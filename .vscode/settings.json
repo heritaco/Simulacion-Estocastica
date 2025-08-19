@@ -1,0 +1,5 @@
+{
+    "python.REPL.enableREPLSmartSend": false
+    // enable autopep8 on save
+    "python.formatting.provider": "autopep8""editor.formatOnSave": true
+}
