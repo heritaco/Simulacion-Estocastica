@@ -1,5 +1,14 @@
 {
-    "python.REPL.enableREPLSmartSend": false
+    "python.REPL.enableREPLSmartSend": false,
     // enable autopep8 on save
-    "python.formatting.provider": "autopep8""editor.formatOnSave": true
+    "python.formatting.provider": "autopep8",
+    "editor.formatOnSave": true,
+    // Fuerza a usar MathJax para que se renderice bien el LaTeX en notebooks
+    "notebook.markdown.mathRenderingOption": "mathjax",
+    // Activa la vista previa de Markdown con soporte extendido
+    "markdown.math.enabled": true,
+    // Opcional: mejora el zoom y calidad de renderizado
+    "notebook.output.fontSize": 14,
+    "notebook.output.lineHeight": 1.6,
+    "notebook.experimental.useMarkdownRenderer": true
 }

@@ -1,4 +1,5 @@
-jupyter nbconvert /path/to/mynotebook.ipynb --to latex
+
+% jupyter nbconvert /notebook.ipynb --to latex
 
 
     %
@@ -24,47 +25,56 @@ jupyter nbconvert /path/to/mynotebook.ipynb --to latex
     %
     %
     %
+    
 
 
+    \usepackage{newunicodechar}
+    \newunicodechar{∼}{\ensuremath{\sim}}
+    \newunicodechar{←}{\ensuremath{\leftarrow}}
+    \newunicodechar{…}{\ldots}
 
-    % Saltar de página antes de cada sección y subsección
 
-
-    % --- header con título de subsección + número de 
-
+    % --- header con título de subsección + número de sección ---
     \usepackage{etoolbox}
+    \setcounter{secnumdepth}{0}
+    % centrar el header
     \pretocmd{\section}{\clearpage}{}{}
-    \pretocmd{\subsection}{\clearpage}{}{}
-    
-    
+    % \pretocmd{\subsection}{\clearpage}{}{}
 
-\begin{document}
-    
-    
+    \renewcommand{\contentsname}{Tabla de Contenidos}
+    % o, si ya cargaste hyperref:
+    \hypersetup{hidelinks}
 
-% --- Portada académica ---
-\begin{titlepage}
-\newgeometry{top=5cm,bottom=3.0cm,left=3.0cm,right=3.0cm}
-\centering
+    %\usepackage{newtxmath, newtxtext}
 
-        \LARGE{\textbf{Actividad 1: Simulación
-Estocástica}}\\[0.5cm]
+    \begin{document}
+        
+        
 
-\small
-\textbf{Curso:} TEMAS SELECTOS 1 (O25-LAT4032-1)\\
+    % --- Portada académica ---
+    \begin{titlepage}
+    \newgeometry{top=5cm,bottom=3.0cm,left=3.0cm,right=3.0cm}
+    \centering
 
-\textbf{Profesor:} Rubén Blancas Rivera\\
+            \LARGE{\textbf{Actividad 1: Simulación
+    Estocástica}}\\[0.5cm]
 
-\textbf{Alumnos:} jujuju jajaja jojojo\\
+    \small
+    \textbf{Curso:} Temas Selectos I: O25 LAT4032 1\\
 
-\textbf{Universidad:} Universidad de las Américas Puebla\\
+    \textbf{Profesor:} Rubén Blancas Rivera\\
 
-\textbf{Fecha:} 2025-08-15
-    
-\restoregeometry
-\end{titlepage}
-% --- Fin portada ---
-\newpage
+    \textbf{Alumnos:} auau 1, auau 2, auau 3\\  
+
+    \textbf{Universidad:} Universidad de las Américas Puebla\\
+
+    \textbf{Fecha:} 2025-08-15
+        
+    \restoregeometry
+    \end{titlepage}
+    % --- Fin portada ---
+    \newpage
+    \tableofcontents
 
 
 
