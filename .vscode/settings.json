@@ -10,5 +10,8 @@
     // Opcional: mejora el zoom y calidad de renderizado
     "notebook.output.fontSize": 14,
     "notebook.output.lineHeight": 1.6,
-    "notebook.experimental.useMarkdownRenderer": true
+    "notebook.experimental.useMarkdownRenderer": true,
+    // settings.json
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-_" // incluye "_"
+    // ejemplo_de_uso. ME_ENCANTA!
 }
