@@ -1,0 +1,5 @@
+\contentsline {section}{Overview}{2}{Doc-Start}%
+\contentsline {section}{Distribución Uniforme \((a,b)\)}{3}{Doc-Start}%
+\contentsline {section}{Distribución Discreta}{4}{Doc-Start}%
+\contentsline {subsection}{a)}{4}{section*.1}%
+\contentsline {subsection}{b)}{5}{section*.1}%

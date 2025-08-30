@@ -1,15 +1,15 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.7.19)  30 AUG 2025 12:22
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.7.19)  30 AUG 2025 12:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **"c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Unive
 rsidad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Alea
-torias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex"
+torias/02 Metodo de la Transformada Inversa/actividad/notebook.tex"
 
 (c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Univers
 idad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleato
-rias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex
+rias/02 Metodo de la Transformada Inversa/actividad/notebook.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-11>
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -1570,8 +1570,7 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \@temptokenb=\toks58
 ) (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-)
-No file notebook.aux.
+) (notebook.aux)
 \openout1 = `notebook.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 477.
@@ -1835,18 +1834,51 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  LS2/libertinust1mathex/m/n --> TU/latinmodern-math.otf(
 3)/b/n on input line 477.
 Package hyperref Info: Link coloring ON on input line 477.
+(notebook.out) (notebook.out)
 \@outlinefile=\write5
 \openout5 = `notebook.out'.
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 
 
 [1
 
-]
-No file notebook.toc.
+] (notebook.toc
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00107pt on input line 2.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.00075pt on input line 2.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00053pt on input line 2.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99893pt on input line 2.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 2.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+
+(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+
+(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 2.
+
+
+(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Trying to load font information for LS1+libertinust1mathbb 
+on input line 2.
+
+(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/libertinust1math\ls1lib
+ertinust1mathbb.fd
+File: ls1libertinust1mathbb.fd 2016/08/22 latex LibertinusT1Mathbb LS1 font def
+initions
+))
 \tf@toc=\write6
 \openout6 = `notebook.toc'.
 
@@ -1856,44 +1888,15 @@ No file notebook.toc.
 
 ]
 LaTeX Font Info:    Font shape `TU/Consolas(0)/m/n' will be
-(Font)              scaled to size 8.79166pt on input line 504.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 505.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 505.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 505
-.
- (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 505
-.
-
-(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 50
-5.
-
-(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Trying to load font information for LS1+libertinust1mathbb 
-on input line 505.
-
-(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/libertinust1math\ls1lib
-ertinust1mathbb.fd
-File: ls1libertinust1mathbb.fd 2016/08/22 latex LibertinusT1Mathbb LS1 font def
-initions
-)
+(Font)              scaled to size 8.79166pt on input line 510.
 LaTeX Font Info:    Font shape `TU/Consolas(0)/m/n' will be
-(Font)              scaled to size 6.15416pt on input line 505.
+(Font)              scaled to size 6.15416pt on input line 511.
 
 Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
 !
 
 LaTeX Font Warning: Font shape `TU/Inconsolata(0)/b/n' undefined
-(Font)              using `TU/Inconsolata(0)/m/n' instead on input line 506.
+(Font)              using `TU/Inconsolata(0)/m/n' instead on input line 512.
 
 Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
 !
@@ -1905,1160 +1908,42 @@ Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt
 
 ]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 559.
+(Font)              scaled to size 14.40152pt on input line 550.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 14.39845pt on input line 550.
+
+
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 559.
+(Font)              scaled to size 9.00096pt on input line 577.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 6.00064pt on input line 577.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 559.
+(Font)              scaled to size 8.99904pt on input line 577.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 559.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:566: Missing $ inser
-ted.
-<inserted text> 
-                $
-l.566     \$\$ 10 = 2 \cdot 5 \bmod
-                                    150 \textbackslash{}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 566.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:567: Missing $ inser
-ted.
-<inserted text> 
-                $
-l.567 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:568: Missing $ inser
-ted.
-<inserted text> 
-                $
-l.568 20 = 10 \cdot 5 \bmod
-                            150 \textbackslash{}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 568.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:569: Missing $ inser
-ted.
-<inserted text> 
-                $
-l.569 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:570: Missing $ inser
-ted.
-<inserted text> 
-                $
-l.570 40 = 20 \cdot 5 \bmod
-                            150 \textbackslash{}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 570.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:571: Missing $ inser
-ted.
-<inserted text> 
-                $
-l.571 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:572: Missing $ inser
-ted.
-<inserted text> 
-                $
-l.572 80 = 40 \cdot 5 \bmod
-                            150 \textbackslash{}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 572.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:573: Missing $ inser
-ted.
-<inserted text> 
-                $
-l.573 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:574: Missing $ inser
-ted.
-<inserted text> 
-                $
-l.574 10 = 80 \cdot 5 \bmod
-                            150 \textbackslash{}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 574.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:575: Missing $ inser
-ted.
-<inserted text> 
-                $
-l.575 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-Missing character: There is no ⋮ in font EB Garamond Regular/OT:script=latn;lan
-guage=dflt;mapping=tex-text;!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-
-
+(Font)              scaled to size 5.99936pt on input line 577.
 [3
 
 ]
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_12_0.png Graphic file (type bmp)
-<notebook_files/notebook_12_0.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 654--655
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 580.
+
+Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
+!
+File: notebook_files/notebook_7_0.png Graphic file (type bmp)
+<notebook_files/notebook_7_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 610--611
 
  []
 
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
 
 
 [4
 
 ]
-File: notebook_files/notebook_13_0.png Graphic file (type bmp)
-<notebook_files/notebook_13_0.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 666--667
-
- []
-
-
-
-[5]
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_17_0.png Graphic file (type bmp)
-<notebook_files/notebook_17_0.png>
-
-
-[6
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 728--729
-
- []
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_18_0.png Graphic file (type bmp)
-<notebook_files/notebook_18_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 740--741
-
- []
-
-
-
-[7]
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 748.
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_22_0.png Graphic file (type bmp)
-<notebook_files/notebook_22_0.png>
-
-
-[8
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 808--809
-
- []
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_24_0.png Graphic file (type bmp)
-<notebook_files/notebook_24_0.png>
-
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 851--852
-
- []
-
-
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 862--863
-
- []
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_28_0.png Graphic file (type bmp)
-<notebook_files/notebook_28_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 912--913
-
- []
-
-
-
-[11
-
-]
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_29_0.png Graphic file (type bmp)
-<notebook_files/notebook_29_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 924--925
-
- []
-
-
-
-[12]
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:929: Extended mathch
-ar used as mathchar (4203026).
-<to be read again> 
-                   =
-l.929 ...ión para aproximar \(\operatorname{{Cov}}
-                                                  (U, e^U)\), donde
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:929: Extended mathch
-ar used as mathchar (4203026).
-<to be read again> 
-                   \relax 
-l.929 ...ión para aproximar \(\operatorname{{Cov}}
-                                                  (U, e^U)\), donde
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:935: Extended mathch
-ar used as mathchar (4203026).
-<to be read again> 
-                   =
-l.935 \operatorname{Cov}
-                        (X,Y)=\mathbb{E}\big[(X-\mathbb{E}X)(Y-\mathbb{E}Y)\...
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:935: Extended mathch
-ar used as mathchar (4203026).
-<to be read again> 
-                   \relax 
-l.935 \operatorname{Cov}
-                        (X,Y)=\mathbb{E}\big[(X-\mathbb{E}X)(Y-\mathbb{E}Y)\...
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:941: Extended mathch
-ar used as mathchar (4203026).
-<to be read again> 
-                   =
-l.941 \operatorname{Cov}
-                        (X,Y)=\mathbb{E}[XY]-\mathbb{E}[X]\;\mathbb{E}[Y].
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:941: Extended mathch
-ar used as mathchar (4203026).
-<to be read again> 
-                   \relax 
-l.941 \operatorname{Cov}
-                        (X,Y)=\mathbb{E}[XY]-\mathbb{E}[X]\;\mathbb{E}[Y].
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:947: Extended mathch
-ar used as mathchar (4203026).
-<to be read again> 
-                   =
-l.947 \operatorname{Cov}
-                        (U,e^{U})=\mathbb{E}\!\big[U e^{U}\big]-\mathbb{E}[U...
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:947: Extended mathch
-ar used as mathchar (4203026).
-<to be read again> 
-                   \relax 
-l.947 \operatorname{Cov}
-                        (U,e^{U})=\mathbb{E}\!\big[U e^{U}\big]-\mathbb{E}[U...
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 951.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:964: Extended mathch
-ar used as mathchar (4203026).
-<to be read again> 
-                   =
-l.964 \;\widehat{\operatorname{Cov}
-                                   }^{(MC)}=\widehat{m}-\widehat{\mu}_U\,\wi...
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:964: Extended mathch
-ar used as mathchar (4203026).
-<to be read again> 
-                   \relax 
-l.964 \;\widehat{\operatorname{Cov}
-                                   }^{(MC)}=\widehat{m}-\widehat{\mu}_U\,\wi...
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 971.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1012: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   =
-l.1012 \operatorname{Cov}
-                         (U,e^{U})=\mathbb{E}[Ue^{U}]-\mathbb{E}[U]\mathbb{E...
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1012: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   \relax 
-l.1012 \operatorname{Cov}
-                         (U,e^{U})=\mathbb{E}[Ue^{U}]-\mathbb{E}[U]\mathbb{E...
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-
-
-[13
-
-]
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-
-
-[14]
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1102.
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_41_0.png Graphic file (type bmp)
-<notebook_files/notebook_41_0.png>
-
-
-[15
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1114--1115
-
- []
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_43_0.png Graphic file (type bmp)
-<notebook_files/notebook_43_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1129--1130
-
- []
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-
-
-[16]
-File: notebook_files/notebook_45_0.png Graphic file (type bmp)
-<notebook_files/notebook_45_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1144--1145
-
- []
-
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.00128pt on input line 1148.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 1148.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 1148.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 1148.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 1148.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 1148.
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_47_0.png Graphic file (type bmp)
-<notebook_files/notebook_47_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1162--1163
-
- []
-
-
-
-[17]
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-
-
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 1179.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 1179.
-[18]
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1188: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1188     \$\$ 22 = (5 \cdot 3 + 7) \bmod
-                                           200 \textbackslash{}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 1188.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1189: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1189 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1190: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1190 117 = (22 \cdot 3 + 7) \bmod
-                                    200 \textbackslash{}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 1190.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1191: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1191 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1192: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1192 192 = (117 \cdot 3 + 7) \bmod
-                                     200 \textbackslash{}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 1192.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1193: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1193 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1194: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1194 167 = (192 \cdot 3 + 7) \bmod
-                                     200 \textbackslash{}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 1194.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1195: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1195 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1196: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1196 42 = (167 \cdot 3 + 7) \bmod
-                                    200 \textbackslash{}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 1196.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1197: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1197 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1198: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1198 17 = (42 \cdot 3 + 7) \bmod
-                                   200 \textbackslash{}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 1198.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1199: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1199 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1200: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1200 92 = (17 \cdot 3 + 7) \bmod
-                                   200 \textbackslash{}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 1200.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1201: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1201 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1202: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1202 67 = (92 \cdot 3 + 7) \bmod
-                                   200 \textbackslash{}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 1202.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1203: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1203 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1204: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1204 142 = (67 \cdot 3 + 7) \bmod
-                                    200 \textbackslash{}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 1204.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1205: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1205 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1206: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1206 117 = (142 \cdot 3 + 7) \bmod
-                                     200 \textbackslash{}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 1206.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1207: Missing $ inse
-rted.
-<inserted text> 
-                $
-l.1207 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-Missing character: There is no ⋮ in font EB Garamond Regular/OT:script=latn;lan
-guage=dflt;mapping=tex-text;!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-
-
-[19
-
-]
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_55_0.png Graphic file (type bmp)
-<notebook_files/notebook_55_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1274--1275
-
- []
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_56_0.png Graphic file (type bmp)
-<notebook_files/notebook_56_0.png>
-
-
-[20
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1286--1287
-
- []
-
-
-
-[21]
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1297.
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_61_0.png Graphic file (type bmp)
-<notebook_files/notebook_61_0.png>
-
-
-[22
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1357--1358
-
- []
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_62_0.png Graphic file (type bmp)
-<notebook_files/notebook_62_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1369--1370
-
- []
-
-
-
-[23]
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1379.
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_68_0.png Graphic file (type bmp)
-<notebook_files/notebook_68_0.png>
-
-
-[24
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1460--1461
-
- []
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_69_0.png Graphic file (type bmp)
-<notebook_files/notebook_69_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1472--1473
-
- []
-
-
-
-[25]
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1480.
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-
-
-[26
-
-]
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_74_0.png Graphic file (type bmp)
-<notebook_files/notebook_74_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1587--1588
-
- []
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_75_0.png Graphic file (type bmp)
-<notebook_files/notebook_75_0.png>
-
-
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 1599--1600
-
- []
-
-
-
-[28]
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1609: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   =
-l.1609   \(\operatorname{Corr}
-                              \big(U,\sqrt{1-U^2}\big)\),
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1609: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   \relax 
-l.1609   \(\operatorname{Corr}
-                              \big(U,\sqrt{1-U^2}\big)\),
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1611: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   =
-l.1611   \(\operatorname{Corr}
-                              \big(U^2,\sqrt{1-U^2}\big)\).
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1611: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   \relax 
-l.1611   \(\operatorname{Corr}
-                              \big(U^2,\sqrt{1-U^2}\big)\).
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 1615.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1618: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   =
-l.1618 \operatorname{Cov}
-                         (X,Y)=\mathbb{E}\big[(X-\mathbb{E}X)(Y-\mathbb{E}Y)...
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1618: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   \relax 
-l.1618 \operatorname{Cov}
-                         (X,Y)=\mathbb{E}\big[(X-\mathbb{E}X)(Y-\mathbb{E}Y)...
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1624: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   =
-l.1624 \operatorname{Cov}
-                         (X,Y)=\mathbb{E}[XY]-\mathbb{E}[X]\;\mathbb{E}[Y].
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1624: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   \relax 
-l.1624 \operatorname{Cov}
-                         (X,Y)=\mathbb{E}[XY]-\mathbb{E}[X]\;\mathbb{E}[Y].
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1630: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   =
-l.1630 \operatorname{Cov}
-                         (U,\sqrt{1-U^2})=\mathbb{E}\!\big[U \sqrt{1-U^2}]-\...
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1630: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   \relax 
-l.1630 \operatorname{Cov}
-                         (U,\sqrt{1-U^2})=\mathbb{E}\!\big[U \sqrt{1-U^2}]-\...
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1634.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1637: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   =
-l.1637 ...operatorname{Cov}}}{\sqrt{s_U^2\,s_Y^2}}
-                                                  .
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1637: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   \relax 
-l.1637 ...operatorname{Cov}}}{\sqrt{s_U^2\,s_Y^2}}
-                                                  .
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1644: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   =
-l.1644 \operatorname{Var}
-                         (X)=\mathbb{E}[X^{2}]-(\mathbb{E}[X])^{2}.
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1644: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   \relax 
-l.1644 \operatorname{Var}
-                         (X)=\mathbb{E}[X^{2}]-(\mathbb{E}[X])^{2}.
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1661: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   =
-l.1661 \;\widehat{\operatorname{Cov}
-                                    }^{(MC)}=\widehat{m}-\widehat{\mu}_U\,\w...
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/01 Numeros Aleatorios/Actividad/actividad/notebook.tex:1661: Extended mathc
-har used as mathchar (4203026).
-<to be read again> 
-                   \relax 
-l.1661 \;\widehat{\operatorname{Cov}
-                                    }^{(MC)}=\widehat{m}-\widehat{\mu}_U\,\w...
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-
-
-[29
-
-]
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_84_0.png Graphic file (type bmp)
-<notebook_files/notebook_84_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1726--1727
-
- []
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-
-
-[30]
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-File: notebook_files/notebook_88_0.png Graphic file (type bmp)
-<notebook_files/notebook_88_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1790--1791
-
- []
-
-
-
-[31]
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1801.
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-
-
-[32
-
-]
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-
-
-[33] (notebook.aux)
+[5] (notebook.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-11>
@@ -3067,25 +1952,16 @@ L3 programming layer <2025-07-11>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `notebook.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `notebook.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  1779FDC3CDDED59B198C3F293A74F64E;4771.
+Package rerunfilecheck Info: File `notebook.out' has not changed.
+(rerunfilecheck)             Checksum: 7D1E395C30024448C889811245717FB8;562.
  ) 
 Here is how much of TeX's memory you used:
- 34961 strings out of 403265
- 685779 string characters out of 5461230
- 1235775 words of memory out of 5000000
- 62818 multiletter control sequences out of 15000+600000
- 652168 words of font info for 178 fonts, out of 8000000 for 9000
+ 34663 strings out of 403265
+ 677003 string characters out of 5461230
+ 1205938 words of memory out of 5000000
+ 62537 multiletter control sequences out of 15000+600000
+ 645568 words of font info for 161 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 116i,13n,121p,1403b,761s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,14n,121p,1408b,668s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on notebook.pdf (34 pages).
+Output written on notebook.pdf (6 pages).
