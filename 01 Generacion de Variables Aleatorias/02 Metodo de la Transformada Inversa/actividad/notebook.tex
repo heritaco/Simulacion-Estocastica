@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper]{article} % Compila con lualatex o xelatex
+\documentclass[11pt]{article}
 
     \usepackage[breakable]{tcolorbox}
     \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
@@ -84,26 +84,11 @@
     \usepackage{mathrsfs}
     
 
-        % VSCode-like mono (Windows default is Consolas; swap if you prefer)
-    \usepackage{fontspec}
-    \setmonofont{Consolas}[Scale=MatchLowercase]
-
-    
-    \usepackage{fontspec} 
-    \newfontface\myfont{Inconsolata}[Contextuals={WordInitial,WordFinal}]{}  
-
-    \usepackage{fancyvrb}
-    \fvset{
-    commandchars=\\\{\},
-    fontsize=\scriptsize,
-    formatcom=\myfont
-    }
-
     
     % Colors for the hyperref package
-    \definecolor{urlcolor}{rgb}{0.00,0.00,1.00}
-    \definecolor{linkcolor}{rgb}{0.00,0.00,0.40}
-    \definecolor{citecolor}{rgb}{0.149,0.498,0.600}
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
 
     % ANSI colors
     \definecolor{ansi-black}{HTML}{3E424D}
@@ -126,53 +111,49 @@
     \definecolor{ansi-default-inverse-bg}{HTML}{000000}
 
     % common color for the border for error outputs.
-    \definecolor{outerrorbackground}{HTML}{FFFFFF}
-
+    \definecolor{outerrorbackground}{HTML}{FFDFDF}
 
     % commands and environments needed by pandoc snippets
     % extracted from the output of `pandoc -s`
     \providecommand{\tightlist}{%
       \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{
-        commandchars=\\\{\}
-    }
-
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
     \newenvironment{Shaded}{}{}
-    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{\textbf{{#1}}}}
-    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.149,0.498,0.600}{{#1}}}
-    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.035,0.525,0.345}{{#1}}}
-    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.035,0.525,0.345}{{#1}}}
-    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.035,0.525,0.345}{{#1}}}
-    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.639,0.082,0.082}{{#1}}}
-    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.639,0.082,0.082}{{#1}}}
-    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.000,0.502,0.000}{\textit{{#1}}}}
-    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{{#1}}}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
     \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
-    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.475,0.369,0.149}{{#1}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
     \newcommand{\RegionMarkerTok}[1]{{#1}}
     \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
     \newcommand{\NormalTok}[1]{{#1}}
 
     % Additional commands for more recent versions of Pandoc
-    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{{#1}}}
-    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.639,0.082,0.082}{{#1}}}
-    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.639,0.082,0.082}{{#1}}}
-    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.639,0.082,0.082}{{#1}}}
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
     \newcommand{\ImportTok}[1]{{#1}}
-    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.000,0.502,0.000}{\textit{{#1}}}}
-    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.706,0.000,0.620}{\textbf{\textit{{#1}}}}}
-    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.000,0.502,0.000}{\textbf{\textit{{#1}}}}}
-    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.000,0.063,0.502}{{#1}}}
-    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{\textbf{{#1}}}}
-    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.000,0.000,0.000}{{#1}}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
     \newcommand{\BuiltInTok}[1]{{#1}}
     \newcommand{\ExtensionTok}[1]{{#1}}
-    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.706,0.000,0.620}{{#1}}}
-    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.149,0.498,0.600}{{#1}}}
-    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.000,0.502,0.000}{\textbf{\textit{{#1}}}}}
-    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.000,0.502,0.000}{\textbf{\textit{{#1}}}}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
     \makeatletter
-
     \newsavebox\pandoc@box
     \newcommand*\pandocbounded[1]{%
       \sbox\pandoc@box{#1}%
@@ -205,11 +186,12 @@
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
     % Document parameters
     % Document title
-
-
-
-
-
+    \title{notebook}
+    
+    
+    
+    
+    
     
     
 % Pygments definitions
@@ -395,7 +377,7 @@
     % Exact colors from NB
     \definecolor{incolor}{HTML}{303F9F}
     \definecolor{outcolor}{HTML}{D84315}
-    \definecolor{cellborder}{HTML}{F7F7F7}
+    \definecolor{cellborder}{HTML}{CFCFCF}
     \definecolor{cellbackground}{HTML}{F7F7F7}
 
     % prompt
@@ -419,96 +401,21 @@
       citecolor=citecolor,
       }
     % Slightly bigger margins than the latex defaults
-        
-    \geometry{verbose,tmargin=1.5in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
     
 
-
-% --- Nuevos caracteres Unicode ----
-\usepackage{newunicodechar}
-\newunicodechar{∼}{\ensuremath{\sim}}
-\newunicodechar{←}{\ensuremath{\leftarrow}}
-\newunicodechar{…}{\ldots}
-
-% --- Layout & links ---
-% \usepackage[margin=1.5in]{geometry}
-% \hypersetup{hidelinks}
-
-% --- Fuentes (texto y matemáticas) ---
-\usepackage{libertinust1math}
-\usepackage{fontspec}
-\setmainfont{EB Garamond}[
-    UprightFont = * Regular,
-    ItalicFont = * Italic,
-    BoldFont = * SemiBold,
-    BoldItalicFont = * SemiBold Italic,
-]
-
-
-% --- Secciones y subsecciones ---
-\usepackage{titlesec}
-\newfontface\boldd{EB Garamond Bold}
-\newfontface\bolditalic{EB Garamond  Bold Italic}
-\newfontface\extrabold{EB Garamond ExtraBold}
-
-
-% --- Ajustes de numeración ---
-\usepackage{etoolbox}
-\setcounter{secnumdepth}{0}
-% centrar el header
-\pretocmd{\section}{\clearpage}{}{}
-% \pretocmd{\subsection}{\clearpage}{}{}
-
-
-% --- Encabezado con nombre de la sección ---
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\small\leftmark}
-\fancyhead[R]{\small\thepage}
-\fancyhead[C]{\small\textit{\rightmark}}
-\renewcommand{\headrulewidth}{0.1pt}
-
-% --- Espaciado ---
-\usepackage{setspace}
-\setstretch{1.2}
-\setlength{\parskip}{0.2em}
-
 \begin{document}
-
-% --- Portada ---
-\begin{titlepage}
-  \centering
-  \vspace*{4cm}
-  {\Huge\bfseries Metodo de la Trasformada Inversa\par}
-  \vspace{1cm}
-  {\large Curso:  Temas Selectos I: O25 LAT4032 1\par}
-  {\large Profesor:  Rubén Blancas Rivera\par}
-  {\large Equipo:  Ximena Bravo, Heriberto Espino, Celeste Nuñez\par}
-  {\large Universidad de las Américas Puebla\par}
-  \vfill
-  {\large \today\par}
-\end{titlepage}
-
-
-% --- Tabla de contenidos ---
-\renewcommand{\contentsname}{Índice}
-\tableofcontents
-\thispagestyle{empty}
-\newpage
-
-% --- Inicio del documento ---
-\section{Overview}
-This document is a minimal example using EB Garamond for prose and libertinust1math for formulas.
-Links lik are active.
-
+    
+    \maketitle
     
     
 
     
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{1}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}, fontsize=\scriptsize]
+\prompt{In}{incolor}{6}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{math}
 \PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{random}
 \PY{k+kn}{from}\PY{+w}{ }\PY{n+nn}{collections}\PY{+w}{ }\PY{k+kn}{import} \PY{n}{Counter}
@@ -520,28 +427,73 @@ Links lik are active.
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{2}{\boxspacing}
+\prompt{In}{incolor}{4}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{matplotlib}\PY{+w}{ }\PY{k}{as}\PY{+w}{ }\PY{n+nn}{mpl}
+\PY{n}{mpl}\PY{o}{.}\PY{n}{rcParams}\PY{o}{.}\PY{n}{update}\PY{p}{(}\PY{p}{\PYZob{}}
+    \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{text.usetex}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{k+kc}{True}\PY{p}{,}          \PY{c+c1}{\PYZsh{} route all text through LaTeX}
+    \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pgf.texsystem}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{xelatex}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}  \PY{c+c1}{\PYZsh{} or \PYZdq{}xelatex\PYZdq{}}
+    \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pgf.rcfonts}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{k+kc}{False}\PY{p}{,}         \PY{c+c1}{\PYZsh{} do not override with mpl fonts}
+    \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{font.family}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{serif}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+    \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{text.latex.preamble}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+sa}{r}\PY{l+s+s2}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{usepackage}\PY{l+s+si}{\PYZob{}libertinust1math\PYZcb{}}
+\PY{l+s+s2}{\PYZdq{}\PYZdq{}\PYZdq{}}\PY{p}{,}
+\PY{p}{\PYZcb{}}\PY{p}{)}
+
+\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot}\PY{+w}{ }\PY{k}{as}\PY{+w}{ }\PY{n+nn}{plt}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{int\PYZus{}0\PYZca{}1 x\PYZca{}2}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{,dx=}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{tfrac13\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{alpha,}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{beta,}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{Gamma(z) ,X\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_1_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{11}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from}\PY{+w}{ }\PY{n+nn}{IPython}\PY{n+nn}{.}\PY{n+nn}{display}\PY{+w}{ }\PY{k+kn}{import} \PY{n}{set\PYZus{}matplotlib\PYZus{}formats}
+\PY{n}{set\PYZus{}matplotlib\PYZus{}formats}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{svg}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}                           \PY{c+c1}{\PYZsh{} or \PYZsq{}svg\PYZsq{},\PYZsq{}pdf\PYZsq{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}, frame=single, framerule=2mm, rulecolor=\color{outerrorbackground}]
+\textcolor{ansi-red}{---------------------------------------------------------------------------}
+\textcolor{ansi-red}{ImportError}                               Traceback (most recent call last)
+\textcolor{ansi-cyan}{Cell}\textcolor{ansi-cyan}{ }\textcolor{ansi-green}{In[11]}\textcolor{ansi-green}{, line 1}
+\textcolor{ansi-green}{----> }\textcolor{ansi-green}{1} \def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{0,135,0}}{\textbf{from}}\def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{188,188,188}}{ }\textcolor{ansi-blue-intense}{\textbf{IPython}}\textcolor{ansi-blue-intense}{\textbf{.}}\textcolor{ansi-blue-intense}{\textbf{display}}\def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{188,188,188}}{ }\def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{0,135,0}}{\textbf{import}} set\_matplotlib\_formats
+\textcolor{ansi-green}{      2} set\_matplotlib\_formats(\textcolor{ansi-yellow}{'}\textcolor{ansi-yellow}{svg}\textcolor{ansi-yellow}{'})
+
+\textcolor{ansi-red}{ImportError}: cannot import name 'set\_matplotlib\_formats' from 'IPython.display' (c:\textbackslash{}Users\textbackslash{}herie\textbackslash{}miniconda3\textbackslash{}envs\textbackslash{}u\textbackslash{}Lib\textbackslash{}site-packages\textbackslash{}IPython\textbackslash{}display.py)
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{color} \PY{o}{=} \PY{n}{sns}\PY{o}{.}\PY{n}{color\PYZus{}palette}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{muted}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{shuffle}\PY{p}{(}\PY{n}{color}\PY{p}{)}
-\PY{n}{sns}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{n}{style}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{whitegrid}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{context}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{paper}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{palette}\PY{o}{=}\PY{n}{color}\PY{p}{)}
+\PY{n}{sns}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{n}{style}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{whitegrid}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{context}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{paper}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{palette}\PY{o}{=}\PY{n}{color}\PY{p}{,} \PY{n}{font}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Inconsolata}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{sns}\PY{o}{.}\PY{n}{color\PYZus{}palette}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{2}{\boxspacing}
+\prompt{Out}{outcolor}{7}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-[(0.5843137254901961, 0.4235294117647059, 0.7058823529411765),
- (0.5490196078431373, 0.3803921568627451, 0.23529411764705882),
- (0.8627450980392157, 0.49411764705882355, 0.7529411764705882),
- (0.2823529411764706, 0.47058823529411764, 0.8156862745098039),
- (0.41568627450980394, 0.8, 0.39215686274509803),
- (0.4745098039215686, 0.4745098039215686, 0.4745098039215686),
- (0.8392156862745098, 0.37254901960784315, 0.37254901960784315),
+[(0.5490196078431373, 0.3803921568627451, 0.23529411764705882),
  (0.9333333333333333, 0.5215686274509804, 0.2901960784313726),
+ (0.5098039215686274, 0.7764705882352941, 0.8862745098039215),
+ (0.2823529411764706, 0.47058823529411764, 0.8156862745098039),
  (0.8352941176470589, 0.7333333333333333, 0.403921568627451),
- (0.5098039215686274, 0.7764705882352941, 0.8862745098039215)]
+ (0.8392156862745098, 0.37254901960784315, 0.37254901960784315),
+ (0.8627450980392157, 0.49411764705882355, 0.7529411764705882),
+ (0.5843137254901961, 0.4235294117647059, 0.7058823529411765),
+ (0.41568627450980394, 0.8, 0.39215686274509803),
+ (0.4745098039215686, 0.4745098039215686, 0.4745098039215686)]
 \end{Verbatim}
 \end{tcolorbox}
         
@@ -591,7 +543,7 @@ f_X(x)=\mathbb P(X = x)=
 \]
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{3}{\boxspacing}
+\prompt{In}{incolor}{12}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{x\PYZus{}vals} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{]}
 \PY{n}{pmf} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{0.4}\PY{p}{,} \PY{l+m+mf}{0.3}\PY{p}{,} \PY{l+m+mf}{0.2}\PY{p}{,} \PY{l+m+mf}{0.1}\PY{p}{]}
@@ -600,12 +552,13 @@ f_X(x)=\mathbb P(X = x)=
 \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}X\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}f\PYZus{}X(x)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{savefig}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pmf\PYZus{}plot.svg}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_7_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_9_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -622,4 +575,1176 @@ F_X(x)=\mathbb P(X\le x)=
 1,& x\ge 4.
 \end{cases}
 \]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{9}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x\PYZus{}cdf} \PY{o}{=} \PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]}
+\PY{n}{F\PYZus{}cdf} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mf}{0.4}\PY{p}{,} \PY{l+m+mf}{0.7}\PY{p}{,} \PY{l+m+mf}{0.9}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{step}\PY{p}{(}\PY{n}{x\PYZus{}cdf}\PY{p}{,} \PY{n}{F\PYZus{}cdf}\PY{p}{,} \PY{n}{where}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{post}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}F\PYZus{}X(x)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_12_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{c}{%
+\subsection{c)}\label{c}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}.
+
+\[
+\begin{aligned}
+F_X(x)=u 
+&\;\iff\; u\in(0,0.4] \;\Rightarrow\; x=1,\\
+&\;\iff\; u\in(0.4,0.7] \;\Rightarrow\; x=2,\\
+&\;\iff\; u\in(0.7,0.9] \;\Rightarrow\; x=3,\\
+&\;\iff\; u\in(0.9,1] \;\Rightarrow\; x=4.
+\end{aligned}
+\]
+
+Entonces:
+
+\[
+F_X^{-1}(u)=
+\begin{cases}
+1,& 0<u\le 0.4,\\
+2,& 0.4<u\le 0.7,\\
+3,& 0.7<u\le 0.9,\\
+4,& 0.9<u\le 1.
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{u\PYZus{}vals} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mf}{0.4}\PY{p}{,} \PY{l+m+mf}{0.7}\PY{p}{,} \PY{l+m+mf}{0.9}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}
+\PY{n}{F\PYZus{}inv\PYZus{}vals} \PY{o}{=} \PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{step}\PY{p}{(}\PY{n}{u\PYZus{}vals}\PY{p}{,} \PY{n}{F\PYZus{}inv\PYZus{}vals}\PY{p}{,} \PY{n}{where}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{post}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{u}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}F\PYZus{}X\PYZca{}}\PY{l+s+s2}{\PYZob{}}\PY{l+s+s2}{\PYZhy{}1\PYZcb{}(u)\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_15_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{d}{%
+\subsection{d)}\label{d}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{F\PYZus{}inv}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{p}{:}
+    \PY{k}{if} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{0.4}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{1}
+    \PY{k}{elif} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{0.7}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{2}
+    \PY{k}{elif} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{0.9}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{3}
+    \PY{k}{else}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{4}
+
+\PY{n}{u\PYZus{}samples} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{uniform}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{500}\PY{p}{)}
+\PY{n}{x\PYZus{}samples} \PY{o}{=} \PY{p}{[}\PY{n}{F\PYZus{}inv}\PY{p}{(}\PY{n}{u}\PY{p}{)} \PY{k}{for} \PY{n}{u} \PY{o+ow}{in} \PY{n}{u\PYZus{}samples}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{e}{%
+\subsection{e)}\label{e}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{8}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{plt}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{x\PYZus{}samples}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mf}{5.5}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{vlines}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{n}{linestyles}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{n}{color}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{n}{color}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}X\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Densidad}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Histograma de la Variable Aleatoria X a partir de \PYZdl{}F\PYZus{}X\PYZca{}}\PY{l+s+s2}{\PYZob{}}\PY{l+s+s2}{\PYZhy{}1\PYZcb{}(u)\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_19_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{exponencial-mathrmexplambda}{%
+\section{\texorpdfstring{Exponencial
+\(\mathrm{Exp}(\lambda)\)}{Exponencial \textbackslash mathrm\{Exp\}(\textbackslash lambda)}}\label{exponencial-mathrmexplambda}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}. Si
+\(X\sim\mathrm{Exp}(\lambda)\), entonces su funcion de distribucion
+acumulada es:
+
+\[
+F_X(x)=\bigl(1-e^{-\lambda x}\bigr)\,\mathbf{1}_{[0,\infty)}(x)
+\]
+
+Encontrando la inversa:
+
+\[
+\begin{aligned}
+F_X(x)=u &\;\iff\; 1-e^{-\lambda x}=u,\\
+         &\;\iff\; e^{-\lambda x}=1-u,\\
+         &\;\iff\; -\lambda x=\ln(1-u),\\
+         &\;\iff\; x=-\frac{1}{\lambda}\,\ln(1-u).
+\end{aligned}
+\]
+
+Entonces:
+
+\[
+F_X^{-1}(u)=-\frac{1}{\lambda}\,\ln(1-u).
+\]
+
+Por lo tanto, con \(U\sim\mathrm{Unif}(0,1)\),
+
+\[
+X=F_X^{-1}(U)=-\frac{1}{\lambda}\ln(1-U)\sim\mathrm{Exp}(\lambda).
+\]
+
+    \hypertarget{weibull-rlambda}{%
+\section{\texorpdfstring{Weibull
+\((r,\lambda)\)}{Weibull (r,\textbackslash lambda)}}\label{weibull-rlambda}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}, con \(r>0\) y \(\lambda>0\).
+Si \(X\sim\mathrm{Weibull}(r,\lambda)\), entonces su funcion de
+distribucion acumulada es:
+
+\[
+F_X(x)=\bigl(1-e^{-(\lambda x)^r}\bigr)\,\mathbf{1}_{[0,\infty)}(x)
+\]
+
+Encontrando la inversa:
+
+\[
+\begin{aligned}
+F_X(x)=u &\;\iff\; 1-e^{-(\lambda x)^r}=u,\\
+         &\;\iff\; e^{-(\lambda x)^r}=1-u,\\
+         &\;\iff\; -(\lambda x)^r=\ln(1-u),\\
+         &\;\iff\; (\lambda x)^r=-\ln(1-u),\\
+         &\;\iff\; x=\frac{1}{\lambda}\,\bigl[-\ln(1-u)\bigr]^{1/r}.
+\end{aligned}
+\]
+
+Entonces:
+
+\[
+F_X^{-1}(u)=\frac{1}{\lambda}\,\bigl[-\ln(1-u)\bigr]^{1/r}.
+\]
+
+Por lo tanto, con \(U\sim\mathrm{Unif}(0,1)\):
+
+\[
+X=F_X^{-1}(U)=\frac{1}{\lambda}\,\bigl[-\ln(1-U)\bigr]^{1/r}\sim\mathrm{Weibull}(r,\lambda).
+\]
+
+    \hypertarget{cauchy-ab}{%
+\section{\texorpdfstring{Cauchy
+\((a,b)\)}{Cauchy (a,b)}}\label{cauchy-ab}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}. Si
+\(X\sim\mathrm{Cauchy}(a,b)\), entonces su funcion de distribucion
+acumulada es:
+
+\[
+F_X(x)=\frac{1}{\pi}\arctan\!\Big(\frac{x-a}{b}\Big)+\frac{1}{2},\qquad x\in\mathbb{R},\; b>0.
+\]
+
+Encontrando la inversa:
+
+\[
+\begin{aligned}
+F_X(x)=u 
+&\;\iff\; \frac{1}{\pi}\arctan\!\Big(\frac{x-a}{b}\Big)+\frac{1}{2}=u,\\
+&\;\iff\; \arctan\!\Big(\frac{x-a}{b}\Big)=\pi\!\left(u-\tfrac{1}{2}\right),\\
+&\;\iff\; \frac{x-a}{b}=\tan\!\big(\pi(u-\tfrac{1}{2})\big),\\
+&\;\iff\; x=a+b\,\tan\!\big(\pi(u-\tfrac{1}{2})\big).
+\end{aligned}
+\]
+
+Entonces:
+
+\[
+F_X^{-1}(u)=a+b\,\tan\!\big(\pi(u-\tfrac{1}{2})\big).
+\]
+
+Por lo tanto,
+\(X=F_X^{-1}(U)=a+b\,\tan(\pi(U-\tfrac{1}{2}))\sim\mathrm{Cauchy}(a,b)\).
+
+    \hypertarget{pareto-i-ab}{%
+\section{\texorpdfstring{Pareto I
+\((a,b)\)}{Pareto I (a,b)}}\label{pareto-i-ab}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}, con \(a>0\) y \(b>0\). Si
+\(X\sim\mathrm{Pareto\ I}(a,b)\), entonces su funcion de distribucion
+acumulada es:
+
+\[
+F_X(x)=\bigl(1-(b/x)^a\bigr)\,\mathbf{1}_{[b,\infty)}(x)
+\]
+
+Encontrando la inversa:
+
+\[
+\begin{aligned}
+F_X(x)=u &\;\iff\; 1-\left(\frac{b}{x}\right)^a=u,\\
+         &\;\iff\; \left(\frac{b}{x}\right)^a=1-u,\\
+         &\;\iff\; \frac{b}{x}=(1-u)^{1/a},\\
+         &\;\iff\; x=b\,(1-u)^{-1/a}.
+\end{aligned}
+\]
+
+Entonces:
+
+\[
+F_X^{-1}(u)=b\,(1-u)^{-1/a}.
+\]
+
+Por lo tanto,
+
+\[
+X=F_X^{-1}(U)=b\,(1-U)^{-1/a}\sim\mathrm{Pareto\ I}(a,b).
+\]
+
+    \hypertarget{muxednimo-x_1minx_1dotsx_n}{%
+\section{\texorpdfstring{Mínimo
+\(X_{(1)}=\min\{X_1,\dots,X_n\}\)}{Mínimo X\_\{(1)\}=\textbackslash min\textbackslash\{X\_1,\textbackslash dots,X\_n\textbackslash\}}}\label{muxednimo-x_1minx_1dotsx_n}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)} y
+\(X_{(1)}:=\min\{X_1,\dots,X_n\}\) con \(X_i\) i.i.d. de CDF \(F\).
+
+\[
+F_{X_{(1)}}(x)=\mathbb P(X_{(1)}\le x)
+=1-\mathbb P(X_1>x,\dots,X_n>x)
+=1-\bigl(1-F(x)\bigr)^n.
+\]
+
+\textbf{Encontrando la inversa:}
+
+\[
+\begin{aligned}
+F_{X_{(1)}}(x)=u 
+&\;\iff\; 1-\bigl(1-F(x)\bigr)^n=u,\\
+&\;\iff\; \bigl(1-F(x)\bigr)^n=1-u,\\
+&\;\iff\; 1-F(x)=(1-u)^{1/n},\\
+&\;\iff\; F(x)=1-(1-u)^{1/n},\\
+&\;\iff\; x=F^{-1}\!\bigl(1-(1-u)^{1/n}\bigr).
+\end{aligned}
+\]
+
+Entonces:
+
+\[
+F_{X_{(1)}}^{-1}(u)=F^{-1}\!\bigl(1-(1-u)^{1/n}\bigr),\quad 0<u<1.
+\]
+
+    \hypertarget{mixta-xminym-con-ysimmathrmexplambda}{%
+\section{\texorpdfstring{Mixta \(X=\min\{Y,M\}\) con
+\(Y\sim\mathrm{Exp}(\lambda)\)}{Mixta X=\textbackslash min\textbackslash\{Y,M\textbackslash\} con Y\textbackslash sim\textbackslash mathrm\{Exp\}(\textbackslash lambda)}}\label{mixta-xminym-con-ysimmathrmexplambda}}
+
+    Caracteriza la cdf, localiza la masa en \(x=M\) y construye \(F^{-1}\)
+con caso discreto/continuo. Implementa
+\texttt{sample\_min\_exp\_M(lam,\ M,\ N)}.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{29}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} TODO: implementa aquí}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{mixta-xmaxym-con-ysimmathrmexplambda}{%
+\section{\texorpdfstring{Mixta \(X=\max\{Y,M\}\) con
+\(Y\sim\mathrm{Exp}(\lambda)\)}{Mixta X=\textbackslash max\textbackslash\{Y,M\textbackslash\} con Y\textbackslash sim\textbackslash mathrm\{Exp\}(\textbackslash lambda)}}\label{mixta-xmaxym-con-ysimmathrmexplambda}}
+
+    Sea \textbf{\(Y\sim\mathrm{Exp}(\lambda)\)} y \(M>0\). Defina
+\(X=\max\{Y,M\}\).
+
+\textbf{CDF}
+
+\[
+F_X(x)=\mathbb P(X\le x)=
+\begin{cases}
+0,& x<M,\\[4pt]
+1-e^{-\lambda x},& x\ge M,
+\end{cases}
+\]
+
+con salto en \(x=M\) de tamaño \(1-e^{-\lambda M}\).
+
+\textbf{Inversa (cuantil generalizado
+\(F_X^{-1}(u)=\inf\{x:F_X(x)\ge u\}\))}
+
+Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}.
+
+\[
+F_X^{-1}(u)=
+\begin{cases}
+M,& 0<u\le 1-e^{-\lambda M},\\[6pt]
+-\dfrac{1}{\lambda}\ln(1-u),& 1-e^{-\lambda M}<u<1,
+\end{cases}
+\]
+
+y además \(F_X^{-1}(0^+)=M\) y \(F_X^{-1}(1)=+\infty\).
+
+\begin{quote}
+Para muestrear: si \(U\le 1-e^{-\lambda M}\) devuelve \(M\); en caso
+contrario devuelve \(-\frac1\lambda\ln(1-U)\).
+\end{quote}
+
+    \begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \textbf{Probar \(F(F^{-1}(u))\ge u\), \(0<u<1\).} Defina el cuantil
+  generalizado \(F^{-1}(u):=\inf\{x:\,F(x)\ge u\}\). Sea
+  \(S_u=\{x:\,F(x)\ge u\}\). Para todo \(\varepsilon>0\) existe
+  \(x_\varepsilon\in S_u\) con
+  \(x_\varepsilon\le F^{-1}(u)+\varepsilon\). Entonces
+\end{enumerate}
+
+\[
+F\big(F^{-1}(u)+\varepsilon\big)\ \ge\ u.
+\]
+
+Por derecha-continuidad,
+
+\[
+F\!\big(F^{-1}(u)\big)=\lim_{\varepsilon\downarrow0}F\big(F^{-1}(u)+\varepsilon\big)\ \ge\ u.
+\]
+
+\textbf{Verificación para \(X=\max\{Y,M\}\).} Con
+\(p_0:=1-e^{-\lambda M}\),
+
+\[
+F^{-1}(u)=
+\begin{cases}
+M,& 0<u\le p_0,\\
+-\frac1\lambda\ln(1-u),& p_0<u<1.
+\end{cases}
+\]
+
+Luego \(F(F^{-1}(u))=F(M)=p_0\ge u\) si \(u\le p_0\), y
+\(F(-\tfrac1\lambda\ln(1-u))=u\) si \(u>p_0\).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \textbf{Probar \(F^{-1}(F(x))\le x\) cuando \(0<F(x)<1\).} Tome
+  \(u=F(x)\). El conjunto \(S_u=\{t:\,F(t)\ge u\}\) contiene a \(x\)
+  (trivialmente \(F(x)\ge u\)). Por lo tanto
+\end{enumerate}
+
+\[
+F^{-1}(F(x))=\inf S_u\ \le\ x.
+\]
+
+La igualdad se da cuando \(F\) es continua en \(x\).
+
+\textbf{Verificación para \(X=\max\{Y,M\}\).} Si \(x>M\),
+
+\[
+F^{-1}(F(x))=-\frac1\lambda\ln\!\big(1-(1-e^{-\lambda x})\big)=x.
+\]
+
+Si \(x=M\), \(F^{-1}(F(M))=F^{-1}(p_0)=M=x\).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  \textbf{Generación por transformada inversa.} Con
+  \(p_0:=1-e^{-\lambda M}\) y \(U\sim\mathrm{Unif}(0,1)\):
+\end{enumerate}
+
+\[
+X=
+\begin{cases}
+M, & U\le p_0,\\[4pt]
+-\dfrac1\lambda\ln(1-U), & U>p_0.
+\end{cases}
+\]
+
+Es todo.
+
+    \hypertarget{variable-con-cdf-por-tramos}{%
+\section{Variable con CDF por
+tramos}\label{variable-con-cdf-por-tramos}}
+
+    \hypertarget{a}{%
+\subsection{a)}\label{a}}
+
+    \[
+F_X(x)=
+\begin{cases}
+0,& x\le -2,\\[2pt]
+\dfrac{x+2}{2},& -2<x<-1,\\[8pt]
+\dfrac12,& -1\le x<1,\\[6pt]
+\dfrac{x}{2},& 1\le x<2,\\[6pt]
+1,& x\ge 2.
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{30}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Define a fine grid of x values}
+\PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{400}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Define the piecewise function for F\PYZus{}X(x)}
+\PY{n}{F\PYZus{}x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{piecewise}\PY{p}{(}\PY{n}{x}\PY{p}{,}
+                   \PY{p}{[}\PY{n}{x} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{,} \PY{p}{(}\PY{n}{x} \PY{o}{\PYZgt{}} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{x} \PY{o}{\PYZlt{}} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{x} \PY{o}{\PYZlt{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{x} \PY{o}{\PYZlt{}} \PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{n}{x} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}
+                   \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{p}{(}\PY{n}{x} \PY{o}{+} \PY{l+m+mi}{2}\PY{p}{)} \PY{o}{/} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{,} \PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{n}{x} \PY{o}{/} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Plot the CDF}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{F\PYZus{}x}\PY{p}{,} \PY{n}{lw}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{n}{color}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}F\PYZus{}X(x)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{CDF Function \PYZdl{}F\PYZus{}X(x)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{True}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_39_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{b}{%
+\subsection{b)}\label{b}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}.
+
+\textbf{Encontrando la inversa:}
+
+\begin{itemize}
+\item
+  Para \(x\le -2\), \(u\in\{0\}\): \(F_X^{-1}(0)=-2\) \emph{(convención
+  en el extremo)}.
+\item
+  Para \(-2<x<-1\), \(u\in(0,\tfrac12)\):
+
+  \[
+  \begin{aligned}
+  F_X(x)=u &\iff \frac{x+2}{2}=u,\\
+           &\iff x=2u-2.
+  \end{aligned}
+  \]
+\item
+  Para \(-1\le x<1\), \(u\in\{\tfrac12\}\): meseta
+  \(\Rightarrow F_X^{-1}(\tfrac12)=-1\) (borde izquierdo).
+\item
+  Para \(1\le x<2\), \(u\in(\tfrac12,1)\):
+
+  \[
+  \begin{aligned}
+  F_X(x)=u &\iff \frac{x}{2}=u,\\
+           &\iff x=2u.
+  \end{aligned}
+  \]
+\item
+  Para \(x\ge 2\), \(u\in\{1\}\): \(F_X^{-1}(1)=2\).
+\end{itemize}
+
+\textbf{Entonces:}
+
+\[
+F_X^{-1}(u)=
+\begin{cases}
+-2,& u=0,\\[4pt]
+2u-2,& 0<u<\tfrac12,\\[4pt]
+-1,& u=\tfrac12,\\[4pt]
+2u,& \tfrac12<u<1,\\[4pt]
+2,& u=1.
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{31}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Create a fine grid of u values in [0,1] ensuring u=0 and u=1 are included}
+\PY{n}{u} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{500}\PY{p}{)}
+
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{F\PYZus{}inv\PYZus{}func}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{p}{:}
+    \PY{k}{if} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{0.4}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{1}
+    \PY{k}{elif} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{0.7}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{2}
+    \PY{k}{elif} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{0.9}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{3}
+    \PY{k}{else}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{4}
+
+\PY{n}{F\PYZus{}inv} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{vectorize}\PY{p}{(}\PY{n}{F\PYZus{}inv\PYZus{}func}\PY{p}{)}\PY{p}{(}\PY{n}{u}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{u}\PY{p}{,} \PY{n}{F\PYZus{}inv}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{n}{color}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{lw}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}u\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}F\PYZus{}X\PYZca{}}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{\PYZhy{}1\PYZcb{}(u)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_42_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{bernoulli-p-desde-u01}{%
+\section{\texorpdfstring{Bernoulli \((p)\) desde
+\(U(0,1)\)}{Bernoulli (p) desde U(0,1)}}\label{bernoulli-p-desde-u01}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)} y \(0<p<1\). Defina
+
+\[
+X=\mathbf 1_{(0,p]}(U)=
+\begin{cases}
+1,& U\le p,\\
+0,& U>p.
+\end{cases}
+\]
+
+\[
+\mathbb P(X=1)=\mathbb P(U\le p)=p,\qquad
+\mathbb P(X=0)=\mathbb P(U>p)=1-p,
+\]
+
+usando que \(\mathbb P(U=p)=0\). Por tanto
+\(X\sim \mathrm{Bernoulli}(p)\).
+
+    \hypertarget{variable-aleatoria-discreta}{%
+\section{Variable aleatoria
+discreta}\label{variable-aleatoria-discreta}}
+
+    \hypertarget{a}{%
+\subsection{a)}\label{a}}
+
+    \[
+f_X(x)=
+\begin{cases}
+0.3& x=1,\\
+0.5,& x=2,\\
+0.2,& x=3,\\
+0,& \text{en otro caso.}
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{32}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x\PYZus{}vals} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}
+\PY{n}{pmf} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mf}{0.2}\PY{p}{]}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{vlines}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}X\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}f\PYZus{}X(x)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_48_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{b}{%
+\subsection{b)}\label{b}}
+
+    \[
+F_X(x)=\mathbb P(X\le x)=
+\begin{cases}
+0,& x<1,\\
+0.3,& 1\le x<2,\\
+0.8,& 2\le x<3,\\
+1,& x\ge 3.
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{33}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x\PYZus{}cdf} \PY{o}{=} \PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{]}
+\PY{n}{F\PYZus{}cdf} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mf}{0.3}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{step}\PY{p}{(}\PY{n}{x\PYZus{}cdf}\PY{p}{,} \PY{n}{F\PYZus{}cdf}\PY{p}{,} \PY{n}{where}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{post}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}X\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}F\PYZus{}X(x)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_51_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{c}{%
+\subsection{c)}\label{c}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}.
+
+\[
+\begin{aligned}
+F_X(x)=u &\;\iff\; u\in(0,0.3]\ \Rightarrow\ x=1,\\
+         &\;\iff\; u\in(0.3,0.8]\ \Rightarrow\ x=2,\\
+         &\;\iff\; u\in(0.8,1]\ \Rightarrow\ x=3.
+\end{aligned}
+\]
+
+Entonces:
+
+\[
+F_X^{-1}(u)=
+\begin{cases}
+1,& 0<u\le 0.3,\\
+2,& 0.3<u\le 0.8,\\
+3,& 0.8<u\le 1.
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{34}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{u\PYZus{}vals} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mf}{0.3}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{p}{,} \PY{l+m+mf}{1.0}\PY{p}{]}
+\PY{n}{F\PYZus{}inv\PYZus{}values} \PY{o}{=} \PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{]}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{step}\PY{p}{(}\PY{n}{u\PYZus{}vals}\PY{p}{,} \PY{n}{F\PYZus{}inv\PYZus{}values}\PY{p}{,} \PY{n}{where}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{post}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}u\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}F\PYZca{}}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{\PYZhy{}1\PYZcb{}(u)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_54_2.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{d-valor-esperado}{%
+\subsection{d) Valor esperado}\label{d-valor-esperado}}
+
+\[
+\mathbb E[X]=\sum_{x=1}^{3}x\cdot f_X(x)=1\cdot 0.3+2\cdot 0.5+3\cdot 0.2=1.9.
+\]
+
+\hypertarget{e-varianza}{%
+\subsection{e) Varianza}\label{e-varianza}}
+
+\[
+\mathbb V[X]=\sum_{x=1}^{3}(x-\mathbb E[X])^2\cdot f_X(x)=
+(1-1.9)^2\cdot 0.3+(2-1.9)^2\cdot 0.5+(3-1.9)^2\cdot 0.2=0.49.
+\]
+
+\[
+\mathbb V[X] = \mathbb E[X^2] - (\mathbb E[X])^2 = 
+0.3\cdot 1^2 + 0.5\cdot 2^2 + 0.2\cdot 3^2 - (1.9)^2 = 2.79 - (1.9)^2 = 0.49.
+\]
+
+    \hypertarget{f}{%
+\subsection{f)}\label{f}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{35}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{F\PYZus{}inv}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{p}{:}
+    \PY{k}{if} \PY{l+m+mf}{0.3} \PY{o}{\PYZlt{}} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{0.8}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{2}
+    \PY{k}{elif} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{0.3}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{1}
+    \PY{k}{else}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{3}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{36}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{u\PYZus{}samples} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{uniform}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{500}\PY{p}{)}
+\PY{n}{x\PYZus{}samples} \PY{o}{=} \PY{p}{[}\PY{n}{F\PYZus{}inv}\PY{p}{(}\PY{n}{u}\PY{p}{)} \PY{k}{for} \PY{n}{u} \PY{o+ow}{in} \PY{n}{u\PYZus{}samples}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{g}{%
+\subsection{g)}\label{g}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{37}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{plt}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{x\PYZus{}samples}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mf}{4.5}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{vlines}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}X\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Densidad}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Histograma de \PYZdl{}F\PYZus{}X\PYZca{}}\PY{l+s+s2}{\PYZob{}}\PY{l+s+s2}{\PYZhy{}1\PYZcb{}(U)\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+findfont: Font family 'Inconsolata' not found.
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_60_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{h}{%
+\subsection{h)}\label{h}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{38}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x\PYZus{}mean} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{x\PYZus{}samples}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Media muestral de X: }\PY{l+s+si}{\PYZob{}}\PY{n}{x\PYZus{}mean}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Media teórica de X: 1.9}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Diferencia: }\PY{l+s+si}{\PYZob{}}\PY{n}{x\PYZus{}mean}\PY{+w}{ }\PY{o}{\PYZhy{}}\PY{+w}{ }\PY{l+m+mf}{1.9}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Media muestral de X: 1.842
+Media teórica de X: 1.9
+Diferencia: -0.0580
+    \end{Verbatim}
+
+    \hypertarget{i}{%
+\subsection{i)}\label{i}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{39}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x\PYZus{}var} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{n}{x\PYZus{}samples}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Varianza muestral de X: }\PY{l+s+si}{\PYZob{}}\PY{n}{x\PYZus{}var}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Varianza teórica de X: 0.49}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Diferencia: }\PY{l+s+si}{\PYZob{}}\PY{n}{x\PYZus{}var}\PY{+w}{ }\PY{o}{\PYZhy{}}\PY{+w}{ }\PY{l+m+mf}{0.49}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Varianza muestral de X: 0.4850359999999999
+Varianza teórica de X: 0.49
+Diferencia: -0.0050
+    \end{Verbatim}
+
+    \hypertarget{binomial-geomuxe9trica-y-poisson}{%
+\section{Binomial, Geométrica y
+Poisson}\label{binomial-geomuxe9trica-y-poisson}}
+
+    Implementa generadores por inversión para: - \(X\sim\mathrm{Bin}(m,p)\)
+con \(m = 10\) y \(p = 1/3\) - \(X\sim\mathrm{Geo}(p)\) con
+\(\mathbb P(X=k)=p(1-p)^{k-1}\), \(k\ge 1\) con \(p = 3/4\) -
+\(X\sim\mathrm{Poisson}(\lambda)\) con \(\lambda = 2\)
+
+    \hypertarget{a-binomial}{%
+\subsection{a) Binomial}\label{a-binomial}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{40}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{rbinom\PYZus{}inv}\PY{p}{(}\PY{n}{ntrials}\PY{p}{:} \PY{n+nb}{int}\PY{p}{,} \PY{n}{p}\PY{p}{:} \PY{n+nb}{float}\PY{p}{,} \PY{n}{size}\PY{p}{:} \PY{n+nb}{int}\PY{p}{)}\PY{p}{:}
+\PY{+w}{    }\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Binomial(ntrials, p) por transformada inversa.\PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{k}{if} \PY{o+ow}{not} \PY{p}{(}\PY{l+m+mi}{0} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{p} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:} 
+        \PY{k}{raise} \PY{n+ne}{ValueError}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{p debe estar en [0,1].}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    \PY{k}{if} \PY{n}{p} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:} 
+        \PY{k}{return} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{*}\PY{n}{size}
+    \PY{k}{if} \PY{n}{p} \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{:} 
+        \PY{k}{return} \PY{p}{[}\PY{n}{ntrials}\PY{p}{]}\PY{o}{*}\PY{n}{size}
+
+    \PY{n}{c} \PY{o}{=} \PY{n}{p}\PY{o}{/}\PY{p}{(}\PY{l+m+mf}{1.0} \PY{o}{\PYZhy{}} \PY{n}{p}\PY{p}{)}                 \PY{c+c1}{\PYZsh{} paso 2: c}
+    \PY{n}{out} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+    \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{size}\PY{p}{)}\PY{p}{:}
+        \PY{n}{U}  \PY{o}{=} \PY{n}{random}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{p}{)}        \PY{c+c1}{\PYZsh{} paso 1}
+        \PY{n}{i}  \PY{o}{=} \PY{l+m+mi}{0}                      \PY{c+c1}{\PYZsh{} paso 2}
+        \PY{n}{pr} \PY{o}{=} \PY{p}{(}\PY{l+m+mf}{1.0} \PY{o}{\PYZhy{}} \PY{n}{p}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{n}{ntrials}     \PY{c+c1}{\PYZsh{} pr = P(X=0)}
+        \PY{n}{F}  \PY{o}{=} \PY{n}{pr}
+        \PY{k}{if} \PY{n}{U} \PY{o}{\PYZlt{}} \PY{n}{F}\PY{p}{:}                   \PY{c+c1}{\PYZsh{} paso 3–5}
+            \PY{n}{out}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{;} \PY{k}{continue}
+        \PY{k}{while} \PY{k+kc}{True}\PY{p}{:}                 \PY{c+c1}{\PYZsh{} paso 6}
+            \PY{n}{pr} \PY{o}{*}\PY{o}{=} \PY{n}{c} \PY{o}{*} \PY{p}{(}\PY{n}{ntrials} \PY{o}{\PYZhy{}} \PY{n}{i}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}  \PY{c+c1}{\PYZsh{} paso 7}
+            \PY{n}{F}  \PY{o}{+}\PY{o}{=} \PY{n}{pr}
+            \PY{n}{i}  \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+            \PY{k}{if} \PY{n}{U} \PY{o}{\PYZlt{}} \PY{n}{F} \PY{o+ow}{or} \PY{n}{i} \PY{o}{==} \PY{n}{ntrials}\PY{p}{:}          \PY{c+c1}{\PYZsh{} paso 8–11 (con tope)}
+                \PY{n}{out}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+                \PY{k}{break}
+    \PY{k}{return} \PY{n}{out}
+
+\PY{n}{m} \PY{o}{=} \PY{n}{rbinom\PYZus{}inv}\PY{p}{(}\PY{n}{ntrials}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{,} \PY{n}{p}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{m}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{20}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[3, 1, 4, 2, 3, 4, 5, 2, 4, 3, 3, 3, 5, 3, 3, 3, 4, 3, 5, 3]
+    \end{Verbatim}
+
+    \hypertarget{b-geometrica}{%
+\subsection{b) Geometrica}\label{b-geometrica}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{41}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{rgeom\PYZus{}inv\PYZus{}trials}\PY{p}{(}\PY{n}{p}\PY{p}{:} \PY{n+nb}{float}\PY{p}{,} \PY{n}{n}\PY{p}{:} \PY{n+nb}{int}\PY{p}{)}\PY{p}{:}
+\PY{+w}{    }\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Geom(p) en \PYZob{}1,2,...\PYZcb{} por inversión: floor(log(U)/log(1\PYZhy{}p))+1.\PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{n}{out} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+    \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+        \PY{n}{u} \PY{o}{=} \PY{n}{random}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{p}{)}       
+        \PY{n}{x} \PY{o}{=} \PY{n}{math}\PY{o}{.}\PY{n}{ceil}\PY{p}{(}\PY{n}{math}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{u}\PY{p}{)} \PY{o}{/} \PY{n}{math}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{l+m+mf}{1.0} \PY{o}{\PYZhy{}} \PY{n}{p}\PY{p}{)}\PY{p}{)}
+        \PY{n}{out}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+    \PY{k}{return} \PY{n}{out}
+
+\PY{c+c1}{\PYZsh{} Ejemplo: p=0.3, n=100}
+\PY{n}{muestras} \PY{o}{=} \PY{n}{rgeom\PYZus{}inv\PYZus{}trials}\PY{p}{(}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{muestras}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{20}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[3, 2, 8, 5, 2, 3, 1, 5, 9, 2, 1, 1, 6, 1, 13, 1, 3, 1, 11, 3]
+    \end{Verbatim}
+
+    \hypertarget{c-poisson}{%
+\subsection{c) Poisson}\label{c-poisson}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{42}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{rpois\PYZus{}inv}\PY{p}{(}\PY{n}{lam}\PY{p}{:} \PY{n+nb}{float}\PY{p}{,} \PY{n}{n}\PY{p}{:} \PY{n+nb}{int}\PY{p}{)}\PY{p}{:}
+\PY{+w}{    }\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Poisson(lam) por transformada inversa, siguiendo el algoritmo dado.\PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{k}{if} \PY{n}{lam} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mi}{0}\PY{p}{:} 
+        \PY{k}{raise} \PY{n+ne}{ValueError}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{lam debe ser \PYZgt{} 0}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+    \PY{n}{out} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+    \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+        \PY{c+c1}{\PYZsh{} 1) U \PYZti{} U(0,1)}
+        \PY{n}{U} \PY{o}{=} \PY{n}{random}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{p}{)}
+        \PY{c+c1}{\PYZsh{} 2) i=0, p=e\PYZca{}\PYZob{}\PYZhy{}lam\PYZcb{}, F=p}
+        \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}
+        \PY{n}{p} \PY{o}{=} \PY{n}{math}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{lam}\PY{p}{)}
+        \PY{n}{F} \PY{o}{=} \PY{n}{p}
+        \PY{c+c1}{\PYZsh{} 3) if U \PYZlt{} F: X=i}
+        \PY{k}{if} \PY{n}{U} \PY{o}{\PYZlt{}} \PY{n}{F}\PY{p}{:}
+            \PY{n}{out}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+            \PY{k}{continue}
+        \PY{c+c1}{\PYZsh{} 6–11) loop: p = (lam/(i+1))*p; F = F + p; i = i + 1; if U \PYZlt{} F: X=i}
+        \PY{k}{while} \PY{k+kc}{True}\PY{p}{:}
+            \PY{n}{i} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+            \PY{n}{p} \PY{o}{=} \PY{n}{p} \PY{o}{*} \PY{n}{lam} \PY{o}{/} \PY{n}{i}
+            \PY{n}{F} \PY{o}{=} \PY{n}{F} \PY{o}{+} \PY{n}{p}
+            \PY{k}{if} \PY{n}{U} \PY{o}{\PYZlt{}} \PY{n}{F}\PY{p}{:}
+                \PY{n}{out}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+                \PY{k}{break}
+    \PY{k}{return} \PY{n}{out}
+
+\PY{n}{muestras} \PY{o}{=} \PY{n}{rpois\PYZus{}inv}\PY{p}{(}\PY{n}{lam}\PY{o}{=}\PY{l+m+mf}{2.0}\PY{p}{,} \PY{n}{n}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{muestras}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{20}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[5, 1, 1, 2, 2, 4, 0, 3, 4, 2, 1, 2, 1, 0, 3, 0, 3, 1, 2, 0]
+    \end{Verbatim}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
 \end{document}
