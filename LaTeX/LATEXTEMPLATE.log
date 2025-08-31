@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.7.19)  30 AUG 2025 23:17
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.7.19)  31 AUG 2025 00:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -901,6 +901,27 @@ t line 194.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/unicode-math\unicode-ma
 th-table.tex)))
+(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\Inconsolata
+.fontspec)
+(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\Inconsolata
+.fontspec)
+(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\Inconsolata
+.fontspec)
+
+Package fontspec Info: 
+(fontspec)             Font family 'Inconsolata(0)' created for font
+(fontspec)             'Inconsolata' with options
+(fontspec)             [BoldFont={},ItalicFont={},SmallCapsFont={},Contextuals=
+{WordInitial,WordFinal}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"Inconsolata/OT:script=latn;language=dflt;+init;+fina
+;"
+
+
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
 Package: fancyvrb 2025/07/28 4.6 verbatim text (tvz,hv)
 \FV@CodeLineNo=\count340
@@ -1204,120 +1225,11 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
 )
-
-Package fontspec Info: 
-(fontspec)             Consolas scale = 0.8791680802786347.
-
-
-Package fontspec Info: 
-(fontspec)             Consolas scale = 0.8791680802786347.
-
-
-Package fontspec Info: 
-(fontspec)             Consolas/B scale = 0.8687842372532074.
-
-
-Package fontspec Info: 
-(fontspec)             Consolas/I scale = 0.8791680802786347.
-
-
-Package fontspec Info: 
-(fontspec)             Consolas/BI scale = 0.8687842372532074.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'Consolas(0)' created for font 'Consolas'
-(fontspec)             with options
-(fontspec)             [WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=Word
-Space,Scale=MatchLowercase].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.8791680802786347]"Consolas/OT:script=latn;langua
-ge=dflt;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[0.8687842372532074]"Consolas/B/OT:script=latn;lang
-uage=dflt;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[0.8791680802786347]"Consolas/I/OT:script=latn;lang
-uage=dflt;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[0.8687842372532074]"Consolas/BI/OT:script=latn;lan
-guage=dflt;"
-
-
-Package fontspec Info: 
-(fontspec)             Consolas scale = 0.8791680802786347.
-
-
-Package fontspec Info: 
-(fontspec)             Consolas scale = 0.8791680802786347.
-
-
-Package fontspec Info: 
-(fontspec)             Consolas/B scale = 0.8687842372532074.
-
-
-Package fontspec Info: 
-(fontspec)             Consolas/I scale = 0.8791680802786347.
-
-
-Package fontspec Info: 
-(fontspec)             Consolas/BI scale = 0.8687842372532074.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'Consolas(1)' created for font 'Consolas'
-(fontspec)             with options [Scale=MatchLowercase].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.8791680802786347]"Consolas/OT:script=latn;langua
-ge=dflt;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[0.8687842372532074]"Consolas/B/OT:script=latn;lang
-uage=dflt;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[0.8791680802786347]"Consolas/I/OT:script=latn;lang
-uage=dflt;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[0.8687842372532074]"Consolas/BI/OT:script=latn;lan
-guage=dflt;"
-
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/Consolas(1)/m/n on input line 89.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/Consolas(1)/bx/n on input line 89.
-
-(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\Inconsolata
-.fontspec)
-(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\Inconsolata
-.fontspec)
-(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\Inconsolata
-.fontspec)
-
-Package fontspec Info: 
-(fontspec)             Font family 'Inconsolata(0)' created for font
-(fontspec)             'Inconsolata' with options
-(fontspec)             [BoldFont={},ItalicFont={},SmallCapsFont={},Contextuals=
-{WordInitial,WordFinal}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"Inconsolata/OT:script=latn;language=dflt;+init;+fina
-;"
-
 \pandoc@box=\box96
 \Wrappedcontinuationbox=\box97
 \Wrappedvisiblespacebox=\box98
-Package hyperref Info: Option `breaklinks' set `true' on input line 420.
-Package hyperref Info: Option `colorlinks' set `true' on input line 420.
+Package hyperref Info: Option `breaklinks' set `true' on input line 385.
+Package hyperref Info: Option `colorlinks' set `true' on input line 385.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/newunicodechar\newunico
 dechar.sty
@@ -1493,13 +1405,13 @@ Package fontspec Info:
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  LS1/libertinust1math/m/n --> TU/EBGaramond(1)/m/n on in
-put line 445.
+put line 406.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  LS1/libertinust1math/m/it --> TU/EBGaramond(1)/m/it on 
-input line 445.
+input line 406.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  LS1/libertinust1math/b/n --> TU/EBGaramond(1)/b/n on in
-put line 445.
+put line 406.
  (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box99
@@ -1568,52 +1480,51 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \@temptokenb=\toks58
 ) (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-)
-No file LATEXTEMPLATE.aux.
+) (LATEXTEMPLATE.aux)
 \openout1 = `LATEXTEMPLATE.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 476.
-LaTeX Font Info:    ... okay on input line 476.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 476.
-LaTeX Font Info:    ... okay on input line 476.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 476.
-LaTeX Font Info:    ... okay on input line 476.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 476.
-LaTeX Font Info:    ... okay on input line 476.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 476.
-LaTeX Font Info:    ... okay on input line 476.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 476.
-LaTeX Font Info:    ... okay on input line 476.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 476.
-LaTeX Font Info:    ... okay on input line 476.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 476.
-LaTeX Font Info:    ... okay on input line 476.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 476.
-LaTeX Font Info:    ... okay on input line 476.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 476.
-LaTeX Font Info:    ... okay on input line 476.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 436.
+LaTeX Font Info:    ... okay on input line 436.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 436.
+LaTeX Font Info:    ... okay on input line 436.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 436.
+LaTeX Font Info:    ... okay on input line 436.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 436.
+LaTeX Font Info:    ... okay on input line 436.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 436.
+LaTeX Font Info:    ... okay on input line 436.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 436.
+LaTeX Font Info:    ... okay on input line 436.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 436.
+LaTeX Font Info:    ... okay on input line 436.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 436.
+LaTeX Font Info:    ... okay on input line 436.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 436.
+LaTeX Font Info:    ... okay on input line 436.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 436.
+LaTeX Font Info:    ... okay on input line 436.
 LaTeX Font Info:    Checking defaults for LS1/libertinust1math/m/n on input lin
-e 476.
+e 436.
 LaTeX Font Info:    Trying to load font information for LS1+libertinust1math on
- input line 476.
+ input line 436.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/libertinust1math\ls1lib
 ertinust1math.fd
 File: ls1libertinust1math.fd 2016/03/23 Fontinst v1.933 font definitions for LS
 1/libertinust1math.
 )
-LaTeX Font Info:    ... okay on input line 476.
+LaTeX Font Info:    ... okay on input line 436.
 LaTeX Font Info:    Checking defaults for LS2/libertinust1mathsym/m/n on input 
-line 476.
+line 436.
 LaTeX Font Info:    Trying to load font information for LS2+libertinust1mathsym
- on input line 476.
+ on input line 436.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/libertinust1math\ls2lib
 ertinust1mathsym.fd
 File: ls2libertinust1mathsym.fd 2015/04/17 v1.1.2-latex LibertinusT1Mathsym LS2
  font definitions
 )
-LaTeX Font Info:    ... okay on input line 476.
+LaTeX Font Info:    ... okay on input line 436.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1658,14 +1569,18 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Command `\dddot' is already robust on input line 476.
-LaTeX Info: Command `\ddddot' is already robust on input line 476.
+LaTeX Info: Command `\dddot' is already robust on input line 436.
+LaTeX Info: Command `\ddddot' is already robust on input line 436.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  LS1/libertinust1mathsf/m/n --> TU/lmss/m/n on input lin
-e 476.
+e 436.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  LS1/libertinust1mathsf/b/n --> TU/lmss/b/n on input lin
-e 476.
+e 436.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 436.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 436.
 
 Package fontspec Info: 
 (fontspec)             Font family 'latinmodern-math.otf(0)' created for font
@@ -1704,16 +1619,16 @@ latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
 "
 
 LaTeX Font Info:    Encoding `LS1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 476.
+(Font)              `operators' in the math version `normal' on input line 436.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  LS1/libertinust1math/m/n --> TU/latinmodern-math.otf(1)
-/m/n on input line 476.
+/m/n on input line 436.
 LaTeX Font Info:    Encoding `LS1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 476.
+(Font)              `operators' in the math version `bold' on input line 436.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  LS1/libertinust1math/b/n --> TU/latinmodern-math.otf(1)
-/b/n on input line 476.
+/b/n on input line 436.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.0001.
@@ -1766,15 +1681,15 @@ t;+ssty=1;"
 uage=dflt;"
 
 LaTeX Font Info:    Encoding `LS2' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 476.
+(Font)              `symbols' in the math version `normal' on input line 436.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  LS2/libertinust1mathsym/m/n --> TU/latinmodern-math.otf
-(2)/m/n on input line 476.
+(2)/m/n on input line 436.
 LaTeX Font Info:    Encoding `LS2' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 476.
+(Font)              `symbols' in the math version `bold' on input line 436.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  LS2/libertinust1mathsym/m/n --> TU/latinmodern-math.otf
-(2)/b/n on input line 476.
+(2)/b/n on input line 436.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 0.9999.
@@ -1822,29 +1737,26 @@ uage=dflt;"
 
 LaTeX Font Info:    Encoding `LS2' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 4
-76.
+36.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  LS2/libertinust1mathex/m/n --> TU/latinmodern-math.otf(
-3)/m/n on input line 476.
+3)/m/n on input line 436.
 LaTeX Font Info:    Encoding `LS2' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 476
+(Font)              `largesymbols' in the math version `bold' on input line 436
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  LS2/libertinust1mathex/m/n --> TU/latinmodern-math.otf(
-3)/b/n on input line 476.
-Package hyperref Info: Link coloring ON on input line 476.
+3)/b/n on input line 436.
+Package hyperref Info: Link coloring ON on input line 436.
+(LATEXTEMPLATE.out) (LATEXTEMPLATE.out)
 \@outlinefile=\write5
 \openout5 = `LATEXTEMPLATE.out'.
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 
 
 [1
 
-]
-No file LATEXTEMPLATE.toc.
+] (LATEXTEMPLATE.toc)
 \tf@toc=\write6
 \openout6 = `LATEXTEMPLATE.toc'.
 
@@ -1853,140 +1765,24 @@ No file LATEXTEMPLATE.toc.
 [1
 
 ]
-LaTeX Font Info:    Font shape `TU/Consolas(0)/m/n' will be
-(Font)              scaled to size 8.79166pt on input line 509.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 510.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 510.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 510
-.
- (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 510
-.
-
-(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 51
-0.
-
-(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Trying to load font information for LS1+libertinust1mathbb 
-on input line 510.
-
-(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/libertinust1math\ls1lib
-ertinust1mathbb.fd
-File: ls1libertinust1mathbb.fd 2016/08/22 latex LibertinusT1Mathbb LS1 font def
-initions
-)
-LaTeX Font Info:    Font shape `TU/Consolas(0)/m/n' will be
-(Font)              scaled to size 6.15416pt on input line 510.
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-
-LaTeX Font Warning: Font shape `TU/Inconsolata(0)/b/n' undefined
-(Font)              using `TU/Inconsolata(0)/m/n' instead on input line 511.
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-
 
 [2
-
-]
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.40152pt on input line 549.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 549.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 549.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 549.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 549.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 549.
-
-
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 576.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 576.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 576.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 576.
-[3
-
-]
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 579.
-
-Missing character: There is no ␣ in font Consolas/OT:script=latn;language=dflt;
-!
-
-LaTeX Warning: File `notebook_files/notebook_7_0.png' not found on input line 6
-07.
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/LATEXTEMPLATE.tex:607: Unable to l
-oad picture or PDF file 'notebook_files/notebook_7_0.png'.
-<to be read again> 
-                   }
-l.607 ...height}}{notebook_files/notebook_7_0.png}
-                                                  
-The requested image couldn't be read because
-it was not a recognized image format.
-
-File: notebook_files/notebook_7_0.png Graphic file (type bmp)
-<notebook_files/notebook_7_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 609--610
-
- []
-
-
-
-[4
 
 ] (LATEXTEMPLATE.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-11>
  ***********
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `LATEXTEMPLATE.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `LATEXTEMPLATE.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  7D1E395C30024448C889811245717FB8;562.
+Package rerunfilecheck Info: File `LATEXTEMPLATE.out' has not changed.
+(rerunfilecheck)             Checksum: 5617C992BC8B94134116BF3FBD9CE356;83.
  ) 
 Here is how much of TeX's memory you used:
- 34691 strings out of 403265
- 678302 string characters out of 5461230
- 1205746 words of memory out of 5000000
- 62574 multiletter control sequences out of 15000+600000
- 645560 words of font info for 160 fonts, out of 8000000 for 9000
+ 34354 strings out of 403265
+ 668367 string characters out of 5461230
+ 1183884 words of memory out of 5000000
+ 62307 multiletter control sequences out of 15000+600000
+ 628096 words of font info for 76 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 116i,14n,121p,1328b,668s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,12n,121p,1332b,377s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Error 1 (driver return code) generating output;
-file LATEXTEMPLATE.pdf may not be valid.
+Output written on LATEXTEMPLATE.pdf (3 pages).

@@ -423,8 +423,7 @@
     % --- Encabezado con nombre de la sección ---
     \usepackage{fancyhdr}
     \pagestyle{fancy}
-    \fancyhf{}
-    \fancyhead[L]{\small\leftmark}
+    \fancyhf{}    \fancyhead[L]{\small\leftmark}
     \fancyhead[R]{\small\thepage}
     \fancyhead[C]{\small\textit{\rightmark}}
     \renewcommand{\headrulewidth}{0.1pt}
@@ -462,124 +461,5 @@
 This document is a minimal example using EB Garamond for prose and libertinust1math for formulas.
 Links lik are active.
 
-    
-    
 
-    
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{1}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}, fontsize=\scriptsize]
-\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{math}
-\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{random}
-\PY{k+kn}{from}\PY{+w}{ }\PY{n+nn}{collections}\PY{+w}{ }\PY{k+kn}{import} \PY{n}{Counter}
-
-\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{numpy}\PY{+w}{ }\PY{k}{as}\PY{+w}{ }\PY{n+nn}{np}
-\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot}\PY{+w}{ }\PY{k}{as}\PY{+w}{ }\PY{n+nn}{plt}
-\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{seaborn}\PY{+w}{ }\PY{k}{as}\PY{+w}{ }\PY{n+nn}{sns}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{2}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{color} \PY{o}{=} \PY{n}{sns}\PY{o}{.}\PY{n}{color\PYZus{}palette}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{muted}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{shuffle}\PY{p}{(}\PY{n}{color}\PY{p}{)}
-\PY{n}{sns}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{n}{style}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{whitegrid}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{context}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{paper}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{palette}\PY{o}{=}\PY{n}{color}\PY{p}{)}
-\PY{n}{sns}\PY{o}{.}\PY{n}{color\PYZus{}palette}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{2}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-[(0.5843137254901961, 0.4235294117647059, 0.7058823529411765),
- (0.5490196078431373, 0.3803921568627451, 0.23529411764705882),
- (0.8627450980392157, 0.49411764705882355, 0.7529411764705882),
- (0.2823529411764706, 0.47058823529411764, 0.8156862745098039),
- (0.41568627450980394, 0.8, 0.39215686274509803),
- (0.4745098039215686, 0.4745098039215686, 0.4745098039215686),
- (0.8392156862745098, 0.37254901960784315, 0.37254901960784315),
- (0.9333333333333333, 0.5215686274509804, 0.2901960784313726),
- (0.8352941176470589, 0.7333333333333333, 0.403921568627451),
- (0.5098039215686274, 0.7764705882352941, 0.8862745098039215)]
-\end{Verbatim}
-\end{tcolorbox}
-        
-    \hypertarget{distribuciuxf3n-uniforme-ab}{%
-\section{\texorpdfstring{Distribución Uniforme
-\((a,b)\)}{Distribución Uniforme (a,b)}}\label{distribuciuxf3n-uniforme-ab}}
-
-    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}. Si
-\(X\sim\mathrm{Unif}(a,b)\), entonces su funcion de distribucion
-acumulada es:
-
-\[
-F_X(x)=\frac{x-a}{b-a}\,\mathbf{1}_{[a,b]}(x) + \mathbf{1}_{(b,\infty)}(x)
-\]
-
-Encontrando la inversa:
-
-\[
-\begin{aligned}
-F_X(x)=u &\quad\iff\quad \frac{x-a}{b-a}=u,\\
-         &\quad\iff\quad x-a=(b-a)\,u,\\
-         &\quad\iff\quad x=a+(b-a)\,u.
-\end{aligned}
-\]
-
-Entonces:
-
-\[
-F_X^{-1}(u)=a+(b-a)\,u.
-\]
-
-    \hypertarget{distribuciuxf3n-discreta}{%
-\section{Distribución Discreta}\label{distribuciuxf3n-discreta}}
-
-    \hypertarget{a}{%
-\subsection{a)}\label{a}}
-
-    \[
-f_X(x)=\mathbb P(X = x)=
-\begin{cases}
-0.4,& x =1,\\
-0.3,& x =2,\\
-0.2,& x =3,\\
-0.1,& x =4,\\
-0,& \text{en otro caso}
-\end{cases}
-\]
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{3}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{x\PYZus{}vals} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{]}
-\PY{n}{pmf} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{0.4}\PY{p}{,} \PY{l+m+mf}{0.3}\PY{p}{,} \PY{l+m+mf}{0.2}\PY{p}{,} \PY{l+m+mf}{0.1}\PY{p}{]}
-
-\PY{n}{plt}\PY{o}{.}\PY{n}{vlines}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{n}{linestyles}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}X\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}f\PYZus{}X(x)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_7_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \hypertarget{b}{%
-\subsection{b)}\label{b}}
-
-    \[
-F_X(x)=\mathbb P(X\le x)=
-\begin{cases}
-0,& x<1,\\
-0.4,& 1\le x<2,\\
-0.7,& 2\le x<3,\\
-0.9,& 3\le x<4,\\
-1,& x\ge 4.
-\end{cases}
-\]
 \end{document}
