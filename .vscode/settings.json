@@ -12,6 +12,7 @@
     "notebook.output.lineHeight": 1.6,
     "notebook.experimental.useMarkdownRenderer": true,
     // settings.json
-    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-_" // incluye "_"
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-_",
+    "chatgpt.openOnStartup": true // incluye "_"
     // ejemplo_de_uso. ME_ENCANTA!
 }

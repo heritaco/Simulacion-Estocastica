@@ -1,0 +1,62 @@
+\documentclass[12pt,twocolumn]{article}
+\usepackage[a4paper]{geometry}
+% change margins
+\geometry{
+  left=1in,
+  right=1in,
+  top=0.75in,
+  bottom=0.5in
+}
+
+\setlength{\columnsep}{7.5mm}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{tikzpagenodes}
+\usepackage{eso-pic}
+
+% ---- Params ----
+\newlength{\RuleSep}      \setlength{\RuleSep}{4.0mm}
+\newcommand{\RuleThickness}{0.1pt}
+\newcommand{\RuleColor}{black!3}
+\newcommand{\TopRuleThickness}{0.6pt}   % thicker top line
+\newcommand{\TopRuleColor}{black}
+
+% ---- Derived ----
+\newlength{\ColWidth}
+\setlength{\ColWidth}{\dimexpr(\textwidth-\columnsep)/2\relax}
+\newlength{\LeftX}   \setlength{\LeftX}{0pt}
+\newlength{\RightX}  \setlength{\RightX}{\ColWidth}
+\addtolength{\RightX}{\columnsep}
+
+% ---- Background ----
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \clip (current page text area.south west)
+          rectangle (current page text area.north east);
+
+    \newdimen\Y \Y=0pt
+    \loop\ifdim\Y<\textheight
+      % left column
+      \draw[line width=\RuleThickness, color=\RuleColor]
+        ($(current page text area.south west)+(\LeftX,\Y)$) --
+        ($(current page text area.south west)+(\LeftX+\ColWidth,\Y)$);
+      % right column
+      \draw[line width=\RuleThickness, color=\RuleColor]
+        ($(current page text area.south west)+(\RightX,\Y)$) --
+        ($(current page text area.south west)+(\RightX+\ColWidth,\Y)$);
+      \advance\Y by \RuleSep
+    \repeat
+
+    % top full-width rule (inside text area)
+    \draw[line width=\TopRuleThickness, color=\TopRuleColor]
+      ($(current page text area.north west)+(0,-1.1mm)$) --
+      ($(current page text area.north east)+(0,-1.1mm)$);
+
+  \end{tikzpicture}%
+}
+
+\pagestyle{empty}
+\begin{document}
+\null\newpage
+\end{document}
