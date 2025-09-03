@@ -1,1 +1,7 @@
-\contentsline {section}{Overview}{2}{Doc-Start}%
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{Overview}{2}{section*.2}%
+\contentsline {section}{Introducción}{3}{section*.3}%
+\contentsline {section}{Desarrollo}{4}{section*.4}%
+\contentsline {subsection}{11 Subt}{5}{section*.5}%
+\contentsline {section}{Conclusión}{6}{section*.6}%
+\contentsline {subsection}{Recomendaciones, letras con tílde}{7}{section*.7}%

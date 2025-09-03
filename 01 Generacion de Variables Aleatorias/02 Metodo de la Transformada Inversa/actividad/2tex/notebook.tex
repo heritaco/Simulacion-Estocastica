@@ -1,5 +1,9 @@
 \documentclass[10pt,a4paper]{article}
 
+    \usepackage[spanish]{babel}
+    % \usepackage{fontspec}            % NO uses inputenc ni fontenc aquí
+    \usepackage[unicode]{hyperref}   % bookmarks con acentos
+
     \usepackage[breakable]{tcolorbox}
     \usepackage{parskip}
     \usepackage{graphicx}
@@ -70,7 +74,7 @@
     \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
 
 
-    \usepackage{hyperref}
+
     \usepackage{titling}
     \usepackage{longtable}
     \usepackage{booktabs}
@@ -417,7 +421,7 @@
     \setcounter{secnumdepth}{0}
     % centrar el header
     \pretocmd{\section}{\clearpage}{}{}
-    % \pretocmd{\subsection}{\clearpage}{}{}
+    \pretocmd{\subsection}{\clearpage}{}{}
 
 
     % --- Encabezado con nombre de la sección ---
@@ -447,7 +451,7 @@
     {\large Equipo: Ana Ximena Bravo, Heriberto Espino, Celeste Núñez\par}
     {\large Universidad de las Américas Puebla\par}
     \vfill
-    {\large \today\par}
+    {\large 2 de Septiembre de 2025 \par}
     \end{titlepage}
 
 
@@ -458,6 +462,8 @@
     \newpage
 
     % --- Inicio del documento ---
+    
+    
 
     
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
@@ -498,7 +504,7 @@
 \((a,b)\)}{1. Distribución Uniforme (a,b)}}\label{distribuciuxf3n-uniforme-ab}}
 
     Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}. Si
-\(X\sim\mathrm{Unif}(a,b)\), entonces su función de distribución
+\(X\sim\mathrm{Unif}(a,b)\), entonces su funcion de distribucion
 acumulada es:
 
 \[
@@ -524,9 +530,9 @@ F_X^{-1}(u)=a+(b-a)\,u.
     \hypertarget{distribuciuxf3n-discreta}{%
 \section{2. Distribución Discreta}\label{distribuciuxf3n-discreta}}
 
-    \hypertarget{a-grafica-de-f_xx}{%
+    \hypertarget{a-gruxe1fica-de-f_xx}{%
 \subsection{\texorpdfstring{a) Gráfica de
-\(f_X(x)\)}{a) Gráfica de f\_X(x)}}\label{a-grafica-de-f_xx}}
+\(f_X(x)\)}{a) Gráfica de f\_X(x)}}\label{a-gruxe1fica-de-f_xx}}
 
     \[
 f_X(x)=\mathbb P(X = x)=
@@ -558,9 +564,9 @@ f_X(x)=\mathbb P(X = x)=
     \end{center}
     { \hspace*{\fill} \\}
     
-    \hypertarget{b-grafica-de-f_xx}{%
+    \hypertarget{b-gruxe1fica-de-f_xx}{%
 \subsection{\texorpdfstring{b) Gráfica de
-\(F_X(x)\)}{b) Gráfica de F\_X(x)}}\label{b-grafica-de-f_xx}}
+\(F_X(x)\)}{b) Gráfica de F\_X(x)}}\label{b-gruxe1fica-de-f_xx}}
 
     \[
 F_X(x)=\mathbb P(X\le x)=
@@ -591,9 +597,9 @@ F_X(x)=\mathbb P(X\le x)=
     \end{center}
     { \hspace*{\fill} \\}
     
-    \hypertarget{c-grafica-de-f-1_xu}{%
+    \hypertarget{c-gruxe1fica-de-f-1_xu}{%
 \subsection{\texorpdfstring{c) Gráfica de
-\(F^{-1}_X(u)\)}{c) Gráfica de F\^{}\{-1\}\_X(u)}}\label{c-grafica-de-f-1_xu}}
+\(F^{-1}_X(u)\)}{c) Gráfica de F\^{}\{-1\}\_X(u)}}\label{c-gruxe1fica-de-f-1_xu}}
 
     Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}.
 
@@ -684,7 +690,7 @@ F_X^{-1}(u)=
 \(\mathrm{Exp}(\lambda)\)}{3. Exponencial \textbackslash mathrm\{Exp\}(\textbackslash lambda)}}\label{exponencial-mathrmexplambda}}
 
     Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}. Si
-\(X\sim\mathrm{Exp}(\lambda)\), entonces su función de distribución
+\(X\sim\mathrm{Exp}(\lambda)\), entonces su funcion de distribucion
 acumulada es:
 
 \[
@@ -906,9 +912,9 @@ X=F_X^{-1}(U)=-\frac{1}{\lambda}\ln(1-U)\sim\mathrm{Exp}(\lambda).
     \end{center}
     { \hspace*{\fill} \\}
     
-    \hypertarget{a-grafica-de-f_xx}{%
+    \hypertarget{a-gruxe1fica-de-f_xx}{%
 \subsection{\texorpdfstring{a) Gráfica de
-\(F_X(x)\)}{a) Gráfica de F\_X(x)}}\label{a-grafica-de-f_xx}}
+\(F_X(x)\)}{a) Gráfica de F\_X(x)}}\label{a-gruxe1fica-de-f_xx}}
 
     Por definición,
 
@@ -962,13 +968,12 @@ F_X(x)=
     \end{center}
     { \hspace*{\fill} \\}
     
-    \hypertarget{b-grafica-de-f-1_xu}{%
+    \hypertarget{b-gruxe1fica-de-f-1_xu}{%
 \subsection{\texorpdfstring{b) Gráfica de
-\(F^{-1}_X(u)\)}{b) Gráfica de F\^{}\{-1\}\_X(u)}}\label{b-grafica-de-f-1_xu}}
+\(F^{-1}_X(u)\)}{b) Gráfica de F\^{}\{-1\}\_X(u)}}\label{b-gruxe1fica-de-f-1_xu}}
 
     Sea \(Y\sim\mathrm{Exp}(\lambda)\), \(M>0\), \(X=\min\{Y,M\}\) y
-\(U\sim\mathrm{Unif}(0,1)\). Usamos la pseudoinversa izquierda
-\(F_X^{-1}(u)=\inf\{x:F_X(x)\ge u\}\).
+\(U\sim\mathrm{Unif}(0,1)\).
 
 \textbf{Encontrando la inversa:}
 
@@ -1106,9 +1111,9 @@ M,&U\ge 1-e^{-\lambda M}.
 \section{\texorpdfstring{9. Mixta \(X=\max\{Y,M\}\) con
 \(Y\sim\mathrm{Exp}(\lambda)\)}{9. Mixta X=\textbackslash max\textbackslash\{Y,M\textbackslash\} con Y\textbackslash sim\textbackslash mathrm\{Exp\}(\textbackslash lambda)}}\label{mixta-xmaxym-con-ysimmathrmexplambda}}
 
-    \hypertarget{a-grafica-de-f_xx}{%
+    \hypertarget{a-gruxe1fica-de-f_xx}{%
 \subsection{\texorpdfstring{a) Gráfica de
-\(F_X(x)\)}{a) Gráfica de F\_X(x)}}\label{a-grafica-de-f_xx}}
+\(F_X(x)\)}{a) Gráfica de F\_X(x)}}\label{a-gruxe1fica-de-f_xx}}
 
     Para \(X=\max\{Y,M\}\) con \(Y\sim\mathrm{Exp}(\lambda)\) y \(M>0\):
 
@@ -1185,9 +1190,9 @@ f_X(x)=\lambda e^{-\lambda x}\,\mathbf 1_{\{x>M\}}.
     \end{center}
     { \hspace*{\fill} \\}
     
-    \hypertarget{b-grafica-de-f-1_xu}{%
+    \hypertarget{b-gruxe1fica-de-f-1_xu}{%
 \subsection{\texorpdfstring{b) Gráfica de
-\(F^{-1}_X(u)\)}{b) Gráfica de F\^{}\{-1\}\_X(u)}}\label{b-grafica-de-f-1_xu}}
+\(F^{-1}_X(u)\)}{b) Gráfica de F\^{}\{-1\}\_X(u)}}\label{b-gruxe1fica-de-f-1_xu}}
 
     Sea \(p_0:=1-e^{-\lambda M}\).
 
@@ -1246,7 +1251,7 @@ Si \(x\ge M\), \(F_X(x)=1-e^{-\lambda x}\ge p_0\) y
 \subsection{e) Cómo generar valores con el método de la función
 inversa}\label{e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf3n-inversa}}
 
-    Muestrea \(U\sim\mathrm{Unif}(0,1)\) y define
+    Se muestrea \(U\sim\mathrm{Unif}(0,1)\) y se define
 
 \[
 X=\begin{cases}
@@ -1255,17 +1260,13 @@ M,& U\le 1-e^{-\lambda M},\\[6pt]
 \end{cases}
 \]
 
-Cambios mínimos respecto al caso \(\min\): sustituye los tramos \(x<M\)
-por cero, coloca la masa en \(M\) con tamaño \(1-e^{-\lambda M}\), y
-mantiene la cola exponencial intacta para \(x>M\).
-
     \hypertarget{variable-con-cdf-por-tramos}{%
 \section{10. Variable con CDF por
 tramos}\label{variable-con-cdf-por-tramos}}
 
-    \hypertarget{a-grafica-de-f_xx}{%
+    \hypertarget{a-gruxe1fica-de-f_xx}{%
 \subsection{\texorpdfstring{a) Gráfica de
-\(F_{X}(x)\)}{a) Gráfica de F\_\{X\}(x)}}\label{a-grafica-de-f_xx}}
+\(F_{X}(x)\)}{a) Gráfica de F\_\{X\}(x)}}\label{a-gruxe1fica-de-f_xx}}
 
     \[
 F_X(x)=
@@ -1308,9 +1309,9 @@ F_X(x)=
     \end{center}
     { \hspace*{\fill} \\}
     
-    \hypertarget{b-grafica-de-f_x-1u}{%
+    \hypertarget{b-gruxe1fica-de-f_x-1u}{%
 \subsection{\texorpdfstring{b) Gráfica de
-\(F_{X}^{-1}(u)\)}{b) Gráfica de F\_\{X\}\^{}\{-1\}(u)}}\label{b-grafica-de-f_x-1u}}
+\(F_{X}^{-1}(u)\)}{b) Gráfica de F\_\{X\}\^{}\{-1\}(u)}}\label{b-gruxe1fica-de-f_x-1u}}
 
     Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}.
 
@@ -1472,7 +1473,7 @@ tal que
   \[
   \begin{align*}
   F_X(x) &= \dfrac{x+2}{2} \in (0,\tfrac12). \\
-  F_X^{-1}(F_X(x)) &= 2\cdot\dfrac{x+2}{2}-2 = x. \quad \text{Igualdad.}
+  F_X^{-1}(F_X(x)) &= 2\cdot\dfrac{x+2}{2}-2 = x. 
   \end{align*}
   \]
 \item
@@ -1480,7 +1481,7 @@ tal que
   \[
   \begin{align*}
   F_X(x) &= \tfrac12. \\
-  F_X^{-1}(F_X(x)) &= F_X^{-1}(\tfrac12) = -1 \leq x, \quad \text{igualdad sólo en } x=-1.
+  F_X^{-1}(F_X(x)) &= F_X^{-1}(\tfrac12) = -1 \leq x.
   \end{align*}
   \]
 \item
@@ -1488,7 +1489,7 @@ tal que
   \[
   \begin{align*}
   F_X(x) &= \dfrac{x}{2} \in [\tfrac12,1). \\
-  F_X^{-1}(F_X(x)) &= 2\cdot\dfrac{x}{2} = x. \quad \text{Igualdad.}
+  F_X^{-1}(F_X(x)) &= 2\cdot\dfrac{x}{2} = x. 
   \end{align*}
   \]
 \item
@@ -1496,7 +1497,7 @@ tal que
   \[
   \begin{align*}
   F_X(x) &= 1. \\
-  F_X^{-1}(F_X(x)) &= F_X^{-1}(1) = 2 \leq x, \quad \text{igualdad sólo en } x=2.
+  F_X^{-1}(F_X(x)) &= F_X^{-1}(1) = 2 \leq x.
   \end{align*}
   \]
 \end{itemize}
@@ -1530,9 +1531,9 @@ F^{-1}(u)=\inf\{x:\ F(x)\ge u\}.
 \mathbb{P}(X\le x)=\mathbb{P}\!\big(F^{-1}(U)\le x\big)=\mathbb{P}\!\big(U\le F(x)\big)=F(x).
 \]
 
-    \hypertarget{f-f_xx.}{%
-\subsection{\texorpdfstring{f)
-\(f_{X}(x)\).}{f) f\_\{X\}(x).}}\label{f-f_xx.}}
+    \hypertarget{f-gruxe1fica-de-f_xx.}{%
+\subsection{\texorpdfstring{f) Gráfica de
+\(f_{X}(x)\).}{f) Gráfica de f\_\{X\}(x).}}\label{f-gruxe1fica-de-f_xx.}}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{17}{\boxspacing}
@@ -1655,9 +1656,9 @@ usando que \(\mathbb P(U=p)=0\). Por tanto
 \section{12. Variable aleatoria
 discreta}\label{variable-aleatoria-discreta}}
 
-    \hypertarget{a-grafica-de-f_xx}{%
+    \hypertarget{a-gruxe1fica-de-f_xx}{%
 \subsection{\texorpdfstring{a) Gráfica de
-\(f_X(x)\)}{a) Gráfica de f\_X(x)}}\label{a-grafica-de-f_xx}}
+\(f_X(x)\)}{a) Gráfica de f\_X(x)}}\label{a-gruxe1fica-de-f_xx}}
 
     \[
 f_X(x)=
@@ -1688,9 +1689,9 @@ f_X(x)=
     \end{center}
     { \hspace*{\fill} \\}
     
-    \hypertarget{b-grafica-de-f_xx}{%
+    \hypertarget{b-gruxe1fica-de-f_xx}{%
 \subsection{\texorpdfstring{b) Gráfica de
-\(F_X(x)\)}{b) Gráfica de F\_X(x)}}\label{b-grafica-de-f_xx}}
+\(F_X(x)\)}{b) Gráfica de F\_X(x)}}\label{b-gruxe1fica-de-f_xx}}
 
     \[
 F_X(x)=\mathbb P(X\le x)=
@@ -1721,9 +1722,9 @@ F_X(x)=\mathbb P(X\le x)=
     \end{center}
     { \hspace*{\fill} \\}
     
-    \hypertarget{c-grafica-de-f-1_xu}{%
+    \hypertarget{c-gruxe1fica-de-f-1_xu}{%
 \subsection{\texorpdfstring{c) Gráfica de
-\(F^{-1}_X(u)\)}{c) Gráfica de F\^{}\{-1\}\_X(u)}}\label{c-grafica-de-f-1_xu}}
+\(F^{-1}_X(u)\)}{c) Gráfica de F\^{}\{-1\}\_X(u)}}\label{c-gruxe1fica-de-f-1_xu}}
 
     Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}.
 
@@ -1885,6 +1886,13 @@ con \(m = 10\) y \(p = 1/3\) - \(X\sim\mathrm{Geo}(p)\) con
 \subsection{a) Binomial}\label{a-binomial}}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{27}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def}\PY{+w}{ }\PY{n+nf}{binomial}\PY{p}{(}\PY{n}{n}\PY{p}{:} \PY{n+nb}{int}\PY{p}{,} \PY{n}{p}\PY{p}{:} \PY{n+nb}{float}\PY{p}{,} \PY{n}{size}\PY{p}{:} \PY{n+nb}{int}\PY{p}{)}\PY{p}{:}
@@ -1916,8 +1924,8 @@ con \(m = 10\) y \(p = 1/3\) - \(X\sim\mathrm{Geo}(p)\) con
 [2, 5, 3, 2, 5, 3, 4, 4, 5, 4, 3, 6, 3, 5, 4, 2, 3, 3, 3, 5]
     \end{Verbatim}
 
-    \hypertarget{b-geometrica}{%
-\subsection{b) Geométrica}\label{b-geometrica}}
+    \hypertarget{b-geomuxe9trica}{%
+\subsection{b) Geométrica}\label{b-geomuxe9trica}}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{28}{\boxspacing}

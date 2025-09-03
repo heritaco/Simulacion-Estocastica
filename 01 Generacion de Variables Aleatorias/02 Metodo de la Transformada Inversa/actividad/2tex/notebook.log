@@ -1,13 +1,15 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.7.19)  2 SEP 2025 23:52
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.7.19)  2 SEP 2025 22:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **"c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Unive
-rsidad/09 Semestre Otoño/Simulacion Estocastica/LaTeX/LATEXTEMPLATE.tex"
+rsidad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Alea
+torias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex"
 
 (c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Univers
-idad/09 Semestre Otoño/Simulacion Estocastica/LaTeX/LATEXTEMPLATE.tex
+idad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleato
+rias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-11>
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -76,9 +78,9 @@ Package babel Info: Making < an active character on input line 722.
 Package babel Info: Making > an active character on input line 722.
 ))
 LaTeX Encoding Info:    Redeclaring text command \guillemotleft (encoding OT1) 
-on input line 4.
+on input line 5.
 LaTeX Encoding Info:    Redeclaring text command \guillemotright (encoding OT1)
- on input line 4.
+ on input line 5.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
@@ -1287,8 +1289,8 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \pandoc@box=\box96
 \Wrappedcontinuationbox=\box97
 \Wrappedvisiblespacebox=\box98
-Package hyperref Info: Option `breaklinks' set `true' on input line 397.
-Package hyperref Info: Option `colorlinks' set `true' on input line 397.
+Package hyperref Info: Option `breaklinks' set `true' on input line 389.
+Package hyperref Info: Option `colorlinks' set `true' on input line 389.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/newunicodechar\newunico
 dechar.sty
@@ -1464,13 +1466,13 @@ Package fontspec Info:
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  LS1/libertinust1math/m/n --> TU/EBGaramond(1)/m/n on in
-put line 422.
+put line 410.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  LS1/libertinust1math/m/it --> TU/EBGaramond(1)/m/it on 
-input line 422.
+input line 410.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  LS1/libertinust1math/b/n --> TU/EBGaramond(1)/b/n on in
-put line 422.
+put line 410.
  (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box99
@@ -1519,31 +1521,7 @@ Package fontspec Info:
 (fontspec)             - 'normal' (m/n) with NFSS spec.: <->"EB Garamond
 (fontspec)             ExtraBold/OT:script=latn;language=dflt;"
 
-
-Package fontspec Info: 
-(fontspec)             Font family 'EBGaramondMedium(0)' created for font 'EB
-(fontspec)             Garamond Medium' with options
-(fontspec)             [BoldFont={},ItalicFont={},SmallCapsFont={}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"EB Garamond
-(fontspec)             Medium/OT:script=latn;language=dflt;"
-
- (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
-Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
-
-(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-dvipdfm.de
-f
-File: bkm-dvipdfm.def 2023-12-10 v1.31 bookmark driver for dvipdfm (HO)
-\BKM@id=\count381
-))
-Package hyperref Info: Option `hypertexnames' set `false' on input line 435.
-
-(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/needspace\needspace.sty
-Package: needspace 2025/03/13 v1.3e reserve vertical space
-) (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+ (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 
 \f@nch@headwidth=\skip72
@@ -1563,59 +1541,96 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \@temptokenb=\toks59
 ) (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-) (LATEXTEMPLATE.aux
+) (notebook.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
 (babel)             Reported  on input line 12.
-)
-\openout1 = `LATEXTEMPLATE.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 487.
-LaTeX Font Info:    ... okay on input line 487.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 487.
-LaTeX Font Info:    ... okay on input line 487.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 487.
-LaTeX Font Info:    ... okay on input line 487.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 487.
-LaTeX Font Info:    ... okay on input line 487.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 487.
-LaTeX Font Info:    ... okay on input line 487.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 487.
-LaTeX Font Info:    ... okay on input line 487.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 487.
-LaTeX Font Info:    ... okay on input line 487.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 487.
-LaTeX Font Info:    ... okay on input line 487.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 487.
-LaTeX Font Info:    ... okay on input line 487.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 487.
-LaTeX Font Info:    ... okay on input line 487.
+
+LaTeX Warning: Label `a-gruxe1fica-de-f_xx' multiply defined.
+
+
+LaTeX Warning: Label `a-gruxe1fica-de-f_xx' multiply defined.
+
+
+LaTeX Warning: Label `b-gruxe1fica-de-f-1_xu' multiply defined.
+
+
+LaTeX Warning: Label `c-f_xf-1_xu-geq-u-para-u-in-0-1.' multiply defined.
+
+
+LaTeX Warning: Label `e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf
+3n-inversa' multiply defined.
+
+
+LaTeX Warning: Label `a-gruxe1fica-de-f_xx' multiply defined.
+
+
+LaTeX Warning: Label `e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf
+3n-inversa' multiply defined.
+
+
+LaTeX Warning: Label `a-gruxe1fica-de-f_xx' multiply defined.
+
+
+LaTeX Warning: Label `b-gruxe1fica-de-f_xx' multiply defined.
+
+
+LaTeX Warning: Label `c-gruxe1fica-de-f-1_xu' multiply defined.
+
+)
+\openout1 = `notebook.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 441.
+LaTeX Font Info:    ... okay on input line 441.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 441.
+LaTeX Font Info:    ... okay on input line 441.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 441.
+LaTeX Font Info:    ... okay on input line 441.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 441.
+LaTeX Font Info:    ... okay on input line 441.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 441.
+LaTeX Font Info:    ... okay on input line 441.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 441.
+LaTeX Font Info:    ... okay on input line 441.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 441.
+LaTeX Font Info:    ... okay on input line 441.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 441.
+LaTeX Font Info:    ... okay on input line 441.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 441.
+LaTeX Font Info:    ... okay on input line 441.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 441.
+LaTeX Font Info:    ... okay on input line 441.
 LaTeX Font Info:    Checking defaults for LS1/libertinust1math/m/n on input lin
-e 487.
+e 441.
 LaTeX Font Info:    Trying to load font information for LS1+libertinust1math on
- input line 487.
+ input line 441.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/libertinust1math\ls1lib
 ertinust1math.fd
 File: ls1libertinust1math.fd 2016/03/23 Fontinst v1.933 font definitions for LS
 1/libertinust1math.
 )
-LaTeX Font Info:    ... okay on input line 487.
+LaTeX Font Info:    ... okay on input line 441.
 LaTeX Font Info:    Checking defaults for LS2/libertinust1mathsym/m/n on input 
-line 487.
+line 441.
 LaTeX Font Info:    Trying to load font information for LS2+libertinust1mathsym
- on input line 487.
+ on input line 441.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/libertinust1math\ls2lib
 ertinust1mathsym.fd
 File: ls2libertinust1mathsym.fd 2015/04/17 v1.1.2-latex LibertinusT1Mathsym LS2
  font definitions
 )
-LaTeX Font Info:    ... okay on input line 487.
-LaTeX Info: Redefining \. on input line 487.
-LaTeX Info: Redefining \% on input line 487.
-Package hyperref Info: Link coloring ON on input line 487.
+LaTeX Font Info:    ... okay on input line 441.
+LaTeX Info: Redefining \. on input line 441.
+LaTeX Info: Redefining \% on input line 441.
+Package hyperref Info: Link coloring ON on input line 441.
+ (notebook.out) (notebook.out)
+\@outlinefile=\write5
+\openout5 = `notebook.out'.
+
 
 Couldn't patch \ttl@straight@ii
 Couldn't patch \ttl@straight@ii
@@ -1635,14 +1650,14 @@ Package caption Info: End \AtBeginDocument code.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(81.30374pt, 434.90039pt, 81.30374pt)
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
 * v-part:(T,H,B)=(108.405pt, 664.37186pt, 72.26999pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=434.90039pt
+* \textwidth=452.9679pt
 * \textheight=664.37186pt
-* \oddsidemargin=9.03375pt
-* \evensidemargin=9.03375pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
 * \topmargin=-0.86499pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -1661,18 +1676,18 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Command `\dddot' is already robust on input line 487.
-LaTeX Info: Command `\ddddot' is already robust on input line 487.
+LaTeX Info: Command `\dddot' is already robust on input line 441.
+LaTeX Info: Command `\ddddot' is already robust on input line 441.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  LS1/libertinust1mathsf/m/n --> TU/lmss/m/n on input lin
-e 487.
+e 441.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  LS1/libertinust1mathsf/b/n --> TU/lmss/b/n on input lin
-e 487.
+e 441.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 487.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 441.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 487.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 441.
 
 Package fontspec Info: 
 (fontspec)             Font family 'latinmodern-math.otf(0)' created for font
@@ -1711,16 +1726,16 @@ latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
 "
 
 LaTeX Font Info:    Encoding `LS1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 487.
+(Font)              `operators' in the math version `normal' on input line 441.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  LS1/libertinust1math/m/n --> TU/latinmodern-math.otf(1)
-/m/n on input line 487.
+/m/n on input line 441.
 LaTeX Font Info:    Encoding `LS1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 487.
+(Font)              `operators' in the math version `bold' on input line 441.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  LS1/libertinust1math/b/n --> TU/latinmodern-math.otf(1)
-/b/n on input line 487.
+/b/n on input line 441.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.0001.
@@ -1773,15 +1788,15 @@ t;+ssty=1;"
 uage=dflt;"
 
 LaTeX Font Info:    Encoding `LS2' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 487.
+(Font)              `symbols' in the math version `normal' on input line 441.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  LS2/libertinust1mathsym/m/n --> TU/latinmodern-math.otf
-(2)/m/n on input line 487.
+(2)/m/n on input line 441.
 LaTeX Font Info:    Encoding `LS2' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 487.
+(Font)              `symbols' in the math version `bold' on input line 441.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  LS2/libertinust1mathsym/m/n --> TU/latinmodern-math.otf
-(2)/b/n on input line 487.
+(2)/b/n on input line 441.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 0.9999.
@@ -1829,106 +1844,1686 @@ uage=dflt;"
 
 LaTeX Font Info:    Encoding `LS2' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 4
-87.
+41.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  LS2/libertinust1mathex/m/n --> TU/latinmodern-math.otf(
-3)/m/n on input line 487.
+3)/m/n on input line 441.
 LaTeX Font Info:    Encoding `LS2' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 487
+(Font)              `largesymbols' in the math version `bold' on input line 441
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  LS2/libertinust1mathex/m/n --> TU/latinmodern-math.otf(
-3)/b/n on input line 487.
+3)/b/n on input line 441.
 
 
 [1
 
-] (LATEXTEMPLATE.toc
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 5.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 5.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 5.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 5.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 5.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 5.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
+]
+No file notebook.toc.
+\tf@toc=\write6
+\openout6 = `notebook.toc'.
 
-(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+
+
+[1
+
+]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00053pt on input line 471.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 471.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 471
+.
+ (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 471
+.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 5.
-
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 47
+1.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for LS1+libertinust1mathbb 
-on input line 5.
+on input line 471.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/libertinust1math\ls1lib
 ertinust1mathbb.fd
 File: ls1libertinust1mathbb.fd 2016/08/22 latex LibertinusT1Mathbb LS1 font def
 initions
-))
-\tf@toc=\write5
-\openout5 = `LATEXTEMPLATE.toc'.
+)
+
+LaTeX Font Warning: Font shape `TU/Inconsolata(0)/b/n' undefined
+(Font)              using `TU/Inconsolata(0)/m/n' instead on input line 472.
+
+
+LaTeX Font Warning: Font shape `TU/Inconsolata(0)/m/it' undefined
+(Font)              using `TU/Inconsolata(0)/m/n' instead on input line 491.
 
 
 
-[1
+LaTeX Info: Redefining \. on input line 504.
+LaTeX Info: Redefining \% on input line 504.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported  on input line 504.
+LaTeX Info: Redefining \. on input line 504.
+LaTeX Info: Redefining \% on input line 504.
+[2]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 14.40152pt on input line 504.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00107pt on input line 504.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.00075pt on input line 504.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 14.39845pt on input line 504.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99893pt on input line 504.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 504.
 
 
-]
-
-[2
-
-
-]
-
+LaTeX Info: Redefining \. on input line 531.
+LaTeX Info: Redefining \% on input line 531.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 9.00096pt on input line 531.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 6.00064pt on input line 531.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 8.99904pt on input line 531.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 5.99936pt on input line 531.
 [3
 
-
 ]
 
+LaTeX Info: Redefining \. on input line 535.
+LaTeX Info: Redefining \% on input line 535.
 [4
 
-
 ]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 12.00128pt on input line 535.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 8.00085pt on input line 535.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 11.99872pt on input line 535.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 7.99915pt on input line 535.
 
-LaTeX Info: Redefining \. on input line 528.
-LaTeX Info: Redefining \% on input line 528.
-Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported  on input line 528.
-LaTeX Info: Redefining \. on input line 528.
-LaTeX Info: Redefining \% on input line 528.
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 535.
+
+File: notebook_files/notebook_7_0.png Graphic file (type bmp)
+<notebook_files/notebook_7_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 565--566
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 569.
+LaTeX Info: Redefining \% on input line 569.
+LaTeX Info: Redefining \. on input line 569.
+LaTeX Info: Redefining \% on input line 569.
 [5
 
 ]
+File: notebook_files/notebook_10_0.png Graphic file (type bmp)
+<notebook_files/notebook_10_0.png>
 
+Underfull \hbox (badness 10000) in paragraph at lines 598--599
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 602.
+LaTeX Info: Redefining \% on input line 602.
+LaTeX Info: Redefining \. on input line 602.
+LaTeX Info: Redefining \% on input line 602.
 [6
 
+]
+File: notebook_files/notebook_13_0.png Graphic file (type bmp)
+<notebook_files/notebook_13_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 644--645
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 647.
+LaTeX Info: Redefining \% on input line 647.
+LaTeX Info: Redefining \. on input line 647.
+LaTeX Info: Redefining \% on input line 647.
+[7
 
 ]
 
-LaTeX Info: Redefining \. on input line 536.
-LaTeX Info: Redefining \% on input line 536.
-LaTeX Info: Redefining \. on input line 536.
-LaTeX Info: Redefining \% on input line 536.
-[7
+LaTeX Info: Redefining \. on input line 668.
+LaTeX Info: Redefining \% on input line 668.
+LaTeX Info: Redefining \. on input line 668.
+LaTeX Info: Redefining \% on input line 668.
+[8
 
-] (LATEXTEMPLATE.aux
+]
+File: notebook_files/notebook_17_0.png Graphic file (type bmp)
+<notebook_files/notebook_17_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 686--687
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 690.
+LaTeX Info: Redefining \% on input line 690.
+LaTeX Info: Redefining \. on input line 690.
+LaTeX Info: Redefining \% on input line 690.
+[9
+
+]
+
+LaTeX Info: Redefining \. on input line 725.
+LaTeX Info: Redefining \% on input line 725.
+[10
+
+]
+
+LaTeX Info: Redefining \. on input line 761.
+LaTeX Info: Redefining \% on input line 761.
+[11
+
+]
+
+LaTeX Info: Redefining \. on input line 794.
+LaTeX Info: Redefining \% on input line 794.
+[12
+
+]
+
+LaTeX Info: Redefining \. on input line 829.
+LaTeX Info: Redefining \% on input line 829.
+[13
+
+]
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:829: Argument
+ of \es@a has an extra }.
+<inserted text> 
+                \par 
+l.829 ...sh\}}}\label{muxednimo-x_1minx_1dotsx_n}}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+{\expandafter \string \the \textfont \mathgroup }\expandafter \split@name \ETC.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:829: Paragrap
+h ended before \es@a was complete.
+<to be read again> 
+                   \par 
+l.829 ...sh\}}}\label{muxednimo-x_1minx_1dotsx_n}}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:829: Argument
+ of \es@a has an extra }.
+<inserted text> 
+                \par 
+l.829 ...sh\}}}\label{muxednimo-x_1minx_1dotsx_n}}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+{\expandafter \string \the \textfont \mathgroup }\expandafter \split@name \ETC.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:829: Paragrap
+h ended before \es@a was complete.
+<to be read again> 
+                   \par 
+l.829 ...sh\}}}\label{muxednimo-x_1minx_1dotsx_n}}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+
+LaTeX Info: Redefining \. on input line 861.
+LaTeX Info: Redefining \% on input line 861.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:861: Missing 
+{ inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {X_1,dots ,X_n}protect )
+l.861 ...el{mixta-xminym-con-ysimmathrmexplambda}}
+                                                  
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:861: Missing 
+endgroup inserted.
+<inserted text> 
+                endgroup 
+l.861 ...el{mixta-xminym-con-ysimmathrmexplambda}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:861: Missing 
+} inserted.
+<inserted text> 
+                }
+l.861 ...el{mixta-xminym-con-ysimmathrmexplambda}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[14
+
+]
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:861: Argument
+ of \es@a has an extra }.
+<inserted text> 
+                \par 
+l.861 ...el{mixta-xminym-con-ysimmathrmexplambda}}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+{\expandafter \string \the \textfont \mathgroup }\expandafter \split@name \ETC.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:861: Paragrap
+h ended before \es@a was complete.
+<to be read again> 
+                   \par 
+l.861 ...el{mixta-xminym-con-ysimmathrmexplambda}}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:861: Argument
+ of \es@a has an extra }.
+<inserted text> 
+                \par 
+l.861 ...el{mixta-xminym-con-ysimmathrmexplambda}}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+{\expandafter \string \the \textfont \mathgroup }\expandafter \split@name \ETC.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:861: Paragrap
+h ended before \es@a was complete.
+<to be read again> 
+                   \par 
+l.861 ...el{mixta-xminym-con-ysimmathrmexplambda}}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+File: notebook_files/notebook_31_0.png Graphic file (type bmp)
+<notebook_files/notebook_31_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 913--914
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 914.
+LaTeX Info: Redefining \% on input line 914.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:914: Missing 
+{ inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {Y,M}protect ) CON protect...
+l.914 
+      
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:914: Missing 
+endgroup inserted.
+<inserted text> 
+                endgroup 
+l.914 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:914: Missing 
+} inserted.
+<inserted text> 
+                }
+l.914 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[15
+
+]
+
+LaTeX Info: Redefining \. on input line 917.
+LaTeX Info: Redefining \% on input line 917.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:917: Missing 
+{ inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {Y,M}protect ) CON protect...
+l.917 ...de F\_X(x)}}\label{a-gruxe1fica-de-f_xx}}
+                                                  
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:917: Missing 
+endgroup inserted.
+<inserted text> 
+                endgroup 
+l.917 ...de F\_X(x)}}\label{a-gruxe1fica-de-f_xx}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:917: Missing 
+} inserted.
+<inserted text> 
+                }
+l.917 ...de F\_X(x)}}\label{a-gruxe1fica-de-f_xx}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[16]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 917.
+
+File: notebook_files/notebook_34_0.png Graphic file (type bmp)
+<notebook_files/notebook_34_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 969--970
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 970.
+LaTeX Info: Redefining \% on input line 970.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:970: Missing 
+{ inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {Y,M}protect ) CON protect...
+l.970 
+      
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:970: Missing 
+endgroup inserted.
+<inserted text> 
+                endgroup 
+l.970 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:970: Missing 
+} inserted.
+<inserted text> 
+                }
+l.970 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+LaTeX Info: Redefining \. on input line 970.
+LaTeX Info: Redefining \% on input line 970.
+[17
+
+]
+
+LaTeX Info: Redefining \. on input line 973.
+LaTeX Info: Redefining \% on input line 973.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:973: Missing 
+{ inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {Y,M}protect ) CON protect...
+l.973 ...\}\_X(u)}}\label{b-gruxe1fica-de-f-1_xu}}
+                                                  
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:973: Missing 
+endgroup inserted.
+<inserted text> 
+                endgroup 
+l.973 ...\}\_X(u)}}\label{b-gruxe1fica-de-f-1_xu}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:973: Missing 
+} inserted.
+<inserted text> 
+                }
+l.973 ...\}\_X(u)}}\label{b-gruxe1fica-de-f-1_xu}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+LaTeX Info: Redefining \. on input line 973.
+LaTeX Info: Redefining \% on input line 973.
+[18]
+File: notebook_files/notebook_37_0.png Graphic file (type bmp)
+<notebook_files/notebook_37_0.png>
+
+
+LaTeX Info: Redefining \. on input line 1047.
+LaTeX Info: Redefining \% on input line 1047.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1047: Missing
+ { inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {Y,M}protect ) CON protect...
+l.1047     \end{center}
+                       
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1047: Missing
+ endgroup inserted.
+<inserted text> 
+                endgroup 
+l.1047     \end{center}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1047: Missing
+ } inserted.
+<inserted text> 
+                }
+l.1047     \end{center}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+LaTeX Info: Redefining \. on input line 1047.
+LaTeX Info: Redefining \% on input line 1047.
+[19
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1048--1049
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 1052.
+LaTeX Info: Redefining \% on input line 1052.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1052: Missing
+ { inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {Y,M}protect ) CON protect...
+l.1052 ...label{c-f_xf-1_xu-geq-u-para-u-in-0-1.}}
+                                                  
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1052: Missing
+ endgroup inserted.
+<inserted text> 
+                endgroup 
+l.1052 ...label{c-f_xf-1_xu-geq-u-para-u-in-0-1.}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1052: Missing
+ } inserted.
+<inserted text> 
+                }
+l.1052 ...label{c-f_xf-1_xu-geq-u-para-u-in-0-1.}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+LaTeX Info: Redefining \. on input line 1052.
+LaTeX Info: Redefining \% on input line 1052.
+[20]
+
+LaTeX Info: Redefining \. on input line 1075.
+LaTeX Info: Redefining \% on input line 1075.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1075: Missing
+ { inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {Y,M}protect ) CON protect...
+l.1075 ...f_xx-leq-x-para-x-tal-que-f_xx-in-0-1.}}
+                                                  
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1075: Missing
+ endgroup inserted.
+<inserted text> 
+                endgroup 
+l.1075 ...f_xx-leq-x-para-x-tal-que-f_xx-in-0-1.}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1075: Missing
+ } inserted.
+<inserted text> 
+                }
+l.1075 ...f_xx-leq-x-para-x-tal-que-f_xx-in-0-1.}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+LaTeX Info: Redefining \. on input line 1075.
+LaTeX Info: Redefining \% on input line 1075.
+[21
+
+]
+
+LaTeX Info: Redefining \. on input line 1092.
+LaTeX Info: Redefining \% on input line 1092.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1092: Missing
+ { inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {Y,M}protect ) CON protect...
+l.1092 ...-el-muxe9todo-de-la-funciuxf3n-inversa}}
+                                                  
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1092: Missing
+ endgroup inserted.
+<inserted text> 
+                endgroup 
+l.1092 ...-el-muxe9todo-de-la-funciuxf3n-inversa}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1092: Missing
+ } inserted.
+<inserted text> 
+                }
+l.1092 ...-el-muxe9todo-de-la-funciuxf3n-inversa}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+LaTeX Info: Redefining \. on input line 1092.
+LaTeX Info: Redefining \% on input line 1092.
+[22
+
+]
+
+LaTeX Info: Redefining \. on input line 1112.
+LaTeX Info: Redefining \% on input line 1112.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1112: Missing
+ { inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {Y,M}protect ) CON protect...
+l.1112 ...l{mixta-xmaxym-con-ysimmathrmexplambda}}
+                                                  
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1112: Missing
+ endgroup inserted.
+<inserted text> 
+                endgroup 
+l.1112 ...l{mixta-xmaxym-con-ysimmathrmexplambda}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1112: Missing
+ } inserted.
+<inserted text> 
+                }
+l.1112 ...l{mixta-xmaxym-con-ysimmathrmexplambda}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+LaTeX Info: Redefining \. on input line 1112.
+LaTeX Info: Redefining \% on input line 1112.
+[23
+
+]
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1112: Argumen
+t of \es@a has an extra }.
+<inserted text> 
+                \par 
+l.1112 ...l{mixta-xmaxym-con-ysimmathrmexplambda}}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+{\expandafter \string \the \textfont \mathgroup }\expandafter \split@name \ETC.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1112: Paragra
+ph ended before \es@a was complete.
+<to be read again> 
+                   \par 
+l.1112 ...l{mixta-xmaxym-con-ysimmathrmexplambda}}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1112: Argumen
+t of \es@a has an extra }.
+<inserted text> 
+                \par 
+l.1112 ...l{mixta-xmaxym-con-ysimmathrmexplambda}}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+{\expandafter \string \the \textfont \mathgroup }\expandafter \split@name \ETC.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1112: Paragra
+ph ended before \es@a was complete.
+<to be read again> 
+                   \par 
+l.1112 ...l{mixta-xmaxym-con-ysimmathrmexplambda}}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+
+LaTeX Info: Redefining \. on input line 1116.
+LaTeX Info: Redefining \% on input line 1116.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1116: Missing
+ { inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {Y,M}protect ) CON protect...
+l.1116 ...e F\_X(x)}}\label{a-gruxe1fica-de-f_xx}}
+                                                  
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1116: Missing
+ endgroup inserted.
+<inserted text> 
+                endgroup 
+l.1116 ...e F\_X(x)}}\label{a-gruxe1fica-de-f_xx}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1116: Missing
+ } inserted.
+<inserted text> 
+                }
+l.1116 ...e F\_X(x)}}\label{a-gruxe1fica-de-f_xx}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[24
+
+]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 1116.
+
+Missing character: There is no λ in font Inconsolata Regular/OT:script=latn;lan
+guage=dflt;+init;+fina;!
+File: notebook_files/notebook_48_0.png Graphic file (type bmp)
+<notebook_files/notebook_48_0.png>
+
+
+LaTeX Info: Redefining \. on input line 1190.
+LaTeX Info: Redefining \% on input line 1190.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1190: Missing
+ { inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {Y,M}protect ) CON protect...
+l.1190     \end{center}
+                       
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1190: Missing
+ endgroup inserted.
+<inserted text> 
+                endgroup 
+l.1190     \end{center}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1190: Missing
+ } inserted.
+<inserted text> 
+                }
+l.1190     \end{center}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+LaTeX Info: Redefining \. on input line 1190.
+LaTeX Info: Redefining \% on input line 1190.
+[25
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1191--1192
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 1195.
+LaTeX Info: Redefining \% on input line 1195.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1195: Missing
+ { inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {Y,M}protect ) CON protect...
+l.1195 ...}\_X(u)}}\label{b-gruxe1fica-de-f-1_xu}}
+                                                  
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1195: Missing
+ endgroup inserted.
+<inserted text> 
+                endgroup 
+l.1195 ...}\_X(u)}}\label{b-gruxe1fica-de-f-1_xu}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1195: Missing
+ } inserted.
+<inserted text> 
+                }
+l.1195 ...}\_X(u)}}\label{b-gruxe1fica-de-f-1_xu}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+LaTeX Info: Redefining \. on input line 1195.
+LaTeX Info: Redefining \% on input line 1195.
+[26]
+File: notebook_files/notebook_51_0.png Graphic file (type bmp)
+<notebook_files/notebook_51_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1229--1230
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 1233.
+LaTeX Info: Redefining \% on input line 1233.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1233: Missing
+ { inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {Y,M}protect ) CON protect...
+l.1233 ...label{c-f_xf-1_xu-geq-u-para-u-in-0-1.}}
+                                                  
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1233: Missing
+ endgroup inserted.
+<inserted text> 
+                endgroup 
+l.1233 ...label{c-f_xf-1_xu-geq-u-para-u-in-0-1.}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1233: Missing
+ } inserted.
+<inserted text> 
+                }
+l.1233 ...label{c-f_xf-1_xu-geq-u-para-u-in-0-1.}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+LaTeX Info: Redefining \. on input line 1233.
+LaTeX Info: Redefining \% on input line 1233.
+[27
+
+]
+
+LaTeX Info: Redefining \. on input line 1243.
+LaTeX Info: Redefining \% on input line 1243.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1243: Missing
+ { inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {Y,M}protect ) CON protect...
+l.1243 ...f_xx-geq-x-para-x-tal-que-f_xx-in-0-1.}}
+                                                  
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1243: Missing
+ endgroup inserted.
+<inserted text> 
+                endgroup 
+l.1243 ...f_xx-geq-x-para-x-tal-que-f_xx-in-0-1.}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1243: Missing
+ } inserted.
+<inserted text> 
+                }
+l.1243 ...f_xx-geq-x-para-x-tal-que-f_xx-in-0-1.}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+LaTeX Info: Redefining \. on input line 1243.
+LaTeX Info: Redefining \% on input line 1243.
+[28
+
+]
+
+LaTeX Info: Redefining \. on input line 1252.
+LaTeX Info: Redefining \% on input line 1252.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1252: Missing
+ { inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {Y,M}protect ) CON protect...
+l.1252 ...-el-muxe9todo-de-la-funciuxf3n-inversa}}
+                                                  
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1252: Missing
+ endgroup inserted.
+<inserted text> 
+                endgroup 
+l.1252 ...-el-muxe9todo-de-la-funciuxf3n-inversa}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1252: Missing
+ } inserted.
+<inserted text> 
+                }
+l.1252 ...-el-muxe9todo-de-la-funciuxf3n-inversa}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+LaTeX Info: Redefining \. on input line 1252.
+LaTeX Info: Redefining \% on input line 1252.
+[29
+
+]
+
+LaTeX Info: Redefining \. on input line 1265.
+LaTeX Info: Redefining \% on input line 1265.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1265: Missing
+ { inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {Y,M}protect ) CON protect...
+l.1265 tramos}\label{variable-con-cdf-por-tramos}}
+                                                  
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1265: Missing
+ endgroup inserted.
+<inserted text> 
+                endgroup 
+l.1265 tramos}\label{variable-con-cdf-por-tramos}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1265: Missing
+ } inserted.
+<inserted text> 
+                }
+l.1265 tramos}\label{variable-con-cdf-por-tramos}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+LaTeX Info: Redefining \. on input line 1265.
+LaTeX Info: Redefining \% on input line 1265.
+[30
+
+]
+
+LaTeX Info: Redefining \. on input line 1269.
+LaTeX Info: Redefining \% on input line 1269.
+[31
+
+]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 1269.
+
+File: notebook_files/notebook_61_0.png Graphic file (type bmp)
+<notebook_files/notebook_61_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1310--1311
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 1311.
+LaTeX Info: Redefining \% on input line 1311.
+LaTeX Info: Redefining \. on input line 1311.
+LaTeX Info: Redefining \% on input line 1311.
+[32
+
+]
+
+LaTeX Info: Redefining \. on input line 1314.
+LaTeX Info: Redefining \% on input line 1314.
+LaTeX Info: Redefining \. on input line 1314.
+LaTeX Info: Redefining \% on input line 1314.
+[33]
+
+LaTeX Info: Redefining \. on input line 1394.
+LaTeX Info: Redefining \% on input line 1394.
+LaTeX Info: Redefining \. on input line 1394.
+LaTeX Info: Redefining \% on input line 1394.
+[34
+
+]
+File: notebook_files/notebook_64_0.png Graphic file (type bmp)
+<notebook_files/notebook_64_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1399--1400
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 1403.
+LaTeX Info: Redefining \% on input line 1403.
+LaTeX Info: Redefining \. on input line 1403.
+LaTeX Info: Redefining \% on input line 1403.
+[35]
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1417: Package
+ amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1417 \end{align*}
+                   
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1430: Package
+ amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1430 \end{align*}
+                   
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1439: Package
+ amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1439   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1446: Package
+ amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1446   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1453: Package
+ amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1453   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+LaTeX Info: Redefining \. on input line 1460.
+LaTeX Info: Redefining \% on input line 1460.
+LaTeX Info: Redefining \. on input line 1460.
+LaTeX Info: Redefining \% on input line 1460.
+[36
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1464--1465
+
+ []
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1469: Package
+ amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1469   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1472--1473
+
+ []
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1477: Package
+ amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1477   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1480--1481
+
+ []
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1485: Package
+ amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1485   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1488--1489
+
+ []
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1493: Package
+ amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1493   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1496--1497
+
+ []
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/2/notebook.tex:1501: Package
+ amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1501   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+LaTeX Info: Redefining \. on input line 1507.
+LaTeX Info: Redefining \% on input line 1507.
+LaTeX Info: Redefining \. on input line 1507.
+LaTeX Info: Redefining \% on input line 1507.
+[37
+
+]
+
+LaTeX Info: Redefining \. on input line 1536.
+LaTeX Info: Redefining \% on input line 1536.
+LaTeX Info: Redefining \. on input line 1536.
+LaTeX Info: Redefining \% on input line 1536.
+[38
+
+]
+File: notebook_files/notebook_72_0.png Graphic file (type bmp)
+<notebook_files/notebook_72_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1567--1568
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 1570.
+LaTeX Info: Redefining \% on input line 1570.
+LaTeX Info: Redefining \. on input line 1570.
+LaTeX Info: Redefining \% on input line 1570.
+[39
+
+]
+
+LaTeX Info: Redefining \. on input line 1576.
+LaTeX Info: Redefining \% on input line 1576.
+LaTeX Info: Redefining \. on input line 1576.
+LaTeX Info: Redefining \% on input line 1576.
+[40
+
+]
+
+LaTeX Info: Redefining \. on input line 1615.
+LaTeX Info: Redefining \% on input line 1615.
+LaTeX Info: Redefining \. on input line 1615.
+LaTeX Info: Redefining \% on input line 1615.
+[41
+
+]
+
+LaTeX Info: Redefining \. on input line 1635.
+LaTeX Info: Redefining \% on input line 1635.
+LaTeX Info: Redefining \. on input line 1635.
+LaTeX Info: Redefining \% on input line 1635.
+[42
+
+]
+
+LaTeX Info: Redefining \. on input line 1657.
+LaTeX Info: Redefining \% on input line 1657.
+[43
+
+]
+
+LaTeX Info: Redefining \. on input line 1661.
+LaTeX Info: Redefining \% on input line 1661.
+[44
+
+]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 1661.
+
+File: notebook_files/notebook_84_0.png Graphic file (type bmp)
+<notebook_files/notebook_84_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1690--1691
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 1694.
+LaTeX Info: Redefining \% on input line 1694.
+LaTeX Info: Redefining \. on input line 1694.
+LaTeX Info: Redefining \% on input line 1694.
+[45
+
+]
+File: notebook_files/notebook_87_0.png Graphic file (type bmp)
+<notebook_files/notebook_87_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1723--1724
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 1727.
+LaTeX Info: Redefining \% on input line 1727.
+LaTeX Info: Redefining \. on input line 1727.
+LaTeX Info: Redefining \% on input line 1727.
+[46
+
+]
+File: notebook_files/notebook_90_0.png Graphic file (type bmp)
+<notebook_files/notebook_90_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1766--1767
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 1770.
+LaTeX Info: Redefining \% on input line 1770.
+LaTeX Info: Redefining \. on input line 1770.
+LaTeX Info: Redefining \% on input line 1770.
+[47
+
+]
+
+LaTeX Info: Redefining \. on input line 1778.
+LaTeX Info: Redefining \% on input line 1778.
+LaTeX Info: Redefining \. on input line 1778.
+LaTeX Info: Redefining \% on input line 1778.
+[48
+
+]
+
+LaTeX Info: Redefining \. on input line 1791.
+LaTeX Info: Redefining \% on input line 1791.
+LaTeX Info: Redefining \. on input line 1791.
+LaTeX Info: Redefining \% on input line 1791.
+[49
+
+]
+
+LaTeX Info: Redefining \. on input line 1807.
+LaTeX Info: Redefining \% on input line 1807.
+LaTeX Info: Redefining \. on input line 1807.
+LaTeX Info: Redefining \% on input line 1807.
+[50
+
+]
+File: notebook_files/notebook_96_0.png Graphic file (type bmp)
+<notebook_files/notebook_96_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1834--1835
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 1838.
+LaTeX Info: Redefining \% on input line 1838.
+LaTeX Info: Redefining \. on input line 1838.
+LaTeX Info: Redefining \% on input line 1838.
+[51
+
+]
+
+LaTeX Info: Redefining \. on input line 1858.
+LaTeX Info: Redefining \% on input line 1858.
+LaTeX Info: Redefining \. on input line 1858.
+LaTeX Info: Redefining \% on input line 1858.
+[52
+
+]
+
+LaTeX Info: Redefining \. on input line 1878.
+LaTeX Info: Redefining \% on input line 1878.
+LaTeX Info: Redefining \. on input line 1878.
+LaTeX Info: Redefining \% on input line 1878.
+[53
+
+]
+
+LaTeX Info: Redefining \. on input line 1886.
+LaTeX Info: Redefining \% on input line 1886.
+[54
+
+]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 1886.
+
+
+
+LaTeX Info: Redefining \. on input line 1928.
+LaTeX Info: Redefining \% on input line 1928.
+LaTeX Info: Redefining \. on input line 1928.
+LaTeX Info: Redefining \% on input line 1928.
+[55
+
+]
+
+LaTeX Info: Redefining \. on input line 1953.
+LaTeX Info: Redefining \% on input line 1953.
+LaTeX Info: Redefining \. on input line 1953.
+LaTeX Info: Redefining \% on input line 1953.
+[56
+
+]
+
+LaTeX Info: Redefining \. on input line 1996.
+LaTeX Info: Redefining \% on input line 1996.
+LaTeX Info: Redefining \. on input line 1996.
+LaTeX Info: Redefining \% on input line 1996.
+[57
+
+] (notebook.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
 )
@@ -1936,14 +3531,29 @@ LaTeX Info: Redefining \% on input line 12.
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-11>
  ***********
- ) 
-Here is how much of TeX's memory you used:
- 36202 strings out of 403265
- 700975 string characters out of 5461230
- 1225228 words of memory out of 5000000
- 64092 multiletter control sequences out of 15000+600000
- 636749 words of font info for 111 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 116i,12n,121p,1278b,577s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on LATEXTEMPLATE.pdf (8 pages).
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `notebook.out' has not changed.
+(rerunfilecheck)             Checksum: F5656F3C6D8E58014D862B4151D7870E;11148.
+ )
+(\end occurred when \ifnum on line 1112 was incomplete)
+(\end occurred when \iffalse on line 1112 was incomplete)
+(\end occurred when \ifnum on line 861 was incomplete)
+(\end occurred when \iffalse on line 861 was incomplete)
+(\end occurred when \ifnum on line 829 was incomplete)
+(\end occurred when \iffalse on line 829 was incomplete) 
+Here is how much of TeX's memory you used:
+ 36375 strings out of 403265
+ 709310 string characters out of 5461230
+ 1307527 words of memory out of 5000000
+ 64221 multiletter control sequences out of 15000+600000
+ 651302 words of font info for 177 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 116i,14n,121p,1354b,924s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on notebook.pdf (58 pages).

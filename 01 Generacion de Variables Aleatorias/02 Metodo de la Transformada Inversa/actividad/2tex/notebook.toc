@@ -1,0 +1,50 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{1. Distribución Uniforme \((a,b)\)}{3}{Doc-Start}%
+\contentsline {section}{2. Distribución Discreta}{4}{Doc-Start}%
+\contentsline {subsection}{a) Gráfica de \(f_X(x)\)}{5}{section*.1}%
+\contentsline {subsection}{b) Gráfica de \(F_X(x)\)}{6}{section*.1}%
+\contentsline {subsection}{c) Gráfica de \(F^{-1}_X(u)\)}{7}{section*.1}%
+\contentsline {subsection}{d) Programa}{8}{section*.1}%
+\contentsline {subsection}{e) Histograma}{9}{section*.1}%
+\contentsline {section}{3. Exponencial \(\mathrm {Exp}(\mitlambda )\)}{10}{section*.1}%
+\contentsline {section}{4. Weibull \((r,\mitlambda )\)}{11}{section*.1}%
+\contentsline {section}{5. Cauchy \((a,b)\)}{12}{section*.1}%
+\contentsline {section}{6. Pareto I \((a,b)\)}{13}{section*.1}%
+\contentsline {section}{7. Mínimo \(X_{(1)}=\mathop {\operator@font m\begingroup \count@ \escapechar \escapechar =\m@ne \edef \par }\{X_1,\dots ,X_n\}\)}{14}{section*.1}%
+\contentsline {section}{8. Mixta \(X=\mathop {\operator@font m\begingroup \count@ \escapechar \escapechar =\m@ne \edef \par }\{Y,M\}\) con \(Y\sim \mathrm {Exp}(\mitlambda )\)}{15}{section*.1}%
+\contentsline {subsection}{a) Gráfica de \(F_X(x)\)}{17}{section*.2}%
+\contentsline {subsection}{b) Gráfica de \(F^{-1}_X(u)\)}{19}{section*.2}%
+\contentsline {subsection}{c) \(F_X(F^{-1}_X(u)) \geq u,\) para \(u \in [0, 1]\).}{21}{section*.2}%
+\contentsline {subsection}{d) \(F^{-1}_X(F_X(x)) \leq x,\) para \(x\) tal que \(F_X(x) \in [0, 1]\).}{22}{section*.2}%
+\contentsline {subsection}{e) Cómo generar valores con el método de la función inversa}{23}{section*.2}%
+\contentsline {section}{9. Mixta \(X=\mathop {\operator@font m\begingroup \count@ \escapechar \escapechar =\m@ne \edef \par }\{Y,M\}\) con \(Y\sim \mathrm {Exp}(\mitlambda )\)}{24}{Item.2}%
+\contentsline {subsection}{a) Gráfica de \(F_X(x)\)}{25}{section*.3}%
+\contentsline {subsection}{b) Gráfica de \(F^{-1}_X(u)\)}{27}{section*.3}%
+\contentsline {subsection}{c) \(F_X(F^{-1}_X(u)) \geq u,\) para \(u \in [0, 1]\).}{28}{section*.3}%
+\contentsline {subsection}{d) \(F^{-1}_X(F_X(x)) \geq x,\) para \(x\) tal que \(F_X(x) \in [0, 1]\).}{29}{section*.3}%
+\contentsline {subsection}{e) Cómo generar valores con el método de la función inversa}{30}{section*.3}%
+\contentsline {section}{10. Variable con CDF por tramos}{31}{section*.3}%
+\contentsline {subsection}{a) Gráfica de \(F_{X}(x)\)}{32}{section*.4}%
+\contentsline {subsection}{b) Gráfica de \(F_{X}^{-1}(u)\)}{34}{section*.4}%
+\contentsline {subsection}{c) \(F_{X}(F^{-1}_X(u)) \geq u,\) para \(u \in [0,1]\)}{36}{section*.4}%
+\contentsline {subsection}{d) \(F_{X}^{-1}(F_X(x)) \leq x,\) para \(x\) tal que \(F_X(x) \in (0, 1)\).}{37}{section*.4}%
+\contentsline {subsection}{e) Cómo generar valores con el método de la función inversa}{38}{section*.4}%
+\contentsline {subsection}{f) Gráfica de \(f_{X}(x)\).}{39}{Item.6}%
+\contentsline {subsection}{g) Programa}{40}{Item.6}%
+\contentsline {subsection}{h) \(\mathbb {E}[X] = 0\).}{41}{Item.6}%
+\contentsline {subsection}{i) \(\bar {x} \approx 0\).}{42}{Item.6}%
+\contentsline {section}{11. Bernoulli \((p)\) desde \(U(0,1)\)}{43}{Item.6}%
+\contentsline {section}{12. Variable aleatoria discreta}{44}{Item.6}%
+\contentsline {subsection}{a) Gráfica de \(f_X(x)\)}{45}{section*.5}%
+\contentsline {subsection}{b) Gráfica de \(F_X(x)\)}{46}{section*.5}%
+\contentsline {subsection}{c) Gráfica de \(F^{-1}_X(u)\)}{47}{section*.5}%
+\contentsline {subsection}{d) Valor esperado \(\mathbb E[X]\)}{48}{section*.5}%
+\contentsline {subsection}{e) Varianza \(\mathbb V[X]\)}{49}{section*.5}%
+\contentsline {subsection}{f) Programa}{50}{section*.5}%
+\contentsline {subsection}{g) Histograma}{51}{section*.5}%
+\contentsline {subsection}{h) \(\mathbb E[X] \approx \bar {x}\)}{52}{section*.5}%
+\contentsline {subsection}{i) \(\mathbb V[X] \approx s^2\)}{53}{section*.5}%
+\contentsline {section}{13. Binomial, Geométrica y Poisson}{54}{section*.5}%
+\contentsline {subsection}{a) Binomial}{55}{section*.6}%
+\contentsline {subsection}{b) Geométrica}{56}{section*.6}%
+\contentsline {subsection}{c) Poisson}{57}{section*.6}%

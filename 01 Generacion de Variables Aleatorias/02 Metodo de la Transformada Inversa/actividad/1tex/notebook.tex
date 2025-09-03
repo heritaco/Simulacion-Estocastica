@@ -1,5 +1,6 @@
 \documentclass[10pt,a4paper]{article}
 
+    \usepackage[spanish]{babel}
     \usepackage[breakable]{tcolorbox}
     \usepackage{parskip}
     \usepackage{graphicx}
@@ -70,7 +71,7 @@
     \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
 
 
-    \usepackage{hyperref}
+    \usepackage[unicode]{hyperref}
     \usepackage{titling}
     \usepackage{longtable}
     \usepackage{booktabs}
@@ -417,7 +418,7 @@
     \setcounter{secnumdepth}{0}
     % centrar el header
     \pretocmd{\section}{\clearpage}{}{}
-    % \pretocmd{\subsection}{\clearpage}{}{}
+    \pretocmd{\subsection}{\clearpage}{}{}
 
 
     % --- Encabezado con nombre de la sección ---
@@ -440,26 +441,24 @@
     \begin{titlepage}
     \centering
     \vspace*{4cm}
-    {\Huge\bfseries Metodo de la Trasformada Inversa\par}
+    {\Huge\bfseries Método de la Trasformada Inversa\par}
     \vspace{1cm}
     {\large Curso:  Temas Selectos I: O25 LAT4032 1\par}
     {\large Profesor:  Rubén Blancas Rivera\par}
-    {\large Equipo:  Ximena Bravo, Heriberto Espino, Celeste Nuñez\par}
+    {\large Equipo: Ana Ximena Bravo, Heriberto Espino, Celeste Núñez\par}
     {\large Universidad de las Américas Puebla\par}
     \vfill
-    {\large \today\par}
+    {\large 2 de Septiembre de 2025 \par}
     \end{titlepage}
 
 
     % --- Tabla de contenidos ---
-    \renewcommand{\contentsname}{Índice}
-    \tableofcontents
-    \thispagestyle{empty}
-    \newpage
+
 
     % --- Inicio del documento ---
 
-    
+
+    \section{Importación de librerías}
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{1}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -498,7 +497,7 @@
 \((a,b)\)}{1. Distribución Uniforme (a,b)}}\label{distribuciuxf3n-uniforme-ab}}
 
     Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}. Si
-\(X\sim\mathrm{Unif}(a,b)\), entonces su funcion de distribucion
+\(X\sim\mathrm{Unif}(a,b)\), entonces su función de distribución
 acumulada es:
 
 \[
@@ -525,8 +524,8 @@ F_X^{-1}(u)=a+(b-a)\,u.
 \section{2. Distribución Discreta}\label{distribuciuxf3n-discreta}}
 
     \hypertarget{a-grafica-de-f_xx}{%
-\subsection{\texorpdfstring{a) Grafica de
-\(f_X(x)\)}{a) Grafica de f\_X(x)}}\label{a-grafica-de-f_xx}}
+\subsection{\texorpdfstring{a) 
+\(f_X(x)\)}{a) f\_X(x)}}\label{a-grafica-de-f_xx}}
 
     \[
 f_X(x)=\mathbb P(X = x)=
@@ -559,17 +558,17 @@ f_X(x)=\mathbb P(X = x)=
     { \hspace*{\fill} \\}
     
     \hypertarget{b-grafica-de-f_xx}{%
-\subsection{\texorpdfstring{b) Grafica de
-\(F_X(x)\)}{b) Grafica de F\_X(x)}}\label{b-grafica-de-f_xx}}
+\subsection{\texorpdfstring{b) 
+\(F_X(x)\)}{b) F\_X(x)}}\label{b-grafica-de-f_xx}}
 
     \[
-F_X(x)=\mathbb P(X\le x)=
+F_X(x)=\mathbb P(X\leq x)=
 \begin{cases}
 0,& x<1,\\
-0.4,& 1\le x<2,\\
-0.7,& 2\le x<3,\\
-0.9,& 3\le x<4,\\
-1,& x\ge 4.
+0.4,& 1\leq x<2,\\
+0.7,& 2\leq x<3,\\
+0.9,& 3\leq x<4,\\
+1,& x\geq 4.
 \end{cases}
 \]
 
@@ -592,8 +591,8 @@ F_X(x)=\mathbb P(X\le x)=
     { \hspace*{\fill} \\}
     
     \hypertarget{c-grafica-de-f-1_xu}{%
-\subsection{\texorpdfstring{c) Grafica de
-\(F^{-1}_X(u)\)}{c) Grafica de F\^{}\{-1\}\_X(u)}}\label{c-grafica-de-f-1_xu}}
+\subsection{\texorpdfstring{c) 
+\(F^{-1}_X(u)\)}{c) F\^{}\{-1\}\_X(u)}}\label{c-grafica-de-f-1_xu}}
 
     Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}.
 
@@ -612,10 +611,10 @@ Entonces:
 \[
 F_X^{-1}(u)=
 \begin{cases}
-1,& 0<u\le 0.4,\\
-2,& 0.4<u\le 0.7,\\
-3,& 0.7<u\le 0.9,\\
-4,& 0.9<u\le 1.
+1,& 0<u\leq 0.4,\\
+2,& 0.4<u\leq 0.7,\\
+3,& 0.7<u\leq 0.9,\\
+4,& 0.9<u\leq 1.
 \end{cases}
 \]
 
@@ -684,7 +683,7 @@ F_X^{-1}(u)=
 \(\mathrm{Exp}(\lambda)\)}{3. Exponencial \textbackslash mathrm\{Exp\}(\textbackslash lambda)}}\label{exponencial-mathrmexplambda}}
 
     Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}. Si
-\(X\sim\mathrm{Exp}(\lambda)\), entonces su funcion de distribucion
+\(X\sim\mathrm{Exp}(\lambda)\), entonces su función de distribución
 acumulada es:
 
 \[
@@ -719,8 +718,8 @@ X=F_X^{-1}(U)=-\frac{1}{\lambda}\ln(1-U)\sim\mathrm{Exp}(\lambda).
 \((r,\lambda)\)}{4. Weibull (r,\textbackslash lambda)}}\label{weibull-rlambda}}
 
     Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}, con \(r>0\) y \(\lambda>0\).
-Si \(X\sim\mathrm{Weibull}(r,\lambda)\), entonces su funcion de
-distribucion acumulada es:
+Si \(X\sim\mathrm{Weibull}(r,\lambda)\), entonces su función de
+distribución acumulada es:
 
 \[
 F_X(x)=\bigl(1-e^{-(\lambda x)^r}\bigr)\,\mathbf{1}_{[0,\infty)}(x)
@@ -755,7 +754,7 @@ X=F_X^{-1}(U)=\frac{1}{\lambda}\,\bigl[-\ln(1-U)\bigr]^{1/r}\sim\mathrm{Weibull}
 \((a,b)\)}{5. Cauchy (a,b)}}\label{cauchy-ab}}
 
     Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}. Si
-\(X\sim\mathrm{Cauchy}(a,b)\), entonces su funcion de distribucion
+\(X\sim\mathrm{Cauchy}(a,b)\), entonces su función de distribución
 acumulada es:
 
 \[
@@ -788,7 +787,7 @@ Por lo tanto,
 \((a,b)\)}{6. Pareto I (a,b)}}\label{pareto-i-ab}}
 
     Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}, con \(a>0\) y \(b>0\). Si
-\(X\sim\mathrm{Pareto\ I}(a,b)\), entonces su funcion de distribucion
+\(X\sim\mathrm{Pareto\ I}(a,b)\), entonces su función de distribución
 acumulada es:
 
 \[
@@ -826,7 +825,7 @@ X=F_X^{-1}(U)=b\,(1-U)^{-1/a}\sim\mathrm{Pareto\ I}(a,b).
 \(X_{(1)}:=\min\{X_1,\dots,X_n\}\) con \(X_i\) i.i.d. de CDF \(F\).
 
 \[
-F_{X_{(1)}}(x)=\mathbb P(X_{(1)}\le x)
+F_{X_{(1)}}(x)=\mathbb P(X_{(1)}\leq x)
 =1-\mathbb P(X_1>x,\dots,X_n>x)
 =1-\bigl(1-F(x)\bigr)^n.
 \]
@@ -851,8 +850,7 @@ F_{X_{(1)}}^{-1}(u)=F^{-1}\!\bigl(1-(1-u)^{1/n}\bigr),\quad 0<u<1.
 \]
 
     \hypertarget{mixta-xminym-con-ysimmathrmexplambda}{%
-\section{\texorpdfstring{8. Mixta \(X=\min\{Y,M\}\) con
-\(Y\sim\mathrm{Exp}(\lambda)\)}{8. Mixta X=\textbackslash min\textbackslash\{Y,M\textbackslash\} con Y\textbackslash sim\textbackslash mathrm\{Exp\}(\textbackslash lambda)}}\label{mixta-xminym-con-ysimmathrmexplambda}}
+\section{8. Mixta Mínimo}}\label{mixta-xminym-con-ysimmathrmexplambda}}
 
     Sea con \(U\sim\mathrm{Unif}(0,1)\),
 
@@ -907,25 +905,25 @@ X=F_X^{-1}(U)=-\frac{1}{\lambda}\ln(1-U)\sim\mathrm{Exp}(\lambda).
     { \hspace*{\fill} \\}
     
     \hypertarget{a-grafica-de-f_xx}{%
-\subsection{\texorpdfstring{a) Grafica de
-\(F_X(x)\)}{a) Grafica de F\_X(x)}}\label{a-grafica-de-f_xx}}
+\subsection{\texorpdfstring{a) 
+\(F_X(x)\)}{a) F\_X(x)}}\label{a-grafica-de-f_xx}}
 
     Por definición,
 
 \[
-F_X(x)=\mathbb P(X\le x)=
+F_X(x)=\mathbb P(X\leq x)=
 \begin{cases}
 0,&x<0,\\[2pt]
-\mathbb P(\min\{Y,M\}\le x),&0\le x<M,\\[2pt]
-1,&x\ge M.
+\mathbb P(\min\{Y,M\}\leq x),&0\leq x<M,\\[2pt]
+1,&x\geq M.
 \end{cases}
 \]
 
-Para \(0\le x<M\): \(\min\{Y,M\}\le x\) equivale a \(Y\le x\). Como
+Para \(0\leq x<M\): \(\min\{Y,M\}\leq x\) equivale a \(Y\leq x\). Como
 \(Y\sim\mathrm{Exp}(\lambda)\),
 
 \[
-\mathbb P(Y\le x)=1-e^{-\lambda x}.
+\mathbb P(Y\leq x)=1-e^{-\lambda x}.
 \]
 
 Entonces,
@@ -934,8 +932,8 @@ Entonces,
 F_X(x)=
 \begin{cases}
 0,&x<0,\\
-1-e^{-\lambda x},&0\le x<M,\\
-1,&x\ge M.
+1-e^{-\lambda x},&0\leq x<M,\\
+1,&x\geq M.
 \end{cases}
 \]
 
@@ -963,12 +961,11 @@ F_X(x)=
     { \hspace*{\fill} \\}
     
     \hypertarget{b-grafica-de-f-1_xu}{%
-\subsection{\texorpdfstring{b) Grafica de
-\(F^{-1}_X(u)\)}{b) Grafica de F\^{}\{-1\}\_X(u)}}\label{b-grafica-de-f-1_xu}}
+\subsection{\texorpdfstring{b) 
+\(F^{-1}_X(u)\)}{b) F\^{}\{-1\}\_X(u)}}\label{b-grafica-de-f-1_xu}}
 
     Sea \(Y\sim\mathrm{Exp}(\lambda)\), \(M>0\), \(X=\min\{Y,M\}\) y
-\(U\sim\mathrm{Unif}(0,1)\). Usamos la pseudoinversa izquierda
-\(F_X^{-1}(u)=\inf\{x:F_X(x)\ge u\}\).
+\(U\sim\mathrm{Unif}(0,1)\). 
 
 \textbf{Encontrando la inversa:}
 
@@ -980,7 +977,7 @@ F_X(x)=
   F_X^{-1}(0)=0.
   \]
 \item
-  Para \(0\le x<M\), \(u\in\big(0,\;1-e^{-\lambda M}\big)\):
+  Para \(0\leq x<M\), \(u\in\big(0,\;1-e^{-\lambda M}\big)\):
 
   \[
   \begin{aligned}
@@ -1005,7 +1002,7 @@ F_X^{-1}(u)=
 \begin{cases}
 0, & u=0,\\[6pt]
 -\dfrac{1}{\lambda}\ln(1-u), & 0<u<1-e^{-\lambda M},\\[10pt]
-M, & 1-e^{-\lambda M}\le u\le 1.
+M, & 1-e^{-\lambda M}\leq u\leq 1.
 \end{cases}
 \]
 
@@ -1055,13 +1052,13 @@ M, & 1-e^{-\lambda M}\le u\le 1.
   F_X\big(F_X^{-1}(u)\big)=F_X(x)=1-e^{-\lambda x}=u.
   \]
 \item
-  Si \(1-e^{-\lambda M}\le u\le1\): \(F_X^{-1}(u)=M\) y
+  Si \(1-e^{-\lambda M}\leq u\le1\): \(F_X^{-1}(u)=M\) y
 
   \[
   F_X\big(F_X^{-1}(u)\big)=F_X(M)=1\ \ge\ u.
   \]
 \item
-  En \(u=0\): \(F_X^{-1}(0)=0\) y \(F_X(0)=0\ge 0\).
+  En \(u=0\): \(F_X^{-1}(0)=0\) y \(F_X(0)=0\geq 0\).
 \end{itemize}
 
     \hypertarget{d-f-1_xf_xx-leq-x-para-x-tal-que-f_xx-in-0-1.}{%
@@ -1071,11 +1068,11 @@ tal que
 
     \begin{itemize}
 \item
-  Si \(x<0\): \(F_X(x)=0\) y \(F_X^{-1}(0)=0\le x\)
+  Si \(x<0\): \(F_X(x)=0\) y \(F_X^{-1}(0)=0\leq x\)
 \item
-  Si \(x\ge M\): \(F_X(x)=1\) y \(F_X^{-1}(1)=M\le x\).
+  Si \(x\geq M\): \(F_X(x)=1\) y \(F_X^{-1}(1)=M\leq x\).
 \item
-  Si \(0\le x < M\):
+  Si \(0\leq x < M\):
 \end{itemize}
 
 \[
@@ -1083,7 +1080,7 @@ F_X^{-1}(F_X(x))=F_X^{-1}\left(1-e^{-\lambda x}\right)= -\dfrac{1}{\lambda}\ln(1
 \]
 
     \hypertarget{e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf3n-inversa}{%
-\subsection{e) Cómo generar valores con el método de la función
+\subsection{e) Generar valores
 inversa}\label{e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf3n-inversa}}
 
     \begin{enumerate}
@@ -1098,25 +1095,24 @@ inversa}\label{e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf3n-inver
 \[
 X=\begin{cases}
 -\dfrac{1}{\lambda}\ln(1-U),&U<1-e^{-\lambda M},\\[6pt]
-M,&U\ge 1-e^{-\lambda M}.
+M,&U\geq 1-e^{-\lambda M}.
 \end{cases}
 \]
 
     \hypertarget{mixta-xmaxym-con-ysimmathrmexplambda}{%
-\section{\texorpdfstring{9. Mixta \(X=\max\{Y,M\}\) con
-\(Y\sim\mathrm{Exp}(\lambda)\)}{9. Mixta X=\textbackslash max\textbackslash\{Y,M\textbackslash\} con Y\textbackslash sim\textbackslash mathrm\{Exp\}(\textbackslash lambda)}}\label{mixta-xmaxym-con-ysimmathrmexplambda}}
+\section{9. Mixta Máximo}\label{mixta-xmaxym-con-ysimmathrmexplambda}}
 
     \hypertarget{a-grafica-de-f_xx}{%
-\subsection{\texorpdfstring{a) Grafica de
-\(F_X(x)\)}{a) Grafica de F\_X(x)}}\label{a-grafica-de-f_xx}}
+\subsection{\texorpdfstring{a) 
+\(F_X(x)\)}{a) F\_X(x)}}\label{a-grafica-de-f_xx}}
 
     Para \(X=\max\{Y,M\}\) con \(Y\sim\mathrm{Exp}(\lambda)\) y \(M>0\):
 
 \[
-F_X(x)=\mathbb P(X\le x)=
+F_X(x)=\mathbb P(X\leq x)=
 \begin{cases}
 0,& x<M,\\[4pt]
-1-e^{-\lambda x},& x\ge M.
+1-e^{-\lambda x},& x\geq M.
 \end{cases}
 \]
 
@@ -1186,15 +1182,15 @@ f_X(x)=\lambda e^{-\lambda x}\,\mathbf 1_{\{x>M\}}.
     { \hspace*{\fill} \\}
     
     \hypertarget{b-grafica-de-f-1_xu}{%
-\subsection{\texorpdfstring{b) Grafica de
-\(F^{-1}_X(u)\)}{b) Grafica de F\^{}\{-1\}\_X(u)}}\label{b-grafica-de-f-1_xu}}
+\subsection{\texorpdfstring{b) 
+\(F^{-1}_X(u)\)}{b) F\^{}\{-1\}\_X(u)}}\label{b-grafica-de-f-1_xu}}
 
     Sea \(p_0:=1-e^{-\lambda M}\).
 
 \[
 F_X^{-1}(u)=
 \begin{cases}
-M,& 0\le u\le p_0,\\[6pt]
+M,& 0\leq u\leq p_0,\\[6pt]
 -\dfrac{1}{\lambda}\ln(1-u),& p_0<u<1.
 \end{cases}
 \]
@@ -1227,7 +1223,7 @@ M,& 0\le u\le p_0,\\[6pt]
 \subsection{\texorpdfstring{c) \(F_X(F^{-1}_X(u)) \geq u,\) para
 \(u \in [0, 1]\).}{c) F\_X(F\^{}\{-1\}\_X(u)) \textbackslash geq u, para u \textbackslash in {[}0, 1{]}.}}\label{c-f_xf-1_xu-geq-u-para-u-in-0-1.}}
 
-    Si \(u\le p_0\), \(F_X^{-1}(u)=M\) y \(F_X(M)=p_0\ge u\).
+    Si \(u\leq p_0\), \(F_X^{-1}(u)=M\) y \(F_X(M)=p_0\geq u\).
 
 Si \(u>p_0\), \(F_X^{-1}(u)=-(1/\lambda)\ln(1-u)\) y
 \(F_X(F_X^{-1}(u))=u\).`
@@ -1237,44 +1233,40 @@ Si \(u>p_0\), \(F_X^{-1}(u)=-(1/\lambda)\ln(1-u)\) y
 tal que
 \(F_X(x) \in [0, 1]\).}{d) F\^{}\{-1\}\_X(F\_X(x)) \textbackslash geq x, para x tal que F\_X(x) \textbackslash in {[}0, 1{]}.}}\label{d-f-1_xf_xx-geq-x-para-x-tal-que-f_xx-in-0-1.}}
 
-    Si \(x<M\), \(F_X(x)=0\) y \(F_X^{-1}(0)=M\ge x\).
+    Si \(x<M\), \(F_X(x)=0\) y \(F_X^{-1}(0)=M\geq x\).
 
-Si \(x\ge M\), \(F_X(x)=1-e^{-\lambda x}\ge p_0\) y
+Si \(x\geq M\), \(F_X(x)=1-e^{-\lambda x}\geq p_0\) y
 \(F_X^{-1}(F_X(x))=x\).
 
     \hypertarget{e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf3n-inversa}{%
-\subsection{e) Cómo generar valores con el método de la función
+\subsection{e) Generar valores
 inversa}\label{e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf3n-inversa}}
 
     Muestrea \(U\sim\mathrm{Unif}(0,1)\) y define
 
 \[
 X=\begin{cases}
-M,& U\le 1-e^{-\lambda M},\\[6pt]
+M,& U\leq 1-e^{-\lambda M},\\[6pt]
 -\dfrac{1}{\lambda}\ln(1-U),& U>1-e^{-\lambda M}.
 \end{cases}
 \]
 
-Cambios mínimos respecto al caso \(\min\): sustituye los tramos \(x<M\)
-por cero, coloca la masa en \(M\) con tamaño \(1-e^{-\lambda M}\), y
-mantiene la cola exponencial intacta para \(x>M\).
 
     \hypertarget{variable-con-cdf-por-tramos}{%
-\section{10. Variable con CDF por
-tramos}\label{variable-con-cdf-por-tramos}}
+\section{10. Por Tramos}\label{variable-con-cdf-por-tramos}}
 
     \hypertarget{a-grafica-de-f_xx}{%
-\subsection{\texorpdfstring{a) Grafica de
-\(F_{X}(x)\)}{a) Grafica de F\_\{X\}(x)}}\label{a-grafica-de-f_xx}}
+\subsection{\texorpdfstring{a) 
+\(F_{X}(x)\)}{a) F\_\{X\}(x)}}\label{a-grafica-de-f_xx}}
 
     \[
 F_X(x)=
 \begin{cases}
-0,& x\le -2,\\[2pt]
+0,& x\leq -2,\\[2pt]
 \dfrac{x+2}{2},& -2<x<-1,\\[8pt]
-\dfrac12,& -1\le x<1,\\[6pt]
-\dfrac{x}{2},& 1\le x<2,\\[6pt]
-1,& x\ge 2.
+\dfrac12,& -1\leq x<1,\\[6pt]
+\dfrac{x}{2},& 1\leq x<2,\\[6pt]
+1,& x\geq 2.
 \end{cases}
 \]
 
@@ -1309,8 +1301,8 @@ F_X(x)=
     { \hspace*{\fill} \\}
     
     \hypertarget{b-grafica-de-f_x-1u}{%
-\subsection{\texorpdfstring{b) Grafica de
-\(F_{X}^{-1}(u)\)}{b) Grafica de F\_\{X\}\^{}\{-1\}(u)}}\label{b-grafica-de-f_x-1u}}
+\subsection{\texorpdfstring{b) 
+\(F_{X}^{-1}(u)\)}{b) F\_\{X\}\^{}\{-1\}(u)}}\label{b-grafica-de-f_x-1u}}
 
     Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}.
 
@@ -1318,7 +1310,7 @@ F_X(x)=
 
 \begin{itemize}
 \item
-  Para \(x\le -2\), \(u\in\{0\}\) \[
+  Para \(x\leq -2\), \(u\in\{0\}\) \[
   F_X^{-1}(0)=-2
   \].
 \item
@@ -1331,13 +1323,13 @@ F_X(x)=
   \end{aligned}
   \]
 \item
-  Para \(-1\le x<1\), \(u\in\{\tfrac12\}\):
+  Para \(-1\leq x<1\), \(u\in\{\tfrac12\}\):
 
   \[
   F_X^{-1}(\tfrac12)=-1
   \].
 \item
-  Para \(1\le x<2\), \(u\in(\tfrac12,1)\):
+  Para \(1\leq x<2\), \(u\in(\tfrac12,1)\):
 
   \[
   \begin{aligned}
@@ -1346,7 +1338,7 @@ F_X(x)=
   \end{aligned}
   \]
 \item
-  Para \(x\ge 2\), \(u\in\{1\}\):
+  Para \(x\geq 2\), \(u\in\{1\}\):
 \end{itemize}
 
 \[
@@ -1502,7 +1494,7 @@ tal que
 \end{itemize}
 
     \hypertarget{e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf3n-inversa}{%
-\subsection{e) Cómo generar valores con el método de la función
+\subsection{e) Generar valores
 inversa}\label{e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf3n-inversa}}
 
     \begin{enumerate}
@@ -1514,7 +1506,7 @@ inversa}\label{e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf3n-inver
 \end{enumerate}
 
 \[
-F^{-1}(u)=\inf\{x:\ F(x)\ge u\}.
+F^{-1}(u)=\inf\{x:\ F(x)\geq u\}.
 \]
 
 \begin{enumerate}
@@ -1527,7 +1519,7 @@ F^{-1}(u)=\inf\{x:\ F(x)\ge u\}.
 \end{enumerate}
 
 \[
-\mathbb{P}(X\le x)=\mathbb{P}\!\big(F^{-1}(U)\le x\big)=\mathbb{P}\!\big(U\le F(x)\big)=F(x).
+\mathbb{P}(X\leq x)=\mathbb{P}\!\big(F^{-1}(U)\leq x\big)=\mathbb{P}\!\big(U\leq F(x)\big)=F(x).
 \]
 
     \hypertarget{f-f_xx.}{%
@@ -1600,15 +1592,6 @@ por el cambio \(x\mapsto -x\) y la simetría, así \(\mathbb E[X]=0\).
 =\frac12\Big(\tfrac12-2\Big)+\frac12\Big(2-\tfrac12\Big)=0.
 \]
 
-\textbf{Mezcla.}
-
-\(X\sim \tfrac12\,\mathrm{Unif}(-2,-1)+\tfrac12\,\mathrm{Unif}(1,2)\).
-
-\(\mathbb E[\mathrm{Unif}(-2,-1)]=-1.5\),
-\(\mathbb E[\mathrm{Unif}(1,2)]=1.5\).
-
-\(\mathbb E[X]=\tfrac12(-1.5)+\tfrac12(1.5)=0\).
-
     \hypertarget{i-barx-approx-0.}{%
 \subsection{\texorpdfstring{i)
 \(\bar{x} \approx 0\).}{i) \textbackslash bar\{x\} \textbackslash approx 0.}}\label{i-barx-approx-0.}}
@@ -1638,13 +1621,13 @@ np.float64(0.0005)
 \[
 X=\mathbf 1_{(0,p]}(U)=
 \begin{cases}
-1,& U\le p,\\
+1,& U\leq p,\\
 0,& U>p.
 \end{cases}
 \]
 
 \[
-\mathbb P(X=1)=\mathbb P(U\le p)=p,\qquad
+\mathbb P(X=1)=\mathbb P(U\leq p)=p,\qquad
 \mathbb P(X=0)=\mathbb P(U>p)=1-p,
 \]
 
@@ -1656,8 +1639,8 @@ usando que \(\mathbb P(U=p)=0\). Por tanto
 discreta}\label{variable-aleatoria-discreta}}
 
     \hypertarget{a-grafica-de-f_xx}{%
-\subsection{\texorpdfstring{a) Grafica de
-\(f_X(x)\)}{a) Grafica de f\_X(x)}}\label{a-grafica-de-f_xx}}
+\subsection{\texorpdfstring{a) 
+\(f_X(x)\)}{a) f\_X(x)}}\label{a-grafica-de-f_xx}}
 
     \[
 f_X(x)=
@@ -1689,16 +1672,16 @@ f_X(x)=
     { \hspace*{\fill} \\}
     
     \hypertarget{b-grafica-de-f_xx}{%
-\subsection{\texorpdfstring{b) Grafica de
-\(F_X(x)\)}{b) Grafica de F\_X(x)}}\label{b-grafica-de-f_xx}}
+\subsection{\texorpdfstring{b) 
+\(F_X(x)\)}{b) F\_X(x)}}\label{b-grafica-de-f_xx}}
 
     \[
-F_X(x)=\mathbb P(X\le x)=
+F_X(x)=\mathbb P(X\leq x)=
 \begin{cases}
 0,& x<1,\\
-0.3,& 1\le x<2,\\
-0.8,& 2\le x<3,\\
-1,& x\ge 3.
+0.3,& 1\leq x<2,\\
+0.8,& 2\leq x<3,\\
+1,& x\geq 3.
 \end{cases}
 \]
 
@@ -1722,8 +1705,8 @@ F_X(x)=\mathbb P(X\le x)=
     { \hspace*{\fill} \\}
     
     \hypertarget{c-grafica-de-f-1_xu}{%
-\subsection{\texorpdfstring{c) Grafica de
-\(F^{-1}_X(u)\)}{c) Grafica de F\^{}\{-1\}\_X(u)}}\label{c-grafica-de-f-1_xu}}
+\subsection{\texorpdfstring{c) 
+\(F^{-1}_X(u)\)}{c) F\^{}\{-1\}\_X(u)}}\label{c-grafica-de-f-1_xu}}
 
     Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}.
 
@@ -1740,9 +1723,9 @@ Entonces:
 \[
 F_X^{-1}(u)=
 \begin{cases}
-1,& 0<u\le 0.3,\\
-2,& 0.3<u\le 0.8,\\
-3,& 0.8<u\le 1.
+1,& 0<u\leq 0.3,\\
+2,& 0.3<u\leq 0.8,\\
+3,& 0.8<u\leq 1.
 \end{cases}
 \]
 
@@ -1878,7 +1861,7 @@ Poisson}\label{binomial-geomuxe9trica-y-poisson}}
 
     Implementa generadores por inversión para: - \(X\sim\mathrm{Bin}(m,p)\)
 con \(m = 10\) y \(p = 1/3\) - \(X\sim\mathrm{Geo}(p)\) con
-\(\mathbb P(X=k)=p(1-p)^{k-1}\), \(k\ge 1\) con \(p = 3/4\) -
+\(\mathbb P(X=k)=p(1-p)^{k-1}\), \(k\geq 1\) con \(p = 3/4\) -
 \(X\sim\mathrm{Poisson}(\lambda)\) con \(\lambda = 2\)
 
     \hypertarget{a-binomial}{%
@@ -1917,7 +1900,7 @@ con \(m = 10\) y \(p = 1/3\) - \(X\sim\mathrm{Geo}(p)\) con
     \end{Verbatim}
 
     \hypertarget{b-geometrica}{%
-\subsection{b) Geometrica}\label{b-geometrica}}
+\subsection{b) Geométrica}\label{b-geometrica}}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{28}{\boxspacing}

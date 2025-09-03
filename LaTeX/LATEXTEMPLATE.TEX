@@ -1,8 +1,20 @@
 \documentclass[10pt,a4paper]{article}
 
+    \usepackage[spanish]{babel} % Idioma del documento, fundamental para la correcta separación de sílabas y traducción de términos
+    \usepackage[unicode]{hyperref}
     \usepackage[breakable]{tcolorbox}
     \usepackage{parskip}
     \usepackage{graphicx}
+
+    % \usepackage{amssymb}
+    \AtBeginDocument{%
+      \let\le\leqslant
+      \let\ge\geqslant
+      \let\leq\leqslant
+      \let\geq\geqslant
+    }
+
+
 
     \setkeys{Gin}{keepaspectratio}
 
@@ -41,7 +53,7 @@
     \fi
 
     % --- Change the cell font ---
-    \usepackage{fontspec} 
+    % \usepackage{fontspec} 
     \newfontface\myfont{Inconsolata}[Contextuals={WordInitial,WordFinal}]{}  
 
     \usepackage{fancyvrb}
@@ -70,7 +82,7 @@
     \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
 
 
-    \usepackage{hyperref}
+    
     \usepackage{titling}
     \usepackage{longtable}
     \usepackage{booktabs}
@@ -84,7 +96,7 @@
     
     % Colors for the hyperref package
     \definecolor{urlcolor}{rgb}{0.00,0.00,1.00}
-    \definecolor{linkcolor}{rgb}{0.00,0.00,0.40}
+    \definecolor{linkcolor}{rgb}{0.00,0.00,0.00}
     \definecolor{citecolor}{rgb}{0.149,0.498,0.600}
 
     % ANSI colors
@@ -385,7 +397,7 @@
       }
     % Slightly bigger margins than the latex defaults
         
-    \geometry{verbose,tmargin=1.5in,bmargin=1in,lmargin=1in,rmargin=1in}
+    \geometry{verbose,tmargin=1.5in,bmargin=1in,lmargin=1.125in,rmargin=1.125in}
     
 
 
@@ -394,6 +406,10 @@
     \newunicodechar{∼}{\ensuremath{\sim}}
     \newunicodechar{←}{\ensuremath{\leftarrow}}
     \newunicodechar{…}{\ldots}
+    % \le y \ge se vuelven \leq y \geq
+    \let\le\leq
+    \let\ge\geq
+
 
     % --- Fuentes (texto y matemáticas) ---
     \usepackage{libertinust1math}
@@ -411,22 +427,57 @@
     \newfontface\boldd{EB Garamond Bold}
     \newfontface\bolditalic{EB Garamond  Bold Italic}
     \newfontface\extrabold{EB Garamond ExtraBold}
+    \newfontface\medium{EB Garamond Medium}
 
-    % --- Ajustes de numeración ---
-    \usepackage{etoolbox}
+
+
+    \usepackage{bookmark}              % mejora anchors
+    \hypersetup{hypertexnames=false}   % evita destinos idénticos
+
+    \usepackage{etoolbox,needspace}
+
+    % Rompe página solo en \section y crea ancla propia
+    \pretocmd{\section}{\clearpage\phantomsection\needspace{6\baselineskip}}{}{}
+
+    % No rompas página en \subsection; solo asegura espacio
+    \pretocmd{\subsection}{\phantomsection\needspace{4\baselineskip}\clearpage}{}{}
+
     \setcounter{secnumdepth}{0}
-    % centrar el header
-    \pretocmd{\section}{\clearpage}{}{}
-    % \pretocmd{\subsection}{\clearpage}{}{}
 
+
+    % --- Hacer los títulos de sección y subsección más grandes ---
+    \titleformat{\section}
+      {\boldd\fontsize{34pt}{34pt}\selectfont} % el primer {} es el formato, el segundo {} es el tamaño de línea
+      {\thesection}{18em}{} % el primer {} es el formato, el segundo {} es la separación entre número y título
+      \titleformat{\subsection}
+        {\boldd\fontsize{18pt}{18pt}\selectfont}
+        {\thesubsection}{10em}{}
+    \titlespacing*{\section}{0pt}{0pt}{24pt} % el primer {} es la sangría, el segundo {} es el espacio antes, el tercero {} es el espacio después
+    \titlespacing*{\subsection}{0pt}{0pt}{18pt} % el primer {} es la sangría, el segundo {} es el espacio antes, el tercero {} es el espacio después
 
     % --- Encabezado con nombre de la sección ---
     \usepackage{fancyhdr}
     \pagestyle{fancy}
-    \fancyhf{}    \fancyhead[L]{\small\leftmark}
+    \fancyhf{}
+    \fancyhead[L]{\small\leftmark}
     \fancyhead[R]{\small\thepage}
     \fancyhead[C]{\small\textit{\rightmark}}
     \renewcommand{\headrulewidth}{0.1pt}
+
+    % --- Crear un nuevo estilo de pagina con el numero arriba a la derecha ---
+    \fancypagestyle{myfancy}{
+      \fancyhf{}
+      \fancyhead[R]{\small\thepage}
+      \renewcommand{\headrulewidth}{0pt}
+    }
+
+        % --- Cambia el pagestyle a 'plain' en cada \section ---
+    \let\oldsection\section
+    \renewcommand{\section}{%
+      \clearpage
+      \thispagestyle{myfancy}%
+      \oldsection
+    }
 
     % --- Espaciado ---
     \usepackage{setspace}
@@ -439,14 +490,16 @@
     \begin{titlepage}
     \centering
     \vspace*{4cm}
-    {\Huge\bfseries Metodo de la Trasformada Inversa\par}
+    {\extrabold\fontsize{28pt}{28pt}\selectfont Método de la Trasformada Inversa\par}
     \vspace{1cm}
+    
+    {\medium\fontsize{12pt}{12pt}\selectfont
     {\large Curso:  Temas Selectos I: O25 LAT4032 1\par}
     {\large Profesor:  Rubén Blancas Rivera\par}
-    {\large Equipo:  Ximena Bravo, Heriberto Espino, Celeste Nuñez\par}
+    {\large Equipo: Ana Ximena Bravo, Heriberto Espino, Celeste Núñez\par}
     {\large Universidad de las Américas Puebla\par}
     \vfill
-    {\large \today\par}
+    {\large 2 de Septiembre de 2025 \par}}
     \end{titlepage}
 
 
@@ -459,7 +512,25 @@
     % --- Inicio del documento ---
 \section{Overview}
 This document is a minimal example using EB Garamond for prose and libertinust1math for formulas.
-Links lik are active.
+Links like \url{https://www.example.com} are active.
+
+\section{Introducción}
+En esta sección, se presenta el contexto y los objetivos del documento.
 
 
+\section{Desarrollo}
+En esta sección, se aborda el desarrollo del tema principal del documento.
+
+\newpage
+\subsection{11 Subt}
+Aquí se detalla el primer subtema del desarrollo.
+
+\section{Conclusión}
+En esta sección, se presentan las conclusiones y recomendaciones finales del documento.
+
+\subsection{Recomendaciones, letras con tílde}
+Se sugiere realizar una revisión exhaustiva de los resultados obtenidos y considerar su aplicación en futuros trabajos.
+$$
+x \le \mathbb{E[X]} \ge \mathbb{E[X]}
+$$
 \end{document}

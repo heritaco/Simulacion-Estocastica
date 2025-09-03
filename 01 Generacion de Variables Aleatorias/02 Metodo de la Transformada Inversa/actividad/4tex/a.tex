@@ -1,0 +1,2040 @@
+\documentclass[10pt,a4paper]{article}
+
+    \usepackage[spanish]{babel} % Idioma del documento, fundamental para la correcta separación de sílabas y traducción de términos
+    \usepackage[unicode]{hyperref}
+    \usepackage[breakable]{tcolorbox}
+    \usepackage{parskip}
+    \usepackage{graphicx}
+
+    % \usepackage{amssymb}
+    \AtBeginDocument{%
+      \let\le\leqslant
+      \let\ge\geqslant
+      \let\leq\leqslant
+      \let\geq\geqslant
+    }
+
+
+
+    \setkeys{Gin}{keepaspectratio}
+
+    \let\Oldincludegraphics\includegraphics
+  
+    \usepackage{caption}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb}
+    \usepackage{textcomp}
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+
+    \usepackage{iftex}
+    \ifPDFTeX
+        \usepackage[T1]{fontenc}
+        \IfFileExists{alphabeta.sty}{
+              \usepackage{alphabeta}
+          }{
+              \usepackage[mathletters]{ucs}
+              \usepackage[utf8x]{inputenc}
+          }
+    \else
+        \usepackage{fontspec}
+        \usepackage{unicode-math}
+    \fi
+
+    % --- Change the cell font ---
+    % \usepackage{fontspec} 
+    \newfontface\myfont{Inconsolata}[Contextuals={WordInitial,WordFinal}]{}  
+
+    \usepackage{fancyvrb}
+    \fvset{
+    commandchars=\\\{\},
+    fontsize=\scriptsize,
+    formatcom=\myfont
+    }
+
+    \usepackage{grffile} 
+    \makeatletter 
+    \@ifpackagelater{grffile}{2019/11/01}
+    {
+      % Do nothing on new versions
+    }
+    {
+      \def\Gread@@xetex#1{%
+        \IfFileExists{"\Gin@base".bb}%
+        {\Gread@eps{\Gin@base.bb}}%
+        {\Gread@@xetex@aux#1}%
+      }
+    }
+    \makeatother
+
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+
+
+    
+    \usepackage{titling}
+    \usepackage{longtable}
+    \usepackage{booktabs}
+    \usepackage{array}
+    \usepackage{calc}
+    \usepackage[inline]{enumitem}
+    \usepackage[normalem]{ulem}
+    \usepackage{soul} 
+    \usepackage{mathrsfs}
+
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0.00,0.00,1.00}
+    \definecolor{linkcolor}{rgb}{0.00,0.00,0.00}
+    \definecolor{citecolor}{rgb}{0.149,0.498,0.600}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % common color for the border for error outputs.
+    \definecolor{outerrorbackground}{HTML}{FFFFFF}
+
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{
+        commandchars=\\\{\}
+    }
+
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.149,0.498,0.600}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.035,0.525,0.345}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.035,0.525,0.345}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.035,0.525,0.345}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.639,0.082,0.082}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.639,0.082,0.082}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.000,0.502,0.000}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.475,0.369,0.149}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.639,0.082,0.082}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.639,0.082,0.082}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.639,0.082,0.082}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.000,0.502,0.000}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.706,0.000,0.620}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.000,0.502,0.000}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.000,0.063,0.502}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.000,0.000,0.000}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.706,0.000,0.620}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.149,0.498,0.600}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.000,0.502,0.000}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.000,0.502,0.000}{\textbf{\textit{{#1}}}}}
+    \makeatletter
+
+    \newsavebox\pandoc@box
+    \newcommand*\pandocbounded[1]{%
+      \sbox\pandoc@box{#1}%
+      % scaling factors for width and height
+      \Gscale@div\@tempa\textheight{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+      \Gscale@div\@tempb\linewidth{\wd\pandoc@box}%
+      % select the smaller of both
+      \ifdim\@tempb\p@<\@tempa\p@
+        \let\@tempa\@tempb
+      \fi
+      % scaling accordingly (\@tempa < 1)
+      \ifdim\@tempa\p@<\p@
+        \scalebox{\@tempa}{\usebox\pandoc@box}%
+      % scaling not needed, use as it is
+      \else
+        \usebox{\pandoc@box}%
+      \fi
+    }
+    \makeatother
+
+
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+
+    % Pygments definitions
+    \makeatletter
+    \def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+        \let\PY@ul=\relax \let\PY@tc=\relax%
+        \let\PY@bc=\relax \let\PY@ff=\relax}
+    \def\PY@tok#1{\csname PY@tok@#1\endcsname}
+    \def\PY@toks#1+{\ifx\relax#1\empty\else%
+        \PY@tok{#1}\expandafter\PY@toks\fi}
+    \def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+        \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+    \def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+    \@namedef{PY@tok@w}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+    \@namedef{PY@tok@c}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+    \@namedef{PY@tok@cp}{\def\PY@tc##1{\textcolor[rgb]{0.61,0.40,0.00}{##1}}}
+    \@namedef{PY@tok@k}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@kp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@kt}{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+    \@namedef{PY@tok@o}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+    \@namedef{PY@tok@ow}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+    \@namedef{PY@tok@nb}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@nf}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+    \@namedef{PY@tok@nc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+    \@namedef{PY@tok@nn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+    \@namedef{PY@tok@ne}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.80,0.25,0.22}{##1}}}
+    \@namedef{PY@tok@nv}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+    \@namedef{PY@tok@no}{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+    \@namedef{PY@tok@nl}{\def\PY@tc##1{\textcolor[rgb]{0.46,0.46,0.00}{##1}}}
+    \@namedef{PY@tok@ni}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+    \@namedef{PY@tok@na}{\def\PY@tc##1{\textcolor[rgb]{0.41,0.47,0.13}{##1}}}
+    \@namedef{PY@tok@nt}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@nd}{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+    \@namedef{PY@tok@s}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@sd}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@si}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+    \@namedef{PY@tok@se}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.36,0.12}{##1}}}
+    \@namedef{PY@tok@sr}{\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+    \@namedef{PY@tok@ss}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+    \@namedef{PY@tok@sx}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@m}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+    \@namedef{PY@tok@gh}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+    \@namedef{PY@tok@gu}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+    \@namedef{PY@tok@gd}{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+    \@namedef{PY@tok@gi}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.52,0.00}{##1}}}
+    \@namedef{PY@tok@gr}{\def\PY@tc##1{\textcolor[rgb]{0.89,0.00,0.00}{##1}}}
+    \@namedef{PY@tok@ge}{\let\PY@it=\textit}
+    \@namedef{PY@tok@gs}{\let\PY@bf=\textbf}
+    \@namedef{PY@tok@ges}{\let\PY@bf=\textbf\let\PY@it=\textit}
+    \@namedef{PY@tok@gp}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+    \@namedef{PY@tok@go}{\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+    \@namedef{PY@tok@gt}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+    \@namedef{PY@tok@err}{\def\PY@bc##1{{\setlength{\fboxsep}{\string -\fboxrule}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}}
+    \@namedef{PY@tok@kc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@kd}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@kn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@kr}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@bp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@fm}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+    \@namedef{PY@tok@vc}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+    \@namedef{PY@tok@vg}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+    \@namedef{PY@tok@vi}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+    \@namedef{PY@tok@vm}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+    \@namedef{PY@tok@sa}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@sb}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@sc}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@dl}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@s2}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@sh}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@s1}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@mb}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+    \@namedef{PY@tok@mf}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+    \@namedef{PY@tok@mh}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+    \@namedef{PY@tok@mi}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+    \@namedef{PY@tok@il}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+    \@namedef{PY@tok@mo}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+    \@namedef{PY@tok@ch}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+    \@namedef{PY@tok@cm}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+    \@namedef{PY@tok@cpf}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+    \@namedef{PY@tok@c1}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+    \@namedef{PY@tok@cs}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+
+    \def\PYZbs{\char`\\}
+    \def\PYZus{\char`\_}
+    \def\PYZob{\char`\{}
+    \def\PYZcb{\char`\}}
+    \def\PYZca{\char`\^}
+    \def\PYZam{\char`\&}
+    \def\PYZlt{\char`\<}
+    \def\PYZgt{\char`\>}
+    \def\PYZsh{\char`\#}
+    \def\PYZpc{\char`\%}
+    \def\PYZdl{\char`\$}
+    \def\PYZhy{\char`\-}
+    \def\PYZsq{\char`\'}
+    \def\PYZdq{\char`\"}
+    \def\PYZti{\char`\~}
+    \def\PYZat{@}
+    \def\PYZlb{[}
+    \def\PYZrb{]}
+    \makeatother
+
+
+    % For linebreaks inside Verbatim environment from package fancyvrb.
+    \makeatletter
+        \newbox\Wrappedcontinuationbox
+        \newbox\Wrappedvisiblespacebox
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}}
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}}
+        \newcommand*\Wrappedcontinuationindent {3ex }
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox}
+        \newcommand*\Wrappedbreaksatspecials {%
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}%
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}%
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}%
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}%
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}%
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}%
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}%
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}%
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}%
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}%
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}%
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}%
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}%
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}%
+        }
+        \newcommand*\Wrappedbreaksatpunct {%
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}%
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}%
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}%
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}%
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}%
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}%
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}%
+            \catcode`\.\active
+            \catcode`\,\active
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active
+            \lccode`\~`\~
+        }
+    \makeatother
+
+    \let\OriginalVerbatim=\Verbatim
+    \makeatletter
+    \renewcommand{\Verbatim}[1][1]{%
+        %\parskip\z@skip
+        \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+        \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+        \def\FancyVerbFormatLine ##1{\hsize\linewidth
+            \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut}%
+        }%
+        % If the linebreak is at a space, the latter will be displayed as visible
+        % space at end of first line, and a continuation symbol starts next line.
+        % Stretch/shrink are however usually zero for typewriter font.
+        \def\FV@Space {%
+            \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+            {\kern\fontdimen2\font}%
+        }%
+
+        % Allow breaks at special characters using \PYG... macros.
+        \Wrappedbreaksatspecials
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active
+        \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+    }
+    \makeatother
+
+    % Exact colors from NB
+    \definecolor{incolor}{HTML}{303F9F}
+    \definecolor{outcolor}{HTML}{D84315}
+    \definecolor{cellborder}{HTML}{F7F7F7}
+    \definecolor{cellbackground}{HTML}{F7F7F7}
+
+    % prompt
+    \makeatletter
+    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+    \makeatother
+    \newcommand{\prompt}[4]{
+        {\ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}}
+    }
+    
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+        
+    \geometry{verbose,tmargin=1.5in,bmargin=1in,lmargin=1.125in,rmargin=1.125in}
+    
+
+
+    % --- Nuevos caracteres Unicode ----
+    \usepackage{newunicodechar}
+    \newunicodechar{∼}{\ensuremath{\sim}}
+    \newunicodechar{←}{\ensuremath{\leftarrow}}
+    \newunicodechar{…}{\ldots}
+    % \le y \ge se vuelven \leq y \geq
+    \let\le\leq
+    \let\ge\geq
+
+
+    % --- Fuentes (texto y matemáticas) ---
+    \usepackage{libertinust1math}
+    \usepackage{fontspec}
+    \setmainfont{EB Garamond}[
+        UprightFont = * Regular,
+        ItalicFont = * Italic,
+        BoldFont = * SemiBold,
+        BoldItalicFont = * SemiBold Italic,
+    ]
+
+
+    % --- Secciones y subsecciones ---
+    \usepackage{titlesec}
+    \newfontface\boldd{EB Garamond Bold}
+    \newfontface\bolditalic{EB Garamond  Bold Italic}
+    \newfontface\extrabold{EB Garamond ExtraBold}
+    \newfontface\medium{EB Garamond Medium}
+
+
+
+    \usepackage{bookmark}              % mejora anchors
+    \hypersetup{hypertexnames=false}   % evita destinos idénticos
+
+    \usepackage{etoolbox,needspace}
+
+    % Rompe página solo en \section y crea ancla propia
+    \pretocmd{\section}{\clearpage\phantomsection\needspace{6\baselineskip}}{}{}
+
+    % No rompas página en \subsection; solo asegura espacio
+    \pretocmd{\subsection}{\phantomsection\needspace{4\baselineskip}\clearpage}{}{}
+
+    \setcounter{secnumdepth}{0}
+
+
+    % --- Hacer los títulos de sección y subsección más grandes ---
+    \titleformat{\section}
+      {\boldd\fontsize{34pt}{34pt}\selectfont} % el primer {} es el formato, el segundo {} es el tamaño de línea
+      {\thesection}{18em}{} % el primer {} es el formato, el segundo {} es la separación entre número y título
+      \titleformat{\subsection}
+        {\boldd\fontsize{18pt}{18pt}\selectfont}
+        {\thesubsection}{10em}{}
+    \titlespacing*{\section}{0pt}{0pt}{24pt} % el primer {} es la sangría, el segundo {} es el espacio antes, el tercero {} es el espacio después
+    \titlespacing*{\subsection}{0pt}{0pt}{18pt} % el primer {} es la sangría, el segundo {} es el espacio antes, el tercero {} es el espacio después
+
+    % --- Encabezado con nombre de la sección ---
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhf{}
+    \fancyhead[L]{\small\leftmark}
+    \fancyhead[R]{\small\thepage}
+    \fancyhead[C]{\small\textit{\rightmark}}
+    \renewcommand{\headrulewidth}{0.1pt}
+
+    % --- Crear un nuevo estilo de pagina con el numero arriba a la derecha ---
+    \fancypagestyle{myfancy}{
+      \fancyhf{}
+      \fancyhead[R]{\small\thepage}
+      \renewcommand{\headrulewidth}{0pt}
+    }
+
+        % --- Cambia el pagestyle a 'plain' en cada \section ---
+    \let\oldsection\section
+    \renewcommand{\section}{%
+      \clearpage
+      \thispagestyle{myfancy}%
+      \oldsection
+    }
+
+    % --- Espaciado ---
+    \usepackage{setspace}
+    \setstretch{1.2}
+    \setlength{\parskip}{0.2em}
+
+    \begin{document}
+
+    % --- Portada ---
+    \begin{titlepage}
+    \centering
+    \vspace*{4cm}
+    {\extrabold\fontsize{28pt}{28pt}\selectfont Método de la Trasformada Inversa\par}
+    \vspace{1cm}
+    
+    {\medium\fontsize{12pt}{12pt}\selectfont
+    {\large Curso:  Temas Selectos I: O25 LAT4032 1\par}
+    {\large Profesor:  Rubén Blancas Rivera\par}
+    {\large Equipo: Ana Ximena Bravo, Heriberto Espino, Celeste Núñez\par}
+    {\large Universidad de las Américas Puebla\par}
+    \vfill
+    {\large 2 de Septiembre de 2025 \par}}
+    \end{titlepage}
+
+
+    % --- Tabla de contenidos ---
+    \renewcommand{\contentsname}{Índice}
+    \tableofcontents
+    \thispagestyle{empty}
+    \newpage
+
+    % --- Inicio del documento ---
+
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{1}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{math}
+\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{random}
+\PY{k+kn}{from}\PY{+w}{ }\PY{n+nn}{collections}\PY{+w}{ }\PY{k+kn}{import} \PY{n}{Counter}
+
+\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{numpy}\PY{+w}{ }\PY{k}{as}\PY{+w}{ }\PY{n+nn}{np}
+\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot}\PY{+w}{ }\PY{k}{as}\PY{+w}{ }\PY{n+nn}{plt}
+\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{seaborn}\PY{+w}{ }\PY{k}{as}\PY{+w}{ }\PY{n+nn}{sns}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{2}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{color} \PY{o}{=} \PY{n}{sns}\PY{o}{.}\PY{n}{color\PYZus{}palette}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{muted}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{shuffle}\PY{p}{(}\PY{n}{color}\PY{p}{)}
+\PY{n}{sns}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{n}{style}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{whitegrid}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{context}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{paper}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{palette}\PY{o}{=}\PY{n}{color}\PY{p}{)}
+
+\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{matplotlib}\PY{+w}{ }\PY{k}{as}\PY{+w}{ }\PY{n+nn}{mpl}
+\PY{n}{mpl}\PY{o}{.}\PY{n}{rcParams}\PY{o}{.}\PY{n}{update}\PY{p}{(}\PY{p}{\PYZob{}}
+    \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{text.usetex}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{k+kc}{True}\PY{p}{,}          \PY{c+c1}{\PYZsh{} route all text through LaTeX}
+    \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pgf.texsystem}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{xelatex}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}  
+    \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pgf.rcfonts}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{k+kc}{False}\PY{p}{,}         \PY{c+c1}{\PYZsh{} do not override with mpl fonts}
+    \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{font.family}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{serif}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+    \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{text.latex.preamble}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+sa}{r}\PY{l+s+s2}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{usepackage}\PY{l+s+si}{\PYZob{}libertinust1math\PYZcb{}}
+\PY{l+s+s2}{\PYZdq{}\PYZdq{}\PYZdq{}}\PY{p}{,}
+\PY{p}{\PYZcb{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{distribuciuxf3n-uniforme-ab}{%
+\section{\texorpdfstring{1. Distribución Uniforme
+\((a,b)\)}{1. Distribución Uniforme (a,b)}}\label{distribuciuxf3n-uniforme-ab}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}. Si
+\(X\sim\mathrm{Unif}(a,b)\), entonces su funcion de distribucion
+acumulada es:
+
+\[
+F_X(x)=\frac{x-a}{b-a}\,\mathbf{1}_{[a,b]}(x) + \mathbf{1}_{(b,\infty)}(x)
+\]
+
+Encontrando la inversa:
+
+\[
+\begin{aligned}
+F_X(x)=u &\quad\iff\quad \frac{x-a}{b-a}=u,\\
+         &\quad\iff\quad x-a=(b-a)\,u,\\
+         &\quad\iff\quad x=a+(b-a)\,u.
+\end{aligned}
+\]
+
+Entonces:
+
+\[
+F_X^{-1}(u)=a+(b-a)\,u.
+\]
+
+    \hypertarget{distribuciuxf3n-discreta}{%
+\section{2. Distribución Discreta}\label{distribuciuxf3n-discreta}}
+
+    \hypertarget{a-grafica-de-f_xx}{%
+\subsection{\texorpdfstring{a) Grafica de
+\(f_X(x)\)}{a) Grafica de f\_X(x)}}\label{a-grafica-de-f_xx}}
+
+    \[
+f_X(x)=\mathbb P(X = x)=
+\begin{cases}
+0.4,& x =1,\\
+0.3,& x =2,\\
+0.2,& x =3,\\
+0.1,& x =4,\\
+0,& \text{en otro caso}
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{3}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x\PYZus{}vals} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{]}
+\PY{n}{pmf} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{0.4}\PY{p}{,} \PY{l+m+mf}{0.3}\PY{p}{,} \PY{l+m+mf}{0.2}\PY{p}{,} \PY{l+m+mf}{0.1}\PY{p}{]}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{vlines}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{n}{linestyles}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}X\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}f\PYZus{}X(x)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_7_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{b-grafica-de-f_xx}{%
+\subsection{\texorpdfstring{b) Grafica de
+\(F_X(x)\)}{b) Grafica de F\_X(x)}}\label{b-grafica-de-f_xx}}
+
+    \[
+F_X(x)=\mathbb P(X\le x)=
+\begin{cases}
+0,& x<1,\\
+0.4,& 1\le x<2,\\
+0.7,& 2\le x<3,\\
+0.9,& 3\le x<4,\\
+1,& x\ge 4.
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{4}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x\PYZus{}cdf} \PY{o}{=} \PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]}
+\PY{n}{F\PYZus{}cdf} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mf}{0.4}\PY{p}{,} \PY{l+m+mf}{0.7}\PY{p}{,} \PY{l+m+mf}{0.9}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{step}\PY{p}{(}\PY{n}{x\PYZus{}cdf}\PY{p}{,} \PY{n}{F\PYZus{}cdf}\PY{p}{,} \PY{n}{where}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{post}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}F\PYZus{}X(x)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_10_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{c-grafica-de-f-1_xu}{%
+\subsection{\texorpdfstring{c) Grafica de
+\(F^{-1}_X(u)\)}{c) Grafica de F\^{}\{-1\}\_X(u)}}\label{c-grafica-de-f-1_xu}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}.
+
+\[
+\begin{aligned}
+F_X(x)=u 
+&\;\iff\; u\in(0,0.4] \;\Rightarrow\; x=1,\\
+&\;\iff\; u\in(0.4,0.7] \;\Rightarrow\; x=2,\\
+&\;\iff\; u\in(0.7,0.9] \;\Rightarrow\; x=3,\\
+&\;\iff\; u\in(0.9,1] \;\Rightarrow\; x=4.
+\end{aligned}
+\]
+
+Entonces:
+
+\[
+F_X^{-1}(u)=
+\begin{cases}
+1,& 0<u\le 0.4,\\
+2,& 0.4<u\le 0.7,\\
+3,& 0.7<u\le 0.9,\\
+4,& 0.9<u\le 1.
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{u\PYZus{}vals} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mf}{0.4}\PY{p}{,} \PY{l+m+mf}{0.7}\PY{p}{,} \PY{l+m+mf}{0.9}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}
+\PY{n}{F\PYZus{}inv\PYZus{}vals} \PY{o}{=} \PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{step}\PY{p}{(}\PY{n}{u\PYZus{}vals}\PY{p}{,} \PY{n}{F\PYZus{}inv\PYZus{}vals}\PY{p}{,} \PY{n}{where}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{post}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{u}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}F\PYZus{}X\PYZca{}}\PY{l+s+s2}{\PYZob{}}\PY{l+s+s2}{\PYZhy{}1\PYZcb{}(u)\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_13_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{d-programa}{%
+\subsection{d) Programa}\label{d-programa}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{6}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{F\PYZus{}inv}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{p}{:}
+    \PY{k}{if} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{0.4}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{1}
+    \PY{k}{elif} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{0.7}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{2}
+    \PY{k}{elif} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{0.9}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{3}
+    \PY{k}{else}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{4}
+
+\PY{n}{u\PYZus{}samples} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{uniform}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{500}\PY{p}{)}
+\PY{n}{x\PYZus{}samples} \PY{o}{=} \PY{p}{[}\PY{n}{F\PYZus{}inv}\PY{p}{(}\PY{n}{u}\PY{p}{)} \PY{k}{for} \PY{n}{u} \PY{o+ow}{in} \PY{n}{u\PYZus{}samples}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{e-histograma}{%
+\subsection{e) Histograma}\label{e-histograma}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{plt}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{x\PYZus{}samples}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mf}{5.5}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{vlines}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{n}{linestyles}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{n}{color}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{n}{color}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}X\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Densidad}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Histograma de la Variable Aleatoria X a partir de \PYZdl{}F\PYZus{}X\PYZca{}}\PY{l+s+s2}{\PYZob{}}\PY{l+s+s2}{\PYZhy{}1\PYZcb{}(u)\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_17_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{exponencial-mathrmexplambda}{%
+\section{\texorpdfstring{3. Exponencial
+\(\mathrm{Exp}(\lambda)\)}{3. Exponencial \textbackslash mathrm\{Exp\}(\textbackslash lambda)}}\label{exponencial-mathrmexplambda}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}. Si
+\(X\sim\mathrm{Exp}(\lambda)\), entonces su funcion de distribucion
+acumulada es:
+
+\[
+F_X(x)=\bigl(1-e^{-\lambda x}\bigr)\,\mathbf{1}_{[0,\infty)}(x)
+\]
+
+Encontrando la inversa:
+
+\[
+\begin{aligned}
+F_X(x)=u &\;\iff\; 1-e^{-\lambda x}=u,\\
+         &\;\iff\; e^{-\lambda x}=1-u,\\
+         &\;\iff\; -\lambda x=\ln(1-u),\\
+         &\;\iff\; x=-\frac{1}{\lambda}\,\ln(1-u).
+\end{aligned}
+\]
+
+Entonces:
+
+\[
+F_X^{-1}(u)=-\frac{1}{\lambda}\,\ln(1-u).
+\]
+
+Por lo tanto, con \(U\sim\mathrm{Unif}(0,1)\),
+
+\[
+X=F_X^{-1}(U)=-\frac{1}{\lambda}\ln(1-U)\sim\mathrm{Exp}(\lambda).
+\]
+
+    \hypertarget{weibull-rlambda}{%
+\section{\texorpdfstring{4. Weibull
+\((r,\lambda)\)}{4. Weibull (r,\textbackslash lambda)}}\label{weibull-rlambda}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}, con \(r>0\) y \(\lambda>0\).
+Si \(X\sim\mathrm{Weibull}(r,\lambda)\), entonces su funcion de
+distribucion acumulada es:
+
+\[
+F_X(x)=\bigl(1-e^{-(\lambda x)^r}\bigr)\,\mathbf{1}_{[0,\infty)}(x)
+\]
+
+Encontrando la inversa:
+
+\[
+\begin{aligned}
+F_X(x)=u &\;\iff\; 1-e^{-(\lambda x)^r}=u,\\
+         &\;\iff\; e^{-(\lambda x)^r}=1-u,\\
+         &\;\iff\; -(\lambda x)^r=\ln(1-u),\\
+         &\;\iff\; (\lambda x)^r=-\ln(1-u),\\
+         &\;\iff\; x=\frac{1}{\lambda}\,\bigl[-\ln(1-u)\bigr]^{1/r}.
+\end{aligned}
+\]
+
+Entonces:
+
+\[
+F_X^{-1}(u)=\frac{1}{\lambda}\,\bigl[-\ln(1-u)\bigr]^{1/r}.
+\]
+
+Por lo tanto, con \(U\sim\mathrm{Unif}(0,1)\):
+
+\[
+X=F_X^{-1}(U)=\frac{1}{\lambda}\,\bigl[-\ln(1-U)\bigr]^{1/r}\sim\mathrm{Weibull}(r,\lambda).
+\]
+
+    \hypertarget{cauchy-ab}{%
+\section{\texorpdfstring{5. Cauchy
+\((a,b)\)}{5. Cauchy (a,b)}}\label{cauchy-ab}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}. Si
+\(X\sim\mathrm{Cauchy}(a,b)\), entonces su funcion de distribucion
+acumulada es:
+
+\[
+F_X(x)=\frac{1}{\pi}\arctan\!\Big(\frac{x-a}{b}\Big)+\frac{1}{2},\qquad x\in\mathbb{R},\; b>0.
+\]
+
+Encontrando la inversa:
+
+\[
+\begin{aligned}
+F_X(x)=u 
+&\;\iff\; \frac{1}{\pi}\arctan\!\Big(\frac{x-a}{b}\Big)+\frac{1}{2}=u,\\
+&\;\iff\; \arctan\!\Big(\frac{x-a}{b}\Big)=\pi\!\left(u-\tfrac{1}{2}\right),\\
+&\;\iff\; \frac{x-a}{b}=\tan\!\big(\pi(u-\tfrac{1}{2})\big),\\
+&\;\iff\; x=a+b\,\tan\!\big(\pi(u-\tfrac{1}{2})\big).
+\end{aligned}
+\]
+
+Entonces:
+
+\[
+F_X^{-1}(u)=a+b\,\tan\!\big(\pi(u-\tfrac{1}{2})\big).
+\]
+
+Por lo tanto,
+\(X=F_X^{-1}(U)=a+b\,\tan(\pi(U-\tfrac{1}{2}))\sim\mathrm{Cauchy}(a,b)\).
+
+    \hypertarget{pareto-i-ab}{%
+\section{\texorpdfstring{6. Pareto I
+\((a,b)\)}{6. Pareto I (a,b)}}\label{pareto-i-ab}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}, con \(a>0\) y \(b>0\). Si
+\(X\sim\mathrm{Pareto\ I}(a,b)\), entonces su funcion de distribucion
+acumulada es:
+
+\[
+F_X(x)=\bigl(1-(b/x)^a\bigr)\,\mathbf{1}_{[b,\infty)}(x)
+\]
+
+Encontrando la inversa:
+
+\[
+\begin{aligned}
+F_X(x)=u &\;\iff\; 1-\left(\frac{b}{x}\right)^a=u,\\
+         &\;\iff\; \left(\frac{b}{x}\right)^a=1-u,\\
+         &\;\iff\; \frac{b}{x}=(1-u)^{1/a},\\
+         &\;\iff\; x=b\,(1-u)^{-1/a}.
+\end{aligned}
+\]
+
+Entonces:
+
+\[
+F_X^{-1}(u)=b\,(1-u)^{-1/a}.
+\]
+
+Por lo tanto,
+
+\[
+X=F_X^{-1}(U)=b\,(1-U)^{-1/a}\sim\mathrm{Pareto\ I}(a,b).
+\]
+
+    \hypertarget{muxednimo-x_1minx_1dotsx_n}{%
+\section{\texorpdfstring{7. Mínimo
+\(X_{(1)}=\min\{X_1,\dots,X_n\}\)}{7. Mínimo X\_\{(1)\}=\textbackslash min\textbackslash\{X\_1,\textbackslash dots,X\_n\textbackslash\}}}\label{muxednimo-x_1minx_1dotsx_n}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)} y
+\(X_{(1)}:=\min\{X_1,\dots,X_n\}\) con \(X_i\) i.i.d. de CDF \(F\).
+
+\[
+F_{X_{(1)}}(x)=\mathbb P(X_{(1)}\le x)
+=1-\mathbb P(X_1>x,\dots,X_n>x)
+=1-\bigl(1-F(x)\bigr)^n.
+\]
+
+\textbf{Encontrando la inversa:}
+
+\[
+\begin{aligned}
+F_{X_{(1)}}(x)=u 
+&\;\iff\; 1-\bigl(1-F(x)\bigr)^n=u,\\
+&\;\iff\; \bigl(1-F(x)\bigr)^n=1-u,\\
+&\;\iff\; 1-F(x)=(1-u)^{1/n},\\
+&\;\iff\; F(x)=1-(1-u)^{1/n},\\
+&\;\iff\; x=F^{-1}\!\bigl(1-(1-u)^{1/n}\bigr).
+\end{aligned}
+\]
+
+Entonces:
+
+\[
+F_{X_{(1)}}^{-1}(u)=F^{-1}\!\bigl(1-(1-u)^{1/n}\bigr),\quad 0<u<1.
+\]
+
+    \hypertarget{mixta-xminym-con-ysimmathrmexplambda}{%
+\section{\texorpdfstring{8. Mixta \(X=\min\{Y,M\}\) con
+\(Y\sim\mathrm{Exp}(\lambda)\)}{8. Mixta X=\textbackslash min\textbackslash\{Y,M\textbackslash\} con Y\textbackslash sim\textbackslash mathrm\{Exp\}(\textbackslash lambda)}}\label{mixta-xminym-con-ysimmathrmexplambda}}
+
+    Sea con \(U\sim\mathrm{Unif}(0,1)\),
+
+\[
+X=F_X^{-1}(U)=-\frac{1}{\lambda}\ln(1-U)\sim\mathrm{Exp}(\lambda).
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{8}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{cdf\PYZus{}exp}\PY{p}{(}\PY{n}{lam}\PY{p}{,} \PY{n}{x}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{l+m+mf}{1.0} \PY{o}{\PYZhy{}} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{lam} \PY{o}{*} \PY{n}{x}\PY{p}{)}
+
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{inv\PYZus{}exp}\PY{p}{(}\PY{n}{lam}\PY{p}{,} \PY{n}{u}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{o}{\PYZhy{}} \PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{u}\PY{p}{)} \PY{o}{/} \PY{n}{lam}
+
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{exp\PYZus{}ab}\PY{p}{(}\PY{n}{lam}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{n}\PY{p}{)}\PY{p}{:}
+    \PY{n}{Fa}\PY{p}{,} \PY{n}{Fb} \PY{o}{=} \PY{n}{cdf\PYZus{}exp}\PY{p}{(}\PY{n}{lam}\PY{p}{,} \PY{n}{a}\PY{p}{)}\PY{p}{,} \PY{n}{cdf\PYZus{}exp}\PY{p}{(}\PY{n}{lam}\PY{p}{,} \PY{n}{b}\PY{p}{)}
+    \PY{n}{U01} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{rand}\PY{p}{(}\PY{n}{n}\PY{p}{)}               \PY{c+c1}{\PYZsh{} \PYZti{} Unif(0,1)}
+    \PY{n}{Uab} \PY{o}{=} \PY{n}{Fa} \PY{o}{+} \PY{n}{U01} \PY{o}{*} \PY{p}{(}\PY{n}{Fb} \PY{o}{\PYZhy{}} \PY{n}{Fa}\PY{p}{)}            \PY{c+c1}{\PYZsh{} \PYZti{} Unif(Fa,Fb)}
+    \PY{k}{return} \PY{n}{inv\PYZus{}exp}\PY{p}{(}\PY{n}{lam}\PY{p}{,} \PY{n}{Uab}\PY{p}{)}              \PY{c+c1}{\PYZsh{} Y = F\PYZca{}\PYZob{}\PYZhy{}1\PYZcb{}(U) ∈ [a,b]}
+
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{pmf\PYZus{}exp}\PY{p}{(}\PY{n}{lam}\PY{p}{,} \PY{n}{x}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{n}{lam} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{lam} \PY{o}{*} \PY{n}{x}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{9}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{lam}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{n} \PY{o}{=} \PY{l+m+mf}{2.0}\PY{p}{,} \PY{l+m+mf}{0.0}\PY{p}{,} \PY{l+m+mf}{5.0}\PY{p}{,} \PY{l+m+mi}{50\PYZus{}000}
+\PY{n}{Y} \PY{o}{=} \PY{n}{exp\PYZus{}ab}\PY{p}{(}\PY{n}{lam}\PY{p}{,} \PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{n}\PY{p}{)}
+
+\PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{400}\PY{p}{)}
+\PY{n}{Fa}\PY{p}{,} \PY{n}{Fb} \PY{o}{=} \PY{n}{cdf\PYZus{}exp}\PY{p}{(}\PY{n}{lam}\PY{p}{,} \PY{n}{a}\PY{p}{)}\PY{p}{,} \PY{n}{cdf\PYZus{}exp}\PY{p}{(}\PY{n}{lam}\PY{p}{,} \PY{n}{b}\PY{p}{)}
+\PY{n}{fY} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZgt{}}\PY{o}{=}\PY{n}{a}\PY{p}{)}\PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZlt{}}\PY{o}{=}\PY{n}{b}\PY{p}{)}\PY{p}{,} \PY{n}{pmf\PYZus{}exp}\PY{p}{(}\PY{n}{lam}\PY{p}{,} \PY{n}{x}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{Fb}\PY{o}{\PYZhy{}}\PY{n}{Fa}\PY{p}{)}\PY{p}{,} \PY{l+m+mf}{0.0}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{fY}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}Y }\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{sim }\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{mathrm}\PY{l+s+se}{\PYZob{}\PYZob{}}\PY{l+s+s2}{Exp}\PY{l+s+se}{\PYZcb{}\PYZcb{}}\PY{l+s+s2}{(}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{lambda=}\PY{l+s+si}{\PYZob{}}\PY{n}{lam}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, a=}\PY{l+s+si}{\PYZob{}}\PY{n}{a}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, b=}\PY{l+s+si}{\PYZob{}}\PY{n}{b}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{)\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}x\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}f\PYZus{}Y(x)\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_31_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{a-grafica-de-f_xx}{%
+\subsection{\texorpdfstring{a) Grafica de
+\(F_X(x)\)}{a) Grafica de F\_X(x)}}\label{a-grafica-de-f_xx}}
+
+    Por definición,
+
+\[
+F_X(x)=\mathbb P(X\le x)=
+\begin{cases}
+0,&x<0,\\[2pt]
+\mathbb P(\min\{Y,M\}\le x),&0\le x<M,\\[2pt]
+1,&x\ge M.
+\end{cases}
+\]
+
+Para \(0\le x<M\): \(\min\{Y,M\}\le x\) equivale a \(Y\le x\). Como
+\(Y\sim\mathrm{Exp}(\lambda)\),
+
+\[
+\mathbb P(Y\le x)=1-e^{-\lambda x}.
+\]
+
+Entonces,
+
+\[
+F_X(x)=
+\begin{cases}
+0,&x<0,\\
+1-e^{-\lambda x},&0\le x<M,\\
+1,&x\ge M.
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{10}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{M} \PY{o}{=} \PY{l+m+mf}{1.5}
+\PY{n}{FY} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZlt{}}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mf}{0.0}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZlt{}}\PY{n}{M}\PY{p}{,} \PY{n}{cdf\PYZus{}exp}\PY{p}{(}\PY{n}{lam}\PY{p}{,} \PY{n}{x}\PY{p}{)}\PY{p}{,} \PY{l+m+mf}{1.0}\PY{p}{)}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{FY}\PY{p}{,} \PY{n}{lw}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+sa}{r}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}F\PYZus{}Y\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{n}{M}\PY{p}{,} \PY{n}{ls}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{lw}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x = M}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylim}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{1.05}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}x\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}F\PYZus{}Y(x)\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_34_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{b-grafica-de-f-1_xu}{%
+\subsection{\texorpdfstring{b) Grafica de
+\(F^{-1}_X(u)\)}{b) Grafica de F\^{}\{-1\}\_X(u)}}\label{b-grafica-de-f-1_xu}}
+
+    Sea \(Y\sim\mathrm{Exp}(\lambda)\), \(M>0\), \(X=\min\{Y,M\}\) y
+\(U\sim\mathrm{Unif}(0,1)\). Usamos la pseudoinversa izquierda
+\(F_X^{-1}(u)=\inf\{x:F_X(x)\ge u\}\).
+
+\textbf{Encontrando la inversa:}
+
+\begin{itemize}
+\item
+  Para \(x<0\), \(u\in\{0\}\):
+
+  \[
+  F_X^{-1}(0)=0.
+  \]
+\item
+  Para \(0\le x<M\), \(u\in\big(0,\;1-e^{-\lambda M}\big)\):
+
+  \[
+  \begin{aligned}
+  F_X(x)=u 
+  &\iff 1-e^{-\lambda x}=u,\\
+  &\iff e^{-\lambda x}=1-u,\\
+  &\iff x=-\frac{1}{\lambda}\ln(1-u).
+  \end{aligned}
+  \]
+\item
+  En el salto \(x=M\), \(u\in\big[1-e^{-\lambda M},\,1\big]\):
+
+  \[
+  F_X^{-1}(u)=M.
+  \]
+\end{itemize}
+
+\textbf{Entonces:}
+
+\[
+F_X^{-1}(u)=
+\begin{cases}
+0, & u=0,\\[6pt]
+-\dfrac{1}{\lambda}\ln(1-u), & 0<u<1-e^{-\lambda M},\\[10pt]
+M, & 1-e^{-\lambda M}\le u\le 1.
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{11}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{q\PYZus{}X}\PY{p}{(}\PY{n}{u}\PY{p}{,} \PY{n}{lam}\PY{o}{=}\PY{l+m+mf}{1.0}\PY{p}{,} \PY{n}{M}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{:}
+    \PY{n}{u} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{asarray}\PY{p}{(}\PY{n}{u}\PY{p}{)}
+    \PY{n}{t} \PY{o}{=} \PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{lam}\PY{o}{*}\PY{n}{M}\PY{p}{)}
+    \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty\PYZus{}like}\PY{p}{(}\PY{n}{u}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
+    \PY{n}{x}\PY{p}{[}\PY{n}{u}\PY{o}{==}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{0.0}
+    \PY{n}{mask} \PY{o}{=} \PY{p}{(}\PY{n}{u}\PY{o}{\PYZgt{}}\PY{l+m+mi}{0}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{u}\PY{o}{\PYZlt{}}\PY{n}{t}\PY{p}{)}
+    \PY{n}{x}\PY{p}{[}\PY{n}{mask}\PY{p}{]} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{np}\PY{o}{.}\PY{n}{log1p}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{u}\PY{p}{[}\PY{n}{mask}\PY{p}{]}\PY{p}{)} \PY{o}{/} \PY{n}{lam}
+    \PY{n}{x}\PY{p}{[}\PY{n}{u}\PY{o}{\PYZgt{}}\PY{o}{=}\PY{n}{t}\PY{p}{]} \PY{o}{=} \PY{n}{M}
+    \PY{k}{return} \PY{n}{x}
+
+\PY{n}{u} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1000}\PY{p}{,} \PY{n}{endpoint}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\PY{n}{xq} \PY{o}{=} \PY{n}{q\PYZus{}X}\PY{p}{(}\PY{n}{u}\PY{p}{,} \PY{n}{lam}\PY{p}{,} \PY{n}{M}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{u}\PY{p}{,} \PY{n}{xq}\PY{p}{,} \PY{n}{lw}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+sa}{r}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}Q\PYZus{}X\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{lam}\PY{o}{*}\PY{n}{M}\PY{p}{)}\PY{p}{,} \PY{n}{ls}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{lw}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+sa}{r}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}1 \PYZhy{} F\PYZus{}Y(M)\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{axhline}\PY{p}{(}\PY{n}{M}\PY{p}{,} \PY{n}{ls}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{lw}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x = M}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylim}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{n}{M}\PY{p}{)}\PY{o}{+}\PY{l+m+mf}{0.1}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}u\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}x\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_37_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{c-f_xf-1_xu-geq-u-para-u-in-0-1.}{%
+\subsection{\texorpdfstring{c) \(F_X(F^{-1}_X(u)) \geq u,\) para
+\(u \in [0, 1]\).}{c) F\_X(F\^{}\{-1\}\_X(u)) \textbackslash geq u, para u \textbackslash in {[}0, 1{]}.}}\label{c-f_xf-1_xu-geq-u-para-u-in-0-1.}}
+
+    \begin{itemize}
+\item
+  Si \(0<u<1-e^{-\lambda M}\): Como \(x=-(1/\lambda)\ln(1-u)\in(0,M)\),
+  entonces:
+
+  \[
+  F_X\big(F_X^{-1}(u)\big)=F_X(x)=1-e^{-\lambda x}=u.
+  \]
+\item
+  Si \(1-e^{-\lambda M}\le u\le1\): \(F_X^{-1}(u)=M\) y
+
+  \[
+  F_X\big(F_X^{-1}(u)\big)=F_X(M)=1\ \ge\ u.
+  \]
+\item
+  En \(u=0\): \(F_X^{-1}(0)=0\) y \(F_X(0)=0\ge 0\).
+\end{itemize}
+
+    \hypertarget{d-f-1_xf_xx-leq-x-para-x-tal-que-f_xx-in-0-1.}{%
+\subsection{\texorpdfstring{d) \(F^{-1}_X(F_X(x)) \leq x,\) para \(x\)
+tal que
+\(F_X(x) \in [0, 1]\).}{d) F\^{}\{-1\}\_X(F\_X(x)) \textbackslash leq x, para x tal que F\_X(x) \textbackslash in {[}0, 1{]}.}}\label{d-f-1_xf_xx-leq-x-para-x-tal-que-f_xx-in-0-1.}}
+
+    \begin{itemize}
+\item
+  Si \(x<0\): \(F_X(x)=0\) y \(F_X^{-1}(0)=0\le x\)
+\item
+  Si \(x\ge M\): \(F_X(x)=1\) y \(F_X^{-1}(1)=M\le x\).
+\item
+  Si \(0\le x < M\):
+\end{itemize}
+
+\[
+F_X^{-1}(F_X(x))=F_X^{-1}\left(1-e^{-\lambda x}\right)= -\dfrac{1}{\lambda}\ln(1-\left(1-e^{-\lambda x}\right))= -\dfrac{1}{\lambda}\ln(e^{-\lambda x})=x.
+\]
+
+    \hypertarget{e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf3n-inversa}{%
+\subsection{e) Cómo generar valores con el método de la función
+inversa}\label{e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf3n-inversa}}
+
+    \begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(U\sim\mathrm{Unif}(0,1)\).
+\item
+  \(X=F^{-1}(U)\). Aquí:
+\end{enumerate}
+
+\[
+X=\begin{cases}
+-\dfrac{1}{\lambda}\ln(1-U),&U<1-e^{-\lambda M},\\[6pt]
+M,&U\ge 1-e^{-\lambda M}.
+\end{cases}
+\]
+
+    \hypertarget{mixta-xmaxym-con-ysimmathrmexplambda}{%
+\section{\texorpdfstring{9. Mixta \(X=\max\{Y,M\}\) con
+\(Y\sim\mathrm{Exp}(\lambda)\)}{9. Mixta X=\textbackslash max\textbackslash\{Y,M\textbackslash\} con Y\textbackslash sim\textbackslash mathrm\{Exp\}(\textbackslash lambda)}}\label{mixta-xmaxym-con-ysimmathrmexplambda}}
+
+    \hypertarget{a-grafica-de-f_xx}{%
+\subsection{\texorpdfstring{a) Grafica de
+\(F_X(x)\)}{a) Grafica de F\_X(x)}}\label{a-grafica-de-f_xx}}
+
+    Para \(X=\max\{Y,M\}\) con \(Y\sim\mathrm{Exp}(\lambda)\) y \(M>0\):
+
+\[
+F_X(x)=\mathbb P(X\le x)=
+\begin{cases}
+0,& x<M,\\[4pt]
+1-e^{-\lambda x},& x\ge M.
+\end{cases}
+\]
+
+Masa en \(M\): \(\mathbb P(X=M)=1-e^{-\lambda M}\). Densidad en
+\((M,\infty)\):
+
+\[
+f_X(x)=\lambda e^{-\lambda x}\,\mathbf 1_{\{x>M\}}.
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{12}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{lam} \PY{o}{=} \PY{l+m+mf}{1.2}   \PY{c+c1}{\PYZsh{} λ \PYZgt{} 0}
+\PY{n}{M} \PY{o}{=} \PY{l+m+mf}{2.0}     \PY{c+c1}{\PYZsh{} M \PYZgt{} 0}
+
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{F\PYZus{}X}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{lam}\PY{p}{,} \PY{n}{M}\PY{p}{)}\PY{p}{:}
+    \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{asarray}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
+    \PY{n}{out} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros\PYZus{}like}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+    \PY{n}{mask} \PY{o}{=} \PY{n}{x} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n}{M}
+    \PY{n}{out}\PY{p}{[}\PY{n}{mask}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{1.0} \PY{o}{\PYZhy{}} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{lam} \PY{o}{*} \PY{n}{x}\PY{p}{[}\PY{n}{mask}\PY{p}{]}\PY{p}{)}
+    \PY{k}{return} \PY{n}{out}
+
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{F\PYZus{}inv}\PY{p}{(}\PY{n}{u}\PY{p}{,} \PY{n}{lam}\PY{p}{,} \PY{n}{M}\PY{p}{)}\PY{p}{:}
+    \PY{n}{u} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{asarray}\PY{p}{(}\PY{n}{u}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
+    \PY{n}{p0} \PY{o}{=} \PY{l+m+mf}{1.0} \PY{o}{\PYZhy{}} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{lam} \PY{o}{*} \PY{n}{M}\PY{p}{)}
+    \PY{n}{out} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty\PYZus{}like}\PY{p}{(}\PY{n}{u}\PY{p}{)}
+    \PY{n}{left} \PY{o}{=} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{p0}
+    \PY{n}{out}\PY{p}{[}\PY{n}{left}\PY{p}{]} \PY{o}{=} \PY{n}{M}
+    \PY{n}{right} \PY{o}{=} \PY{o}{\PYZti{}}\PY{n}{left}
+    \PY{n}{out}\PY{p}{[}\PY{n}{right}\PY{p}{]} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{l+m+mf}{1.0} \PY{o}{\PYZhy{}} \PY{n}{u}\PY{p}{[}\PY{n}{right}\PY{p}{]}\PY{p}{)} \PY{o}{/} \PY{n}{lam}
+    \PY{k}{return} \PY{n}{out}
+
+\PY{n}{p0} \PY{o}{=} \PY{l+m+mf}{1.0} \PY{o}{\PYZhy{}} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{lam} \PY{o}{*} \PY{n}{M}\PY{p}{)}
+
+
+\PY{n}{x\PYZus{}min} \PY{o}{=} \PY{n+nb}{max}\PY{p}{(}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{n}{M} \PY{o}{\PYZhy{}} \PY{l+m+mf}{3.0}\PY{p}{)}
+\PY{n}{x\PYZus{}max} \PY{o}{=} \PY{n}{M} \PY{o}{+} \PY{l+m+mf}{8.0}
+\PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{n}{x\PYZus{}min}\PY{p}{,} \PY{n}{x\PYZus{}max}\PY{p}{,} \PY{l+m+mi}{2000}\PY{p}{)}
+\PY{n}{Fx} \PY{o}{=} \PY{n}{F\PYZus{}X}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{lam}\PY{p}{,} \PY{n}{M}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{13}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{Fx}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{n}{M}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{axhline}\PY{p}{(}\PY{n}{p0}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{p}{[}\PY{n}{M}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{n}{p0}\PY{p}{]}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{l+m+mi}{40}\PY{p}{)}          \PY{c+c1}{\PYZsh{} value at x=M}
+\PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{p}{[}\PY{n}{M}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+m+mf}{0.0}\PY{p}{]}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{l+m+mi}{40}\PY{p}{,} \PY{n}{facecolors}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{none}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}  \PY{c+c1}{\PYZsh{} left limit at M\PYZhy{}}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}F\PYZus{}X(x)\PYZdl{} for \PYZdl{}X=}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{max}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{\PYZob{}}\PY{l+s+s2}{Y,M}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{\PYZcb{},}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{ Y}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{sim }\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{mathrm}\PY{l+s+si}{\PYZob{}Exp\PYZcb{}}\PY{l+s+s2}{(}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{lambda)\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{F\PYZus{}X(x)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylim}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.02}\PY{p}{,} \PY{l+m+mf}{1.02}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlim}\PY{p}{(}\PY{n}{x\PYZus{}min}\PY{p}{,} \PY{n}{x\PYZus{}max}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{True}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_48_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{b-grafica-de-f-1_xu}{%
+\subsection{\texorpdfstring{b) Grafica de
+\(F^{-1}_X(u)\)}{b) Grafica de F\^{}\{-1\}\_X(u)}}\label{b-grafica-de-f-1_xu}}
+
+    Sea \(p_0:=1-e^{-\lambda M}\).
+
+\[
+F_X^{-1}(u)=
+\begin{cases}
+M,& 0\le u\le p_0,\\[6pt]
+-\dfrac{1}{\lambda}\ln(1-u),& p_0<u<1.
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{14}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{u} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{l+m+mf}{0.999}\PY{p}{,} \PY{l+m+mi}{2000}\PY{p}{)}
+\PY{n}{Finv} \PY{o}{=} \PY{n}{F\PYZus{}inv}\PY{p}{(}\PY{n}{u}\PY{p}{,} \PY{n}{lam}\PY{p}{,} \PY{n}{M}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{u}\PY{p}{,} \PY{n}{Finv}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{n}{p0}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{axhline}\PY{p}{(}\PY{n}{M}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}F\PYZus{}X\PYZca{}}\PY{l+s+s2}{\PYZob{}}\PY{l+s+s2}{\PYZhy{}1\PYZcb{}(u)\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{u in [0,1)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}F\PYZus{}X\PYZca{}}\PY{l+s+s2}{\PYZob{}}\PY{l+s+s2}{\PYZhy{}1\PYZcb{}(u)\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{True}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_51_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{c-f_xf-1_xu-geq-u-para-u-in-0-1.}{%
+\subsection{\texorpdfstring{c) \(F_X(F^{-1}_X(u)) \geq u,\) para
+\(u \in [0, 1]\).}{c) F\_X(F\^{}\{-1\}\_X(u)) \textbackslash geq u, para u \textbackslash in {[}0, 1{]}.}}\label{c-f_xf-1_xu-geq-u-para-u-in-0-1.}}
+
+    Si \(u\le p_0\), \(F_X^{-1}(u)=M\) y \(F_X(M)=p_0\ge u\).
+
+Si \(u>p_0\), \(F_X^{-1}(u)=-(1/\lambda)\ln(1-u)\) y
+\(F_X(F_X^{-1}(u))=u\).`
+
+    \hypertarget{d-f-1_xf_xx-geq-x-para-x-tal-que-f_xx-in-0-1.}{%
+\subsection{\texorpdfstring{d) \(F^{-1}_X(F_X(x)) \geq x,\) para \(x\)
+tal que
+\(F_X(x) \in [0, 1]\).}{d) F\^{}\{-1\}\_X(F\_X(x)) \textbackslash geq x, para x tal que F\_X(x) \textbackslash in {[}0, 1{]}.}}\label{d-f-1_xf_xx-geq-x-para-x-tal-que-f_xx-in-0-1.}}
+
+    Si \(x<M\), \(F_X(x)=0\) y \(F_X^{-1}(0)=M\ge x\).
+
+Si \(x\ge M\), \(F_X(x)=1-e^{-\lambda x}\ge p_0\) y
+\(F_X^{-1}(F_X(x))=x\).
+
+    \hypertarget{e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf3n-inversa}{%
+\subsection{e) Cómo generar valores con el método de la función
+inversa}\label{e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf3n-inversa}}
+
+    Muestrea \(U\sim\mathrm{Unif}(0,1)\) y define
+
+\[
+X=\begin{cases}
+M,& U\le 1-e^{-\lambda M},\\[6pt]
+-\dfrac{1}{\lambda}\ln(1-U),& U>1-e^{-\lambda M}.
+\end{cases}
+\]
+
+Cambios mínimos respecto al caso \(\min\): sustituye los tramos \(x<M\)
+por cero, coloca la masa en \(M\) con tamaño \(1-e^{-\lambda M}\), y
+mantiene la cola exponencial intacta para \(x>M\).
+
+    \hypertarget{variable-con-cdf-por-tramos}{%
+\section{10. Variable con CDF por
+tramos}\label{variable-con-cdf-por-tramos}}
+
+    \hypertarget{a-grafica-de-f_xx}{%
+\subsection{\texorpdfstring{a) Grafica de
+\(F_{X}(x)\)}{a) Grafica de F\_\{X\}(x)}}\label{a-grafica-de-f_xx}}
+
+    \[
+F_X(x)=
+\begin{cases}
+0,& x\le -2,\\[2pt]
+\dfrac{x+2}{2},& -2<x<-1,\\[8pt]
+\dfrac12,& -1\le x<1,\\[6pt]
+\dfrac{x}{2},& 1\le x<2,\\[6pt]
+1,& x\ge 2.
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{15}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{F}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+    \PY{k}{if} \PY{n}{x} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{0}
+    \PY{k}{elif} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2} \PY{o}{\PYZlt{}} \PY{n}{x} \PY{o}{\PYZlt{}} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{:}
+        \PY{k}{return} \PY{p}{(}\PY{n}{x} \PY{o}{+} \PY{l+m+mi}{2}\PY{p}{)} \PY{o}{/} \PY{l+m+mi}{2}
+    \PY{k}{elif} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{x} \PY{o}{\PYZlt{}} \PY{l+m+mi}{1}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mf}{0.5}
+    \PY{k}{elif} \PY{l+m+mi}{1} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{x} \PY{o}{\PYZlt{}} \PY{l+m+mi}{2}\PY{p}{:}
+        \PY{k}{return} \PY{n}{x} \PY{o}{/} \PY{l+m+mi}{2}
+    \PY{k}{elif} \PY{n}{x} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{l+m+mi}{2}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{1}
+
+\PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{400}\PY{p}{)}
+\PY{n}{Fx} \PY{o}{=} \PY{p}{[}\PY{n}{F}\PY{p}{(}\PY{n}{xi}\PY{p}{)} \PY{k}{for} \PY{n}{xi} \PY{o+ow}{in} \PY{n}{x}\PY{p}{]}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{Fx}\PY{p}{,} \PY{n}{lw}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{n}{color}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}x\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}F\PYZus{}X(x)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_61_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{b-grafica-de-f_x-1u}{%
+\subsection{\texorpdfstring{b) Grafica de
+\(F_{X}^{-1}(u)\)}{b) Grafica de F\_\{X\}\^{}\{-1\}(u)}}\label{b-grafica-de-f_x-1u}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}.
+
+\textbf{Encontrando la inversa:}
+
+\begin{itemize}
+\item
+  Para \(x\le -2\), \(u\in\{0\}\) \[
+  F_X^{-1}(0)=-2
+  \].
+\item
+  Para \(-2<x<-1\), \(u\in(0,\tfrac12)\):
+
+  \[
+  \begin{aligned}
+  F_X(x)=u &\iff \frac{x+2}{2}=u,\\
+           &\iff x=2u-2.
+  \end{aligned}
+  \]
+\item
+  Para \(-1\le x<1\), \(u\in\{\tfrac12\}\):
+
+  \[
+  F_X^{-1}(\tfrac12)=-1
+  \].
+\item
+  Para \(1\le x<2\), \(u\in(\tfrac12,1)\):
+
+  \[
+  \begin{aligned}
+  F_X(x)=u &\iff \frac{x}{2}=u,\\
+           &\iff x=2u.
+  \end{aligned}
+  \]
+\item
+  Para \(x\ge 2\), \(u\in\{1\}\):
+\end{itemize}
+
+\[
+F_X^{-1}(1)=2
+\].
+
+\textbf{Entonces:}
+
+\[
+F_X^{-1}(u)=
+\begin{cases}
+-2,& u=0,\\[4pt]
+2u-2,& 0<u<\tfrac12,\\[4pt]
+-1,& u=\tfrac12,\\[4pt]
+2u,& \tfrac12<u<1,\\[4pt]
+2,& u=1.
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{16}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{F\PYZus{}inv\PYZus{}func}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{p}{:}
+    \PY{k}{if} \PY{n}{u} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
+        \PY{k}{return} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2}
+    \PY{k}{elif} \PY{l+m+mi}{0} \PY{o}{\PYZlt{}} \PY{n}{u} \PY{o}{\PYZlt{}} \PY{l+m+mf}{0.5}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{u} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2}
+    \PY{k}{elif} \PY{n}{u} \PY{o}{==} \PY{l+m+mf}{0.5}\PY{p}{:}
+        \PY{k}{return} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}
+    \PY{k}{elif} \PY{l+m+mf}{0.5} \PY{o}{\PYZlt{}} \PY{n}{u} \PY{o}{\PYZlt{}} \PY{l+m+mi}{1}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{u}
+    \PY{k}{elif} \PY{n}{u} \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{2}
+
+\PY{n}{u} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{500}\PY{p}{)}
+\PY{n}{F\PYZus{}inv} \PY{o}{=} \PY{p}{[}\PY{n}{F\PYZus{}inv\PYZus{}func}\PY{p}{(}\PY{n}{val}\PY{p}{)} \PY{k}{for} \PY{n}{val} \PY{o+ow}{in} \PY{n}{u}\PY{p}{]}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{u}\PY{p}{,} \PY{n}{F\PYZus{}inv}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{n}{color}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{lw}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}u\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}F\PYZus{}X\PYZca{}}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{\PYZhy{}1\PYZcb{}(u)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_64_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{c-f_xf-1_xu-geq-u-para-u-in-01}{%
+\subsection{\texorpdfstring{c) \(F_{X}(F^{-1}_X(u)) \geq u,\) para
+\(u \in [0,1]\)}{c) F\_\{X\}(F\^{}\{-1\}\_X(u)) \textbackslash geq u, para u \textbackslash in {[}0,1{]}}}\label{c-f_xf-1_xu-geq-u-para-u-in-01}}
+
+    Sea \(x(u)=F_X^{-1}(u)\).
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{\(u=0\):}
+\end{itemize}
+
+\[
+\begin{align*}
+F_X^{-1}(0)&=-2. \\
+F_X(-2)&=0=u.
+\end{align*}
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{\(0<u<\tfrac12\):}
+\end{itemize}
+
+\[
+\begin{align*}
+F_X^{-1}(u) & =2u-2\in(-2,-1). \\
+F_X(2u-2) & =\dfrac{(2u-2)+2}{2}=u.
+\end{align*}
+\]
+
+\begin{itemize}
+\item
+  \textbf{\(u=\tfrac12\):} \[
+  \begin{align*}
+  F_X^{-1}(\tfrac12) & =-1. \\
+  F_X(-1) & =\tfrac12=u.
+  \end{align*}
+  \]
+\item
+  \textbf{\(\tfrac12<u<1\):} \[
+  \begin{align*}
+  F_X^{-1}(u) & =2u\in(1,2). \\
+  F_X(2u) & =\dfrac{2u}{2}=u.
+  \end{align*}
+  \]
+\item
+  \textbf{\(u=1\):} \[
+  \begin{align*}
+  F_X^{-1}(1) & =2. \\
+  F_X(2) & =1=u.
+  \end{align*}
+  \]
+\end{itemize}
+
+    \hypertarget{d-f_x-1f_xx-leq-x-para-x-tal-que-f_xx-in-0-1.}{%
+\subsection{\texorpdfstring{d) \(F_{X}^{-1}(F_X(x)) \leq x,\) para \(x\)
+tal que
+\(F_X(x) \in (0, 1)\).}{d) F\_\{X\}\^{}\{-1\}(F\_X(x)) \textbackslash leq x, para x tal que F\_X(x) \textbackslash in (0, 1).}}\label{d-f_x-1f_xx-leq-x-para-x-tal-que-f_xx-in-0-1.}}
+
+    \begin{itemize}
+\item
+  \textbf{\(x<-2\):}\\
+  \[
+  \begin{align*}
+  F_X(x) &= 0. \\
+  F_X^{-1}(F_X(x)) &= F_X^{-1}(0) = -2 \leq x.
+  \end{align*}
+  \]
+\item
+  \textbf{\(x\in(-2,-1)\):}\\
+  \[
+  \begin{align*}
+  F_X(x) &= \dfrac{x+2}{2} \in (0,\tfrac12). \\
+  F_X^{-1}(F_X(x)) &= 2\cdot\dfrac{x+2}{2}-2 = x. \quad \text{Igualdad.}
+  \end{align*}
+  \]
+\item
+  \textbf{\(x\in[-1,1)\):}\\
+  \[
+  \begin{align*}
+  F_X(x) &= \tfrac12. \\
+  F_X^{-1}(F_X(x)) &= F_X^{-1}(\tfrac12) = -1 \leq x, \quad \text{igualdad sólo en } x=-1.
+  \end{align*}
+  \]
+\item
+  \textbf{\(x\in[1,2)\):}\\
+  \[
+  \begin{align*}
+  F_X(x) &= \dfrac{x}{2} \in [\tfrac12,1). \\
+  F_X^{-1}(F_X(x)) &= 2\cdot\dfrac{x}{2} = x. \quad \text{Igualdad.}
+  \end{align*}
+  \]
+\item
+  \textbf{\(x\geq 2\):}\\
+  \[
+  \begin{align*}
+  F_X(x) &= 1. \\
+  F_X^{-1}(F_X(x)) &= F_X^{-1}(1) = 2 \leq x, \quad \text{igualdad sólo en } x=2.
+  \end{align*}
+  \]
+\end{itemize}
+
+    \hypertarget{e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf3n-inversa}{%
+\subsection{e) Cómo generar valores con el método de la función
+inversa}\label{e-cuxf3mo-generar-valores-con-el-muxe9todo-de-la-funciuxf3n-inversa}}
+
+    \begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Generar \(U\sim\mathrm{Unif}(0,1)\).
+\item
+  Definir la inversa
+\end{enumerate}
+
+\[
+F^{-1}(u)=\inf\{x:\ F(x)\ge u\}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  Asignar \(X=F^{-1}(U)\).
+\item
+  Entonces:
+\end{enumerate}
+
+\[
+\mathbb{P}(X\le x)=\mathbb{P}\!\big(F^{-1}(U)\le x\big)=\mathbb{P}\!\big(U\le F(x)\big)=F(x).
+\]
+
+    \hypertarget{f-f_xx.}{%
+\subsection{\texorpdfstring{f)
+\(f_{X}(x)\).}{f) f\_\{X\}(x).}}\label{f-f_xx.}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{17}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{f}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+    \PY{k}{if} \PY{n}{x} \PY{o}{\PYZlt{}} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{0}
+    \PY{k}{elif}  \PY{o}{\PYZhy{}}\PY{l+m+mi}{2} \PY{o}{\PYZlt{}} \PY{n}{x} \PY{o}{\PYZlt{}} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}
+    \PY{k}{elif} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{x} \PY{o}{\PYZlt{}} \PY{l+m+mi}{1}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{0}
+    \PY{k}{elif} \PY{l+m+mi}{1} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{x} \PY{o}{\PYZlt{}} \PY{l+m+mi}{2}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}
+    \PY{k}{else}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{0}
+    
+
+\PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{400}\PY{p}{)}
+\PY{n}{fx} \PY{o}{=} \PY{p}{[}\PY{n}{f}\PY{p}{(}\PY{n}{xi}\PY{p}{)} \PY{k}{for} \PY{n}{xi} \PY{o+ow}{in} \PY{n}{x}\PY{p}{]}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{fx}\PY{p}{,} \PY{n}{lw}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{n}{color}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}x\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}F\PYZus{}X(x)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_72_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{g-programa}{%
+\subsection{g) Programa}\label{g-programa}}
+
+    Está en el inciso anterior.
+
+    \hypertarget{h-mathbbex-0.}{%
+\subsection{\texorpdfstring{h)
+\(\mathbb{E}[X] = 0\).}{h) \textbackslash mathbb\{E\}{[}X{]} = 0.}}\label{h-mathbbex-0.}}
+
+    La densidad es
+
+\[
+f(x)=\tfrac12\,\mathbf 1_{(-2,-1)}(x)+\tfrac12\,\mathbf 1_{(1,2)}(x),
+\]
+
+\textbf{Simetría.}
+
+Es simétrica, \(f(x)=f(-x)\). Entonces
+
+\[
+\mathbb E[X]=\int_{\mathbb R} x\,f(x)\,dx
+=\int_{-\infty}^{\infty} x\,f(x)\,dx
+=-\int_{-\infty}^{\infty} x\,f(x)\,dx
+\]
+
+por el cambio \(x\mapsto -x\) y la simetría, así \(\mathbb E[X]=0\).
+
+\textbf{Cálculo.}
+
+\[
+\mathbb E[X]=\frac12\!\int_{-2}^{-1}\!x\,dx+\frac12\!\int_{1}^{2}\!x\,dx
+=\frac12\Big[\tfrac{x^{2}}{2}\Big]_{-2}^{-1}+\frac12\Big[\tfrac{x^{2}}{2}\Big]_{1}^{2}
+=\frac12\Big(\tfrac12-2\Big)+\frac12\Big(2-\tfrac12\Big)=0.
+\]
+
+\textbf{Mezcla.}
+
+\(X\sim \tfrac12\,\mathrm{Unif}(-2,-1)+\tfrac12\,\mathrm{Unif}(1,2)\).
+
+\(\mathbb E[\mathrm{Unif}(-2,-1)]=-1.5\),
+\(\mathbb E[\mathrm{Unif}(1,2)]=1.5\).
+
+\(\mathbb E[X]=\tfrac12(-1.5)+\tfrac12(1.5)=0\).
+
+    \hypertarget{i-barx-approx-0.}{%
+\subsection{\texorpdfstring{i)
+\(\bar{x} \approx 0\).}{i) \textbackslash bar\{x\} \textbackslash approx 0.}}\label{i-barx-approx-0.}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{18}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{uniform}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{10000}\PY{p}{,} \PY{l+m+mi}{10000}\PY{p}{,} \PY{l+m+mi}{1000}\PY{p}{)}
+\PY{n}{fx} \PY{o}{=} \PY{p}{[}\PY{n}{f}\PY{p}{(}\PY{n}{xi}\PY{p}{)} \PY{k}{for} \PY{n}{xi} \PY{o+ow}{in} \PY{n}{x}\PY{p}{]}
+\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{fx}\PY{p}{)}  
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{18}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+np.float64(0.0005)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \hypertarget{bernoulli-p-desde-u01}{%
+\section{\texorpdfstring{11. Bernoulli \((p)\) desde
+\(U(0,1)\)}{11. Bernoulli (p) desde U(0,1)}}\label{bernoulli-p-desde-u01}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)} y \(0<p<1\). Defina
+
+\[
+X=\mathbf 1_{(0,p]}(U)=
+\begin{cases}
+1,& U\le p,\\
+0,& U>p.
+\end{cases}
+\]
+
+\[
+\mathbb P(X=1)=\mathbb P(U\le p)=p,\qquad
+\mathbb P(X=0)=\mathbb P(U>p)=1-p,
+\]
+
+usando que \(\mathbb P(U=p)=0\). Por tanto
+\(X\sim \mathrm{Bernoulli}(p)\).
+
+    \hypertarget{variable-aleatoria-discreta}{%
+\section{12. Variable aleatoria
+discreta}\label{variable-aleatoria-discreta}}
+
+    \hypertarget{a-grafica-de-f_xx}{%
+\subsection{\texorpdfstring{a) Grafica de
+\(f_X(x)\)}{a) Grafica de f\_X(x)}}\label{a-grafica-de-f_xx}}
+
+    \[
+f_X(x)=
+\begin{cases}
+0.3& x=1,\\
+0.5,& x=2,\\
+0.2,& x=3,\\
+0,& \text{en otro caso.}
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{19}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x\PYZus{}vals} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}
+\PY{n}{pmf} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mf}{0.2}\PY{p}{]}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{vlines}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}X\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}f\PYZus{}X(x)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_84_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{b-grafica-de-f_xx}{%
+\subsection{\texorpdfstring{b) Grafica de
+\(F_X(x)\)}{b) Grafica de F\_X(x)}}\label{b-grafica-de-f_xx}}
+
+    \[
+F_X(x)=\mathbb P(X\le x)=
+\begin{cases}
+0,& x<1,\\
+0.3,& 1\le x<2,\\
+0.8,& 2\le x<3,\\
+1,& x\ge 3.
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{20}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x\PYZus{}cdf} \PY{o}{=} \PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{]}
+\PY{n}{F\PYZus{}cdf} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mf}{0.3}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{step}\PY{p}{(}\PY{n}{x\PYZus{}cdf}\PY{p}{,} \PY{n}{F\PYZus{}cdf}\PY{p}{,} \PY{n}{where}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{post}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}X\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}F\PYZus{}X(x)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Expected value \PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{mathbb}\PY{l+s+si}{\PYZob{}E\PYZcb{}}\PY{l+s+s1}{[X]\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_87_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{c-grafica-de-f-1_xu}{%
+\subsection{\texorpdfstring{c) Grafica de
+\(F^{-1}_X(u)\)}{c) Grafica de F\^{}\{-1\}\_X(u)}}\label{c-grafica-de-f-1_xu}}
+
+    Sea \textbf{\(U\sim\mathrm{Unif}(0,1)\)}.
+
+\[
+\begin{aligned}
+F_X(x)=u &\;\iff\; u\in(0,0.3]\ \Rightarrow\ x=1,\\
+         &\;\iff\; u\in(0.3,0.8]\ \Rightarrow\ x=2,\\
+         &\;\iff\; u\in(0.8,1]\ \Rightarrow\ x=3.
+\end{aligned}
+\]
+
+Entonces:
+
+\[
+F_X^{-1}(u)=
+\begin{cases}
+1,& 0<u\le 0.3,\\
+2,& 0.3<u\le 0.8,\\
+3,& 0.8<u\le 1.
+\end{cases}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{21}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{u\PYZus{}vals} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mf}{0.3}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{p}{,} \PY{l+m+mf}{1.0}\PY{p}{]}
+\PY{n}{F\PYZus{}inv\PYZus{}values} \PY{o}{=} \PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{]}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{step}\PY{p}{(}\PY{n}{u\PYZus{}vals}\PY{p}{,} \PY{n}{F\PYZus{}inv\PYZus{}values}\PY{p}{,} \PY{n}{where}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{post}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}u\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}F\PYZca{}}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{\PYZhy{}1\PYZcb{}(u)\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_90_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{d-valor-esperado-mathbb-ex}{%
+\subsection{\texorpdfstring{d) Valor esperado
+\(\mathbb E[X]\)}{d) Valor esperado \textbackslash mathbb E{[}X{]}}}\label{d-valor-esperado-mathbb-ex}}
+
+\[
+\mathbb E[X]=\sum_{x=1}^{3}x\cdot f_X(x)=1\cdot 0.3+2\cdot 0.5+3\cdot 0.2=1.9.
+\]
+
+\hypertarget{e-varianza-mathbb-vx}{%
+\subsection{\texorpdfstring{e) Varianza
+\(\mathbb V[X]\)}{e) Varianza \textbackslash mathbb V{[}X{]}}}\label{e-varianza-mathbb-vx}}
+
+\[
+\mathbb V[X]=\sum_{x=1}^{3}(x-\mathbb E[X])^2\cdot f_X(x)=
+(1-1.9)^2\cdot 0.3+(2-1.9)^2\cdot 0.5+(3-1.9)^2\cdot 0.2=0.49.
+\]
+
+\[
+\mathbb V[X] = \mathbb E[X^2] - (\mathbb E[X])^2 = 
+0.3\cdot 1^2 + 0.5\cdot 2^2 + 0.2\cdot 3^2 - (1.9)^2 = 2.79 - (1.9)^2 = 0.49.
+\]
+
+    \hypertarget{f-programa}{%
+\subsection{f) Programa}\label{f-programa}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{22}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{F\PYZus{}inv}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{p}{:}
+    \PY{k}{if} \PY{l+m+mf}{0.3} \PY{o}{\PYZlt{}} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{0.8}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{2}
+    \PY{k}{elif} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{0.3}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{1}
+    \PY{k}{else}\PY{p}{:}
+        \PY{k}{return} \PY{l+m+mi}{3}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{g-histograma}{%
+\subsection{g) Histograma}\label{g-histograma}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{23}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{u\PYZus{}samples} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{uniform}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{500}\PY{p}{)}
+\PY{n}{x\PYZus{}samples} \PY{o}{=} \PY{p}{[}\PY{n}{F\PYZus{}inv}\PY{p}{(}\PY{n}{u}\PY{p}{)} \PY{k}{for} \PY{n}{u} \PY{o+ow}{in} \PY{n}{u\PYZus{}samples}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{24}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{plt}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{x\PYZus{}samples}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mf}{4.5}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Simulación}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{vlines}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{n}{pmf}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{PMF}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}X\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Densidad}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Histograma de \PYZdl{}F\PYZus{}X\PYZca{}}\PY{l+s+s2}{\PYZob{}}\PY{l+s+s2}{\PYZhy{}1\PYZcb{}(U)\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_96_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{h-mathbb-ex-approx-barx}{%
+\subsection{\texorpdfstring{h)
+\(\mathbb E[X] \approx \bar{x}\)}{h) \textbackslash mathbb E{[}X{]} \textbackslash approx \textbackslash bar\{x\}}}\label{h-mathbb-ex-approx-barx}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{25}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x\PYZus{}mean} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{x\PYZus{}samples}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Media muestral de X: }\PY{l+s+si}{\PYZob{}}\PY{n}{x\PYZus{}mean}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Media teórica de X: 1.9}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Diferencia: }\PY{l+s+si}{\PYZob{}}\PY{n}{x\PYZus{}mean}\PY{+w}{ }\PY{o}{\PYZhy{}}\PY{+w}{ }\PY{l+m+mf}{1.9}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Media muestral de X: 1.922
+Media teórica de X: 1.9
+Diferencia: 0.0220
+    \end{Verbatim}
+
+    \hypertarget{i-mathbb-vx-approx-s2}{%
+\subsection{\texorpdfstring{i)
+\(\mathbb V[X] \approx s^2\)}{i) \textbackslash mathbb V{[}X{]} \textbackslash approx s\^{}2}}\label{i-mathbb-vx-approx-s2}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{26}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x\PYZus{}var} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{n}{x\PYZus{}samples}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Varianza muestral de X: }\PY{l+s+si}{\PYZob{}}\PY{n}{x\PYZus{}var}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Varianza teórica de X: 0.49}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Diferencia: }\PY{l+s+si}{\PYZob{}}\PY{n}{x\PYZus{}var}\PY{+w}{ }\PY{o}{\PYZhy{}}\PY{+w}{ }\PY{l+m+mf}{0.49}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Varianza muestral de X: 0.5279159999999999
+Varianza teórica de X: 0.49
+Diferencia: 0.0379
+    \end{Verbatim}
+
+    \hypertarget{binomial-geomuxe9trica-y-poisson}{%
+\section{13. Binomial, Geométrica y
+Poisson}\label{binomial-geomuxe9trica-y-poisson}}
+
+    Implementa generadores por inversión para: - \(X\sim\mathrm{Bin}(m,p)\)
+con \(m = 10\) y \(p = 1/3\) - \(X\sim\mathrm{Geo}(p)\) con
+\(\mathbb P(X=k)=p(1-p)^{k-1}\), \(k\ge 1\) con \(p = 3/4\) -
+\(X\sim\mathrm{Poisson}(\lambda)\) con \(\lambda = 2\)
+
+    \hypertarget{a-binomial}{%
+\subsection{a) Binomial}\label{a-binomial}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{27}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{binomial}\PY{p}{(}\PY{n}{n}\PY{p}{:} \PY{n+nb}{int}\PY{p}{,} \PY{n}{p}\PY{p}{:} \PY{n+nb}{float}\PY{p}{,} \PY{n}{size}\PY{p}{:} \PY{n+nb}{int}\PY{p}{)}\PY{p}{:}
+
+    \PY{n}{c} \PY{o}{=} \PY{n}{p}\PY{o}{/}\PY{p}{(}\PY{l+m+mf}{1.0} \PY{o}{\PYZhy{}} \PY{n}{p}\PY{p}{)}                 \PY{c+c1}{\PYZsh{} paso 2: c}
+    \PY{n}{out} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+    \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{size}\PY{p}{)}\PY{p}{:}
+        \PY{n}{U}  \PY{o}{=} \PY{n}{random}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{p}{)}        \PY{c+c1}{\PYZsh{} paso 1}
+        \PY{n}{i}  \PY{o}{=} \PY{l+m+mi}{0}                      \PY{c+c1}{\PYZsh{} paso 2}
+        \PY{n}{pr} \PY{o}{=} \PY{p}{(}\PY{l+m+mf}{1.0} \PY{o}{\PYZhy{}} \PY{n}{p}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{n}{n}           \PY{c+c1}{\PYZsh{} pr = P(X=0)}
+        \PY{n}{F}  \PY{o}{=} \PY{n}{pr}
+        \PY{k}{if} \PY{n}{U} \PY{o}{\PYZlt{}} \PY{n}{F}\PY{p}{:}                   \PY{c+c1}{\PYZsh{} paso 3–5}
+            \PY{n}{out}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{;} \PY{k}{continue}
+        \PY{k}{while} \PY{k+kc}{True}\PY{p}{:}                 \PY{c+c1}{\PYZsh{} paso 6}
+            \PY{n}{pr} \PY{o}{*}\PY{o}{=} \PY{n}{c} \PY{o}{*} \PY{p}{(}\PY{n}{n} \PY{o}{\PYZhy{}} \PY{n}{i}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}  \PY{c+c1}{\PYZsh{} paso 7}
+            \PY{n}{F}  \PY{o}{+}\PY{o}{=} \PY{n}{pr}
+            \PY{n}{i}  \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+            \PY{k}{if} \PY{n}{U} \PY{o}{\PYZlt{}} \PY{n}{F} \PY{o+ow}{or} \PY{n}{i} \PY{o}{==} \PY{n}{n}\PY{p}{:}          \PY{c+c1}{\PYZsh{} paso 8–11 (con tope)}
+                \PY{n}{out}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+                \PY{k}{break}
+    \PY{k}{return} \PY{n}{out}
+
+\PY{n}{m} \PY{o}{=} \PY{n}{binomial}\PY{p}{(}\PY{n}{n}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{,} \PY{n}{p}\PY{o}{=}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{m}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{20}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[2, 5, 3, 2, 5, 3, 4, 4, 5, 4, 3, 6, 3, 5, 4, 2, 3, 3, 3, 5]
+    \end{Verbatim}
+
+    \hypertarget{b-geometrica}{%
+\subsection{b) Geometrica}\label{b-geometrica}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{28}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{geometrica}\PY{p}{(}\PY{n}{p}\PY{p}{:} \PY{n+nb}{float}\PY{p}{,} \PY{n}{n}\PY{p}{:} \PY{n+nb}{int}\PY{p}{)}\PY{p}{:}
+
+    \PY{n}{out} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+    \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+        \PY{n}{u} \PY{o}{=} \PY{n}{random}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{p}{)}       
+        \PY{n}{x} \PY{o}{=} \PY{n}{math}\PY{o}{.}\PY{n}{ceil}\PY{p}{(}\PY{n}{math}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{u}\PY{p}{)} \PY{o}{/} \PY{n}{math}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{l+m+mf}{1.0} \PY{o}{\PYZhy{}} \PY{n}{p}\PY{p}{)}\PY{p}{)}
+        \PY{n}{out}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+    \PY{k}{return} \PY{n}{out}
+
+
+\PY{n}{muestras} \PY{o}{=} \PY{n}{geometrica}\PY{p}{(}\PY{n}{p}\PY{o}{=}\PY{l+m+mi}{3}\PY{o}{/}\PY{l+m+mi}{4}\PY{p}{,} \PY{n}{n}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{muestras}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{20}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[1, 1, 1, 1, 2, 2, 1, 2, 1, 1, 1, 2, 3, 1, 1, 2, 2, 1, 1, 1]
+    \end{Verbatim}
+
+    \hypertarget{c-poisson}{%
+\subsection{c) Poisson}\label{c-poisson}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{29}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{poisson}\PY{p}{(}\PY{n}{lam}\PY{p}{:} \PY{n+nb}{float}\PY{p}{,} \PY{n}{n}\PY{p}{:} \PY{n+nb}{int}\PY{p}{)}\PY{p}{:}
+    
+    \PY{n}{out} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+    \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+        \PY{c+c1}{\PYZsh{} 1) U \PYZti{} U(0,1)}
+        \PY{n}{U} \PY{o}{=} \PY{n}{random}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{p}{)}
+        \PY{c+c1}{\PYZsh{} 2) i=0, p=e\PYZca{}\PYZob{}\PYZhy{}lam\PYZcb{}, F=p}
+        \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}
+        \PY{n}{p} \PY{o}{=} \PY{n}{math}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{lam}\PY{p}{)}
+        \PY{n}{F} \PY{o}{=} \PY{n}{p}
+        \PY{c+c1}{\PYZsh{} 3) if U \PYZlt{} F: X=i}
+        \PY{k}{if} \PY{n}{U} \PY{o}{\PYZlt{}} \PY{n}{F}\PY{p}{:}
+            \PY{n}{out}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+            \PY{k}{continue}
+        \PY{c+c1}{\PYZsh{} 6–11) loop: p = (lam/(i+1))*p; F = F + p; i = i + 1; if U \PYZlt{} F: X=i}
+        \PY{k}{while} \PY{k+kc}{True}\PY{p}{:}
+            \PY{n}{i} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+            \PY{n}{p} \PY{o}{=} \PY{n}{p} \PY{o}{*} \PY{n}{lam} \PY{o}{/} \PY{n}{i}
+            \PY{n}{F} \PY{o}{=} \PY{n}{F} \PY{o}{+} \PY{n}{p}
+            \PY{k}{if} \PY{n}{U} \PY{o}{\PYZlt{}} \PY{n}{F}\PY{p}{:}
+                \PY{n}{out}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+                \PY{k}{break}
+    \PY{k}{return} \PY{n}{out}
+
+\PY{n}{muestras} \PY{o}{=} \PY{n}{poisson}\PY{p}{(}\PY{n}{lam}\PY{o}{=}\PY{l+m+mf}{2.0}\PY{p}{,} \PY{n}{n}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{muestras}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{20}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[1, 2, 0, 3, 0, 4, 1, 0, 3, 0, 0, 1, 3, 1, 2, 3, 2, 2, 3, 1]
+    \end{Verbatim}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+\end{document}

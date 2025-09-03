@@ -1,15 +1,15 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.7.19)  2 SEP 2025 19:25
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.7.19)  2 SEP 2025 23:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **"c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Unive
 rsidad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Alea
-torias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex"
+torias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex"
 
 (c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Univers
 idad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleato
-rias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex
+rias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-11>
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -29,6 +29,59 @@ File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
 )
+(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2025/05/14 v25.9 The multilingual framework for pdfLaTeX, LuaLaT
+eX and XeLaTeX
+\babel@savecnt=\count279
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
+ne 2043.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
+ne 2045.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
+e 2047.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
+e 2048.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
+on input line 2049.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
+on input line 2051.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
+on input line 2076.
+\U@D=\dimen149
+\l@unhyphenated=\language79
+
+(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/babel\xebabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count280
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.l
+df
+Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
+
+(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/es\babel
+-spanish.tex
+Package babel Info: Importing font and identification data for spanish
+(babel)             from babel-es.ini. Reported on input line 11.
+)
+\es@quottoks=\toks17
+\es@quotdepth=\count281
+Package babel Info: Making " an active character on input line 570.
+Package babel Info: Making . an active character on input line 675.
+Package babel Info: Making < an active character on input line 722.
+Package babel Info: Making > an active character on input line 722.
+))
+LaTeX Encoding Info:    Redeclaring text command \guillemotleft (encoding OT1) 
+on input line 4.
+LaTeX Encoding Info:    Redeclaring text command \guillemotright (encoding OT1)
+ on input line 4.
+
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.sty
 Package: tcolorbox 2025/07/08 version 6.7.1 text color boxes
 
@@ -39,9 +92,9 @@ sty
 y
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
 -common.tex
-\pgfutil@everybye=\toks17
-\pgfutil@tempdima=\dimen149
-\pgfutil@tempdimb=\dimen150
+\pgfutil@everybye=\toks18
+\pgfutil@tempdima=\dimen150
+\pgfutil@tempdimb=\dimen151
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
 -latex.def
@@ -61,7 +114,7 @@ Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks18
+\KV@toks@=\toks19
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
@@ -78,8 +131,8 @@ Package graphics Info: Driver file: xetex.def on input line 106.
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.def
 File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
 ))
-\Gin@req@height=\dimen151
-\Gin@req@width=\dimen152
+\Gin@req@height=\dimen152
+\Gin@req@width=\dimen153
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.
 sty
@@ -89,33 +142,33 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
 .code.tex
-\pgfkeys@pathtoks=\toks19
-\pgfkeys@temptoks=\toks20
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
 libraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks21
+\pgfkeys@tmptoks=\toks22
 ))
-\pgf@x=\dimen153
-\pgf@y=\dimen154
-\pgf@xa=\dimen155
-\pgf@ya=\dimen156
-\pgf@xb=\dimen157
-\pgf@yb=\dimen158
-\pgf@xc=\dimen159
-\pgf@yc=\dimen160
-\pgf@xd=\dimen161
-\pgf@yd=\dimen162
+\pgf@x=\dimen154
+\pgf@y=\dimen155
+\pgf@xa=\dimen156
+\pgf@ya=\dimen157
+\pgf@xb=\dimen158
+\pgf@yb=\dimen159
+\pgf@xc=\dimen160
+\pgf@yc=\dimen161
+\pgf@xd=\dimen162
+\pgf@yd=\dimen163
 \w@pgf@writea=\write3
-\r@pgf@reada=\read2
-\c@pgf@counta=\count279
-\c@pgf@countb=\count280
-\c@pgf@countc=\count281
-\c@pgf@countd=\count282
-\t@pgf@toka=\toks22
-\t@pgf@tokb=\toks23
-\t@pgf@tokc=\toks24
-\pgf@sys@id@count=\count283
+\r@pgf@reada=\read3
+\c@pgf@counta=\count282
+\c@pgf@countb=\count283
+\c@pgf@countc=\count284
+\c@pgf@countd=\count285
+\t@pgf@toka=\toks23
+\t@pgf@tokb=\toks24
+\t@pgf@tokc=\toks25
+\pgf@sys@id@count=\count286
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
 fg
@@ -135,13 +188,13 @@ File: pgfsys-dvipdfmx.def 2023-01-15 v3.1.10 (3.1.10)
 s-common-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 )
-\pgfsys@objnum=\count284
+\pgfsys@objnum=\count287
 )))
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 ssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count285
-\pgfsyssoftpath@bigbuffer@items=\count286
+\pgfsyssoftpath@smallbuffer@items=\count288
+\pgfsyssoftpath@bigbuffer@items=\count289
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 sprotocol.code.tex
@@ -174,12 +227,12 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 code.tex)
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
 r.code.tex
-\pgfmath@dimen=\dimen163
-\pgfmath@count=\count287
+\pgfmath@dimen=\dimen164
+\pgfmath@count=\count290
 \pgfmath@box=\box54
-\pgfmath@toks=\toks25
-\pgfmath@stack@operand=\toks26
-\pgfmath@stack@operation=\toks27
+\pgfmath@toks=\toks26
+\pgfmath@stack@operand=\toks27
+\pgfmath@stack@operation=\toks28
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
 ions.code.tex)
@@ -203,39 +256,39 @@ ions.integerarithmetics.code.tex)
 code.tex)
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
 .code.tex
-\c@pgfmathroundto@lastzeros=\count288
+\c@pgfmathroundto@lastzeros=\count291
 ))
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
 tex)
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 epoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen164
-\pgf@picmaxx=\dimen165
-\pgf@picminy=\dimen166
-\pgf@picmaxy=\dimen167
-\pgf@pathminx=\dimen168
-\pgf@pathmaxx=\dimen169
-\pgf@pathminy=\dimen170
-\pgf@pathmaxy=\dimen171
-\pgf@xx=\dimen172
-\pgf@xy=\dimen173
-\pgf@yx=\dimen174
-\pgf@yy=\dimen175
-\pgf@zx=\dimen176
-\pgf@zy=\dimen177
+\pgf@picminx=\dimen165
+\pgf@picmaxx=\dimen166
+\pgf@picminy=\dimen167
+\pgf@picmaxy=\dimen168
+\pgf@pathminx=\dimen169
+\pgf@pathmaxx=\dimen170
+\pgf@pathminy=\dimen171
+\pgf@pathmaxy=\dimen172
+\pgf@xx=\dimen173
+\pgf@xy=\dimen174
+\pgf@yx=\dimen175
+\pgf@yy=\dimen176
+\pgf@zx=\dimen177
+\pgf@zy=\dimen178
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 epathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen178
-\pgf@path@lasty=\dimen179
+\pgf@path@lastx=\dimen179
+\pgf@path@lasty=\dimen180
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 epathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen180
-\pgf@shorten@start@additional=\dimen181
+\pgf@shorten@end@additional=\dimen181
+\pgf@shorten@start@additional=\dimen182
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 escopes.code.tex
@@ -243,19 +296,19 @@ File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box55
 \pgf@hbox=\box56
 \pgf@layerbox@main=\box57
-\pgf@picture@serial@count=\count289
+\pgf@picture@serial@count=\count292
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 egraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen182
+\pgflinewidth=\dimen183
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 etransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen183
-\pgf@pt@y=\dimen184
-\pgf@pt@temp=\dimen185
+\pgf@pt@x=\dimen184
+\pgf@pt@y=\dimen185
+\pgf@pt@temp=\dimen186
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 equick.code.tex
@@ -272,14 +325,14 @@ File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 earrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen186
+\pgfarrowsep=\dimen187
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 eshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen187
-\pgf@sys@shading@range@num=\count290
-\pgf@shadingcount=\count291
+\pgf@max=\dimen188
+\pgf@sys@shading@range@num=\count293
+\pgf@shadingcount=\count294
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 eimage.code.tex
@@ -318,8 +371,8 @@ File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
 mp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen188
-\pgf@nodesepend=\dimen189
+\pgf@nodesepstart=\dimen189
+\pgf@nodesepend=\dimen190
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
 mp-version-1-18.sty
@@ -337,10 +390,10 @@ ty
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
 code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen190
-\pgffor@skip=\dimen191
-\pgffor@stack=\toks28
-\pgffor@toks=\toks29
+\pgffor@iter=\dimen191
+\pgffor@skip=\dimen192
+\pgffor@stack=\toks29
+\pgffor@toks=\toks30
 ))
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z\tikz.code.tex
@@ -349,34 +402,34 @@ Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
 aryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count292
-\pgfplotmarksize=\dimen192
+\pgf@plot@mark@count=\count295
+\pgfplotmarksize=\dimen193
 )
-\tikz@lastx=\dimen193
-\tikz@lasty=\dimen194
-\tikz@lastxsaved=\dimen195
-\tikz@lastysaved=\dimen196
-\tikz@lastmovetox=\dimen197
-\tikz@lastmovetoy=\dimen198
-\tikzleveldistance=\dimen199
-\tikzsiblingdistance=\dimen256
+\tikz@lastx=\dimen194
+\tikz@lasty=\dimen195
+\tikz@lastxsaved=\dimen196
+\tikz@lastysaved=\dimen197
+\tikz@lastmovetox=\dimen198
+\tikz@lastmovetoy=\dimen199
+\tikzleveldistance=\dimen256
+\tikzsiblingdistance=\dimen257
 \tikz@figbox=\box60
 \tikz@figbox@bg=\box61
 \tikz@tempbox=\box62
 \tikz@tempbox@bg=\box63
-\tikztreelevel=\count293
-\tikznumberofchildren=\count294
-\tikznumberofcurrentchild=\count295
-\tikz@fig@count=\count296
+\tikztreelevel=\count296
+\tikznumberofchildren=\count297
+\tikznumberofcurrentchild=\count298
+\tikz@fig@count=\count299
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 matrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count297
-\pgfmatrixcurrentcolumn=\count298
-\pgf@matrix@numberofcolumns=\count299
+\pgfmatrixcurrentrow=\count300
+\pgfmatrixcurrentcolumn=\count301
+\pgf@matrix@numberofcolumns=\count302
 )
-\tikz@expandcount=\count300
+\tikz@expandcount=\count303
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrarytopaths.code.tex
@@ -384,9 +437,9 @@ File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
 Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks30
-\verbatim@line=\toks31
-\verbatim@in@stream=\read3
+\every@verbatim=\toks31
+\verbatim@line=\toks32
+\verbatim@in@stream=\read4
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
@@ -395,21 +448,21 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 ty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
-\@envbody=\toks32
+\@envbody=\toks33
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count301
+\etb@tempcnta=\count304
 )
 \tcb@titlebox=\box64
 \tcb@upperbox=\box65
 \tcb@lowerbox=\box66
 \tcb@phantombox=\box67
-\c@tcbbreakpart=\count302
-\c@tcblayer=\count303
-\c@tcolorbox@number=\count304
+\c@tcbbreakpart=\count305
+\c@tcblayer=\count306
+\c@tcolorbox@number=\count307
 \l__tcobox_tmpa_box=\box68
-\l__tcobox_tmpa_dim=\dimen257
+\l__tcobox_tmpa_dim=\dimen258
 \tcb@temp=\box69
 \tcb@temp=\box70
 \tcb@temp=\box71
@@ -448,30 +501,30 @@ Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen258
-\captionmargin=\dimen259
-\caption@leftmargin=\dimen260
-\caption@rightmargin=\dimen261
-\caption@width=\dimen262
-\caption@indent=\dimen263
-\caption@parindent=\dimen264
-\caption@hangindent=\dimen265
+\caption@tempdima=\dimen259
+\captionmargin=\dimen260
+\caption@leftmargin=\dimen261
+\caption@rightmargin=\dimen262
+\caption@width=\dimen263
+\caption@indent=\dimen264
+\caption@parindent=\dimen265
+\caption@hangindent=\dimen266
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count305
-\c@continuedfloat=\count306
+\c@caption@flags=\count308
+\c@continuedfloat=\count309
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count307
-\float@exts=\toks33
+\c@float@type=\count310
+\float@exts=\toks34
 \float@box=\box76
-\@float@everytoks=\toks34
+\@float@everytoks=\toks35
 \@floatcapt=\box77
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/tools\enumerate.sty
 Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
-\@enLab=\toks35
+\@enLab=\toks36
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -479,18 +532,18 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count308
-\Gm@cntv=\count309
-\c@Gm@tempcnt=\count310
-\Gm@bindingoffset=\dimen266
-\Gm@wd@mp=\dimen267
-\Gm@odd@mp=\dimen268
-\Gm@even@mp=\dimen269
-\Gm@layoutwidth=\dimen270
-\Gm@layoutheight=\dimen271
-\Gm@layouthoffset=\dimen272
-\Gm@layoutvoffset=\dimen273
-\Gm@dimlist=\toks36
+\Gm@cnth=\count311
+\Gm@cntv=\count312
+\c@Gm@tempcnt=\count313
+\Gm@bindingoffset=\dimen267
+\Gm@wd@mp=\dimen268
+\Gm@odd@mp=\dimen269
+\Gm@even@mp=\dimen270
+\Gm@layoutwidth=\dimen271
+\Gm@layoutheight=\dimen272
+\Gm@layouthoffset=\dimen273
+\Gm@layoutvoffset=\dimen274
+\Gm@dimlist=\toks37
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
@@ -503,24 +556,24 @@ Package: amstext 2024/11/17 v2.01 AMS text
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks37
-\ex@=\dimen274
+\@emptytoks=\toks38
+\ex@=\dimen275
 ))
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen275
+\pmbraise@=\dimen276
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count311
+\inf@bad=\count314
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count312
-\leftroot@=\count313
+\uproot@=\count315
+\leftroot@=\count316
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count314
-\DOTSCASE@=\count315
+\classnum@=\count317
+\DOTSCASE@=\count318
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -530,34 +583,34 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen276
+\big@size=\dimen277
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count316
+\macc@depth=\count319
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count317
+\c@MaxMatrixCols=\count320
 \dotsspace@=\muskip17
-\c@parentequation=\count318
-\dspbrk@lvl=\count319
-\tag@help=\toks38
-\row@=\count320
-\column@=\count321
-\maxfields@=\count322
-\andhelp@=\toks39
-\eqnshift@=\dimen277
-\alignsep@=\dimen278
-\tagshift@=\dimen279
-\tagwidth@=\dimen280
-\totwidth@=\dimen281
-\lineht@=\dimen282
-\@envbody=\toks40
+\c@parentequation=\count321
+\dspbrk@lvl=\count322
+\tag@help=\toks39
+\row@=\count323
+\column@=\count324
+\maxfields@=\count325
+\andhelp@=\toks40
+\eqnshift@=\dimen278
+\alignsep@=\dimen279
+\tagshift@=\dimen280
+\tagwidth@=\dimen281
+\totwidth@=\dimen282
+\lineht@=\dimen283
+\@envbody=\toks41
 \multlinegap=\skip52
 \multlinetaggap=\skip53
-\mathdisplay@stack=\toks41
+\mathdisplay@stack=\toks42
 LaTeX Info: Redefining \[ on input line 2949.
 LaTeX Info: Redefining \] on input line 2950.
 )
@@ -591,9 +644,9 @@ Package: expl3 2025-07-11 L3 programming layer (loader)
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-xet
 ex.def
 File: l3backend-xetex.def 2025-06-09 L3 backend support: XeTeX
-\g__graphics_track_int=\count323
-\g__pdfannot_backend_int=\count324
-\g__pdfannot_backend_link_int=\count325
+\g__graphics_track_int=\count326
+\g__pdfannot_backend_int=\count327
+\g__pdfannot_backend_link_int=\count328
 ))
 Package: xparse 2024-08-16 L3 Experimental document command parser
 )
@@ -603,20 +656,20 @@ Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
 .sty
 Package: fontspec-xetex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count326
-\l__fontspec_language_int=\count327
-\l__fontspec_strnum_int=\count328
-\l__fontspec_tmp_int=\count329
-\l__fontspec_tmpa_int=\count330
-\l__fontspec_tmpb_int=\count331
-\l__fontspec_tmpc_int=\count332
-\l__fontspec_em_int=\count333
-\l__fontspec_emdef_int=\count334
-\l__fontspec_strong_int=\count335
-\l__fontspec_strongdef_int=\count336
-\l__fontspec_tmpa_dim=\dimen283
-\l__fontspec_tmpb_dim=\dimen284
-\l__fontspec_tmpc_dim=\dimen285
+\l__fontspec_script_int=\count329
+\l__fontspec_language_int=\count330
+\l__fontspec_strnum_int=\count331
+\l__fontspec_tmp_int=\count332
+\l__fontspec_tmpa_int=\count333
+\l__fontspec_tmpb_int=\count334
+\l__fontspec_tmpc_int=\count335
+\l__fontspec_em_int=\count336
+\l__fontspec_emdef_int=\count337
+\l__fontspec_strong_int=\count338
+\l__fontspec_strongdef_int=\count339
+\l__fontspec_tmpa_dim=\dimen284
+\l__fontspec_tmpb_dim=\dimen285
+\l__fontspec_tmpc_dim=\dimen286
  (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
 )
@@ -896,9 +949,9 @@ put line 193.
 LaTeX Encoding Info:    Redeclaring text symbol \textdiv (encoding TS1) on inpu
 t line 194.
 ))
-\g__um_fam_int=\count337
-\g__um_fonts_used_int=\count338
-\l__um_primecount_int=\count339
+\g__um_fam_int=\count340
+\g__um_fonts_used_int=\count341
+\l__um_primecount_int=\count342
 \g__um_primekern_muskip=\muskip18
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/unicode-math\unicode-ma
@@ -926,11 +979,11 @@ Package fontspec Info:
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
 Package: fancyvrb 2025/07/28 4.6 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count340
-\FV@InFile=\read4
+\FV@CodeLineNo=\count343
+\FV@InFile=\read5
 \FV@TabBox=\box81
-\c@FancyVerbLine=\count341
-\FV@StepNumber=\count342
+\c@FancyVerbLine=\count344
+\FV@StepNumber=\count345
 \FV@OutFile=\write4
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/grffile\grffile.sty
@@ -946,10 +999,10 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
-\XKV@toks=\toks42
-\XKV@tempa@toks=\toks43
+\XKV@toks=\toks43
+\XKV@tempa@toks=\toks44
 )
-\XKV@depth=\count343
+\XKV@depth=\count346
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.sty
@@ -964,33 +1017,33 @@ ty
 Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
 \collectedbox=\box82
 )
-\tc@llx=\dimen286
-\tc@lly=\dimen287
-\tc@urx=\dimen288
-\tc@ury=\dimen289
+\tc@llx=\dimen287
+\tc@lly=\dimen288
+\tc@urx=\dimen289
+\tc@ury=\dimen290
 Package trimclip Info: Using driver 'tc-xetex.def'.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-xetex.def
 File: tc-xetex.def 2019/01/04 v2.2 Clipping driver for xetex
 ))
-\adjbox@Width=\dimen290
-\adjbox@Height=\dimen291
-\adjbox@Depth=\dimen292
-\adjbox@Totalheight=\dimen293
-\adjbox@pwidth=\dimen294
-\adjbox@pheight=\dimen295
-\adjbox@pdepth=\dimen296
-\adjbox@ptotalheight=\dimen297
+\adjbox@Width=\dimen291
+\adjbox@Height=\dimen292
+\adjbox@Depth=\dimen293
+\adjbox@Totalheight=\dimen294
+\adjbox@pwidth=\dimen295
+\adjbox@pheight=\dimen296
+\adjbox@pdepth=\dimen297
+\adjbox@ptotalheight=\dimen298
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
-\c@checkoddpage=\count344
+\c@checkoddpage=\count347
 ) (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box83
-\sift@deathcycles=\count345
-\@vwid@loff=\dimen298
-\@vwid@roff=\dimen299
+\sift@deathcycles=\count348
+\@vwid@loff=\dimen299
+\@vwid@roff=\dimen300
 )
 ==> First Aid for varwidth.sty applied!
 ) (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
@@ -1025,25 +1078,26 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count346
+\c@section@level=\count349
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
 ty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen300
-\Hy@linkcounter=\count347
-\Hy@pagecounter=\count348
+\@linkdim=\dimen301
+\Hy@linkcounter=\count350
+\Hy@pagecounter=\count351
  (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
 ) (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count349
+\Hy@SavedSpaceFactor=\count352
  (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 )
+Package hyperref Info: Option `unicode' set `true' on input line 4066.
 Package hyperref Info: Hyper figures OFF on input line 4195.
 Package hyperref Info: Link nesting OFF on input line 4200.
 Package hyperref Info: Hyper index ON on input line 4203.
@@ -1051,14 +1105,14 @@ Package hyperref Info: Plain pages OFF on input line 4210.
 Package hyperref Info: Backreferencing OFF on input line 4215.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4462.
-\c@Hy@tempcnt=\count350
+\c@Hy@tempcnt=\count353
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip19
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4801.
-\XeTeXLinkMargin=\dimen301
+\XeTeXLinkMargin=\dimen302
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -1068,9 +1122,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count351
-\Field@Width=\dimen302
-\Fld@charsize=\dimen303
+\Fld@menulength=\count354
+\Field@Width=\dimen303
+\Fld@charsize=\dimen304
 Package hyperref Info: Hyper figures OFF on input line 6078.
 Package hyperref Info: Link nesting OFF on input line 6083.
 Package hyperref Info: Hyper index ON on input line 6086.
@@ -1078,19 +1132,19 @@ Package hyperref Info: backreferencing OFF on input line 6093.
 Package hyperref Info: Link coloring OFF on input line 6098.
 Package hyperref Info: Link coloring with OCG OFF on input line 6103.
 Package hyperref Info: PDF/A mode OFF on input line 6108.
-\Hy@abspage=\count352
-\c@Item=\count353
-\c@Hfootnote=\count354
+\Hy@abspage=\count355
+\c@Item=\count356
+\c@Hfootnote=\count357
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hxetex.def
 File: hxetex.def 2025-07-12 v7.01o Hyperref driver for XeTeX
 \pdfm@box=\box84
-\c@Hy@AnnotLevel=\count355
-\HyField@AnnotCount=\count356
-\Fld@listcount=\count357
-\c@bookmark@seq@number=\count358
+\c@Hy@AnnotLevel=\count358
+\HyField@AnnotCount=\count359
+\Fld@listcount=\count360
+\c@bookmark@seq@number=\count361
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
@@ -1117,108 +1171,108 @@ Package: longtable 2024-12-18 v4.23 Multi-page Table package (DPC)
 \LTright=\skip59
 \LTpre=\skip60
 \LTpost=\skip61
-\LTchunksize=\count359
-\LTcapwidth=\dimen304
+\LTchunksize=\count362
+\LTcapwidth=\dimen305
 \LT@head=\box85
 \LT@firsthead=\box86
 \LT@foot=\box87
 \LT@lastfoot=\box88
 \LT@gbox=\box89
-\LT@cols=\count360
-\LT@rows=\count361
-\c@LT@tables=\count362
-\c@LT@chunks=\count363
-\LT@p@ftn=\toks44
+\LT@cols=\count363
+\LT@rows=\count364
+\c@LT@tables=\count365
+\c@LT@chunks=\count366
+\LT@p@ftn=\toks45
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen305
-\lightrulewidth=\dimen306
-\cmidrulewidth=\dimen307
-\belowrulesep=\dimen308
-\belowbottomsep=\dimen309
-\aboverulesep=\dimen310
-\abovetopsep=\dimen311
-\cmidrulesep=\dimen312
-\cmidrulekern=\dimen313
-\defaultaddspace=\dimen314
-\@cmidla=\count364
-\@cmidlb=\count365
-\@aboverulesep=\dimen315
-\@belowrulesep=\dimen316
-\@thisruleclass=\count366
-\@lastruleclass=\count367
-\@thisrulewidth=\dimen317
+\heavyrulewidth=\dimen306
+\lightrulewidth=\dimen307
+\cmidrulewidth=\dimen308
+\belowrulesep=\dimen309
+\belowbottomsep=\dimen310
+\aboverulesep=\dimen311
+\abovetopsep=\dimen312
+\cmidrulesep=\dimen313
+\cmidrulekern=\dimen314
+\defaultaddspace=\dimen315
+\@cmidla=\count367
+\@cmidlb=\count368
+\@aboverulesep=\dimen316
+\@belowrulesep=\dimen317
+\@thisruleclass=\count369
+\@lastruleclass=\count370
+\@thisrulewidth=\dimen318
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
-\col@sep=\dimen318
+\col@sep=\dimen319
 \ar@mcellbox=\box90
-\extrarowheight=\dimen319
-\NC@list=\toks45
+\extrarowheight=\dimen320
+\NC@list=\toks46
 \extratabsurround=\skip62
 \backup@length=\skip63
 \ar@cellbox=\box91
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
-\calc@Acount=\count368
-\calc@Bcount=\count369
-\calc@Adimen=\dimen320
-\calc@Bdimen=\dimen321
+\calc@Acount=\count371
+\calc@Bcount=\count372
+\calc@Adimen=\dimen321
+\calc@Bdimen=\dimen322
 \calc@Askip=\skip64
 \calc@Bskip=\skip65
 LaTeX Info: Redefining \setlength on input line 86.
 LaTeX Info: Redefining \addtolength on input line 87.
-\calc@Ccount=\count370
+\calc@Ccount=\count373
 \calc@Cskip=\skip66
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip67
-\enit@outerparindent=\dimen322
-\enit@toks=\toks46
+\enit@outerparindent=\dimen323
+\enit@toks=\toks47
 \enit@inbox=\box92
-\enit@count@id=\count371
-\enitdp@description=\count372
+\enit@count@id=\count374
+\enitdp@description=\count375
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/ulem\ulem.sty
 \UL@box=\box93
 \UL@hyphenbox=\box94
 \UL@skip=\skip68
-\UL@hook=\toks47
-\UL@height=\dimen323
-\UL@pe=\count373
-\UL@pixel=\dimen324
+\UL@hook=\toks48
+\UL@height=\dimen324
+\UL@pe=\count376
+\UL@pixel=\dimen325
 \ULC@box=\box95
 Package: ulem 2019/11/18
-\ULdepth=\dimen325
+\ULdepth=\dimen326
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/soul\soul.sty
 Package: soul 2023-06-14 v3.1 Permit use of UTF-8 characters in soul (HO)
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/soul\soul-ori.sty
 Package: soul-ori 2023-06-14 v3.1 letterspacing/underlining (mf)
-\SOUL@word=\toks48
-\SOUL@lasttoken=\toks49
-\SOUL@syllable=\toks50
-\SOUL@cmds=\toks51
-\SOUL@buffer=\toks52
-\SOUL@token=\toks53
-\SOUL@syllgoal=\dimen326
-\SOUL@syllwidth=\dimen327
-\SOUL@charkern=\dimen328
-\SOUL@hyphkern=\dimen329
-\SOUL@dimen=\dimen330
-\SOUL@dimeni=\dimen331
-\SOUL@minus=\count374
-\SOUL@comma=\count375
-\SOUL@apo=\count376
-\SOUL@grave=\count377
+\SOUL@word=\toks49
+\SOUL@lasttoken=\toks50
+\SOUL@syllable=\toks51
+\SOUL@cmds=\toks52
+\SOUL@buffer=\toks53
+\SOUL@token=\toks54
+\SOUL@syllgoal=\dimen327
+\SOUL@syllwidth=\dimen328
+\SOUL@charkern=\dimen329
+\SOUL@hyphkern=\dimen330
+\SOUL@dimen=\dimen331
+\SOUL@dimeni=\dimen332
+\SOUL@minus=\count377
+\SOUL@comma=\count378
+\SOUL@apo=\count379
+\SOUL@grave=\count380
 \SOUL@spaceskip=\skip69
-\SOUL@ttwidth=\dimen332
-\SOUL@uldp=\dimen333
-\SOUL@ulht=\dimen334
+\SOUL@ttwidth=\dimen333
+\SOUL@uldp=\dimen334
+\SOUL@ulht=\dimen335
 )
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
@@ -1230,8 +1284,8 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \pandoc@box=\box96
 \Wrappedcontinuationbox=\box97
 \Wrappedvisiblespacebox=\box98
-Package hyperref Info: Option `breaklinks' set `true' on input line 385.
-Package hyperref Info: Option `colorlinks' set `true' on input line 385.
+Package hyperref Info: Option `breaklinks' set `true' on input line 386.
+Package hyperref Info: Option `colorlinks' set `true' on input line 386.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/newunicodechar\newunico
 dechar.sty
@@ -1321,10 +1375,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 164.
 LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `bold'
 (Font)                  U/stixcal/m/n --> U/stixcal/b/n on input line 165.
-\tx@tA=\toks54
-\tx@tB=\toks55
-\tx@su=\read5
-\tx@sbptoks=\toks56
+\tx@tA=\toks55
+\tx@tB=\toks56
+\tx@su=\read6
+\tx@sbptoks=\toks57
 LaTeX Info: Redefining \checkmark on input line 802.
 LaTeX Font Info:    Redeclaring math accent \grave on input line 876.
 LaTeX Font Info:    Redeclaring math accent \acute on input line 877.
@@ -1407,24 +1461,24 @@ Package fontspec Info:
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  LS1/libertinust1math/m/n --> TU/EBGaramond(1)/m/n on in
-put line 406.
+put line 407.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  LS1/libertinust1math/m/it --> TU/EBGaramond(1)/m/it on 
-input line 406.
+input line 407.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  LS1/libertinust1math/b/n --> TU/EBGaramond(1)/b/n on in
-put line 406.
+put line 407.
  (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box99
 \beforetitleunit=\skip70
 \aftertitleunit=\skip71
-\ttl@plus=\dimen335
-\ttl@minus=\dimen336
-\ttl@toksa=\toks57
-\titlewidth=\dimen337
-\titlewidthlast=\dimen338
-\titlewidthfirst=\dimen339
+\ttl@plus=\dimen336
+\ttl@minus=\dimen337
+\ttl@toksa=\toks58
+\titlewidth=\dimen338
+\titlewidthlast=\dimen339
+\titlewidthfirst=\dimen340
 )
 
 Package fontspec Info: 
@@ -1479,60 +1533,66 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthL=\skip83
 \f@nch@widthC=\skip84
 \f@nch@widthR=\skip85
-\@temptokenb=\toks58
+\@temptokenb=\toks59
 ) (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
 No file notebook.aux.
 \openout1 = `notebook.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 437.
-LaTeX Font Info:    ... okay on input line 437.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 437.
-LaTeX Font Info:    ... okay on input line 437.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 437.
-LaTeX Font Info:    ... okay on input line 437.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 437.
-LaTeX Font Info:    ... okay on input line 437.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 437.
-LaTeX Font Info:    ... okay on input line 437.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 437.
-LaTeX Font Info:    ... okay on input line 437.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 437.
-LaTeX Font Info:    ... okay on input line 437.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 437.
-LaTeX Font Info:    ... okay on input line 437.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 437.
-LaTeX Font Info:    ... okay on input line 437.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 437.
-LaTeX Font Info:    ... okay on input line 437.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 438.
+LaTeX Font Info:    ... okay on input line 438.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 438.
+LaTeX Font Info:    ... okay on input line 438.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 438.
+LaTeX Font Info:    ... okay on input line 438.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 438.
+LaTeX Font Info:    ... okay on input line 438.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 438.
+LaTeX Font Info:    ... okay on input line 438.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 438.
+LaTeX Font Info:    ... okay on input line 438.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 438.
+LaTeX Font Info:    ... okay on input line 438.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 438.
+LaTeX Font Info:    ... okay on input line 438.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 438.
+LaTeX Font Info:    ... okay on input line 438.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 438.
+LaTeX Font Info:    ... okay on input line 438.
 LaTeX Font Info:    Checking defaults for LS1/libertinust1math/m/n on input lin
-e 437.
+e 438.
 LaTeX Font Info:    Trying to load font information for LS1+libertinust1math on
- input line 437.
+ input line 438.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/libertinust1math\ls1lib
 ertinust1math.fd
 File: ls1libertinust1math.fd 2016/03/23 Fontinst v1.933 font definitions for LS
 1/libertinust1math.
 )
-LaTeX Font Info:    ... okay on input line 437.
+LaTeX Font Info:    ... okay on input line 438.
 LaTeX Font Info:    Checking defaults for LS2/libertinust1mathsym/m/n on input 
-line 437.
+line 438.
 LaTeX Font Info:    Trying to load font information for LS2+libertinust1mathsym
- on input line 437.
+ on input line 438.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/libertinust1math\ls2lib
 ertinust1mathsym.fd
 File: ls2libertinust1mathsym.fd 2015/04/17 v1.1.2-latex LibertinusT1Mathsym LS2
  font definitions
 )
-LaTeX Font Info:    ... okay on input line 437.
+LaTeX Font Info:    ... okay on input line 438.
+LaTeX Info: Redefining \. on input line 438.
+LaTeX Info: Redefining \% on input line 438.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported  on input line 438.
+
+Couldn't patch \ttl@straight@ii
+Couldn't patch \ttl@straight@ii
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
-
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
@@ -1572,18 +1632,18 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Command `\dddot' is already robust on input line 437.
-LaTeX Info: Command `\ddddot' is already robust on input line 437.
+LaTeX Info: Command `\dddot' is already robust on input line 438.
+LaTeX Info: Command `\ddddot' is already robust on input line 438.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  LS1/libertinust1mathsf/m/n --> TU/lmss/m/n on input lin
-e 437.
+e 438.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  LS1/libertinust1mathsf/b/n --> TU/lmss/b/n on input lin
-e 437.
+e 438.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 437.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 438.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 437.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 438.
 
 Package fontspec Info: 
 (fontspec)             Font family 'latinmodern-math.otf(0)' created for font
@@ -1622,16 +1682,16 @@ latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
 "
 
 LaTeX Font Info:    Encoding `LS1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 437.
+(Font)              `operators' in the math version `normal' on input line 438.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  LS1/libertinust1math/m/n --> TU/latinmodern-math.otf(1)
-/m/n on input line 437.
+/m/n on input line 438.
 LaTeX Font Info:    Encoding `LS1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 437.
+(Font)              `operators' in the math version `bold' on input line 438.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  LS1/libertinust1math/b/n --> TU/latinmodern-math.otf(1)
-/b/n on input line 437.
+/b/n on input line 438.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.0001.
@@ -1684,15 +1744,15 @@ t;+ssty=1;"
 uage=dflt;"
 
 LaTeX Font Info:    Encoding `LS2' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 437.
+(Font)              `symbols' in the math version `normal' on input line 438.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  LS2/libertinust1mathsym/m/n --> TU/latinmodern-math.otf
-(2)/m/n on input line 437.
+(2)/m/n on input line 438.
 LaTeX Font Info:    Encoding `LS2' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 437.
+(Font)              `symbols' in the math version `bold' on input line 438.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  LS2/libertinust1mathsym/m/n --> TU/latinmodern-math.otf
-(2)/b/n on input line 437.
+(2)/b/n on input line 438.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 0.9999.
@@ -1740,17 +1800,17 @@ uage=dflt;"
 
 LaTeX Font Info:    Encoding `LS2' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 4
-37.
+38.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  LS2/libertinust1mathex/m/n --> TU/latinmodern-math.otf(
-3)/m/n on input line 437.
+3)/m/n on input line 438.
 LaTeX Font Info:    Encoding `LS2' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 437
+(Font)              `largesymbols' in the math version `bold' on input line 438
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  LS2/libertinust1mathex/m/n --> TU/latinmodern-math.otf(
-3)/b/n on input line 437.
-Package hyperref Info: Link coloring ON on input line 437.
+3)/b/n on input line 438.
+Package hyperref Info: Link coloring ON on input line 438.
 \@outlinefile=\write5
 \openout5 = `notebook.out'.
 
@@ -1762,38 +1822,29 @@ Package hyperref Warning: Rerun to get /PageLabels entry.
 [1
 
 ]
-No file notebook.toc.
-\tf@toc=\write6
-\openout6 = `notebook.toc'.
-
-
-
-[1
-
-]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 465.
+(Font)              scaled to size 5.00053pt on input line 464.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 465.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 465
+(Font)              scaled to size 4.99947pt on input line 464.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 464
 .
  (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 465
+LaTeX Font Info:    Trying to load font information for U+msb on input line 464
 .
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 46
-5.
+4.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for LS1+libertinust1mathbb 
-on input line 465.
+on input line 464.
 
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/libertinust1math\ls1lib
 ertinust1mathbb.fd
@@ -1802,158 +1853,375 @@ initions
 )
 
 LaTeX Font Warning: Font shape `TU/Inconsolata(0)/b/n' undefined
-(Font)              using `TU/Inconsolata(0)/m/n' instead on input line 466.
+(Font)              using `TU/Inconsolata(0)/m/n' instead on input line 465.
 
 
 LaTeX Font Warning: Font shape `TU/Inconsolata(0)/m/it' undefined
-(Font)              using `TU/Inconsolata(0)/m/n' instead on input line 485.
+(Font)              using `TU/Inconsolata(0)/m/n' instead on input line 484.
 
 
 
-[2]
+LaTeX Info: Redefining \. on input line 497.
+LaTeX Info: Redefining \% on input line 497.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported  on input line 497.
+[1
+
+]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.40152pt on input line 498.
+(Font)              scaled to size 14.40152pt on input line 497.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 498.
+(Font)              scaled to size 10.00107pt on input line 497.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 498.
+(Font)              scaled to size 7.00075pt on input line 497.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 498.
+(Font)              scaled to size 14.39845pt on input line 497.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 498.
+(Font)              scaled to size 9.99893pt on input line 497.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 498.
+(Font)              scaled to size 6.99925pt on input line 497.
 
 
+LaTeX Info: Redefining \. on input line 524.
+LaTeX Info: Redefining \% on input line 524.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 525.
+(Font)              scaled to size 9.00096pt on input line 524.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 525.
+(Font)              scaled to size 6.00064pt on input line 524.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 525.
+(Font)              scaled to size 8.99904pt on input line 524.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 525.
+(Font)              scaled to size 5.99936pt on input line 524.
+[2
+
+]
+
+LaTeX Info: Redefining \. on input line 528.
+LaTeX Info: Redefining \% on input line 528.
 [3
 
 ]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.00128pt on input line 529.
+(Font)              scaled to size 12.00128pt on input line 528.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 529.
+(Font)              scaled to size 8.00085pt on input line 528.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 529.
+(Font)              scaled to size 11.99872pt on input line 528.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 529.
+(Font)              scaled to size 7.99915pt on input line 528.
 
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 529.
+(hyperref)                be the same. Added a new anchor on input line 528.
 
 File: notebook_files/notebook_7_0.png Graphic file (type bmp)
 <notebook_files/notebook_7_0.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 559--560
+Underfull \hbox (badness 10000) in paragraph at lines 558--559
 
  []
 
 
 
+LaTeX Info: Redefining \. on input line 562.
+LaTeX Info: Redefining \% on input line 562.
+LaTeX Info: Redefining \. on input line 562.
+LaTeX Info: Redefining \% on input line 562.
 [4
 
 ]
 File: notebook_files/notebook_10_0.png Graphic file (type bmp)
 <notebook_files/notebook_10_0.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--593
+Underfull \hbox (badness 10000) in paragraph at lines 591--592
 
  []
 
 
 
-[5]
+LaTeX Info: Redefining \. on input line 595.
+LaTeX Info: Redefining \% on input line 595.
+LaTeX Info: Redefining \. on input line 595.
+LaTeX Info: Redefining \% on input line 595.
+[5
+
+]
 File: notebook_files/notebook_13_0.png Graphic file (type bmp)
 <notebook_files/notebook_13_0.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 638--639
+Underfull \hbox (badness 10000) in paragraph at lines 637--638
 
  []
 
 
 
-[6]
+LaTeX Info: Redefining \. on input line 640.
+LaTeX Info: Redefining \% on input line 640.
+LaTeX Info: Redefining \. on input line 640.
+LaTeX Info: Redefining \% on input line 640.
+[6
+
+]
+
+LaTeX Info: Redefining \. on input line 661.
+LaTeX Info: Redefining \% on input line 661.
+LaTeX Info: Redefining \. on input line 661.
+LaTeX Info: Redefining \% on input line 661.
+[7
+
+]
 File: notebook_files/notebook_17_0.png Graphic file (type bmp)
 <notebook_files/notebook_17_0.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 680--681
+Underfull \hbox (badness 10000) in paragraph at lines 679--680
 
  []
 
 
 
-[7]
-
+LaTeX Info: Redefining \. on input line 683.
+LaTeX Info: Redefining \% on input line 683.
+LaTeX Info: Redefining \. on input line 683.
+LaTeX Info: Redefining \% on input line 683.
 [8
 
 ]
 
+LaTeX Info: Redefining \. on input line 718.
+LaTeX Info: Redefining \% on input line 718.
 [9
 
 ]
 
+LaTeX Info: Redefining \. on input line 754.
+LaTeX Info: Redefining \% on input line 754.
 [10
 
 ]
 
+LaTeX Info: Redefining \. on input line 787.
+LaTeX Info: Redefining \% on input line 787.
 [11
 
 ]
 
+LaTeX Info: Redefining \. on input line 822.
+LaTeX Info: Redefining \% on input line 822.
 [12
 
 ]
-File: notebook_files/notebook_31_0.png Graphic file (type bmp)
-<notebook_files/notebook_31_0.png>
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:822: Argume
+nt of \es@a has an extra }.
+<inserted text> 
+                \par 
+l.822 ...sh\}}}\label{muxednimo-x_1minx_1dotsx_n}}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
 
-Underfull \hbox (badness 10000) in paragraph at lines 907--908
+Runaway argument?
+{\expandafter \string \the \textfont \mathgroup }\expandafter \split@name \ETC.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:822: Paragr
+aph ended before \es@a was complete.
+<to be read again> 
+                   \par 
+l.822 ...sh\}}}\label{muxednimo-x_1minx_1dotsx_n}}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
 
- []
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:822: Argume
+nt of \es@a has an extra }.
+<inserted text> 
+                \par 
+l.822 ...sh\}}}\label{muxednimo-x_1minx_1dotsx_n}}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+{\expandafter \string \the \textfont \mathgroup }\expandafter \split@name \ETC.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:822: Paragr
+aph ended before \es@a was complete.
+<to be read again> 
+                   \par 
+l.822 ...sh\}}}\label{muxednimo-x_1minx_1dotsx_n}}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
 
 
+
+LaTeX Info: Redefining \. on input line 853.
+LaTeX Info: Redefining \% on input line 853.
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:853: Missin
+g { inserted.
+<inserted text> ...har escapechar =m@ne edef par }
+                                                  {X_1,dots ,X_n}protect )
+l.853 \section{8. Mixta Mínimo}}
+                                \label{mixta-xminym-con-ysimmathrmexplambda}}
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:853: Missin
+g endgroup inserted.
+<inserted text> 
+                endgroup 
+l.853 \section{8. Mixta Mínimo}}
+                                \label{mixta-xminym-con-ysimmathrmexplambda}}
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:853: Missin
+g } inserted.
+<inserted text> 
+                }
+l.853 \section{8. Mixta Mínimo}}
+                                \label{mixta-xminym-con-ysimmathrmexplambda}}
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
 [13
 
 ]
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:853: Too ma
+ny }'s.
+l.853 ...el{mixta-xminym-con-ysimmathrmexplambda}}
+                                                  
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+File: notebook_files/notebook_31_0.png Graphic file (type bmp)
+<notebook_files/notebook_31_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 905--906
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 906.
+LaTeX Info: Redefining \% on input line 906.
+[14
+
+]
+
+LaTeX Info: Redefining \. on input line 909.
+LaTeX Info: Redefining \% on input line 909.
+[15]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 911.
+(hyperref)                be the same. Added a new anchor on input line 909.
 
 File: notebook_files/notebook_34_0.png Graphic file (type bmp)
 <notebook_files/notebook_34_0.png>
 
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 963--964
+Underfull \hbox (badness 10000) in paragraph at lines 961--962
 
  []
 
 
 
-[15]
+LaTeX Info: Redefining \. on input line 962.
+LaTeX Info: Redefining \% on input line 962.
+LaTeX Info: Redefining \. on input line 962.
+LaTeX Info: Redefining \% on input line 962.
+[16
+
+]
+
+LaTeX Info: Redefining \. on input line 965.
+LaTeX Info: Redefining \% on input line 965.
+LaTeX Info: Redefining \. on input line 965.
+LaTeX Info: Redefining \% on input line 965.
+[17]
 File: notebook_files/notebook_37_0.png Graphic file (type bmp)
 <notebook_files/notebook_37_0.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1043--1044
+
+LaTeX Info: Redefining \. on input line 1039.
+LaTeX Info: Redefining \% on input line 1039.
+LaTeX Info: Redefining \. on input line 1039.
+LaTeX Info: Redefining \% on input line 1039.
+[18
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1040--1041
 
  []
 
 
 
-[16]
+LaTeX Info: Redefining \. on input line 1044.
+LaTeX Info: Redefining \% on input line 1044.
+LaTeX Info: Redefining \. on input line 1044.
+LaTeX Info: Redefining \% on input line 1044.
+[19]
 
-[17]
+LaTeX Info: Redefining \. on input line 1067.
+LaTeX Info: Redefining \% on input line 1067.
+LaTeX Info: Redefining \. on input line 1067.
+LaTeX Info: Redefining \% on input line 1067.
+[20
+
+]
+
+LaTeX Info: Redefining \. on input line 1084.
+LaTeX Info: Redefining \% on input line 1084.
+LaTeX Info: Redefining \. on input line 1084.
+LaTeX Info: Redefining \% on input line 1084.
+[21
+
+]
+
+LaTeX Info: Redefining \. on input line 1103.
+LaTeX Info: Redefining \% on input line 1103.
+LaTeX Info: Redefining \. on input line 1103.
+LaTeX Info: Redefining \% on input line 1103.
+[22
+
+]
+
+LaTeX Info: Redefining \. on input line 1107.
+LaTeX Info: Redefining \% on input line 1107.
+[23
+
+]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1111.
+(hyperref)                be the same. Added a new anchor on input line 1107.
 
 Missing character: There is no λ in font Inconsolata Regular/OT:script=latn;lan
 guage=dflt;+init;+fina;!
@@ -1961,128 +2229,223 @@ File: notebook_files/notebook_48_0.png Graphic file (type bmp)
 <notebook_files/notebook_48_0.png>
 
 
-[18
+LaTeX Info: Redefining \. on input line 1181.
+LaTeX Info: Redefining \% on input line 1181.
+LaTeX Info: Redefining \. on input line 1181.
+LaTeX Info: Redefining \% on input line 1181.
+[24
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1186--1187
+Underfull \hbox (badness 10000) in paragraph at lines 1182--1183
 
  []
 
+
+
+LaTeX Info: Redefining \. on input line 1186.
+LaTeX Info: Redefining \% on input line 1186.
+LaTeX Info: Redefining \. on input line 1186.
+LaTeX Info: Redefining \% on input line 1186.
+[25]
 File: notebook_files/notebook_51_0.png Graphic file (type bmp)
 <notebook_files/notebook_51_0.png>
 
-
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 1224--1225
+Underfull \hbox (badness 10000) in paragraph at lines 1220--1221
 
  []
 
 
 
-[20]
+LaTeX Info: Redefining \. on input line 1224.
+LaTeX Info: Redefining \% on input line 1224.
+LaTeX Info: Redefining \. on input line 1224.
+LaTeX Info: Redefining \% on input line 1224.
+[26
+
+]
+
+LaTeX Info: Redefining \. on input line 1234.
+LaTeX Info: Redefining \% on input line 1234.
+LaTeX Info: Redefining \. on input line 1234.
+LaTeX Info: Redefining \% on input line 1234.
+[27
+
+]
+
+LaTeX Info: Redefining \. on input line 1243.
+LaTeX Info: Redefining \% on input line 1243.
+LaTeX Info: Redefining \. on input line 1243.
+LaTeX Info: Redefining \% on input line 1243.
+[28
+
+]
+
+LaTeX Info: Redefining \. on input line 1256.
+LaTeX Info: Redefining \% on input line 1256.
+LaTeX Info: Redefining \. on input line 1256.
+LaTeX Info: Redefining \% on input line 1256.
+[29
+
+]
+
+LaTeX Info: Redefining \. on input line 1260.
+LaTeX Info: Redefining \% on input line 1260.
+[30
+
+]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1268.
+(hyperref)                be the same. Added a new anchor on input line 1260.
 
 File: notebook_files/notebook_61_0.png Graphic file (type bmp)
 <notebook_files/notebook_61_0.png>
 
-
-[21
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1309--1310
+Underfull \hbox (badness 10000) in paragraph at lines 1301--1302
 
  []
 
 
 
-[22]
+LaTeX Info: Redefining \. on input line 1302.
+LaTeX Info: Redefining \% on input line 1302.
+LaTeX Info: Redefining \. on input line 1302.
+LaTeX Info: Redefining \% on input line 1302.
+[31
+
+]
+
+LaTeX Info: Redefining \. on input line 1305.
+LaTeX Info: Redefining \% on input line 1305.
+LaTeX Info: Redefining \. on input line 1305.
+LaTeX Info: Redefining \% on input line 1305.
+[32]
+
+LaTeX Info: Redefining \. on input line 1385.
+LaTeX Info: Redefining \% on input line 1385.
+LaTeX Info: Redefining \. on input line 1385.
+LaTeX Info: Redefining \% on input line 1385.
+[33
+
+]
 File: notebook_files/notebook_64_0.png Graphic file (type bmp)
 <notebook_files/notebook_64_0.png>
 
+Underfull \hbox (badness 10000) in paragraph at lines 1390--1391
 
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 1398--1399
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 1394.
+LaTeX Info: Redefining \% on input line 1394.
+LaTeX Info: Redefining \. on input line 1394.
+LaTeX Info: Redefining \% on input line 1394.
+[34]
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:1408: Packa
+ge amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1408 \end{align*}
+                   
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:1421: Packa
+ge amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1421 \end{align*}
+                   
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:1430: Packa
+ge amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1430   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:1437: Packa
+ge amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1437   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:1444: Packa
+ge amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1444   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+LaTeX Info: Redefining \. on input line 1451.
+LaTeX Info: Redefining \% on input line 1451.
+LaTeX Info: Redefining \. on input line 1451.
+LaTeX Info: Redefining \% on input line 1451.
+[35
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1455--1456
 
  []
 
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1416: Pack
-age amsmath Error: Erroneous nesting of equation structures;
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:1460: Packa
+ge amsmath Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1416 \end{align*}
-                   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1429: Pack
-age amsmath Error: Erroneous nesting of equation structures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1429 \end{align*}
-                   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1438: Pack
-age amsmath Error: Erroneous nesting of equation structures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1438   \end{align*}
-                     
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1445: Pack
-age amsmath Error: Erroneous nesting of equation structures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1445   \end{align*}
-                     
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1452: Pack
-age amsmath Error: Erroneous nesting of equation structures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1452   \end{align*}
+l.1460   \end{align*}
                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2095,8 +2458,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1463--1464
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1468: Pack
-age amsmath Error: Erroneous nesting of equation structures;
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:1468: Packa
+ge amsmath Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -2109,8 +2472,6 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-
-[24]
 Underfull \hbox (badness 10000) in paragraph at lines 1471--1472
 
  []
@@ -2118,8 +2479,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1471--1472
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1476: Pack
-age amsmath Error: Erroneous nesting of equation structures;
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:1476: Packa
+ge amsmath Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -2139,8 +2500,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1479--1480
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1484: Pack
-age amsmath Error: Erroneous nesting of equation structures;
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:1484: Packa
+ge amsmath Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -2160,8 +2521,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1487--1488
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1492: Pack
-age amsmath Error: Erroneous nesting of equation structures;
+ias/02 Metodo de la Transformada Inversa/actividad/tex/notebook.tex:1492: Packa
+ge amsmath Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -2174,104 +2535,220 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1495--1496
 
- []
+LaTeX Info: Redefining \. on input line 1498.
+LaTeX Info: Redefining \% on input line 1498.
+LaTeX Info: Redefining \. on input line 1498.
+LaTeX Info: Redefining \% on input line 1498.
+[36
 
+]
 
-c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
-dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1500: Pack
-age amsmath Error: Erroneous nesting of equation structures;
-(amsmath)                trying to recover with `aligned'.
+LaTeX Info: Redefining \. on input line 1527.
+LaTeX Info: Redefining \% on input line 1527.
+LaTeX Info: Redefining \. on input line 1527.
+LaTeX Info: Redefining \% on input line 1527.
+[37
 
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1500   \end{align*}
-                     
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-
-[25]
+]
 File: notebook_files/notebook_72_0.png Graphic file (type bmp)
 <notebook_files/notebook_72_0.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1566--1567
+Underfull \hbox (badness 10000) in paragraph at lines 1558--1559
 
  []
 
 
 
-[26]
+LaTeX Info: Redefining \. on input line 1561.
+LaTeX Info: Redefining \% on input line 1561.
+LaTeX Info: Redefining \. on input line 1561.
+LaTeX Info: Redefining \% on input line 1561.
+[38
 
-[27]
+]
 
-[28
+LaTeX Info: Redefining \. on input line 1567.
+LaTeX Info: Redefining \% on input line 1567.
+LaTeX Info: Redefining \. on input line 1567.
+LaTeX Info: Redefining \% on input line 1567.
+[39
+
+]
+
+LaTeX Info: Redefining \. on input line 1597.
+LaTeX Info: Redefining \% on input line 1597.
+LaTeX Info: Redefining \. on input line 1597.
+LaTeX Info: Redefining \% on input line 1597.
+[40
+
+]
+
+LaTeX Info: Redefining \. on input line 1617.
+LaTeX Info: Redefining \% on input line 1617.
+LaTeX Info: Redefining \. on input line 1617.
+LaTeX Info: Redefining \% on input line 1617.
+[41
+
+]
+
+LaTeX Info: Redefining \. on input line 1639.
+LaTeX Info: Redefining \% on input line 1639.
+[42
+
+]
+
+LaTeX Info: Redefining \. on input line 1643.
+LaTeX Info: Redefining \% on input line 1643.
+[43
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1660.
+(hyperref)                be the same. Added a new anchor on input line 1643.
 
 File: notebook_files/notebook_84_0.png Graphic file (type bmp)
 <notebook_files/notebook_84_0.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1689--1690
+Underfull \hbox (badness 10000) in paragraph at lines 1672--1673
 
  []
 
 
 
-[29
+LaTeX Info: Redefining \. on input line 1676.
+LaTeX Info: Redefining \% on input line 1676.
+LaTeX Info: Redefining \. on input line 1676.
+LaTeX Info: Redefining \% on input line 1676.
+[44
 
 ]
 File: notebook_files/notebook_87_0.png Graphic file (type bmp)
 <notebook_files/notebook_87_0.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1722--1723
+Underfull \hbox (badness 10000) in paragraph at lines 1705--1706
 
  []
 
 
 
-[30]
+LaTeX Info: Redefining \. on input line 1709.
+LaTeX Info: Redefining \% on input line 1709.
+LaTeX Info: Redefining \. on input line 1709.
+LaTeX Info: Redefining \% on input line 1709.
+[45
+
+]
 File: notebook_files/notebook_90_0.png Graphic file (type bmp)
 <notebook_files/notebook_90_0.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1765--1766
+Underfull \hbox (badness 10000) in paragraph at lines 1748--1749
 
  []
 
 
 
-[31]
-File: notebook_files/notebook_96_0.png Graphic file (type bmp)
-<notebook_files/notebook_96_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1833--1834
-
- []
-
-
-
-[32]
-
-[33]
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1885.
-
-
-
-[34
+LaTeX Info: Redefining \. on input line 1752.
+LaTeX Info: Redefining \% on input line 1752.
+LaTeX Info: Redefining \. on input line 1752.
+LaTeX Info: Redefining \% on input line 1752.
+[46
 
 ]
 
-[35] (notebook.aux)
+LaTeX Info: Redefining \. on input line 1760.
+LaTeX Info: Redefining \% on input line 1760.
+LaTeX Info: Redefining \. on input line 1760.
+LaTeX Info: Redefining \% on input line 1760.
+[47
+
+]
+
+LaTeX Info: Redefining \. on input line 1773.
+LaTeX Info: Redefining \% on input line 1773.
+LaTeX Info: Redefining \. on input line 1773.
+LaTeX Info: Redefining \% on input line 1773.
+[48
+
+]
+
+LaTeX Info: Redefining \. on input line 1789.
+LaTeX Info: Redefining \% on input line 1789.
+LaTeX Info: Redefining \. on input line 1789.
+LaTeX Info: Redefining \% on input line 1789.
+[49
+
+]
+File: notebook_files/notebook_96_0.png Graphic file (type bmp)
+<notebook_files/notebook_96_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1816--1817
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 1820.
+LaTeX Info: Redefining \% on input line 1820.
+LaTeX Info: Redefining \. on input line 1820.
+LaTeX Info: Redefining \% on input line 1820.
+[50
+
+]
+
+LaTeX Info: Redefining \. on input line 1840.
+LaTeX Info: Redefining \% on input line 1840.
+LaTeX Info: Redefining \. on input line 1840.
+LaTeX Info: Redefining \% on input line 1840.
+[51
+
+]
+
+LaTeX Info: Redefining \. on input line 1860.
+LaTeX Info: Redefining \% on input line 1860.
+LaTeX Info: Redefining \. on input line 1860.
+LaTeX Info: Redefining \% on input line 1860.
+[52
+
+]
+
+LaTeX Info: Redefining \. on input line 1868.
+LaTeX Info: Redefining \% on input line 1868.
+[53
+
+]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 1868.
+
+
+
+LaTeX Info: Redefining \. on input line 1903.
+LaTeX Info: Redefining \% on input line 1903.
+LaTeX Info: Redefining \. on input line 1903.
+LaTeX Info: Redefining \% on input line 1903.
+[54
+
+]
+
+LaTeX Info: Redefining \. on input line 1928.
+LaTeX Info: Redefining \% on input line 1928.
+LaTeX Info: Redefining \. on input line 1928.
+LaTeX Info: Redefining \% on input line 1928.
+[55
+
+]
+
+LaTeX Info: Redefining \. on input line 1971.
+LaTeX Info: Redefining \% on input line 1971.
+LaTeX Info: Redefining \. on input line 1971.
+LaTeX Info: Redefining \% on input line 1971.
+[56
+
+] (notebook.aux
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-11>
@@ -2290,15 +2767,17 @@ Package rerunfilecheck Warning: File `notebook.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `notebook.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  FA1C6D39D2EF11640FD4B521582E344B;11045.
- ) 
+(rerunfilecheck)             After:  32E19ECD96CF33BCF8B91D825ECDD170;9355.
+ )
+(\end occurred when \ifnum on line 822 was incomplete)
+(\end occurred when \iffalse on line 822 was incomplete) 
 Here is how much of TeX's memory you used:
- 34856 strings out of 403265
- 683356 string characters out of 5461230
- 1311865 words of memory out of 5000000
- 62724 multiletter control sequences out of 15000+600000
+ 36347 strings out of 403265
+ 708711 string characters out of 5461230
+ 1294770 words of memory out of 5000000
+ 64200 multiletter control sequences out of 15000+600000
  651302 words of font info for 177 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 116i,15n,121p,1417b,761s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,14n,121p,1356b,926s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on notebook.pdf (36 pages).
+Output written on notebook.pdf (57 pages).
