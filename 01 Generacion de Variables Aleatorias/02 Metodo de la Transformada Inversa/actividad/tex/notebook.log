@@ -1,15 +1,15 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.7.19)  31 AUG 2025 00:24
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.7.19)  2 SEP 2025 19:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **"c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Unive
 rsidad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Alea
-torias/02 Metodo de la Transformada Inversa/actividad/tex1/notebook.tex"
+torias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex"
 
 (c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Univers
 idad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleato
-rias/02 Metodo de la Transformada Inversa/actividad/tex1/notebook.tex
+rias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-11>
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -1482,7 +1482,8 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \@temptokenb=\toks58
 ) (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-) (notebook.aux)
+)
+No file notebook.aux.
 \openout1 = `notebook.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 437.
@@ -1750,51 +1751,18 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  LS2/libertinust1mathex/m/n --> TU/latinmodern-math.otf(
 3)/b/n on input line 437.
 Package hyperref Info: Link coloring ON on input line 437.
-(notebook.out) (notebook.out)
 \@outlinefile=\write5
 \openout5 = `notebook.out'.
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
 
 
 [1
 
-] (notebook.toc
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 2.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 2.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 2.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 2.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 2.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 2.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
-
-(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
-
-(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 2.
-
-
-(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Trying to load font information for LS1+libertinust1mathbb 
-on input line 2.
-
-(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/libertinust1math\ls1lib
-ertinust1mathbb.fd
-File: ls1libertinust1mathbb.fd 2016/08/22 latex LibertinusT1Mathbb LS1 font def
-initions
-))
+]
+No file notebook.toc.
 \tf@toc=\write6
 \openout6 = `notebook.toc'.
 
@@ -1803,40 +1771,88 @@ initions
 [1
 
 ]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00053pt on input line 465.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 465.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 465
+.
+ (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 465
+.
+
+(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 46
+5.
+
+(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Trying to load font information for LS1+libertinust1mathbb 
+on input line 465.
+
+(C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/libertinust1math\ls1lib
+ertinust1mathbb.fd
+File: ls1libertinust1mathbb.fd 2016/08/22 latex LibertinusT1Mathbb LS1 font def
+initions
+)
 
 LaTeX Font Warning: Font shape `TU/Inconsolata(0)/b/n' undefined
-(Font)              using `TU/Inconsolata(0)/m/n' instead on input line 472.
+(Font)              using `TU/Inconsolata(0)/m/n' instead on input line 466.
+
+
+LaTeX Font Warning: Font shape `TU/Inconsolata(0)/m/it' undefined
+(Font)              using `TU/Inconsolata(0)/m/n' instead on input line 485.
 
 
 
-[2
-
-]
+[2]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.40152pt on input line 510.
+(Font)              scaled to size 14.40152pt on input line 498.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00107pt on input line 498.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.00075pt on input line 498.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 510.
+(Font)              scaled to size 14.39845pt on input line 498.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99893pt on input line 498.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 498.
 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 537.
+(Font)              scaled to size 9.00096pt on input line 525.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 537.
+(Font)              scaled to size 6.00064pt on input line 525.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 537.
+(Font)              scaled to size 8.99904pt on input line 525.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 537.
+(Font)              scaled to size 5.99936pt on input line 525.
 [3
 
 ]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 12.00128pt on input line 529.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 8.00085pt on input line 529.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 11.99872pt on input line 529.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 7.99915pt on input line 529.
+
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 540.
+(hyperref)                be the same. Added a new anchor on input line 529.
 
 File: notebook_files/notebook_7_0.png Graphic file (type bmp)
 <notebook_files/notebook_7_0.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 570--571
+Underfull \hbox (badness 10000) in paragraph at lines 559--560
 
  []
 
@@ -1845,8 +1861,417 @@ Underfull \hbox (badness 10000) in paragraph at lines 570--571
 [4
 
 ]
+File: notebook_files/notebook_10_0.png Graphic file (type bmp)
+<notebook_files/notebook_10_0.png>
 
-[5] (notebook.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 592--593
+
+ []
+
+
+
+[5]
+File: notebook_files/notebook_13_0.png Graphic file (type bmp)
+<notebook_files/notebook_13_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 638--639
+
+ []
+
+
+
+[6]
+File: notebook_files/notebook_17_0.png Graphic file (type bmp)
+<notebook_files/notebook_17_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--681
+
+ []
+
+
+
+[7]
+
+[8
+
+]
+
+[9
+
+]
+
+[10
+
+]
+
+[11
+
+]
+
+[12
+
+]
+File: notebook_files/notebook_31_0.png Graphic file (type bmp)
+<notebook_files/notebook_31_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 907--908
+
+ []
+
+
+
+[13
+
+]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 911.
+
+File: notebook_files/notebook_34_0.png Graphic file (type bmp)
+<notebook_files/notebook_34_0.png>
+
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 963--964
+
+ []
+
+
+
+[15]
+File: notebook_files/notebook_37_0.png Graphic file (type bmp)
+<notebook_files/notebook_37_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1043--1044
+
+ []
+
+
+
+[16]
+
+[17]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 1111.
+
+Missing character: There is no λ in font Inconsolata Regular/OT:script=latn;lan
+guage=dflt;+init;+fina;!
+File: notebook_files/notebook_48_0.png Graphic file (type bmp)
+<notebook_files/notebook_48_0.png>
+
+
+[18
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1186--1187
+
+ []
+
+File: notebook_files/notebook_51_0.png Graphic file (type bmp)
+<notebook_files/notebook_51_0.png>
+
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 1224--1225
+
+ []
+
+
+
+[20]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 1268.
+
+File: notebook_files/notebook_61_0.png Graphic file (type bmp)
+<notebook_files/notebook_61_0.png>
+
+
+[21
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1309--1310
+
+ []
+
+
+
+[22]
+File: notebook_files/notebook_64_0.png Graphic file (type bmp)
+<notebook_files/notebook_64_0.png>
+
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 1398--1399
+
+ []
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1416: Pack
+age amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1416 \end{align*}
+                   
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1429: Pack
+age amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1429 \end{align*}
+                   
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1438: Pack
+age amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1438   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1445: Pack
+age amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1445   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1452: Pack
+age amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1452   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1463--1464
+
+ []
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1468: Pack
+age amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1468   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 1471--1472
+
+ []
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1476: Pack
+age amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1476   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1479--1480
+
+ []
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1484: Pack
+age amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1484   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1487--1488
+
+ []
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1492: Pack
+age amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1492   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1495--1496
+
+ []
+
+
+c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
+dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
+ias/02 Metodo de la Transformada Inversa/actividad/tex3/notebook.tex:1500: Pack
+age amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1500   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+[25]
+File: notebook_files/notebook_72_0.png Graphic file (type bmp)
+<notebook_files/notebook_72_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1566--1567
+
+ []
+
+
+
+[26]
+
+[27]
+
+[28
+
+]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 1660.
+
+File: notebook_files/notebook_84_0.png Graphic file (type bmp)
+<notebook_files/notebook_84_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1689--1690
+
+ []
+
+
+
+[29
+
+]
+File: notebook_files/notebook_87_0.png Graphic file (type bmp)
+<notebook_files/notebook_87_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1722--1723
+
+ []
+
+
+
+[30]
+File: notebook_files/notebook_90_0.png Graphic file (type bmp)
+<notebook_files/notebook_90_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1765--1766
+
+ []
+
+
+
+[31]
+File: notebook_files/notebook_96_0.png Graphic file (type bmp)
+<notebook_files/notebook_96_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1833--1834
+
+ []
+
+
+
+[32]
+
+[33]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 1885.
+
+
+
+[34
+
+]
+
+[35] (notebook.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-11>
@@ -1855,16 +2280,25 @@ L3 programming layer <2025-07-11>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `notebook.out' has not changed.
-(rerunfilecheck)             Checksum: 7D1E395C30024448C889811245717FB8;562.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `notebook.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `notebook.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  FA1C6D39D2EF11640FD4B521582E344B;11045.
  ) 
 Here is how much of TeX's memory you used:
- 34614 strings out of 403265
- 675606 string characters out of 5461230
- 1205050 words of memory out of 5000000
- 62501 multiletter control sequences out of 15000+600000
- 645488 words of font info for 151 fonts, out of 8000000 for 9000
+ 34856 strings out of 403265
+ 683356 string characters out of 5461230
+ 1311865 words of memory out of 5000000
+ 62724 multiletter control sequences out of 15000+600000
+ 651302 words of font info for 177 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 116i,14n,121p,1417b,668s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,15n,121p,1417b,761s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on notebook.pdf (6 pages).
+Output written on notebook.pdf (36 pages).
