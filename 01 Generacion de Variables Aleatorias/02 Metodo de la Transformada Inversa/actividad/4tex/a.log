@@ -1,15 +1,15 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.7.19)  2 SEP 2025 23:55
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.7.19)  3 SEP 2025 16:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **"c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Unive
 rsidad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Alea
-torias/02 Metodo de la Transformada Inversa/4/a.tex"
+torias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex"
 
 (c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Univers
 idad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleato
-rias/02 Metodo de la Transformada Inversa/4/a.tex
+rias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-11>
 (C:\Users\herie\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -2077,8 +2077,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 875--875
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:875: Argument of \es@a has an 
-extra }.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:875: Argument of 
+\es@a has an extra }.
 <inserted text> 
                 \par 
 l.875 ...sh\}}}\label{muxednimo-x_1minx_1dotsx_n}}
@@ -2094,8 +2094,8 @@ Runaway argument?
 {\expandafter \string \the \textfont \mathgroup }\expandafter \split@name \ETC.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:875: Paragraph ended before \e
-s@a was complete.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:875: Paragraph en
+ded before \es@a was complete.
 <to be read again> 
                    \par 
 l.875 ...sh\}}}\label{muxednimo-x_1minx_1dotsx_n}}
@@ -2106,8 +2106,8 @@ My plan is to forget the whole thing and hope for the best.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:875: Argument of \es@a has an 
-extra }.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:875: Argument of 
+\es@a has an extra }.
 <inserted text> 
                 \par 
 l.875 ...sh\}}}\label{muxednimo-x_1minx_1dotsx_n}}
@@ -2123,8 +2123,8 @@ Runaway argument?
 {\expandafter \string \the \textfont \mathgroup }\expandafter \split@name \ETC.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:875: Paragraph ended before \e
-s@a was complete.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:875: Paragraph en
+ded before \es@a was complete.
 <to be read again> 
                    \par 
 l.875 ...sh\}}}\label{muxednimo-x_1minx_1dotsx_n}}
@@ -2141,8 +2141,8 @@ My plan is to forget the whole thing and hope for the best.
 ]
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:907: Argument of \es@a has an 
-extra }.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:907: Argument of 
+\es@a has an extra }.
 <inserted text> 
                 \par 
 l.907 ...el{mixta-xminym-con-ysimmathrmexplambda}}
@@ -2158,8 +2158,8 @@ Runaway argument?
 {\expandafter \string \the \textfont \mathgroup }\expandafter \split@name \ETC.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:907: Paragraph ended before \e
-s@a was complete.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:907: Paragraph en
+ded before \es@a was complete.
 <to be read again> 
                    \par 
 l.907 ...el{mixta-xminym-con-ysimmathrmexplambda}}
@@ -2170,8 +2170,8 @@ My plan is to forget the whole thing and hope for the best.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:907: Argument of \es@a has an 
-extra }.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:907: Argument of 
+\es@a has an extra }.
 <inserted text> 
                 \par 
 l.907 ...el{mixta-xminym-con-ysimmathrmexplambda}}
@@ -2187,8 +2187,8 @@ Runaway argument?
 {\expandafter \string \the \textfont \mathgroup }\expandafter \split@name \ETC.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:907: Paragraph ended before \e
-s@a was complete.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:907: Paragraph en
+ded before \es@a was complete.
 <to be read again> 
                    \par 
 l.907 ...el{mixta-xminym-con-ysimmathrmexplambda}}
@@ -2215,7 +2215,8 @@ LaTeX Info: Redefining \. on input line 963.
 LaTeX Info: Redefining \% on input line 963.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:963: Missing { inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:963: Missing { in
+serted.
 <inserted text> ...har escapechar =m@ne edef par }
                                                   {Y,M}protect ) CON protect...
 l.963 ...ca de F\_X(x)}}\label{a-grafica-de-f_xx}}
@@ -2225,8 +2226,8 @@ which I'm going to interpret as `\def\a{}'.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:963: Missing endgroup inserted
-.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:963: Missing endg
+roup inserted.
 <inserted text> 
                 endgroup 
 l.963 ...ca de F\_X(x)}}\label{a-grafica-de-f_xx}}
@@ -2239,7 +2240,8 @@ my insertion and my current dilemma will both disappear.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:963: Missing } inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:963: Missing } in
+serted.
 <inserted text> 
                 }
 l.963 ...ca de F\_X(x)}}\label{a-grafica-de-f_xx}}
@@ -2264,7 +2266,8 @@ LaTeX Info: Redefining \. on input line 1016.
 LaTeX Info: Redefining \% on input line 1016.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1016: Missing { inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1016: Missing { i
+nserted.
 <inserted text> ...har escapechar =m@ne edef par }
                                                   {Y,M}protect ) CON protect...
 l.1016 
@@ -2274,8 +2277,8 @@ which I'm going to interpret as `\def\a{}'.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1016: Missing endgroup inserte
-d.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1016: Missing end
+group inserted.
 <inserted text> 
                 endgroup 
 l.1016 
@@ -2288,7 +2291,8 @@ my insertion and my current dilemma will both disappear.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1016: Missing } inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1016: Missing } i
+nserted.
 <inserted text> 
                 }
 l.1016 
@@ -2309,7 +2313,8 @@ LaTeX Info: Redefining \. on input line 1019.
 LaTeX Info: Redefining \% on input line 1019.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1019: Missing { inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1019: Missing { i
+nserted.
 <inserted text> ...har escapechar =m@ne edef par }
                                                   {Y,M}protect ) CON protect...
 l.1019 ...-1\}\_X(u)}}\label{b-grafica-de-f-1_xu}}
@@ -2319,8 +2324,8 @@ which I'm going to interpret as `\def\a{}'.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1019: Missing endgroup inserte
-d.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1019: Missing end
+group inserted.
 <inserted text> 
                 endgroup 
 l.1019 ...-1\}\_X(u)}}\label{b-grafica-de-f-1_xu}}
@@ -2333,7 +2338,8 @@ my insertion and my current dilemma will both disappear.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1019: Missing } inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1019: Missing } i
+nserted.
 <inserted text> 
                 }
 l.1019 ...-1\}\_X(u)}}\label{b-grafica-de-f-1_xu}}
@@ -2355,7 +2361,8 @@ LaTeX Info: Redefining \. on input line 1094.
 LaTeX Info: Redefining \% on input line 1094.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1094: Missing { inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1094: Missing { i
+nserted.
 <inserted text> ...har escapechar =m@ne edef par }
                                                   {Y,M}protect ) CON protect...
 l.1094     \end{center}
@@ -2365,8 +2372,8 @@ which I'm going to interpret as `\def\a{}'.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1094: Missing endgroup inserte
-d.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1094: Missing end
+group inserted.
 <inserted text> 
                 endgroup 
 l.1094     \end{center}
@@ -2379,7 +2386,8 @@ my insertion and my current dilemma will both disappear.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1094: Missing } inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1094: Missing } i
+nserted.
 <inserted text> 
                 }
 l.1094     \end{center}
@@ -2405,7 +2413,8 @@ LaTeX Info: Redefining \. on input line 1099.
 LaTeX Info: Redefining \% on input line 1099.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1099: Missing { inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1099: Missing { i
+nserted.
 <inserted text> ...har escapechar =m@ne edef par }
                                                   {Y,M}protect ) CON protect...
 l.1099 ...label{c-f_xf-1_xu-geq-u-para-u-in-0-1.}}
@@ -2415,8 +2424,8 @@ which I'm going to interpret as `\def\a{}'.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1099: Missing endgroup inserte
-d.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1099: Missing end
+group inserted.
 <inserted text> 
                 endgroup 
 l.1099 ...label{c-f_xf-1_xu-geq-u-para-u-in-0-1.}}
@@ -2429,7 +2438,8 @@ my insertion and my current dilemma will both disappear.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1099: Missing } inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1099: Missing } i
+nserted.
 <inserted text> 
                 }
 l.1099 ...label{c-f_xf-1_xu-geq-u-para-u-in-0-1.}}
@@ -2448,7 +2458,8 @@ LaTeX Info: Redefining \. on input line 1122.
 LaTeX Info: Redefining \% on input line 1122.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1122: Missing { inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1122: Missing { i
+nserted.
 <inserted text> ...har escapechar =m@ne edef par }
                                                   {Y,M}protect ) CON protect...
 l.1122 ...f_xx-leq-x-para-x-tal-que-f_xx-in-0-1.}}
@@ -2458,8 +2469,8 @@ which I'm going to interpret as `\def\a{}'.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1122: Missing endgroup inserte
-d.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1122: Missing end
+group inserted.
 <inserted text> 
                 endgroup 
 l.1122 ...f_xx-leq-x-para-x-tal-que-f_xx-in-0-1.}}
@@ -2472,7 +2483,8 @@ my insertion and my current dilemma will both disappear.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1122: Missing } inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1122: Missing } i
+nserted.
 <inserted text> 
                 }
 l.1122 ...f_xx-leq-x-para-x-tal-que-f_xx-in-0-1.}}
@@ -2493,7 +2505,8 @@ LaTeX Info: Redefining \. on input line 1139.
 LaTeX Info: Redefining \% on input line 1139.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1139: Missing { inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1139: Missing { i
+nserted.
 <inserted text> ...har escapechar =m@ne edef par }
                                                   {Y,M}protect ) CON protect...
 l.1139 ...-el-muxe9todo-de-la-funciuxf3n-inversa}}
@@ -2503,8 +2516,8 @@ which I'm going to interpret as `\def\a{}'.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1139: Missing endgroup inserte
-d.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1139: Missing end
+group inserted.
 <inserted text> 
                 endgroup 
 l.1139 ...-el-muxe9todo-de-la-funciuxf3n-inversa}}
@@ -2517,7 +2530,8 @@ my insertion and my current dilemma will both disappear.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1139: Missing } inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1139: Missing } i
+nserted.
 <inserted text> 
                 }
 l.1139 ...-el-muxe9todo-de-la-funciuxf3n-inversa}}
@@ -2538,7 +2552,8 @@ LaTeX Info: Redefining \. on input line 1159.
 LaTeX Info: Redefining \% on input line 1159.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1159: Missing { inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1159: Missing { i
+nserted.
 <inserted text> ...har escapechar =m@ne edef par }
                                                   {Y,M}protect ) CON protect...
 l.1159 ...l{mixta-xmaxym-con-ysimmathrmexplambda}}
@@ -2548,8 +2563,8 @@ which I'm going to interpret as `\def\a{}'.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1159: Missing endgroup inserte
-d.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1159: Missing end
+group inserted.
 <inserted text> 
                 endgroup 
 l.1159 ...l{mixta-xmaxym-con-ysimmathrmexplambda}}
@@ -2562,7 +2577,8 @@ my insertion and my current dilemma will both disappear.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1159: Missing } inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1159: Missing } i
+nserted.
 <inserted text> 
                 }
 l.1159 ...l{mixta-xmaxym-con-ysimmathrmexplambda}}
@@ -2580,8 +2596,8 @@ LaTeX Info: Redefining \% on input line 1159.
 ]
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1159: Argument of \es@a has an
- extra }.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1159: Argument of
+ \es@a has an extra }.
 <inserted text> 
                 \par 
 l.1159 ...l{mixta-xmaxym-con-ysimmathrmexplambda}}
@@ -2597,8 +2613,8 @@ Runaway argument?
 {\expandafter \string \the \textfont \mathgroup }\expandafter \split@name \ETC.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1159: Paragraph ended before \
-es@a was complete.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1159: Paragraph e
+nded before \es@a was complete.
 <to be read again> 
                    \par 
 l.1159 ...l{mixta-xmaxym-con-ysimmathrmexplambda}}
@@ -2609,8 +2625,8 @@ My plan is to forget the whole thing and hope for the best.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1159: Argument of \es@a has an
- extra }.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1159: Argument of
+ \es@a has an extra }.
 <inserted text> 
                 \par 
 l.1159 ...l{mixta-xmaxym-con-ysimmathrmexplambda}}
@@ -2626,8 +2642,8 @@ Runaway argument?
 {\expandafter \string \the \textfont \mathgroup }\expandafter \split@name \ETC.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1159: Paragraph ended before \
-es@a was complete.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1159: Paragraph e
+nded before \es@a was complete.
 <to be read again> 
                    \par 
 l.1159 ...l{mixta-xmaxym-con-ysimmathrmexplambda}}
@@ -2652,7 +2668,8 @@ LaTeX Info: Redefining \. on input line 1237.
 LaTeX Info: Redefining \% on input line 1237.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1237: Missing { inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1237: Missing { i
+nserted.
 <inserted text> ...har escapechar =m@ne edef par }
                                                   {Y,M}protect ) CON protect...
 l.1237     \end{center}
@@ -2662,8 +2679,8 @@ which I'm going to interpret as `\def\a{}'.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1237: Missing endgroup inserte
-d.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1237: Missing end
+group inserted.
 <inserted text> 
                 endgroup 
 l.1237     \end{center}
@@ -2676,7 +2693,8 @@ my insertion and my current dilemma will both disappear.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1237: Missing } inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1237: Missing } i
+nserted.
 <inserted text> 
                 }
 l.1237     \end{center}
@@ -2702,7 +2720,8 @@ LaTeX Info: Redefining \. on input line 1242.
 LaTeX Info: Redefining \% on input line 1242.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1242: Missing { inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1242: Missing { i
+nserted.
 <inserted text> ...har escapechar =m@ne edef par }
                                                   {Y,M}protect ) CON protect...
 l.1242 ...-1\}\_X(u)}}\label{b-grafica-de-f-1_xu}}
@@ -2712,8 +2731,8 @@ which I'm going to interpret as `\def\a{}'.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1242: Missing endgroup inserte
-d.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1242: Missing end
+group inserted.
 <inserted text> 
                 endgroup 
 l.1242 ...-1\}\_X(u)}}\label{b-grafica-de-f-1_xu}}
@@ -2726,7 +2745,8 @@ my insertion and my current dilemma will both disappear.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1242: Missing } inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1242: Missing } i
+nserted.
 <inserted text> 
                 }
 l.1242 ...-1\}\_X(u)}}\label{b-grafica-de-f-1_xu}}
@@ -2753,7 +2773,8 @@ LaTeX Info: Redefining \. on input line 1280.
 LaTeX Info: Redefining \% on input line 1280.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1280: Missing { inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1280: Missing { i
+nserted.
 <inserted text> ...har escapechar =m@ne edef par }
                                                   {Y,M}protect ) CON protect...
 l.1280 ...label{c-f_xf-1_xu-geq-u-para-u-in-0-1.}}
@@ -2763,8 +2784,8 @@ which I'm going to interpret as `\def\a{}'.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1280: Missing endgroup inserte
-d.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1280: Missing end
+group inserted.
 <inserted text> 
                 endgroup 
 l.1280 ...label{c-f_xf-1_xu-geq-u-para-u-in-0-1.}}
@@ -2777,7 +2798,8 @@ my insertion and my current dilemma will both disappear.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1280: Missing } inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1280: Missing } i
+nserted.
 <inserted text> 
                 }
 l.1280 ...label{c-f_xf-1_xu-geq-u-para-u-in-0-1.}}
@@ -2798,7 +2820,8 @@ LaTeX Info: Redefining \. on input line 1290.
 LaTeX Info: Redefining \% on input line 1290.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1290: Missing { inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1290: Missing { i
+nserted.
 <inserted text> ...har escapechar =m@ne edef par }
                                                   {Y,M}protect ) CON protect...
 l.1290 ...f_xx-geq-x-para-x-tal-que-f_xx-in-0-1.}}
@@ -2808,8 +2831,8 @@ which I'm going to interpret as `\def\a{}'.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1290: Missing endgroup inserte
-d.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1290: Missing end
+group inserted.
 <inserted text> 
                 endgroup 
 l.1290 ...f_xx-geq-x-para-x-tal-que-f_xx-in-0-1.}}
@@ -2822,7 +2845,8 @@ my insertion and my current dilemma will both disappear.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1290: Missing } inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1290: Missing } i
+nserted.
 <inserted text> 
                 }
 l.1290 ...f_xx-geq-x-para-x-tal-que-f_xx-in-0-1.}}
@@ -2843,7 +2867,8 @@ LaTeX Info: Redefining \. on input line 1299.
 LaTeX Info: Redefining \% on input line 1299.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1299: Missing { inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1299: Missing { i
+nserted.
 <inserted text> ...har escapechar =m@ne edef par }
                                                   {Y,M}protect ) CON protect...
 l.1299 ...-el-muxe9todo-de-la-funciuxf3n-inversa}}
@@ -2853,8 +2878,8 @@ which I'm going to interpret as `\def\a{}'.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1299: Missing endgroup inserte
-d.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1299: Missing end
+group inserted.
 <inserted text> 
                 endgroup 
 l.1299 ...-el-muxe9todo-de-la-funciuxf3n-inversa}}
@@ -2867,7 +2892,8 @@ my insertion and my current dilemma will both disappear.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1299: Missing } inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1299: Missing } i
+nserted.
 <inserted text> 
                 }
 l.1299 ...-el-muxe9todo-de-la-funciuxf3n-inversa}}
@@ -2888,7 +2914,8 @@ LaTeX Info: Redefining \. on input line 1316.
 LaTeX Info: Redefining \% on input line 1316.
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1316: Missing { inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1316: Missing { i
+nserted.
 <inserted text> ...har escapechar =m@ne edef par }
                                                   {Y,M}protect ) CON protect...
 l.1316 tramos}\label{variable-con-cdf-por-tramos}}
@@ -2898,8 +2925,8 @@ which I'm going to interpret as `\def\a{}'.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1316: Missing endgroup inserte
-d.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1316: Missing end
+group inserted.
 <inserted text> 
                 endgroup 
 l.1316 tramos}\label{variable-con-cdf-por-tramos}}
@@ -2912,7 +2939,8 @@ my insertion and my current dilemma will both disappear.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1316: Missing } inserted.
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1316: Missing } i
+nserted.
 <inserted text> 
                 }
 l.1316 tramos}\label{variable-con-cdf-por-tramos}}
@@ -2980,8 +3008,8 @@ LaTeX Info: Redefining \% on input line 1454.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1468: Package amsmath Error: E
-rroneous nesting of equation structures;
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1468: Package ams
+math Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -2996,8 +3024,8 @@ If that doesn't work, type  X <return>  to quit.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1481: Package amsmath Error: E
-rroneous nesting of equation structures;
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1481: Package ams
+math Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -3012,8 +3040,8 @@ If that doesn't work, type  X <return>  to quit.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1490: Package amsmath Error: E
-rroneous nesting of equation structures;
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1490: Package ams
+math Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -3028,8 +3056,8 @@ If that doesn't work, type  X <return>  to quit.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1497: Package amsmath Error: E
-rroneous nesting of equation structures;
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1497: Package ams
+math Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -3044,8 +3072,8 @@ If that doesn't work, type  X <return>  to quit.
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1504: Package amsmath Error: E
-rroneous nesting of equation structures;
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1504: Package ams
+math Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -3073,8 +3101,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1515--1516
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1520: Package amsmath Error: E
-rroneous nesting of equation structures;
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1520: Package ams
+math Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -3094,8 +3122,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1523--1524
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1528: Package amsmath Error: E
-rroneous nesting of equation structures;
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1528: Package ams
+math Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -3115,8 +3143,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1531--1532
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1536: Package amsmath Error: E
-rroneous nesting of equation structures;
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1536: Package ams
+math Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -3136,8 +3164,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1539--1540
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1544: Package amsmath Error: E
-rroneous nesting of equation structures;
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1544: Package ams
+math Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -3157,8 +3185,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1547--1548
 
 c:/Users/herie/OneDrive - Fundacion Universidad de las Americas Puebla/Universi
 dad/09 Semestre Otoño/Simulacion Estocastica/01 Generacion de Variables Aleator
-ias/02 Metodo de la Transformada Inversa/4/a.tex:1552: Package amsmath Error: E
-rroneous nesting of equation structures;
+ias/02 Metodo de la Transformada Inversa/actividad/4tex/a.tex:1552: Package ams
+math Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -3402,11 +3430,11 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 (\end occurred when \iffalse on line 875 was incomplete) 
 Here is how much of TeX's memory you used:
  36730 strings out of 403265
- 715840 string characters out of 5461230
+ 715879 string characters out of 5461230
  1295136 words of memory out of 5000000
  64554 multiletter control sequences out of 15000+600000
  659866 words of font info for 216 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 116i,14n,121p,1337b,924s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,14n,121p,1350b,924s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on a.pdf (58 pages).
