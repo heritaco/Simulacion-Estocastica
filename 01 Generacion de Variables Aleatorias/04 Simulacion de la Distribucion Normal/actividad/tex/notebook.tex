@@ -1,3 +1,5 @@
+% jupyter nbconvert 'notebook.ipynb' --to latex
+
 \documentclass[10pt,a4paper]{article}
 
     \usepackage[spanish]{babel} % Idioma del documento, fundamental para la correcta separación de sílabas y traducción de términos
@@ -490,16 +492,16 @@
     \begin{titlepage}
     \centering
     \vspace*{4cm}
-    {\extrabold\fontsize{28pt}{28pt}\selectfont Método de la Trasformada Inversa\par}
+    {\extrabold\fontsize{28pt}{28pt}\selectfont Método de Aceptación y Rechazo\par}
     \vspace{1cm}
     
     {\medium\fontsize{12pt}{12pt}\selectfont
     {\large Curso:  Temas Selectos I: O25 LAT4032 1\par}
     {\large Profesor:  Rubén Blancas Rivera\par}
-    {\large Equipo: Ana Ximena Bravo, Heriberto Espino, Celeste Núñez\par}
+    {\large Equipo: jijiji, jujuju, jojojo\par}
     {\large Universidad de las Américas Puebla\par}
     \vfill
-    {\large 2 de Septiembre de 2025 \par}}
+    {\large 11 de Septiembre de 2025 \par}}
     \end{titlepage}
 
 
@@ -513,6 +515,28 @@
     
 
     
+    \hypertarget{importaciuxf3n-de-libreruxedas}{%
+\section{Importación de
+librerías}\label{importaciuxf3n-de-libreruxedas}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{1}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Importación de librerías}
+\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{numpy}\PY{+w}{ }\PY{k}{as}\PY{+w}{ }\PY{n+nn}{np}
+\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot}\PY{+w}{ }\PY{k}{as}\PY{+w}{ }\PY{n+nn}{plt}
+\PY{k+kn}{from}\PY{+w}{ }\PY{n+nn}{style}\PY{+w}{ }\PY{k+kn}{import} \PY{n}{mpl\PYZus{}apply}
+\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{time}
+\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{math}
+
+\PY{c+c1}{\PYZsh{} Configuración del estilo}
+\PY{n}{mpl\PYZus{}apply}\PY{p}{(}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Generador de números aleatorios}
+\PY{n}{rng} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{default\PYZus{}rng}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
     \hypertarget{ejercicio-1}{%
 \section{Ejercicio 1}\label{ejercicio-1}}
 
@@ -533,6 +557,8 @@ q(k)}\label{a-distribuciuxf3n-de-referencia-qk}}
     Proponga una distribución de referencia \(q(k)\) sobre
 \(\{1, 2, 3, 4\}\) que sea fácil de simular.
 
+    Se elige \(q(k)=\tfrac14\), uniforme en \(\{1,2,3,4\}\)
+
     \hypertarget{b-cota-con-constante-c}{%
 \subsection{b) Cota con constante c}\label{b-cota-con-constante-c}}
 
@@ -542,12 +568,67 @@ q(k)}\label{a-distribuciuxf3n-de-referencia-qk}}
 p_k \le c\, q(k),\ \forall k.
 \]
 
+    Se necesita \(p_k\le c\,q(k)\ \forall k\), es decir
+\(c\ge \max_k \frac{p_k}{q(k)}\).
+
+\[
+\frac{p_1}{q(1)}=\frac{1/2}{1/4}=2,\quad
+\frac{p_2}{q(2)}=\frac{1/4}{1/4}=1,\quad
+\frac{p_3}{q(3)}=\frac{1/8}{1/4}=0.5,\quad
+\frac{p_4}{q(4)}=\frac{1/8}{1/4}=0.5.
+\]
+
+\[
+\Rightarrow\ \boxed{c=\max\{2,1,0.5,0.5\}=2.}
+\]
+
+\textbf{Regla de aceptación}
+
+Se genera \(Y\sim q\) y \(U\sim \mathrm{Unif}(0,1)\). Se acepta \(X=Y\)
+si
+
+\[
+U\le \frac{p_Y}{c\,q(Y)}=\frac{p_Y}{2\cdot(1/4)}=2\,p_Y.
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  Si \(Y=1\): acepta si \(U\le 1\) (siempre).
+\item
+  Si \(Y=2\): acepta si \(U\le 1/2\).
+\item
+  Si \(Y=3\) o \(4\): acepta si \(U\le 1/4\).
+\end{itemize}
+
+\textbf{Eficiencia}
+
+La probabilidad de aceptar en una propuesta es
+
+\[
+\sum_{k} q(k)\,\min\!\Big(1,\frac{p_k}{c\,q(k)}\Big)
+=\sum_k q(k)\,\frac{p_k}{c\,q(k)}=\frac{1}{c}\sum_k p_k=\frac{1}{c}.
+\]
+
+Aquí \(1/c=1/2\). El número esperado de intentos por muestra aceptada es
+\(c=2\).
+
     \hypertarget{c-algoritmo-de-aceptaciuxf3nrechazo}{%
 \subsection{c) Algoritmo de
 aceptación--rechazo}\label{c-algoritmo-de-aceptaciuxf3nrechazo}}
 
     Describa el algoritmo de aceptación--rechazo para generar una
 realización de \(X\).
+
+    \begin{verbatim}
+1. `repeat:`
+
+2.  Genera $Y\in\{1,2,3,4\}$ con prob. $1/4$ c/u.
+
+3.  Genera $U\sim U(0,1)$.
+
+4.  Si $U\le p_Y/(2\cdot 1/4)=2p_Y$, **acepta** y devuelve $X=Y$; si no, regresa a 1.
+\end{verbatim}
 
     \hypertarget{d-programa-de-simulaciuxf3n-y-estimaciuxf3n-de-c}{%
 \subsection{d) Programa de simulación y estimación de
@@ -557,18 +638,107 @@ c}\label{d-programa-de-simulaciuxf3n-y-estimaciuxf3n-de-c}}
 compare el valor teórico de \(c\) con un valor aproximado obtenido de
 las simulaciones.
 
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{2}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{p} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+m+mi}{1}\PY{p}{:} \PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{:} \PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{:} \PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{:} \PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{8}\PY{p}{\PYZcb{}}
+\PY{n}{q} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+m+mi}{1}\PY{p}{:} \PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{:} \PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{:} \PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{:} \PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{4}\PY{p}{\PYZcb{}}
+\PY{n}{c} \PY{o}{=} \PY{l+m+mf}{2.0}
+
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{ar\PYZus{}discreto}\PY{p}{(}\PY{n}{n}\PY{o}{=}\PY{l+m+mi}{100000}\PY{p}{)}\PY{p}{:}
+    \PY{n}{X}\PY{p}{,} \PY{n}{trials}\PY{p}{,} \PY{n}{acc} \PY{o}{=} \PY{p}{[}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}
+    \PY{k}{while} \PY{n+nb}{len}\PY{p}{(}\PY{n}{X}\PY{p}{)} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{:}
+        \PY{n}{y} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{integers}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}         \PY{c+c1}{\PYZsh{} propuesta uniforme}
+        \PY{n}{u} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{p}{)}
+        \PY{n}{trials} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+        \PY{k}{if} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{p}\PY{p}{[}\PY{n}{y}\PY{p}{]} \PY{o}{/} \PY{p}{(}\PY{n}{c}\PY{o}{*}\PY{n}{q}\PY{p}{[}\PY{n}{y}\PY{p}{]}\PY{p}{)}\PY{p}{:}      \PY{c+c1}{\PYZsh{} umbral = 2*p[y]}
+            \PY{n}{X}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{y}\PY{p}{)}\PY{p}{;} \PY{n}{acc} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+    \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{X}\PY{p}{)}\PY{p}{,} \PY{n}{acc}\PY{o}{/}\PY{n}{trials}\PY{p}{,} \PY{n}{trials}\PY{o}{/}\PY{n}{n}
+
+\PY{n}{x}\PY{p}{,} \PY{n}{acc}\PY{p}{,} \PY{n}{intents} \PY{o}{=} \PY{n}{ar\PYZus{}discreto}\PY{p}{(}\PY{l+m+mi}{200000}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Aceptación empírica ≈ }\PY{l+s+si}{\PYZob{}}\PY{n}{acc}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{  (teórica 0.500)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Intentos por muestra ≈ }\PY{l+s+si}{\PYZob{}}\PY{n}{intents}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{  (teórica 2.000)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{vals}\PY{p}{,} \PY{n}{counts} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{return\PYZus{}counts}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\PY{n}{freq} \PY{o}{=} \PY{p}{\PYZob{}}\PY{n+nb}{int}\PY{p}{(}\PY{n}{k}\PY{p}{)}\PY{p}{:} \PY{n}{v}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{k}{for} \PY{n}{k}\PY{p}{,} \PY{n}{v} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{vals}\PY{p}{,} \PY{n}{counts}\PY{p}{)}\PY{p}{\PYZcb{}}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Frecuencias simuladas:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{freq}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Probabilidades teóricas:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{p}\PY{p}{)}
+
+\PY{n}{bar\PYZus{}width} \PY{o}{=} \PY{l+m+mf}{0.4}
+\PY{n}{keys} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{n}{freq}\PY{o}{.}\PY{n}{keys}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n}{simulated\PYZus{}values} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{n}{freq}\PY{o}{.}\PY{n}{values}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n}{theoretical\PYZus{}values} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{p}\PY{p}{[}\PY{n}{k}\PY{p}{]} \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n}{keys}\PY{p}{]}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{keys} \PY{o}{\PYZhy{}} \PY{n}{bar\PYZus{}width}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{simulated\PYZus{}values}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{n}{bar\PYZus{}width}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.7}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simuladas}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{keys} \PY{o}{+} \PY{n}{bar\PYZus{}width}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{theoretical\PYZus{}values}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{n}{bar\PYZus{}width}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.7}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Teóricas}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}\PY{n}{keys}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Aceptación empírica ≈ 0.499  (teórica 0.500)
+Intentos por muestra ≈ 2.002  (teórica 2.000)
+Frecuencias simuladas: \{1: np.float64(0.49747), 2: np.float64(0.2517), 3:
+np.float64(0.124885), 4: np.float64(0.125945)\}
+Probabilidades teóricas: \{1: 0.5, 2: 0.25, 3: 0.125, 4: 0.125\}
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_15_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
     \hypertarget{ejercicio-2}{%
 \section{Ejercicio 2}\label{ejercicio-2}}
 
-    \hypertarget{simulaciuxf3n-textbeta1-23-por-aceptaciuxf3nrechazo}{%
-\subsection{\texorpdfstring{Simulación \(\text{Beta}(1, 2,3)\) por
-aceptación--rechazo}{Simulación \textbackslash text\{Beta\}(1, 2,3) por aceptación--rechazo}}\label{simulaciuxf3n-textbeta1-23-por-aceptaciuxf3nrechazo}}
+    \hypertarget{simulaciuxf3n-textbeta1-2.3-por-aceptaciuxf3nrechazo}{%
+\subsection{\texorpdfstring{Simulación \(\text{Beta}(1, 2.3)\) por
+aceptación--rechazo}{Simulación \textbackslash text\{Beta\}(1, 2.3) por aceptación--rechazo}}\label{simulaciuxf3n-textbeta1-2.3-por-aceptaciuxf3nrechazo}}
 
     Utilice el método de aceptación y rechazo para simular una variable
-aleatoria con distribución \(\text{Beta}(1, 2,3)\). Elabore un programa
+aleatoria con distribución \(\text{Beta}(1, 2.3)\). Elabore un programa
 de cómputo que genere simulaciones de esta variable y compare resultados
 con la densidad teórica.
 
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{3}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{rbeta\PYZus{}alpha1\PYZus{}beta}\PY{p}{(}\PY{n}{beta}\PY{o}{=}\PY{l+m+mf}{2.0}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{l+m+mf}{3.0}\PY{p}{,} \PY{n}{n}\PY{o}{=}\PY{l+m+mi}{100000}\PY{p}{)}\PY{p}{:}
+    \PY{n}{X}\PY{p}{,} \PY{n}{trials} \PY{o}{=} \PY{p}{[}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{0}
+    \PY{k}{while} \PY{n+nb}{len}\PY{p}{(}\PY{n}{X}\PY{p}{)} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{:}
+        \PY{n}{y} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{n}{s}           \PY{c+c1}{\PYZsh{} Unif(0,s)}
+        \PY{n}{u} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{p}{)}
+        \PY{k}{if} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{p}{(}\PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n}{y}\PY{o}{/}\PY{n}{s}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{n}{beta} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
+            \PY{n}{X}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{y}\PY{p}{)}
+        \PY{n}{trials} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+    \PY{n}{X} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{X}\PY{p}{)}
+    \PY{n}{acc} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{X}\PY{p}{)}\PY{o}{/}\PY{n}{trials}
+    \PY{k}{return} \PY{n}{X}\PY{p}{,} \PY{n}{acc}\PY{p}{,} \PY{n}{trials}
+
+\PY{c+c1}{\PYZsh{} Beta(1, 2.3) en (0,1): beta=2.3, s=1}
+\PY{n}{x1}\PY{p}{,} \PY{n}{acc1}\PY{p}{,} \PY{n}{tr1} \PY{o}{=} \PY{n}{rbeta\PYZus{}alpha1\PYZus{}beta}\PY{p}{(}\PY{n}{beta}\PY{o}{=}\PY{l+m+mf}{2.3}\PY{p}{,} \PY{n}{s}\PY{o}{=}\PY{l+m+mf}{1.0}\PY{p}{,} \PY{n}{n}\PY{o}{=}\PY{l+m+mi}{100000}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Beta(1,2.3) en (0,1): aceptación empírica ≈ }\PY{l+s+si}{\PYZob{}}\PY{n}{acc1}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, teórica = }\PY{l+s+si}{\PYZob{}}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mf}{2.3}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, intentos/muestra ≈ }\PY{l+s+si}{\PYZob{}}\PY{n}{tr1}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{x1}\PY{p}{)}\PY{l+s+si}{:}\PY{l+s+s2}{.2f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{200}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{[}\PY{n}{x}\PY{o}{\PYZlt{}}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{l+m+mf}{2.3}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{p}{[}\PY{n}{x}\PY{o}{\PYZlt{}}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{1.3}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Beta(1,2.3) en (0,1)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Beta(1,2.3) en (0,1): aceptación empírica ≈ 0.433, teórica = 0.435,
+intentos/muestra ≈ 2.31
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_19_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
     \hypertarget{ejercicio-3}{%
 \section{Ejercicio 3}\label{ejercicio-3}}
 
@@ -585,11 +755,46 @@ inversa}\label{a-muxe9todo-de-la-transformada-inversa}}
     Aplique el método de la transformada inversa para dar un algoritmo que
 simule una variable aleatoria con la función de distribución anterior.
 
+    Sea \(U\sim\mathrm{Unif}(0,1)\). Definimos
+
+\[
+X = U^{1/n}.
+\]
+
+Entonces
+
+\[
+P(X\le x)=P(U^{1/n}\le x)=P(U\le x^n)=x^n=F(x),
+\]
+
+luego \(X\) tiene CDF \(F(x)=x^n\).
+
+\textbf{Algoritmo:} genera \(U\) y regresa \(U^{1/n}\). Aceptación:
+100\%.
+
     \hypertarget{b-muxe9todo-de-aceptaciuxf3nrechazo}{%
 \subsection{b) Método de
 aceptación--rechazo}\label{b-muxe9todo-de-aceptaciuxf3nrechazo}}
 
     Aplique el método de aceptación y rechazo para el mismo caso.
+
+    La densidad objetivo es \(f(x)=F'(x)=n\,x^{n-1}\) en \((0,1)\).
+
+Toma propuesta \(g(x)=1\) (uniforme en \((0,1)\)). Entonces
+
+\[
+\frac{f(x)}{g(x)}=n\,x^{n-1}\le \max_{x\in(0,1)} n\,x^{n-1}=n \quad\Rightarrow\quad \boxed{c=n}.
+\]
+
+\textbf{Criterio:} genera \(Y\sim\mathrm{Unif}(0,1)\),
+\(U\sim\mathrm{Unif}(0,1)\) y acepta si
+
+\[
+U \le \frac{f(Y)}{c\,g(Y)}=\frac{nY^{n-1}}{n}=Y^{\,n-1}.
+\]
+
+\textbf{Eficiencia:} prob. de aceptación \(=1/c=1/n\); intentos
+esperados \(=c=n\).
 
     \hypertarget{c-implementaciuxf3n-computacional}{%
 \subsection{c) Implementación
@@ -597,11 +802,94 @@ computacional}\label{c-implementaciuxf3n-computacional}}
 
     Elabore un programa de cómputo para implementar ambos algoritmos.
 
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{4}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{sample\PYZus{}inverse}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{n}{size}\PY{p}{)}\PY{p}{:}
+    \PY{n}{u} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{n}{size}\PY{p}{)}
+    \PY{k}{return} \PY{n}{u}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mf}{1.0}\PY{o}{/}\PY{n}{n}\PY{p}{)}
+
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{sample\PYZus{}ar}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{n}{size}\PY{p}{)}\PY{p}{:}
+    \PY{n}{X}\PY{p}{,} \PY{n}{trials} \PY{o}{=} \PY{p}{[}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{0}
+    \PY{k}{while} \PY{n+nb}{len}\PY{p}{(}\PY{n}{X}\PY{p}{)} \PY{o}{\PYZlt{}} \PY{n}{size}\PY{p}{:}
+        \PY{n}{y} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{p}{)}
+        \PY{n}{u} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{p}{)}
+        \PY{n}{trials} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+        \PY{k}{if} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{y}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
+            \PY{n}{X}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{y}\PY{p}{)}
+    \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{X}\PY{p}{)}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{X}\PY{p}{)}\PY{o}{/}\PY{n}{trials}\PY{p}{,} \PY{n}{trials}
+
+\PY{c+c1}{\PYZsh{} Demo}
+\PY{n}{n}\PY{p}{,} \PY{n}{N} \PY{o}{=} \PY{l+m+mi}{7}\PY{p}{,} \PY{l+m+mi}{100\PYZus{}000}
+
+\PY{n}{t0} \PY{o}{=} \PY{n}{time}\PY{o}{.}\PY{n}{perf\PYZus{}counter}\PY{p}{(}\PY{p}{)}
+\PY{n}{x\PYZus{}inv} \PY{o}{=} \PY{n}{sample\PYZus{}inverse}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{n}{N}\PY{p}{)}
+\PY{n}{t\PYZus{}inv} \PY{o}{=} \PY{n}{time}\PY{o}{.}\PY{n}{perf\PYZus{}counter}\PY{p}{(}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{t0}
+
+\PY{n}{t0} \PY{o}{=} \PY{n}{time}\PY{o}{.}\PY{n}{perf\PYZus{}counter}\PY{p}{(}\PY{p}{)}
+\PY{n}{x\PYZus{}ar}\PY{p}{,} \PY{n}{acc\PYZus{}ar}\PY{p}{,} \PY{n}{props} \PY{o}{=} \PY{n}{sample\PYZus{}ar}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{n}{N}\PY{p}{)}
+\PY{n}{t\PYZus{}ar} \PY{o}{=} \PY{n}{time}\PY{o}{.}\PY{n}{perf\PYZus{}counter}\PY{p}{(}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{t0}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{[Inversa]  tiempo=}\PY{l+s+si}{\PYZob{}}\PY{n}{t\PYZus{}inv}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{s,   rechazos=0,            uniformes≈}\PY{l+s+si}{\PYZob{}}\PY{n}{N}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{[A\PYZhy{}R]      tiempo=}\PY{l+s+si}{\PYZob{}}\PY{n}{t\PYZus{}ar}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{s,   aceptación≈}\PY{l+s+si}{\PYZob{}}\PY{n}{acc\PYZus{}ar}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{ (teórica }\PY{l+s+si}{\PYZob{}}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{n}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{), }\PY{l+s+s2}{\PYZdq{}}
+      \PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{propuestas=}\PY{l+s+si}{\PYZob{}}\PY{n}{props}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{ (\PYZti{}}\PY{l+s+si}{\PYZob{}}\PY{n}{props}\PY{o}{/}\PY{n}{N}\PY{l+s+si}{:}\PY{l+s+s2}{.2f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{ por muestra), uniformes≈}\PY{l+s+si}{\PYZob{}}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{props}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Chequeo de momentos (teóricos: E[X]=n/(n+1), Var[X]=n/[(n+2)(n+1)\PYZca{}2])}
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{stats}\PY{p}{(}\PY{n}{name}\PY{p}{,} \PY{n}{x}\PY{p}{)}\PY{p}{:}
+    \PY{n}{mean} \PY{o}{=} \PY{n}{x}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+    \PY{n}{var}  \PY{o}{=} \PY{n}{x}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{p}{)}
+    \PY{n}{mt}   \PY{o}{=} \PY{n}{n}\PY{o}{/}\PY{p}{(}\PY{n}{n}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+    \PY{n}{vt}   \PY{o}{=} \PY{n}{n}\PY{o}{/}\PY{p}{(}\PY{p}{(}\PY{n}{n}\PY{o}{+}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{n}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}}\PY{n}{name}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{: mean≈}\PY{l+s+si}{\PYZob{}}\PY{n}{mean}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{ vs }\PY{l+s+si}{\PYZob{}}\PY{n}{mt}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, var≈}\PY{l+s+si}{\PYZob{}}\PY{n}{var}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{ vs }\PY{l+s+si}{\PYZob{}}\PY{n}{vt}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{stats}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Inversa}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{x\PYZus{}inv}\PY{p}{)}
+\PY{n}{stats}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{A\PYZhy{}R    }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{x\PYZus{}ar}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Plot histograms for both methods}
+\PY{n}{bins} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{x\PYZus{}inv}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{n}{bins}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Inversa (t=}\PY{l+s+si}{\PYZob{}}\PY{n}{t\PYZus{}inv}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{s)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{x\PYZus{}ar}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{n}{bins}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{A\PYZhy{}R (t=}\PY{l+s+si}{\PYZob{}}\PY{n}{t\PYZus{}ar}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{s)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Overlay the theoretical density}
+\PY{n}{x\PYZus{}vals} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{200}\PY{p}{)}
+\PY{n}{theoretical\PYZus{}density} \PY{o}{=} \PY{n}{n} \PY{o}{*} \PY{n}{x\PYZus{}vals}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{n}{n} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x\PYZus{}vals}\PY{p}{,} \PY{n}{theoretical\PYZus{}density}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Teórica}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{black}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Comparación de métodos: Inversa vs A\PYZhy{}R}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Densidad}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[Inversa]  tiempo=0.003s,   rechazos=0,            uniformes≈100000
+[A-R]      tiempo=0.950s,   aceptación≈0.142 (teórica 0.143), propuestas=703088
+(\textasciitilde{}7.03 por muestra), uniformes≈1406176
+Inversa: mean≈0.8749 vs 0.8750, var≈0.0121 vs 0.0122
+A-R    : mean≈0.8749 vs 0.8750, var≈0.0122 vs 0.0122
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_30_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
     \hypertarget{d-eficiencia-comparada}{%
 \subsection{d) Eficiencia comparada}\label{d-eficiencia-comparada}}
 
     Compare la eficiencia de ambos métodos y justifique cuál es más
 recomendable.
+
+    \begin{itemize}
+\item
+  \textbf{Transformada inversa:} 1 uniforme por muestra, 0 rechazos →
+  \textbf{siempre más eficiente} aquí.
+\item
+  \textbf{A--R:} aceptación \(1/n\) (requiere \(\approx n\) propuestas y
+  \(\approx 2n\) uniformes por muestra aceptada).
+\end{itemize}
 
     \hypertarget{ejercicio-4}{%
 \section{Ejercicio 4}\label{ejercicio-4}}
@@ -621,12 +909,34 @@ densidad
 f_{|Z|}(x) = \sqrt{\tfrac{2}{\pi}}\, e^{-x^{2}/2}, \qquad x > 0.
 \]
 
+    Sea \(Z\sim\mathcal N(0,1)\). Para \(x>0\):
+
+\[
+P(|Z|\le x)=P(-x\le Z\le x)=\Phi(x)-\Phi(-x)=2\Phi(x)-1.
+\]
+
+Derivando:
+
+\[
+f_{|Z|}(x)=\frac{d}{dx}\,[2\Phi(x)-1]=2\phi(x)
+=\boxed{\sqrt{\frac{2}{\pi}}\,e^{-x^{2}/2}},\quad x>0.
+\]
+
     \hypertarget{b-simetrizaciuxf3n-con-sz}{%
 \subsection{b) Simetrización con
 S·\textbar Z\textbar{}}\label{b-simetrizaciuxf3n-con-sz}}
 
     Si \(S \sim \text{Unif}\{+1,-1\}\) es independiente de \(|Z|\) (con
 \(Z\) como en (a)), entonces \(S\,|Z| \sim \mathcal{N}(0,1)\).
+
+    Sea \(S\sim\text{Unif}\{+1,-1\}\) independiente de \(|Z|\). Para
+\(z\in\mathbb R\):
+
+\[
+f_{S|Z|}(z)=\tfrac12 f_{|Z|}(|z|)+\tfrac12 f_{|Z|}(|z|)=f_{|Z|}(|z|)=\phi(z),
+\]
+
+luego \(\boxed{S\,|Z|\sim \mathcal N(0,1)}\).
 
     \hypertarget{c-evento-de-aceptaciuxf3n-con-xexp1-y-uunif01}{%
 \subsection{c) Evento de aceptación con X∼Exp(1) y
@@ -649,6 +959,30 @@ f(x) = \sqrt{\tfrac{2}{\pi}}\, e^{-x^{2}/2}, \qquad x > 0,
 la cual corresponde a la densidad del valor absoluto de una normal
 estándar \(Z \sim \mathcal{N}(0,1)\).
 
+    Propuesta \(g(x)=e^{-x}\) en \(x>0\) y objetivo \(f(x)=f_{|Z|}(x)\).
+
+\[
+\frac{f(x)}{g(x)}=\sqrt{\frac{2}{\pi}}\,\frac{e^{-x^2/2}}{e^{-x}}
+=\sqrt{\frac{2}{\pi}}\,e^{-\frac{(x-1)^2}{2}}\,e^{1/2}.
+\]
+
+El máximo es en \(x=1\), así
+
+\[
+\boxed{c=\sqrt{\frac{2e}{\pi}}},\qquad
+\frac{f(x)}{c\,g(x)}=e^{-\frac{(x-1)^2}{2}}.
+\]
+
+\textbf{Regla:} genera \(Y\sim\mathrm{Exp}(1)\), \(U\sim U(0,1)\);
+acepta \(|Z|=Y\) si
+
+\[
+\boxed{U\le \exp\!\Big(-\tfrac{(Y-1)^2}{2}\Big)}.
+\]
+
+Luego toma \(Z=S|Z|\) con \(S\sim\text{Unif}\{\pm1\}\). Prob. de
+aceptación \(=1/c=\boxed{\sqrt{\pi/(2e)}}\).
+
     \hypertarget{d-probabilidad-con-v1v2exp1}{%
 \subsection{d) Probabilidad con
 V1,V2∼Exp(1)}\label{d-probabilidad-con-v1v2exp1}}
@@ -662,11 +996,30 @@ idénticamente distribuidas como \(\text{Exp}(\lambda)\) con
 = \sqrt{\tfrac{\pi}{2e}}\,.
 \]
 
+    Si \(V_1,V_2\overset{iid}{\sim}\mathrm{Exp}(1)\),
+
+\[
+\begin{aligned}
+P\!\left[V_1\ge \frac{(V_2-1)^2}{2}\right]
+&=\int_0^\infty P\!\left[V_1\ge \tfrac{(y-1)^2}{2}\right] e^{-y}\,dy
+=\int_0^\infty e^{-\frac{(y-1)^2}{2}}\,e^{-y}\,dy\\
+&=\int_0^\infty \exp\!\Big(-\tfrac{y^2+1}{2}\Big)\,dy
+=e^{-1/2}\!\int_0^\infty e^{-y^2/2}\,dy
+=\boxed{\sqrt{\frac{\pi}{2e}}}.
+\end{aligned}
+\]
+
+Coincide con la prob. de aceptación de (c).
+
     \hypertarget{ejercicio-5}{%
 \section{Ejercicio 5}\label{ejercicio-5}}
 
     Implemente un algoritmo de simulación para la distribución
 \(\text{Gamma}\) con los siguientes parámetros:
+
+    Elabore un programa de cómputo que genere simulaciones de ambas
+distribuciones y compare los resultados empíricos con las densidades
+teóricas correspondientes.
 
     \hypertarget{a-textgamma1.5-3}{%
 \subsection{\texorpdfstring{a)
@@ -676,6 +1029,53 @@ idénticamente distribuidas como \(\text{Exp}(\lambda)\) con
 \text{Gamma}(1.5, 3)
 \]
 
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} (i) A\PYZhy{}R para alpha\PYZgt{}1 con mu = lambda/alpha (óptimo)}
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{rgamma\PYZus{}alpha\PYZus{}gt1}\PY{p}{(}\PY{n}{alpha}\PY{p}{,} \PY{n}{lam}\PY{p}{,} \PY{n}{n}\PY{o}{=}\PY{l+m+mi}{60000}\PY{p}{)}\PY{p}{:}
+    \PY{n}{mu} \PY{o}{=} \PY{n}{lam} \PY{o}{/} \PY{n}{alpha}
+    \PY{n}{K} \PY{o}{=} \PY{n}{lam}\PY{o}{*}\PY{o}{*}\PY{n}{alpha} \PY{o}{/} \PY{n}{math}\PY{o}{.}\PY{n}{gamma}\PY{p}{(}\PY{n}{alpha}\PY{p}{)}  \PY{c+c1}{\PYZsh{} constante de f}
+    \PY{c+c1}{\PYZsh{} c(mu) evaluada en el máximo:}
+    \PY{n}{c} \PY{o}{=} \PY{p}{(}\PY{n}{K}\PY{o}{/}\PY{n}{mu}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{n}{alpha}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{lam}\PY{o}{\PYZhy{}}\PY{n}{mu}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{n}{alpha}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{*} \PY{n}{math}\PY{o}{.}\PY{n}{e}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{n}{alpha}\PY{p}{)}
+    \PY{n}{X}\PY{p}{,} \PY{n}{trials} \PY{o}{=} \PY{p}{[}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{0}
+    \PY{k}{while} \PY{n+nb}{len}\PY{p}{(}\PY{n}{X}\PY{p}{)} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{:}
+        \PY{n}{y} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{exponential}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{mu}\PY{p}{)}                   \PY{c+c1}{\PYZsh{} Exp(mu): media 1/mu}
+        \PY{n}{u} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{p}{)}
+        \PY{k}{if} \PY{n}{u} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{p}{(}\PY{n}{K} \PY{o}{*} \PY{n}{y}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{n}{alpha}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{*} \PY{n}{math}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{lam}\PY{o}{*}\PY{n}{y}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{c} \PY{o}{*} \PY{p}{(}\PY{n}{mu} \PY{o}{*} \PY{n}{math}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{mu}\PY{o}{*}\PY{n}{y}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+            \PY{n}{X}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{y}\PY{p}{)}
+        \PY{n}{trials} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+    \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{X}\PY{p}{)}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{X}\PY{p}{)}\PY{o}{/}\PY{n}{trials}\PY{p}{,} \PY{n}{c}
+
+\PY{c+c1}{\PYZsh{} (ii) Reducción de orden para alpha in (0,1)}
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{rgamma\PYZus{}alpha\PYZus{}lt1}\PY{p}{(}\PY{n}{alpha}\PY{p}{,} \PY{n}{lam}\PY{p}{,} \PY{n}{n}\PY{o}{=}\PY{l+m+mi}{60000}\PY{p}{)}\PY{p}{:}
+    \PY{n}{Y}\PY{p}{,} \PY{n}{accY}\PY{p}{,} \PY{n}{cY} \PY{o}{=} \PY{n}{rgamma\PYZus{}alpha\PYZus{}gt1}\PY{p}{(}\PY{n}{alpha}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{lam}\PY{p}{,} \PY{n}{n}\PY{p}{)}  \PY{c+c1}{\PYZsh{} primero Gamma(alpha+1, lam)}
+    \PY{n}{U} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+    \PY{n}{X} \PY{o}{=} \PY{n}{Y} \PY{o}{*} \PY{p}{(}\PY{n}{U} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{l+m+mf}{1.0}\PY{o}{/}\PY{n}{alpha}\PY{p}{)}\PY{p}{)}
+    \PY{k}{return} \PY{n}{X}
+
+\PY{c+c1}{\PYZsh{} (a) Gamma(1.5, 3)}
+\PY{n}{x\PYZus{}a}\PY{p}{,} \PY{n}{acc\PYZus{}a}\PY{p}{,} \PY{n}{c\PYZus{}a} \PY{o}{=} \PY{n}{rgamma\PYZus{}alpha\PYZus{}gt1}\PY{p}{(}\PY{l+m+mf}{1.5}\PY{p}{,} \PY{l+m+mf}{3.0}\PY{p}{,} \PY{l+m+mi}{60000}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Gamma(1.5,3): aceptación≈}\PY{l+s+si}{\PYZob{}}\PY{n}{acc\PYZus{}a}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, 1/c≈}\PY{l+s+si}{\PYZob{}}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{c\PYZus{}a}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Comparación con densidad teórica}
+\PY{n}{xs} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{x\PYZus{}a}\PY{p}{,} \PY{l+m+mf}{0.995}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{400}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}
+\PY{n}{f} \PY{o}{=} \PY{p}{(}\PY{l+m+mf}{3.0}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{1.5} \PY{o}{/} \PY{n}{math}\PY{o}{.}\PY{n}{gamma}\PY{p}{(}\PY{l+m+mf}{1.5}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mf}{1.5}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{3.0}\PY{o}{*}\PY{n}{xs}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{x\PYZus{}a}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.6}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Sim}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xs}\PY{p}{,} \PY{n}{f}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Teórica}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Gamma(1.5,3)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Gamma(1.5,3): aceptación≈0.797, 1/c≈0.795
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_53_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
     \hypertarget{b-textgamma0.5-6}{%
 \subsection{\texorpdfstring{b)
 \(\text{Gamma}(0.5, 6)\)}{b) \textbackslash text\{Gamma\}(0.5, 6)}}\label{b-textgamma0.5-6}}
@@ -684,9 +1084,40 @@ idénticamente distribuidas como \(\text{Exp}(\lambda)\) con
 \text{Gamma}(0.5, 6)
 \]
 
-    Elabore un programa de cómputo que genere simulaciones de ambas
-distribuciones y compare los resultados empíricos con las densidades
-teóricas correspondientes.
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{6}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} (b) Gamma(0.5, 6) por dos vías}
+\PY{n}{x\PYZus{}b1} \PY{o}{=} \PY{n}{rgamma\PYZus{}alpha\PYZus{}lt1}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mf}{6.0}\PY{p}{,} \PY{l+m+mi}{60000}\PY{p}{)}   \PY{c+c1}{\PYZsh{} reducción de orden}
+
+\PY{c+c1}{\PYZsh{} vía chi\PYZhy{}cuadrado: Z\PYZca{}2 \PYZti{} Gamma(0.5, 0.5)  =\PYZgt{}  (Z\PYZca{}2)/12 \PYZti{} Gamma(0.5, 6)}
+\PY{n}{Z} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{standard\PYZus{}normal}\PY{p}{(}\PY{l+m+mi}{60000}\PY{p}{)}
+\PY{n}{x\PYZus{}b2} \PY{o}{=} \PY{p}{(}\PY{n}{Z}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)} \PY{o}{/} \PY{l+m+mf}{12.0}
+
+\PY{c+c1}{\PYZsh{} Densidad teórica}
+\PY{n}{xs} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{x\PYZus{}b1}\PY{p}{,} \PY{l+m+mf}{0.995}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{400}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}
+\PY{n}{f} \PY{o}{=} \PY{p}{(}\PY{l+m+mf}{6.0}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{0.5} \PY{o}{/} \PY{n}{math}\PY{o}{.}\PY{n}{gamma}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{6.0}\PY{o}{*}\PY{n}{xs}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{x\PYZus{}b1}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Reducción de orden}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{x\PYZus{}b2}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+sa}{r}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Escala de \PYZdl{}Z\PYZca{}2\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xs}\PY{p}{,} \PY{n}{f}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Teórica}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Gamma(0.5,6)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Medias: b1≈}\PY{l+s+si}{\PYZob{}}\PY{n}{x\PYZus{}b1}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, b2≈}\PY{l+s+si}{\PYZob{}}\PY{n}{x\PYZus{}b2}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, teórica=}\PY{l+s+si}{\PYZob{}}\PY{l+m+mf}{0.5}\PY{o}{/}\PY{l+m+mi}{6}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Varianzas: b1≈}\PY{l+s+si}{\PYZob{}}\PY{n}{x\PYZus{}b1}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{p}{)}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, b2≈}\PY{l+s+si}{\PYZob{}}\PY{n}{x\PYZus{}b2}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{p}{)}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, teórica=}\PY{l+s+si}{\PYZob{}}\PY{l+m+mf}{0.5}\PY{o}{/}\PY{l+m+mi}{6}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_56_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Medias: b1≈0.0832, b2≈0.0836, teórica=0.0833
+Varianzas: b1≈0.0139, b2≈0.0143, teórica=0.0139
+    \end{Verbatim}
 
 
     % Add a bibliography block to the postdoc
