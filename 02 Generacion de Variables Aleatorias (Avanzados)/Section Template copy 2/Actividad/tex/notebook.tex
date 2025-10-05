@@ -466,8 +466,6 @@
     \fancyhead[C]{\small\textit{\rightmark}}
     \renewcommand{\headrulewidth}{0.1pt}
 
-    %\textsc{} para versalitas
-
     % --- Crear un nuevo estilo de pagina con el numero arriba a la derecha ---
     \fancypagestyle{myfancy}{
       \fancyhf{}
@@ -494,19 +492,16 @@
     \begin{titlepage}
     \centering
     \vspace*{4cm}
-    {\extrabold\fontsize{28pt}{28pt}\selectfont Método de Aceptación y Rechazo\par}
+    {\extrabold\fontsize{28pt}{28pt}\selectfont Método de la Trasformada Inversa\par}
     \vspace{1cm}
     
     {\medium\fontsize{12pt}{12pt}\selectfont
     {\large Curso:  Temas Selectos I: O25 LAT4032 1\par}
-    \vspace{.5em}
     {\large Profesor:  Rubén Blancas Rivera\par}
-    \vspace{.5em}
-    {\large Mayren Herrera Vargas, ID: 173802\\ Sofia Graham Coello, ID: 174291\\Heriberto Espino Montelongo, ID: 175199\par}
-    \vspace{.5em}
+    {\large Equipo: Ana Ximena Bravo, Heriberto Espino, Celeste Núñez\par}
     {\large Universidad de las Américas Puebla\par}
     \vfill
-    {\large 11 de Septiembre de 2025 \par}}
+    {\large 2 de Septiembre de 2025 \par}}
     \end{titlepage}
 
 
@@ -517,3 +512,197 @@
     \newpage
 
     % --- Inicio del documento ---
+    
+    
+    
+
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{2}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{style}
+\PY{n}{style}\PY{o}{.}\PY{n}{apply}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{ejercicio-1}{%
+\section{Ejercicio 1}\label{ejercicio-1}}
+
+    Queremos simular una variable aleatoria X con distribución discreta:
+
+\[
+P(X = k) = p_k,\quad k\in\{1,2,3,4\}.
+\]
+
+donde \[
+p_1=\tfrac{1}{2},\quad p_2=\tfrac{1}{4},\quad p_3=\tfrac{1}{8},\quad p_4=\tfrac{1}{8}.
+\]
+
+    \hypertarget{a-distribuciuxf3n-de-referencia-qk}{%
+\subsection{a) Distribución de referencia
+q(k)}\label{a-distribuciuxf3n-de-referencia-qk}}
+
+    Proponga una distribución de referencia \(q(k)\) sobre
+\(\{1, 2, 3, 4\}\) que sea fácil de simular.
+
+    \hypertarget{b-cota-con-constante-c}{%
+\subsection{b) Cota con constante c}\label{b-cota-con-constante-c}}
+
+    Determine la constante \(c\) tal que
+
+\[
+p_k \le c\, q(k),\ \forall k.
+\]
+
+    \hypertarget{c-algoritmo-de-aceptaciuxf3nrechazo}{%
+\subsection{c) Algoritmo de
+aceptación--rechazo}\label{c-algoritmo-de-aceptaciuxf3nrechazo}}
+
+    Describa el algoritmo de aceptación--rechazo para generar una
+realización de \(X\).
+
+    \hypertarget{d-programa-de-simulaciuxf3n-y-estimaciuxf3n-de-c}{%
+\subsection{d) Programa de simulación y estimación de
+c}\label{d-programa-de-simulaciuxf3n-y-estimaciuxf3n-de-c}}
+
+    Elabore un programa de cómputo que simule la distribución anterior y
+compare el valor teórico de \(c\) con un valor aproximado obtenido de
+las simulaciones.
+
+    \hypertarget{ejercicio-2}{%
+\section{Ejercicio 2}\label{ejercicio-2}}
+
+    \hypertarget{simulaciuxf3n-textbeta1-23-por-aceptaciuxf3nrechazo}{%
+\subsection{\texorpdfstring{Simulación \(\text{Beta}(1, 2,3)\) por
+aceptación--rechazo}{Simulación \textbackslash text\{Beta\}(1, 2,3) por aceptación--rechazo}}\label{simulaciuxf3n-textbeta1-23-por-aceptaciuxf3nrechazo}}
+
+    Utilice el método de aceptación y rechazo para simular una variable
+aleatoria con distribución \(\text{Beta}(1, 2,3)\). Elabore un programa
+de cómputo que genere simulaciones de esta variable y compare resultados
+con la densidad teórica.
+
+    \hypertarget{ejercicio-3}{%
+\section{Ejercicio 3}\label{ejercicio-3}}
+
+    Considere la siguiente función de distribución acumulada
+
+\[
+F(x) = x^{n},\quad 0 \le x \le 1.
+\]
+
+    \hypertarget{a-muxe9todo-de-la-transformada-inversa}{%
+\subsection{a) Método de la transformada
+inversa}\label{a-muxe9todo-de-la-transformada-inversa}}
+
+    Aplique el método de la transformada inversa para dar un algoritmo que
+simule una variable aleatoria con la función de distribución anterior.
+
+    \hypertarget{b-muxe9todo-de-aceptaciuxf3nrechazo}{%
+\subsection{b) Método de
+aceptación--rechazo}\label{b-muxe9todo-de-aceptaciuxf3nrechazo}}
+
+    Aplique el método de aceptación y rechazo para el mismo caso.
+
+    \hypertarget{c-implementaciuxf3n-computacional}{%
+\subsection{c) Implementación
+computacional}\label{c-implementaciuxf3n-computacional}}
+
+    Elabore un programa de cómputo para implementar ambos algoritmos.
+
+    \hypertarget{d-eficiencia-comparada}{%
+\subsection{d) Eficiencia comparada}\label{d-eficiencia-comparada}}
+
+    Compare la eficiencia de ambos métodos y justifique cuál es más
+recomendable.
+
+    \hypertarget{ejercicio-4}{%
+\section{Ejercicio 4}\label{ejercicio-4}}
+
+    En el contexto del método de aceptación y rechazo para generar valores
+de la distribución \(\mathcal{N}(\mu, \sigma^{2})\), demuestre
+directamente los siguientes resultados:
+
+    \hypertarget{a-densidad-de-z-para-zn01}{%
+\subsection{a) Densidad de \textbar Z\textbar{} para
+Z∼N(0,1)}\label{a-densidad-de-z-para-zn01}}
+
+    Si \(Z \sim \mathcal{N}(0,1)\), entonces \(|Z|\) tiene función de
+densidad
+
+\[
+f_{|Z|}(x) = \sqrt{\tfrac{2}{\pi}}\, e^{-x^{2}/2}, \qquad x > 0.
+\]
+
+    \hypertarget{b-simetrizaciuxf3n-con-sz}{%
+\subsection{b) Simetrización con
+S·\textbar Z\textbar{}}\label{b-simetrizaciuxf3n-con-sz}}
+
+    Si \(S \sim \text{Unif}\{+1,-1\}\) es independiente de \(|Z|\) (con
+\(Z\) como en (a)), entonces \(S\,|Z| \sim \mathcal{N}(0,1)\).
+
+    \hypertarget{c-evento-de-aceptaciuxf3n-con-xexp1-y-uunif01}{%
+\subsection{c) Evento de aceptación con X∼Exp(1) y
+U∼Unif(0,1)}\label{c-evento-de-aceptaciuxf3n-con-xexp1-y-uunif01}}
+
+    Sea \(X \sim \text{Exp}(\lambda)\) con \(\lambda = 1\) y
+\(U \sim \text{Unif}(0,1)\) independientes. Considere el evento
+
+\[
+\big\{ U \le \exp\big(-\tfrac{(X-1)^{2}}{2}\big) \big\}.
+\]
+
+Entonces, la distribución de \(X\) condicionada a este evento tiene
+densidad
+
+\[
+f(x) = \sqrt{\tfrac{2}{\pi}}\, e^{-x^{2}/2}, \qquad x > 0,
+\]
+
+la cual corresponde a la densidad del valor absoluto de una normal
+estándar \(Z \sim \mathcal{N}(0,1)\).
+
+    \hypertarget{d-probabilidad-con-v1v2exp1}{%
+\subsection{d) Probabilidad con
+V1,V2∼Exp(1)}\label{d-probabilidad-con-v1v2exp1}}
+
+    Sean \(V_1\) y \(V_2\) variables aleatorias independientes e
+idénticamente distribuidas como \(\text{Exp}(\lambda)\) con
+\(\lambda = 1\). Entonces se cumple que
+
+\[
+\mathbb{P}\!\left( V_{1} \ge \tfrac{(V_{2}-1)^{2}}{2} \right)
+= \sqrt{\tfrac{\pi}{2e}}\,.
+\]
+
+    \hypertarget{ejercicio-5}{%
+\section{Ejercicio 5}\label{ejercicio-5}}
+
+    Implemente un algoritmo de simulación para la distribución
+\(\text{Gamma}\) con los siguientes parámetros:
+
+    \hypertarget{a-textgamma1.5-3}{%
+\subsection{\texorpdfstring{a)
+\(\text{Gamma}(1.5, 3)\)}{a) \textbackslash text\{Gamma\}(1.5, 3)}}\label{a-textgamma1.5-3}}
+
+    \[
+\text{Gamma}(1.5, 3)
+\]
+
+    \hypertarget{b-textgamma0.5-6}{%
+\subsection{\texorpdfstring{b)
+\(\text{Gamma}(0.5, 6)\)}{b) \textbackslash text\{Gamma\}(0.5, 6)}}\label{b-textgamma0.5-6}}
+
+    \[
+\text{Gamma}(0.5, 6)
+\]
+
+    Elabore un programa de cómputo que genere simulaciones de ambas
+distribuciones y compare los resultados empíricos con las densidades
+teóricas correspondientes.
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+\end{document}
