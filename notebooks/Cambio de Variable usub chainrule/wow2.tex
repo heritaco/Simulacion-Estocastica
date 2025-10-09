@@ -1,0 +1,173 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{amsthm}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+\begin{document}
+
+\begin{center}
+{\LARGE From the Chain Rule to \texorpdfstring{$u$}{u}-Substitution to Change of Variables}\\[0.5em]
+{\large A careful, step-by-step exposition with intuition and generalization}
+\end{center}
+
+\section*{0) Core idea in one line}
+Differentiation: \(\dfrac{d}{dx}F(g(x))=F'(g(x))\,g'(x)\).\\
+Integration in reverse: \(\displaystyle \int F'(g(x))\,g'(x)\,dx=F(g(x))+C\).\\
+Rename \(u=g(x)\): \(\displaystyle \int \phi(g(x))\,g'(x)\,dx=\int \phi(u)\,du\).\\
+With limits and bijections: push bounds via \(u=g(x)\); in \(\mathbb R^n\), use a diffeomorphism and the Jacobian determinant.
+
+\section*{1) Chain rule \(\Rightarrow\) reverse chain rule}
+Let \(F\) satisfy \(F'=\phi\). Then
+\[
+\frac{d}{dx}F(g(x))=\phi(g(x))\,g'(x) \quad\Longrightarrow\quad
+\int \phi(g(x))\,g'(x)\,dx=F(g(x))+C.
+\]
+This is the algebraic heart of \(u\)-substitution.
+
+\section*{2) \texorpdfstring{$u$}{u}-substitution (indefinite integrals)}
+\begin{definition}[Indefinite \(u\)-substitution]
+Choose \(u=g(x)\) with \(g\) differentiable. Then \(du=g'(x)\,dx\), so
+\[
+\int \phi(g(x))\,g'(x)\,dx=\int \phi(u)\,du=F(u)+C=F(g(x))+C.
+\]
+\end{definition}
+
+\noindent\textbf{Intuition.} Relabel the inner expression \(g(x)\) as \(u\). The differential rescales by the chain rule: \(dx=du/g'(x)\).
+
+\noindent\textbf{Pattern recognition.} Seek \(g(x)\) whose derivative \(g'(x)\) multiplies the remaining factor up to a constant.
+
+\begin{example}[Indefinite]
+\(\displaystyle \int \frac{5x-2}{\sqrt{7+(5x-2)^2}}\,dx\).
+Set \(u=7+(5x-2)^2\Rightarrow du=10(5x-2)\,dx\). Then
+\[
+\int \frac{5x-2}{\sqrt{7+(5x-2)^2}}\,dx
+=\frac{1}{10}\int u^{-1/2}\,du
+=\frac{1}{5}\sqrt{u}+C
+=\frac{1}{5}\sqrt{7+(5x-2)^2}+C.
+\]
+\end{example}
+
+\section*{3) \texorpdfstring{$u$}{u}-substitution with limits}
+\begin{theorem}[1D change of variable]
+Let \(g:[A,B]\to\mathbb R\) be \(C^{1}\) and strictly monotone, and let \(\phi\) be integrable. Then
+\[
+\int_{A}^{B}\phi(g(x))\,g'(x)\,dx=\int_{g(A)}^{g(B)} \phi(u)\,du,
+\quad \text{with }u=g(x).
+\]
+\end{theorem}
+
+\noindent\textbf{Intuition.} The map \(u=g(x)\) reparametrizes the horizontal axis. The factor \(g'(x)\) compensates local stretching so that area is preserved.
+
+\begin{example}[Definite]
+\[
+\int_{0}^{1}\frac{5x-2}{\sqrt{7+(5x-2)^2}}\,dx
+=\frac{1}{10}\int_{u=7+(-2)^2}^{u=7+(3)^2}u^{-1/2}\,du
+=\frac{1}{5}\!\left(\sqrt{16}-\sqrt{11}\right)=\frac{1}{5}\,(4-\sqrt{11}).
+\]
+\emph{Note:} transform bounds through \(u=g(x)\); do not back-substitute \(x\) after evaluation.
+\end{example}
+
+\begin{remark}[Non-monotone \(g\)]
+If \(g\) is not monotone on \([A,B]\), split into subintervals where it is monotone and apply the theorem piecewise.
+\end{remark}
+
+\section*{4) Algebraic alignment when the match is imperfect}
+If the numerator is not exactly \(g'(x)\), decompose it so part matches \(g'(x)\) and the remainder is integrable by a known primitive.
+
+\begin{example}[A composite definite integral with a split]\label{ex:composite}
+\[
+I=\int_{0}^{2}\frac{6x-5}{\sqrt{10+(3x-2)^2}}\,dx.
+\]
+Write \(6x-5=2(3x-2)-1\). Let \(y=3x-2\) so \(dy=3\,dx\) and bounds \(y(0)=-2\), \(y(2)=4\). Then
+\[
+I=\frac{1}{3}\int_{-2}^{4}\frac{2y}{\sqrt{10+y^2}}\,dy
+-\frac{1}{3}\int_{-2}^{4}\frac{1}{\sqrt{10+y^2}}\,dy.
+\]
+First term: \(u=10+y^2\), \(du=2y\,dy\) \(\Rightarrow\) \(\dfrac{2}{3}\big(\sqrt{26}-\sqrt{14}\big)\).\\
+Second term: \(\displaystyle \int \frac{dy}{\sqrt{a^2+y^2}}=\operatorname{arsinh}(y/a)\) with \(a=\sqrt{10}\):
+\[
+\frac{1}{3}\left[\operatorname{arsinh}\!\Big(\frac{y}{\sqrt{10}}\Big)\right]_{-2}^{4}
+=\frac{1}{3}\!\left(\operatorname{arsinh}\frac{4}{\sqrt{10}}+\operatorname{arsinh}\frac{2}{\sqrt{10}}\right).
+\]
+Thus
+\[
+\boxed{\,I=\frac{2}{3}\big(\sqrt{26}-\sqrt{14}\big)-\frac{1}{3}\!\left(\operatorname{arsinh}\frac{4}{\sqrt{10}}+\operatorname{arsinh}\frac{2}{\sqrt{10}}\right).\,}
+\]
+\end{example}
+
+\section*{5) Full 1D change-of-variables formula}
+A bijective \(C^1\) map \(g\) with \(g'(x)\neq 0\) yields
+\[
+\int_{A}^{B} f(x)\,dx
+=\int_{u=g(A)}^{u=g(B)} f\!\big(g^{-1}(u)\big)\,\frac{du}{g'\!\left(g^{-1}(u)\right)}.
+\]
+Equivalently, if \(f(x)=\phi(g(x))\,g'(x)\) then
+\[
+\int_{A}^{B}\phi(g(x))\,g'(x)\,dx=\int_{g(A)}^{g(B)}\phi(u)\,du.
+\]
+Orientation: if \(g'<0\), the absolute value appears in the denominator form; in practice one flips the bounds.
+
+\section*{6) Multivariable change of variables (Jacobian)}
+\begin{theorem}[Jacobian formula]
+Let \(\Phi:U\subset\mathbb R^n\to V\subset\mathbb R^n\) be a \(C^1\) bijection with \(C^1\) inverse and \(\det D\Phi(\mathbf x)\neq 0\) on \(U\). For integrable \(f\),
+\[
+\int_{\Phi(\Omega)} f(\mathbf u)\,d\mathbf u
+=\int_{\Omega} f\big(\Phi(\mathbf x)\big)\,\big|\det D\Phi(\mathbf x)\big|\,d\mathbf x.
+\]
+\end{theorem}
+
+\noindent\textbf{Intuition.} \(|\det D\Phi|\) is the local \(n\)-D volume scale of the linearization. In 1D this reduces to \(|g'(x)|\).
+
+\begin{example}[Polar coordinates]
+\(\Phi(r,\theta)=(r\cos\theta,r\sin\theta)\).
+\[
+D\Phi=\begin{pmatrix}\cos\theta & -r\sin\theta\\ \sin\theta & r\cos\theta\end{pmatrix},
+\quad |\det D\Phi|=r.
+\]
+Hence
+\[
+\iint_{D} f(x,y)\,dx\,dy=\int_{\Phi^{-1}(D)} f(r\cos\theta,r\sin\theta)\,r\,dr\,d\theta.
+\]
+\end{example}
+
+\section*{7) When to use what}
+Use \(u\)-sub if you can isolate \(g(x)\) with a multiple of \(g'(x)\). If not, try algebraic alignment, integration by parts, completing the square with trig/hyperbolic substitutions, rational substitutions, or partial fractions.
+
+\section*{8) Common errors}
+(i) Not transforming bounds in definite integrals. \;
+(ii) Choosing \(u\) so \(du\) does not appear up to a constant. \;
+(iii) Ignoring non-monotonicity. \;
+(iv) In \(\mathbb R^n\), omitting \(|\det D\Phi|\).
+
+\section*{9) Worked example connecting all levels (summary of Example~\ref{ex:composite})}
+\begin{align*}
+I&=\int_{0}^{2}\frac{6x-5}{\sqrt{10+(3x-2)^2}}\,dx
+=\frac{1}{3}\int_{-2}^{4}\frac{2y}{\sqrt{10+y^2}}\,dy
+-\frac{1}{3}\int_{-2}^{4}\frac{1}{\sqrt{10+y^2}}\,dy\\
+&=\frac{2}{3}\big(\sqrt{26}-\sqrt{14}\big)
+-\frac{1}{3}\!\left(\operatorname{arsinh}\frac{4}{\sqrt{10}}+\operatorname{arsinh}\frac{2}{\sqrt{10}}\right).
+\end{align*}
+Outer affine change \(x\mapsto y\) is the 1D theorem; inner \(y\mapsto u\) is pure reverse chain rule.
+
+\section*{10) Minimal recipes}
+\textbf{Indefinite.} Pick \(u=g(x)\) so \(du\) appears, integrate in \(u\), back-substitute.\\
+\textbf{Definite.} Replace bounds by \(g(A),g(B)\), evaluate in \(u\), no back-substitution.\\
+\textbf{Multivariable.} Choose \(\Phi\) simplifying the domain, multiply integrand by \(|\det D\Phi|\), transform the region.
+
+\section*{11) Two quick generalizations}
+Trig and hyperbolic substitutions are structured changes of variables that linearize radicals:
+\(x=a\tan\theta\Rightarrow 1+\tan^2\theta=\sec^2\theta\) and \(x=a\sinh t\Rightarrow \sqrt{a^2+x^2}=a\cosh t\).
+
+\section*{12) Targeted practice}
+(a) \(\displaystyle \int_{-1}^{3}\frac{4x+1}{\sqrt{5+(2x+1)^2}}\,dx\) \quad
+(b) \(\displaystyle \int_{0}^{\pi/4}\frac{\tan\theta}{\sqrt{1+\tan^2\theta}}\,d\theta\) \quad
+(c) \(\displaystyle \iint_{x^2+y^2\le 4} (x^2+y^2)\,dx\,dy\).\\
+Hints: (a) \(u=5+(2x+1)^2\). (b) use \(\sqrt{1+\tan^2\theta}=\sec\theta\) or \(u=1+\tan^2\theta\). (c) polar with Jacobian \(r\).
+
+\end{document}

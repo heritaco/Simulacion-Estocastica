@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+
+
+
+\[
+I=\int_{0}^{2}\frac{6x-5}{\sqrt{10+(3x-2)^{2}}}\,dx
+\]
+
+\paragraph{Change-of-variable theorem (definite integrals).}
+If $g:[A,B]\to\mathbb{R}$ is $C^1$ and strictly monotone and $\phi$ is integrable, then
+\[
+\int_{A}^{B}\phi\!\big(g(x)\big)\,g'(x)\,dx
+=\int_{g(A)}^{g(B)}\phi(t)\,dt,
+\qquad t=g(x),\ dt=g'(x)\,dx.
+\]
+This is the rigorous form of $u$-substitution for definite integrals.
+
+\paragraph{Solution linking $u$-sub and change of variable.}
+Apply the affine substitution
+\[
+y=g(x)=3x-2,\qquad g'(x)=3,\qquad dx=\frac{dy}{3},\qquad g(0)=-2,\ g(2)=4.
+\]
+Rewrite the numerator to expose $y$:
+\[
+6x-5=2(3x-2)-1=2y-1.
+\]
+Thus
+\begin{align*}
+I
+&=\frac{1}{3}\int_{-2}^{4}\frac{2y-1}{\sqrt{10+y^{2}}}\,dy
+\\
+&=\frac{1}{3}\left(\int_{-2}^{4}\frac{2y}{\sqrt{10+y^{2}}}\,dy
+-\int_{-2}^{4}\frac{1}{\sqrt{10+y^{2}}}\,dy\right).
+\end{align*}
+
+\emph{First piece} ($u$-sub via the theorem): with $t=10+y^{2}$, $dt=2y\,dy$,
+\[
+\int \frac{2y}{\sqrt{10+y^{2}}}\,dy=\int t^{-1/2}\,dt=2\sqrt{t}=2\sqrt{10+y^{2}}.
+\]
+Evaluating on $[-2,4]$ and including the prefactor $1/3$ gives
+\[
+\frac{1}{3}\cdot 2\big(\sqrt{26}-\sqrt{14}\big)=\frac{2}{3}\big(\sqrt{26}-\sqrt{14}\big).
+\]
+
+\emph{Second piece} (standard primitive):
+\[
+\int\frac{dy}{\sqrt{a^{2}+y^{2}}}=\operatorname{arsinh}\!\Big(\frac{y}{a}\Big)
+=\ln\!\Big(y+\sqrt{y^{2}+a^{2}}\Big)\quad(a>0).
+\]
+With $a=\sqrt{10}$,
+\[
+\frac{1}{3}\int_{-2}^{4}\frac{dy}{\sqrt{10+y^{2}}}
+=\frac{1}{3}\left[\operatorname{arsinh}\!\Big(\frac{y}{\sqrt{10}}\Big)\right]_{-2}^{4}
+=\frac{1}{3}\left(\operatorname{arsinh}\!\frac{4}{\sqrt{10}}+\operatorname{arsinh}\!\frac{2}{\sqrt{10}}\right).
+\]
+
+\emph{Combine:}
+\[
+\boxed{\,I=\frac{2}{3}\big(\sqrt{26}-\sqrt{14}\big)\;-\;\frac{1}{3}\!\left[\operatorname{arsinh}\!\frac{4}{\sqrt{10}}+\operatorname{arsinh}\!\frac{2}{\sqrt{10}}\right]\, }.
+\]
+
+\paragraph{Equivalent logarithmic form.}
+Using $\operatorname{arsinh}(x)=\ln\!\big(x+\sqrt{1+x^{2}}\big)$,
+\[
+\operatorname{arsinh}\!\frac{4}{\sqrt{10}}+\operatorname{arsinh}\!\frac{2}{\sqrt{10}}
+=\ln\!\left(\frac{4+\sqrt{26}}{\sqrt{10}}\right)+\ln\!\left(\frac{2+\sqrt{14}}{\sqrt{10}}\right)
+=\ln\!\left(\frac{(4+\sqrt{26})(2+\sqrt{14})}{10}\right).
+\]
+Hence
+\[
+I=\frac{2}{3}\big(\sqrt{26}-\sqrt{14}\big)
+-\frac{1}{3}\ln\!\left(\frac{(4+\sqrt{26})(2+\sqrt{14})}{10}\right).
+\]
+
+\paragraph{Derivative check.}
+Define
+\[
+F(x)=\frac{2}{3}\sqrt{10+(3x-2)^{2}}-\frac{1}{3}\operatorname{arsinh}\!\frac{3x-2}{\sqrt{10}}.
+\]
+Then
+\[
+F'(x)=\frac{2}{3}\cdot\frac{(3x-2)\cdot 3}{\sqrt{10+(3x-2)^2}}
+-\frac{1}{3}\cdot\frac{3}{\sqrt{10}}\cdot\frac{1}{\sqrt{1+\frac{(3x-2)^2}{10}}}
+=\frac{6x-5}{\sqrt{10+(3x-2)^{2}}}.
+\]
+\end{document}
