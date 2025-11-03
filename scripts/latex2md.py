@@ -2,10 +2,8 @@
 import pyperclip, latex2md
 pyperclip.copy(latex2md.latex_to_markdown(pyperclip.paste()))
 """
-
-
 import re
-from typing import List, Tuple
+from typing import List
 
 __all__ = ["latex_to_markdown"]
 
@@ -36,12 +34,10 @@ def _restore_math(text: str, blocks: List[str], inlines: List[str]) -> str:
 # ---------- Remove '---' and YAML front matter ----------
 def _strip_triple_dash_and_frontmatter(text: str) -> str:
     s = text
-    # YAML front matter at top
     if s.lstrip().startswith('---'):
         m = re.match(r"(?s)^\s*---\s*\n.*?\n---\s*\n", s)
         if m:
             s = s[m.end():]
-    # Standalone '---' lines anywhere
     s = re.sub(r"(?m)^\s*---\s*$", "", s)
     return s
 
@@ -50,45 +46,50 @@ def _convert_square_bracket_blocks(text: str) -> str:
     def repl(m):
         inner = m.group(1).strip("\n")
         return f"$$\n{inner}\n$$"
-    # Multiline [ ... ] with optional indentation
     text = re.sub(r"(?ms)^\s*\[\s*\n(.*?)\n\s*\]\s*$", repl, text)
-    # Single-line [ ... ]
     text = re.sub(r"(?m)^\s*\[\s*(.+?)\s*\]\s*$", lambda m: f"$$\n{m.group(1)}\n$$", text)
     return text
 
 # ---------- Standard LaTeX math delimiters ----------
 def _convert_standard_latex_delims(text: str) -> str:
-    # \[...\] -> $$...$$
+    # \[ ... \] -> $$
     text = re.sub(r"(?s)\\\[\s*(.*?)\s*\\\]", r"$$\n\1\n$$", text)
-    # \(...\) -> $...$
+    # \( ... \) -> $
+    # FIXED: removed extra ')'
     text = re.sub(r"\\\((.+?)\\\)", r"$\1$", text, flags=re.S)
-    # Common display environments -> $$...$$
-    envs = ["equation", "equation*", "align", "align*", "gather", "gather*", "eqnarray", "eqnarray*", "displaymath"]
+    # environments -> $$
+    envs = [
+        "equation", "equation*",
+        "align", "align*",
+        "gather", "gather*",
+        "eqnarray", "eqnarray*",
+        "displaymath"
+    ]
     for env in envs:
-        text = re.sub(rf"(?s)\\begin\{{{env}\}}\s*(.*?)\s*\\end\{{{env}\}}", r"$$\n\1\n$$", text)
+        text = re.sub(
+            rf"(?s)\\begin\{{{env}\}}\s*(.*?)\s*\\end\{{{env}\}}",
+            r"$$\n\1\n$$",
+            text,
+        )
     return text
 
-# ---------- De-size \big, \Big, \bigl, \Bigr, etc. and map to '(' / ')' ----------
+# ---------- De-size /left /right ----------
 _SIZE_CMD = r"(?:big|Big|bigg|Bigg)(?:gl|gr|l|r)?"
 def _desize_and_fix_big_delims(text: str) -> str:
     s = text
-    # Map size macros on braces to parentheses
     s = re.sub(rf"\\{_SIZE_CMD}\s*\{{", "(", s)
     s = re.sub(rf"\\{_SIZE_CMD}\s*\}}", ")", s)
-    # Map size macros on real parens
     s = re.sub(rf"\\{_SIZE_CMD}\s*\(", "(", s)
     s = re.sub(rf"\\{_SIZE_CMD}\s*\)", ")", s)
-    # \left / \right pairs
     s = re.sub(r"\\left\s*\(", "(", s)
     s = re.sub(r"\\right\s*\)", ")", s)
-    # Optionally normalize curly to round as requested
     s = re.sub(r"\\left\s*\{", "(", s)
     s = re.sub(r"\\right\s*\}", ")", s)
     return s
 
-# ---------- Heuristic: inline math in (…) ----------
+# ---------- Inline (…) -> $…$ heuristic ----------
 _MATHY_HINT = re.compile(r"(\\[A-Za-z]+|[=<>^_]|\\{|\\}|\\left|\\right|\\frac|\d[A-Za-z]|[A-Za-z]\d)")
-_ENGLISHISH = re.compile(r"\s(?<!\\|\{)[A-Za-zÁÉÍÓÚáéíóúñÑ]{2,}(?=\s|[.,;:)]|$)")
+_ENGLISHISH = re.compile(r"\s(?<!\\|\{)[A-Za-zÁÉÍÓÚáéíóúñÑ]{2,}(?=\s|[.,;:)]|$)") 
 
 def _convert_paren_inline_math_balanced(text: str) -> str:
     out = []
@@ -97,10 +98,7 @@ def _convert_paren_inline_math_balanced(text: str) -> str:
         ch = text[i]
         if ch != '(':
             out.append(ch); i += 1; continue
-        # find matching ')'
-        depth = 0
-        j = i
-        found = -1
+        depth, j, found = 0, i, -1
         while j < n:
             cj = text[j]
             if cj == '(':
@@ -123,43 +121,81 @@ def _convert_paren_inline_math_balanced(text: str) -> str:
         i = found + 1
     return ''.join(out)
 
-# ---------- Light cleanup and normalization ----------
+# ---------- LaTeX noise ----------
 def _strip_latex_noise(text: str) -> str:
     s = text
     s = re.sub(r"\\label\{[^{}]*\}", "", s)
     s = re.sub(r"(^|[^\\])%.*?$", r"\1", s, flags=re.M)
     return s
 
-def _cleanup_math_minor(text: str) -> str:
-    # Fix misplaced '!' after commands when followed by sizing or left/right
-    def fix_inside(s: str) -> str:
-        return re.sub(r"(?<=\\[A-Za-z])!(?=\\(Big|big|left|right))", r"\\!", s)
-    def blk(m):
-        inner = m.group(1)
-        return "$$\n" + fix_inside(inner) + "\n$$"
-    s = re.sub(r"(?s)\$\$\n?(.*?)\n?\$\$", blk, text)
-    def inl(m):
-        inner = m.group(1)
-        return "$" + fix_inside(inner) + "$"
-    s = re.sub(r"\$(.+?)\$", inl, s, flags=re.S)
-    return s
+# ---------- NEW: [npt] -> '\\' ----------
+def _replace_pt_breaks(text: str) -> str:
+    return re.sub(r"\[\s*\d+\s*pt\s*\]", r"\\\\", text, flags=re.I)
+
+# ---------- NEW: clean math internals ----------
+def _fix_math_internals(text: str) -> str:
+    def fix(inner: str) -> str:
+        s = inner
+
+        s = re.sub(r"\s*;\s*([<>]=?)\s*;\s*", r" \1 ", s)         # '; < ;' -> '<'
+        s = re.sub(r"\s*;\s*", " ", s)                            # remove lone ';'
+        s = re.sub(r",\s*(?=[)\]])", "", s)                       # ',)' ',]' -> ')',']'
+        s = re.sub(r",\s*(?=(?:d|\\mathrm\s*\{\s*d\s*\})\s*[A-Za-z])", " ", s)  # ',dx' -> ' dx'
+        s = re.sub(r",\s*(?=\\[A-Za-z])", " ", s)                 # ',\cmd' -> '\cmd'
+        s = re.sub(r"\+,\s*", "+ ", s)                            # '+,' -> '+ '
+
+        s = re.sub(                                              # '\cmd!' -> '\cmd\!'
+            r"(\\[A-Za-z]+)!(?=\s*(\(|\[|\\frac|\\left|\\right|\\Big|\\big|\\Bigg|\\bigg))",
+            r"\1\\!", s)
+
+        s = re.sub(r"!\s*(?=\\[A-Za-z])", "", s)                  # '!\cmd' -> '\cmd'
+        s = re.sub(r"\s*!\s*-\s*!\s*", " - ", s)                  # '!-!' -> ' - '
+
+        # NEW: remove spacing '!' before '(' or '[' (e.g., S_0!\left( -> S_0()
+        s = re.sub(r"(?<=[\w}\]])\s*!\s*(?=[\(\[])", " ", s)
+
+        s = re.sub(r"(?<![\w)])\s*!\s*(?=\S)", " ", s)            # other stray '!' spacing
+
+        # drop comma before '('
+        s = re.sub(r",\s*(?=\()", " ", s)
+
+        # drop comma before a letter (variable)
+        s = re.sub(r",\s*(?=[A-Za-z])", " ", s)
+
+
+        return s
+
+    def blk(m): return "$$\n" + fix(m.group(1)) + "\n$$"
+    text = re.sub(r"(?s)\$\$\n?(.*?)\n?\$\$", blk, text)
+
+    def inl(m): return "$" + fix(m.group(1)) + "$"
+    text = re.sub(r"\$(.+?)\$", inl, text, flags=re.S)
+
+    return text
+
+
+
 
 def _normalize_ws(text: str) -> str:
     s = re.sub(r"[ \t]+\n", "\n", text)
     s = re.sub(r"\n{3,}", "\n\n", s)
+    s = re.sub(r"[ \t]{2,}", " ", s)
     return s.strip() + "\n"
 
 # ---------- Public API ----------
 def latex_to_markdown(text: str) -> str:
     s = text
-    s = _strip_triple_dash_and_frontmatter(s)   # remove --- and YAML front matter
-    s = _convert_square_bracket_blocks(s)       # [ … ] blocks -> $$ … $$
-    s = _convert_standard_latex_delims(s)       # \[ \], \(...\), environments
-    s = _desize_and_fix_big_delims(s)           # \bigl{, \Big(, \left{ … -> ( and ) 
-    s, blks, inls = _protect_math(s)            # protect existing $ / $$ 
-    s = _convert_paren_inline_math_balanced(s)  # inline (…) -> $…$ when math-like
+    s = _strip_triple_dash_and_frontmatter(s)
+    s = _replace_pt_breaks(s)                 # [2pt] -> \\
+    s = _convert_square_bracket_blocks(s)
+    s = _convert_standard_latex_delims(s)     # <<< fixed here
+    s = _desize_and_fix_big_delims(s)
+    s, blks, inls = _protect_math(s)
+    s = _convert_paren_inline_math_balanced(s)
     s = _restore_math(s, blks, inls)
     s = _strip_latex_noise(s)
-    s = _cleanup_math_minor(s)
+    s = _fix_math_internals(s)
     s = _normalize_ws(s)
+    # replace "# " with "## " to avoid top-level headers
+    s = re.sub(r"(?m)^# ", "## ", s)
     return s
