@@ -1,0 +1,729 @@
+\documentclass[11pt]{article}
+\usepackage[margin=.1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+\usepackage{ocgx2}
+\usepackage{hyperref}
+\tcbset{colback=white,colframe=black!15,boxrule=0.5pt,arc=2pt,enhanced,breakable}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\PhiStd}{\Phi}
+
+\begin{document}
+
+  ===================== BLOQUE 1 =====================
+\begin{tcolorbox}
+\[
+\boxed{\text{Método clásico (1D)}}
+\]
+\[
+0 \le g(x) \le c,\quad x\in(a,b),\qquad
+\theta \coloneqq \int_a^b g(x)\,dx
+\]
+\[
+(X,Y)\sim \mathrm{Unif}(a,b)\times \mathrm{Unif}(0,c),\qquad
+p \coloneqq \mathbb{P}\!\big(Y\le g(X)\big)
+\]
+\[
+p=\dfrac{1}{c(b-a)}\int_a^b g(x)\,dx=\dfrac{\theta}{c(b-a)}
+\quad\Longrightarrow\quad
+\theta=c(b-a)\,p
+\]
+\[
+\{(X_i,Y_i)\}_{i=1}^n\ \text{i.i.d.},\quad
+N\coloneqq \sum_{i=1}^n \mathbf{1}\{Y_i\le g(X_i)\}\sim \mathrm{Bin}(n,p)
+\]
+\[
+\widehat{p}=\frac{N}{n},
+\qquad
+\boxed{\ \widehat{\theta}=c(b-a)\,\widehat{p}=c(b-a)\,\frac{N}{n}\ }
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\[
+\boxed{\text{Propiedades}}
+\]
+\[
+\mathbb{E}[\widehat{\theta}]=\theta
+\]
+\[
+\mathrm{Var}(\widehat{\theta})
+=\mathrm{Var}\!\Big(c(b-a)\tfrac{N}{n}\Big)
+=c^2(b-a)^2\,\frac{p(1-p)}{n}
+=\frac{1}{n}\,\theta\big(c(b-a)-\theta\big)
+\]
+\[
+\widehat{\theta}\xrightarrow[]{\;\mathbb{P}\;}\theta
+\quad\text{y}\quad
+\frac{\widehat{\theta}-\theta}{\sqrt{\mathrm{Var}(\widehat{\theta})}}
+\ \approx\ \mathcal{N}(0,1)
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\[
+\boxed{\text{Tamaño de muestra (cota tipo Chebyshev)}}
+\]
+\[
+\forall\,\varepsilon>0,\ 0<\alpha<1:\quad
+n\ \ge\ \frac{c^2(b-a)^2}{4\,\alpha\,\varepsilon^2}
+\ \Longrightarrow\
+\mathbb{P}\big(|\widehat{\theta}-\theta|<\varepsilon\big)\ \ge\ 1-\alpha
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\[
+\boxed{\text{Intervalos de confianza}}
+\]
+(1) Forma con parámetro $\varepsilon$:
+\[
+n\ \ge\ \frac{c^2(b-a)^2}{2\,\alpha\,\varepsilon^2}
+\ \Longrightarrow\
+\mathbb{P}\big(\widehat{\theta}-\varepsilon<\theta<\widehat{\theta}+\varepsilon\big)\ \ge\ 1-\alpha
+\]
+\[
+\varepsilon^2=\frac{c^2(b-a)^2}{2\alpha n}
+\ \Longrightarrow\
+\mathbb{P}\!\left(
+\widehat{\theta}-\frac{1}{\sqrt{\alpha}}\frac{c(b-a)}{\sqrt{2n}}
+<\theta<
+\widehat{\theta}+\frac{1}{\sqrt{\alpha}}\frac{c(b-a)}{\sqrt{2n}}
+\right)\ \ge\ 1-\alpha
+\]
+\text{(2) Aproximación normal asintótica:}
+\[
+\mathbb{P}\!\left(
+\widehat{\theta}-z_{\alpha/2}\sqrt{\mathrm{Var}(\widehat{\theta})}
+<\theta<
+\widehat{\theta}+z_{\alpha/2}\sqrt{\mathrm{Var}(\widehat{\theta})}
+\right)\ \approx\ 1-\alpha
+\]
+$\text{(3) Cota ampliada con } \mathrm{Var}(\widehat{\theta})\le \dfrac{c^2(b-a)^2}{2n}:$
+\[
+\mathbb{P}\!\left(
+\widehat{\theta}-z_{\alpha/2}\frac{c(b-a)}{\sqrt{2n}}
+<\theta<
+\widehat{\theta}+z_{\alpha/2}\frac{c(b-a)}{\sqrt{2n}}
+\right)\ \approx\ 1-\alpha
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\[
+\boxed{\text{Caso multidimensional (2D)}}
+\]
+\[
+0\le g(x,y)\le c,\quad (x,y)\in(a_1,b_1)\times(a_2,b_2)
+\]
+\[
+\theta\coloneqq \int_{a_1}^{b_1}\int_{a_2}^{b_2} g(x,y)\,dy\,dx
+\]
+\[
+(X,Y,Z)\sim \mathrm{Unif}(a_1,b_1)\times \mathrm{Unif}(a_2,b_2)\times \mathrm{Unif}(0,c),
+\quad
+p=\mathbb{P}\big(Z\le g(X,Y)\big)=\frac{\theta}{c(b_1-a_1)(b_2-a_2)}
+\]
+\[
+N=\sum_{i=1}^n \mathbf{1}\{Z_i\le g(X_i,Y_i)\}\sim \mathrm{Bin}(n,p),
+\qquad
+\boxed{\ \widehat{\theta}=c(b_1-a_1)(b_2-a_2)\,\frac{N}{n}\ }
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\[
+\boxed{\text{Algoritmo en símbolos}}
+\]
+\[
+X_i\sim \mathrm{Unif}(a,b),\quad
+Y_i\sim \mathrm{Unif}(0,c),\quad
+I_i=\mathbf{1}\{Y_i\le g(X_i)\},\quad
+N=\sum_{i=1}^n I_i,\quad
+\widehat{\theta}=c(b-a)\frac{N}{n}
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\[
+\boxed{\text{Ejercicio con cómputo a mano}}
+\]
+\[
+g(x)=\sin x+1,\quad a=0,\ b=\pi,\ c=2
+\]
+\[
+\theta=\int_0^{\pi}(\sin x+1)\,dx=\Big[-\cos x\Big]_0^{\pi}+\Big[x\Big]_0^{\pi}=2+\pi
+\]
+\[
+p=\frac{\theta}{c(b-a)}=\frac{\pi+2}{2\pi}
+\]
+$\text{Escenario muestral con } n=1000,\ N=818:\ (\text{aprox. } \widehat{p}=0.818)$
+\[
+\widehat{\theta}=c(b-a)\frac{N}{n}=2\pi\cdot 0.818
+\]
+\[
+\widehat{\theta}\approx 2\pi\cdot 0.818\approx 5.14
+\quad\text{y}\quad
+\theta=\pi+2\approx 5.14
+\]
+\[
+\mathrm{Var}(\widehat{\theta})
+=\frac{1}{n}\,\theta\big(c(b-a)-\theta\big)
+=\frac{1}{1000}\,(\pi+2)\big(2\pi-(\pi+2)\big)
+\]
+\[
+\text{IC}_{95\ }\ \text{(aprox. normal)}:\ 
+\widehat{\theta}\ \pm\ 1.96\,\sqrt{\mathrm{Var}(\widehat{\theta})}
+\]
+\end{tcolorbox}
+
+  ===================== BLOQUE 2 (OCGX2) =====================
+\begin{tcolorbox}
+\[
+\boxed{\mathrm{General}}
+\]
+\begin{ocg}{General}{ocgG}{1}
+\[
+\theta=\int_a^b g(x)\,dx,\qquad
+\theta=\int_a^b \frac{g(x)}{f(x)}\,f(x)\,dx=\mathbb{E}\!\left[\frac{g(X)}{f(X)}\right].
+\]
+\[
+\hat\theta=\frac{1}{n}\sum_{i=1}^{n}\frac{g(X_i)}{f(X_i)},\qquad
+\mathbb{E}[\hat\theta]=\theta.
+\]
+\end{ocg}
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\[
+\boxed{\mathrm{Uniforme}}
+\]
+\begin{ocg}{Uniforme}{ocgU}{1}
+\[
+X\sim \mathrm{Unif}(a,b),\quad f(x)=\frac{1}{b-a}.
+\]
+\[
+\theta=(b-a)\,\mathbb{E}[g(X)],\qquad
+\hat\theta_{\mathrm{u}}=(b-a)\,\frac{1}{n}\sum_{i=1}^{n} g(X_i).
+\]
+\[
+\mathrm{Var}(\hat\theta_{\mathrm{u}})=\frac{1}{n}\!\left[(b-a)\int_a^b g^2(x)\,dx-\theta^{2}\right].
+\]
+\[
+\mathrm{Var}(\hat\theta_{\mathrm{u}})\le \mathrm{Var}(\hat\theta_{\mathrm{cl}}).
+\]
+\end{ocg}
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\[
+\boxed{\mathrm{Exponencial}}
+\]
+\begin{ocg}{Exponencial}{ocgE}{1}
+\[
+X\sim \mathrm{Exp}(\lambda),\quad f(x)=\lambda e^{-\lambda x},\quad \lambda=1.
+\]
+\[
+\theta=\mathbb{E}\!\left[e^{X} \, g(X)\right],\qquad
+\hat\theta_{\mathrm{exp}}=\frac{1}{n}\sum_{i=1}^{n} e^{x_i}\,g(x_i).
+\]
+\end{ocg}
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\[
+\boxed{\mathrm{Normal}}
+\]
+\begin{ocg}{Normal}{ocgN}{1}
+\[
+\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{-x^{2}/2},\qquad X\sim \mathcal{N}(0,1).
+\]
+\[
+\theta=\sqrt{2\pi}\,\mathbb{E}\!\left[e^{X^{2}/2}\,g(X)\right],\qquad
+\hat\theta_{\mathrm{norm}}=\sqrt{2\pi}\,\frac{1}{n}\sum_{i=1}^{n} e^{x_i^{2}/2}\,g(x_i).
+\]
+\end{ocg}
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\[
+\boxed{\mathrm{Ejercicio}}
+\]
+\begin{ocg}{Ejercicio}{ocgEx}{1}
+\[
+g(x)=x,\quad a=0,\ b=1,\quad x_1=\tfrac{1}{4},\ x_2=\tfrac{1}{2},\ x_3=\tfrac{3}{4},\ n=3.
+\]
+\[
+\theta=\int_{0}^{1} x\,dx=\tfrac{1}{2}.
+\]
+\[
+\hat\theta_{\mathrm{u}}=(b-a)\frac{1}{n}\sum_{i=1}^{n}g(x_i)
+=1\cdot\frac{1}{3}\!\left(\tfrac{1}{4}+\tfrac{1}{2}+\tfrac{3}{4}\right)
+=\frac{1}{3}\cdot\frac{3}{2}=\tfrac{1}{2}.
+\]
+\[
+\bigl|\hat\theta_{\mathrm{u}}-\theta\bigr|=0.
+\]
+\end{ocg}
+\end{tcolorbox}
+
+  ===================== BLOQUE 3: MUESTREO CONDICIONAL =====================
+
+  \begin{tcolorbox}
+\[
+\boxed{\text{Varianza y esperanza condicional}}
+\]
+\textbf{Definición.} Sea $X$ con $\E[X^2]<\infty$ y $Y$ una v.a.\ cualquiera. Se define
+\[
+\Var(X\mid Y)\;=\;\E\!\big[(X-\E[X\mid Y])^{2}\,\big|\,Y\big].
+\]
+
+\textbf{Propiedades.}
+\[
+\Var(X\mid Y)\ \ge\ 0\quad \text{c.s.}
+\]
+\[
+\Var(X\mid Y)\;=\;\E\!\left[X^{2}\mid Y\right]\;-\;\Big(\E\!\left[X\mid Y\right]\Big)^{2}.
+\]
+\[
+\boxed{\ \Var(X)\;=\;\E\!\left[\Var(X\mid Y)\right]\;+\;\Var\!\left(\E[X\mid Y]\right)\ }\quad
+\text{(ley de la varianza total).}
+\]
+\[
+\Var\!\left(\E[X\mid Y]\right)\ \le\ \Var(X).
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}
+  ========= MU ESTREO CONDICIONAL: FORMULAS =========
+  Marco básico
+\[
+\theta=\int_a^b g(x)\,dx=\mathbb{E}\!\left[\frac{g(X)}{f(X)}\right],\qquad
+X\sim f
+\]
+\[
+\hat\theta_{1}=\frac{1}{n}\sum_{i=1}^{n}\frac{g(X_i)}{f(X_i)},\qquad
+\hat\theta_{2}=\frac{1}{n}\sum_{i=1}^{n}\mathbb{E}\!\left[\frac{g(X)}{f(X)}\mid Y_i\right]
+\]
+\[
+\mathbb{E}[\hat\theta_{1}]=\mathbb{E}[\hat\theta_{2}]=\theta
+\]
+\[
+\operatorname{Var}(\hat\theta_{1})=\frac{1}{n}\operatorname{Var}\!\left(\frac{g(X)}{f(X)}\right),
+\quad
+\operatorname{Var}(\hat\theta_{2})=\frac{1}{n}\operatorname{Var}\!\left(\mathbb{E}\!\left[\frac{g(X)}{f(X)}\mid Y\right]\right)
+\]
+\[
+\operatorname{Var}(X)=\mathbb{E}\!\left[\operatorname{Var}(X\mid Y)\right]+\operatorname{Var}\!\left(\mathbb{E}[X\mid Y]\right)
+\]
+\[
+\operatorname{Var}(\hat\theta_{2})\le \operatorname{Var}(\hat\theta_{1})
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}
+  ========= EJEMPLO 1 =========
+  $\theta = \iint (x+y)$
+\[
+\theta=\int_{0}^{1}\!\!\int_{0}^{1}(x+y)\,dx\,dy=1
+\]
+\[
+\hat\theta_{1}=\frac{1}{n}\sum_{i=1}^{n}(X_i+Y_i),\quad (X_i,Y_i)\stackrel{\text{i.i.d.}}{\sim}U([0,1]^2)
+\]
+\[
+\mathbb{E}[X\mid Y=y]=\tfrac12\;\Rightarrow\;
+\hat\theta_{2}=\frac{1}{n}\sum_{i=1}^{n}\!\left(\tfrac12+Y_i\right),\quad Y_i\stackrel{\text{i.i.d.}}{\sim}U(0,1)
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}
+  ========= EJEMPLO 2 =========
+  $\theta = P(X+Y \le u)$
+\[
+\theta=\mathbb{P}(X+Y\le u)=\mathbb{E}\!\left[\mathbf{1}_{\{X+Y\le u\}}\right]
+\]
+\[
+\hat\theta_{1}=\frac{1}{n}\sum_{i=1}^{n}\mathbf{1}_{\{X_i+Y_i\le u\}},\quad (X_i,Y_i)\stackrel{\text{i.i.d.}}{\sim}F
+\]
+\[
+\theta=\mathbb{E}\!\left[\mathbb{E}\!\left(\mathbf{1}_{\{X\le u-Y\}}\mid Y\right)\right]
+=\mathbb{E}\!\left[F_X(u-Y)\right]
+\]
+\[
+\hat\theta_{2}=\frac{1}{n}\sum_{i=1}^{n}F_X(u-Y_i),\quad Y_i\stackrel{\text{i.d.}}{\sim}F_Y
+\]
+\end{tcolorbox}
+
+  ========= EJEMPLO 3 =========
+  Suma compuesta SN
+\begin{tcolorbox}
+
+\[
+S_N=\sum_{i=1}^{N}X_i,\quad N\perp\!\!\!\perp \{X_i\},\quad X_i\stackrel{\text{i.d.}}{\sim}F
+\]
+\[
+\theta=\mathbb{P}(S_N\le x)=\mathbb{E}\!\left[\mathbf{1}_{\{S_N\le x\}}\right]
+\]
+\[
+\hat\theta_{1}=\frac{1}{n}\sum_{k=1}^{n}\mathbf{1}_{\{S^{(k)}_{N_k}\le x\}},
+\qquad
+\operatorname{Var}(\hat\theta_{1})=\frac{1}{n}\theta(1-\theta)
+\]
+\[
+F^{*n}(x)=\mathbb{P}\!\left(\sum_{i=1}^{n}X_i\le x\right)=
+\mathbb{E}\!\left[F\!\left(x-\sum_{i=2}^{n}X_i\right)\right]
+\]
+\[
+F^{*N}(x)=\mathbb{E}\!\left[F\!\left(x-\sum_{i=2}^{N}X_i\right)\right]
+\]
+\[
+\hat\theta_{2}=\frac{1}{n}\sum_{k=1}^{n}F\!\left(x-\sum_{i=2}^{N_k}X^{(k)}_i\right)
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}
+  ========= EJERCICIO (CÁLCULO A MANO) =========
+  Uniformes y u=1
+\[
+X,Y\stackrel{\text{i.i.d.}}{\sim}U(0,1),\quad u=1
+\]
+\[
+\theta=\mathbb{P}(X+Y\le 1)=\int_{0}^{1}\!\!\int_{0}^{1}\mathbf{1}_{\{x+y\le 1\}}\,dx\,dy
+=\int_{0}^{1}\!\left(\int_{0}^{1-y}dx\right)dy
+=\int_{0}^{1}(1-y)\,dy=\tfrac{1}{2}
+\]
+\[
+F_X(1-Y)=(1-Y)\,\mathbf{1}_{\{0\le Y\le 1\}}
+\]
+\[
+\theta=\mathbb{E}[F_X(1-Y)]=\mathbb{E}[1-Y]=1-\mathbb{E}[Y]=1-\tfrac12=\tfrac12
+\]
+\end{tcolorbox}
+
+  ===================== BLOQUE 4: MUESTREO POR IMPORTANCIA =====================
+\begin{tcolorbox}
+=== Muestreo por Importancia (resumen solo fórmulas) ===
+
+ Objetivo
+\[
+\boxed{\;\theta=\int_a^b g(x)\,dx\;}
+\qquad
+\boxed{\;\theta=\int_a^b \frac{g(x)}{f(x)}\,f(x)\,dx=\mathbb{E}\!\left[\frac{g(X)}{f(X)}\right]\;}
+\]
+
+Estimador Monte Carlo
+\[
+\boxed{\;\hat\theta=\frac{1}{n}\sum_{i=1}^n \frac{g(X_i)}{f(X_i)}\;}
+\qquad
+\boxed{\;\mathbb{E}[\hat\theta]=\theta\;}
+\qquad
+\boxed{\;\mathrm{Var}(\hat\theta)=\frac{1}{n}\,\mathrm{Var}\!\left(\frac{g(X)}{f(X)}\right)\;}
+\]
+
+Cota por Cauchy–Schwarz y f óptima
+\[
+\boxed{\;\mathrm{Var}(\hat\theta)\;\ge\;\frac{1}{n}\Bigg[\!\left(\int_a^b |g(x)|\,dx\right)^{\!2}-\theta^2\Bigg]\;}
+\qquad
+\boxed{\;f^\star(x)=\dfrac{|g(x)|}{\int_a^b |g(t)|\,dt}\;}
+\qquad
+\boxed{\;\mathrm{Var}(\hat\theta;f^\star)=\frac{1}{n}\Bigg[\!\left(\int_a^b |g(x)|\,dx\right)^{\!2}-\theta^2\Bigg]\;}
+\]
+
+Requisito de integrabilidad
+\[
+\boxed{\;\int_a^b |g(x)|\,dx<\infty\;}
+\]
+
+Aproximación por partición (discreta por tramos)
+$\text{Partición: } a=u_0<u_1<\cdots<u_m=b,\;\; \Delta_i=u_i-u_{i-1},\;\; x_i\in(u_{i-1},u_i)
+\qquad
+\bar g(x)=\sum_{i=1}^m g_i\,\mathbf{1}_{(u_{i-1},u_i)}(x),\;\; g_i:=g(x_i)$
+\[
+\boxed{\;p_i=\mathbb{P}(X=x_i)=\dfrac{|g_i|\Delta_i}{\sum_{j=1}^m |g_j|\Delta_j}\;}
+\qquad
+\boxed{\;\theta=\int_a^b g(x)\,dx\;\approx\;\mathbb{E}\!\left[\frac{g(X)\,\Delta(X)}{p(X)}\right]\;}
+\]
+\[
+\boxed{\;\hat\theta_{\!\Delta}=\frac{1}{n}\sum_{k=1}^n \frac{g(X_k)\,\Delta(X_k)}{p(X_k)}\;}
+\]
+
+Caso multidimensional
+\[
+\boxed{\;\theta=\int_{a_1}^{b_1}\!\!\cdots\!\int_{a_d}^{b_d} g(\mathbf{x})\,d\mathbf{x}
+=\mathbb{E}\!\left[\frac{g(\mathbf{X})}{f(\mathbf{X})}\right]\;}
+\qquad
+\boxed{\;f^\star(\mathbf{x})=\dfrac{|g(\mathbf{x})|}{\int |g(\mathbf{t})|\,d\mathbf{t}}\;}
+\qquad
+\boxed{\;\hat\theta=\frac{1}{n}\sum_{i=1}^n \frac{g(\mathbf{X}_i)}{f(\mathbf{X}_i)}\;}
+\]
+
+  ===== Ejercicio simple con cálculos a mano =====
+  Integral objetivo y partición m=2
+$\text{Ejercicio: } \theta=\int_0^1 e^{-x}\,dx,\;\; m=2,\;\; u_0=0,\;u_1=\tfrac{1}{2},\;u_2=1,\;\; \Delta_1=\Delta_2=\tfrac{1}{2}
+\qquad
+x_1=\tfrac{1}{4},\;x_2=\tfrac{3}{4},\;\; g_1=e^{-1/4},\; g_2=e^{-3/4}$
+\[
+p_1=\dfrac{|g_1|\Delta_1}{|g_1|\Delta_1+|g_2|\Delta_2}
+=\dfrac{e^{-1/4}\cdot \tfrac{1}{2}}{e^{-1/4}\cdot \tfrac{1}{2}+e^{-3/4}\cdot \tfrac{1}{2}}
+=\dfrac{e^{-1/4}}{e^{-1/4}+e^{-3/4}},
+\qquad
+p_2=\dfrac{e^{-3/4}}{e^{-1/4}+e^{-3/4}}
+\]
+\[
+w_1=\frac{g_1\Delta_1}{p_1}
+=\frac{e^{-1/4}\cdot \tfrac{1}{2}}{e^{-1/4}/(e^{-1/4}+e^{-3/4})}
+=\tfrac{1}{2}\big(e^{-1/4}+e^{-3/4}\big),
+\qquad
+w_2=\frac{g_2\Delta_2}{p_2}
+=\frac{e^{-3/4}\cdot \tfrac{1}{2}}{e^{-3/4}/(e^{-1/4}+e^{-3/4})}
+=\tfrac{1}{2}\big(e^{-1/4}+e^{-3/4}\big)
+\]
+\[
+\boxed{\;\hat\theta_{\!\Delta}=\frac{1}{n}\sum_{k=1}^n w_{I_k}=\tfrac{1}{2}\big(e^{-1/4}+e^{-3/4}\big)\;}
+\qquad
+e^{-1/4}\approx 0.77880078,\;\; e^{-3/4}\approx 0.47236655
+\qquad
+\hat\theta_{\!\Delta}\approx \tfrac{1}{2}(0.77880078+0.47236655)\approx 0.62558366
+\]
+\[
+\boxed{\;\theta_{\text{exacta}}=1-e^{-1}\approx 1-0.36787944\approx 0.63212056\;}
+\qquad
+|\hat\theta_{\!\Delta}-\theta_{\text{exacta}}|\approx 0.00653690
+\]
+
+  ===== Recap simbólico =====
+\[
+\boxed{\;\text{IS:}\;\; \hat\theta=\frac{1}{n}\sum_{i=1}^n \frac{g(X_i)}{f(X_i)},\quad
+f^\star\propto |g|,\quad
+\mathrm{Var}(\hat\theta)\ge \frac{1}{n}\Big[(\int |g|)^2-\theta^2\Big]\;}
+\]
+\end{tcolorbox}
+
+  ===================== BLOQUE 5: VARIABLES COMUNES, ANTITÉTICAS Y POISSON =====================
+\begin{tcolorbox}
+  Resumen en fórmulas: Variables Comunes
+\[
+\boxed{\text{Variables Comunes}}
+\]
+\[
+\theta=\mathbb{E}(X-Y),\qquad
+\hat\theta=\frac{1}{n}\sum_{i=1}^n(X_i-Y_i)
+\]
+\[
+\operatorname{Var}(\hat\theta)=\frac{1}{n}\bigl(\operatorname{Var}(X)+\operatorname{Var}(Y)\bigr)
+\]
+\[
+U\sim\mathrm{Unif}(0,1),\quad X=F^{-1}(U),\quad Y=G^{-1}(U)
+\]
+\[
+\operatorname{Var}(\hat\theta)=\frac{1}{n}\!\left[\operatorname{Var}(X)+\operatorname{Var}(Y)-2\,\operatorname{Cov}\!\bigl(F^{-1}(U),G^{-1}(U)\bigr)\right]
+\]
+\[
+\operatorname{Cov}\!\bigl(F^{-1}(U),G^{-1}(U)\bigr)\ge 0
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}
+  Variables Antitéticas
+\[
+\boxed{\text{Variables Antitéticas}}
+\]
+\[
+\theta=\mathbb{E}(X+Y),\qquad
+\hat\theta=\frac{1}{n}\sum_{i=1}^n(X_i+Y_i)
+\]
+\[
+\operatorname{Var}(\hat\theta)=\frac{1}{n}\bigl(\operatorname{Var}(X)+\operatorname{Var}(Y)\bigr)
+\]
+\[
+U\sim\mathrm{Unif}(0,1),\quad X=F^{-1}(U),\quad Y=G^{-1}(1-U)
+\]
+\[
+\operatorname{Var}(\hat\theta)=\frac{1}{n}\!\left[\operatorname{Var}(X)+\operatorname{Var}(Y)+2\,\operatorname{Cov}\!\bigl(F^{-1}(U),G^{-1}(1-U)\bigr)\right]
+\]
+\[
+\operatorname{Cov}\!\bigl(F^{-1}(U),G^{-1}(1-U)\bigr)\le 0
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}
+  Procesos de Poisson
+\[
+\boxed{\text{Procesos de Poisson}}
+\]
+\[
+T\sim\mathrm{Exp}(\lambda),\qquad F_T^{-1}(U)=-\frac{1}{\lambda}\ln(1-U)\;(=\!-\tfrac{1}{\lambda}\ln U)
+\]
+\[
+\tau_0=0,\quad \tau_n=\sum_{k=1}^{n}T_k,\qquad N(s)=\max\{n:\tau_n\le s\}
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}
+  Ejercicio (cálculo a mano: comunes)
+\[
+\boxed{\text{Ejercicio (cálculo a mano: comunes)}}
+\]
+\[
+\mu=0.05,\quad U=0.8,\quad Z=0.5
+\]
+\[
+T=-\frac{1}{\mu}\ln U=-20\ln(0.8)=4.4629
+\]
+\[
+R_A=0.03+0.01Z=0.035,\qquad R_B=0.05+0.01Z=0.055
+\]
+\[
+V_A=\frac{1-e^{-R_AT}}{R_A}=\frac{1-e^{-0.035\cdot 4.4629}}{0.035}
+=\frac{1-e^{-0.1562}}{0.035}=4.1318
+\]
+\[
+V_B=\frac{1-e^{-R_BT}}{R_B}=\frac{1-e^{-0.055\cdot 4.4629}}{0.055}
+=\frac{1-e^{-0.2455}}{0.055}=3.9573
+\]
+\[
+\hat\delta=V_B-V_A=3.9573-4.1318=-0.1744
+\]
+\[
+\text{(mismo }Z\text{ en }R_A,R_B\Rightarrow \operatorname{Cov}(V_B,V_A)>0\Rightarrow \operatorname{Var}(\hat\delta)\text{ reducida)}
+\]
+\end{tcolorbox}
+
+
+  --- Chuleta de distribuciones (f, F, media, var, MGF) ---
+\[
+\text{Def.: } \PhiStd(z)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^z e^{-u^2/2}\,du,\quad
+B(\alpha,\beta)=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)},\quad
+I_x(\alpha,\beta)=\frac{1}{B(\alpha,\beta)}\int_{0}^{x} u^{\alpha-1}(1-u)^{\beta-1}\,du.
+\]
+
+ -----------------------------------------------------------
+  Normal
+ -----------------------------------------------------------
+\[
+\textbf{Normal } X\sim \mathcal{N}(\mu,\sigma^2),\ \sigma>0,\ x\in\R:
+\]
+\[
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\!\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),\quad
+F(x)=\PhiStd\!\left(\frac{x-\mu}{\sigma}\right),
+\]
+\[
+\E[X]=\mu,\quad \Var(X)=\sigma^2,\quad
+M_X(t)=\exp\!\left(\mu t+\tfrac{1}{2}\sigma^2 t^2\right),\ t\in\R.
+\]
+
+ -----------------------------------------------------------
+  Exponencial
+ -----------------------------------------------------------
+\[
+\textbf{Exponencial } X\sim \mathrm{Exp}(\lambda),\ \lambda>0,\ x\ge 0:
+\]
+\[
+f(x)=\lambda e^{-\lambda x}\,\ind_{[0,\infty)}(x),\quad
+F(x)=\left(1-e^{-\lambda x}\right)\,\ind_{[0,\infty)}(x),
+\]
+\[
+\E[X]=\frac{1}{\lambda},\quad \Var(X)=\frac{1}{\lambda^2},\quad
+M_X(t)=\frac{\lambda}{\lambda-t}\ \text{para } t<\lambda.
+\]
+
+ -----------------------------------------------------------
+  Uniforme
+ -----------------------------------------------------------
+\[
+\textbf{Uniforme } X\sim \mathrm{Unif}(a,b),\ a<b,\ x\in[a,b]:
+\]
+\[
+f(x)=\frac{1}{b-a}\,\ind_{[a,b]}(x),\quad
+F(x)=
+\begin{cases}
+0,& x<a,\\[2pt]
+\dfrac{x-a}{b-a},& a\le x\le b,\\[6pt]
+1,& x>b,
+\end{cases}
+\]
+\[
+\E[X]=\frac{a+b}{2},\quad \Var(X)=\frac{(b-a)^2}{12},\quad
+M_X(t)=
+\begin{cases}
+\dfrac{e^{tb}-e^{ta}}{t(b-a)}, & t\neq 0,\\
+1,& t=0.
+\end{cases}
+\]
+
+ -----------------------------------------------------------
+  Bernoulli
+ -----------------------------------------------------------
+\[
+\textbf{Bernoulli } X\sim \mathrm{Bern}(p),\ p\in[0,1],\ x\in\{0,1\}:
+\]
+\[
+\Pr(X=x)=p^x(1-p)^{1-x},\quad
+F(x)=
+\begin{cases}
+0,& x<0,\\
+1-p,& 0\le x<1,\\
+1,& x\ge 1,
+\end{cases}
+\]
+\[
+\E[X]=p,\quad \Var(X)=p(1-p),\quad
+M_X(t)=1-p+pe^{t},\ t\in\R.
+\]
+
+ -----------------------------------------------------------
+  Binomial
+ -----------------------------------------------------------
+\[
+\textbf{Binomial } X\sim \mathrm{Bin}(n,p),\ n\in\N,\ p\in[0,1],\ x\in\{0,\dots,n\}:
+\]
+\[
+\Pr(X=k)=\binom{n}{k}p^k(1-p)^{n-k},\quad
+F(k)=\sum_{j=0}^{k}\binom{n}{j}p^j(1-p)^{n-j},
+\]
+\[
+\E[X]=np,\quad \Var(X)=np(1-p),\quad
+M_X(t)=\left(1-p+pe^{t}\right)^n,\ t\in\R.
+\]
+
+ -----------------------------------------------------------
+  Poisson
+ -----------------------------------------------------------
+\[
+\textbf{Poisson } X\sim \mathrm{Pois}(\lambda),\ \lambda>0,\ x\in\{0,1,2,\dots\}:
+\]
+\[
+\Pr(X=k)=e^{-\lambda}\frac{\lambda^k}{k!},\quad
+F(k)=e^{-\lambda}\sum_{j=0}^{k}\frac{\lambda^j}{j!},
+\]
+\[
+\E[X]=\lambda,\quad \Var(X)=\lambda,\quad
+M_X(t)=\exp\!\big(\lambda(e^{t}-1)\big),\ t\in\R.
+\]
+
+ -----------------------------------------------------------
+  Beta
+ -----------------------------------------------------------
+\[
+\textbf{Beta } X\sim \mathrm{Beta}(\alpha,\beta),\ \alpha,\beta>0,\ x\in(0,1):
+\]
+\[
+f(x)=\frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)},\quad
+F(x)=I_x(\alpha,\beta),
+\]
+\[
+\E[X]=\frac{\alpha}{\alpha+\beta},\quad
+\Var(X)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)},
+\]
+\[
+M_X(t)={}_1F_1\!\left(\alpha;\ \alpha+\beta;\ t\right),\ t\in\R.
+\]
+
+
+\end{document}

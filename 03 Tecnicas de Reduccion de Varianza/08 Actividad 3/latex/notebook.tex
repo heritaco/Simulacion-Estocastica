@@ -1,0 +1,1561 @@
+\documentclass[10pt,a4paper]{article}
+
+    \usepackage[spanish]{babel} % Idioma del documento, fundamental para la correcta separación de sílabas y traducción de términos
+    \usepackage[unicode]{hyperref}
+    \usepackage[breakable]{tcolorbox}
+    \usepackage{parskip}
+    \usepackage{graphicx}
+
+    % \usepackage{amssymb}
+    \AtBeginDocument{%
+      \let\le\leqslant
+      \let\ge\geqslant
+      \let\leq\leqslant
+      \let\geq\geqslant
+    }
+
+
+
+    \setkeys{Gin}{keepaspectratio}
+
+    \let\Oldincludegraphics\includegraphics
+  
+    \usepackage{caption}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb}
+    \usepackage{textcomp}
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+
+    \usepackage{iftex}
+    \ifPDFTeX
+        \usepackage[T1]{fontenc}
+        \IfFileExists{alphabeta.sty}{
+              \usepackage{alphabeta}
+          }{
+              \usepackage[mathletters]{ucs}
+              \usepackage[utf8x]{inputenc}
+          }
+    \else
+        \usepackage{fontspec}
+        \usepackage{unicode-math}
+    \fi
+
+    % --- Change the cell font ---
+    % \usepackage{fontspec} 
+    \newfontface\myfont{Inconsolata}[Contextuals={WordInitial,WordFinal}]{}  
+
+    \usepackage{fancyvrb}
+    \fvset{
+    commandchars=\\\{\},
+    fontsize=\scriptsize,
+    formatcom=\myfont
+    }
+
+    \usepackage{grffile} 
+    \makeatletter 
+    \@ifpackagelater{grffile}{2019/11/01}
+    {
+      % Do nothing on new versions
+    }
+    {
+      \def\Gread@@xetex#1{%
+        \IfFileExists{"\Gin@base".bb}%
+        {\Gread@eps{\Gin@base.bb}}%
+        {\Gread@@xetex@aux#1}%
+      }
+    }
+    \makeatother
+
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+
+
+    
+    \usepackage{titling}
+    \usepackage{longtable}
+    \usepackage{booktabs}
+    \usepackage{array}
+    \usepackage{calc}
+    \usepackage[inline]{enumitem}
+    \usepackage[normalem]{ulem}
+    \usepackage{soul} 
+    \usepackage{mathrsfs}
+
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0.00,0.00,1.00}
+    \definecolor{linkcolor}{rgb}{0.00,0.00,0.00}
+    \definecolor{citecolor}{rgb}{0.149,0.498,0.600}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % common color for the border for error outputs.
+    \definecolor{outerrorbackground}{HTML}{FFFFFF}
+
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{
+        commandchars=\\\{\}
+    }
+
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.149,0.498,0.600}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.035,0.525,0.345}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.035,0.525,0.345}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.035,0.525,0.345}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.639,0.082,0.082}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.639,0.082,0.082}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.000,0.502,0.000}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.475,0.369,0.149}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.639,0.082,0.082}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.639,0.082,0.082}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.639,0.082,0.082}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.000,0.502,0.000}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.706,0.000,0.620}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.000,0.502,0.000}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.000,0.063,0.502}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.000,0.000,0.000}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.706,0.000,0.620}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.149,0.498,0.600}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.000,0.502,0.000}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.000,0.502,0.000}{\textbf{\textit{{#1}}}}}
+    \makeatletter
+
+    \newsavebox\pandoc@box
+    \newcommand*\pandocbounded[1]{%
+      \sbox\pandoc@box{#1}%
+      % scaling factors for width and height
+      \Gscale@div\@tempa\textheight{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+      \Gscale@div\@tempb\linewidth{\wd\pandoc@box}%
+      % select the smaller of both
+      \ifdim\@tempb\p@<\@tempa\p@
+        \let\@tempa\@tempb
+      \fi
+      % scaling accordingly (\@tempa < 1)
+      \ifdim\@tempa\p@<\p@
+        \scalebox{\@tempa}{\usebox\pandoc@box}%
+      % scaling not needed, use as it is
+      \else
+        \usebox{\pandoc@box}%
+      \fi
+    }
+    \makeatother
+
+
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+
+    % Pygments definitions
+    \makeatletter
+    \def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+        \let\PY@ul=\relax \let\PY@tc=\relax%
+        \let\PY@bc=\relax \let\PY@ff=\relax}
+    \def\PY@tok#1{\csname PY@tok@#1\endcsname}
+    \def\PY@toks#1+{\ifx\relax#1\empty\else%
+        \PY@tok{#1}\expandafter\PY@toks\fi}
+    \def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+        \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+    \def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+    \@namedef{PY@tok@w}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+    \@namedef{PY@tok@c}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+    \@namedef{PY@tok@cp}{\def\PY@tc##1{\textcolor[rgb]{0.61,0.40,0.00}{##1}}}
+    \@namedef{PY@tok@k}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@kp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@kt}{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+    \@namedef{PY@tok@o}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+    \@namedef{PY@tok@ow}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+    \@namedef{PY@tok@nb}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@nf}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+    \@namedef{PY@tok@nc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+    \@namedef{PY@tok@nn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+    \@namedef{PY@tok@ne}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.80,0.25,0.22}{##1}}}
+    \@namedef{PY@tok@nv}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+    \@namedef{PY@tok@no}{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+    \@namedef{PY@tok@nl}{\def\PY@tc##1{\textcolor[rgb]{0.46,0.46,0.00}{##1}}}
+    \@namedef{PY@tok@ni}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+    \@namedef{PY@tok@na}{\def\PY@tc##1{\textcolor[rgb]{0.41,0.47,0.13}{##1}}}
+    \@namedef{PY@tok@nt}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@nd}{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+    \@namedef{PY@tok@s}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@sd}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@si}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+    \@namedef{PY@tok@se}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.36,0.12}{##1}}}
+    \@namedef{PY@tok@sr}{\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+    \@namedef{PY@tok@ss}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+    \@namedef{PY@tok@sx}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@m}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+    \@namedef{PY@tok@gh}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+    \@namedef{PY@tok@gu}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+    \@namedef{PY@tok@gd}{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+    \@namedef{PY@tok@gi}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.52,0.00}{##1}}}
+    \@namedef{PY@tok@gr}{\def\PY@tc##1{\textcolor[rgb]{0.89,0.00,0.00}{##1}}}
+    \@namedef{PY@tok@ge}{\let\PY@it=\textit}
+    \@namedef{PY@tok@gs}{\let\PY@bf=\textbf}
+    \@namedef{PY@tok@ges}{\let\PY@bf=\textbf\let\PY@it=\textit}
+    \@namedef{PY@tok@gp}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+    \@namedef{PY@tok@go}{\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+    \@namedef{PY@tok@gt}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+    \@namedef{PY@tok@err}{\def\PY@bc##1{{\setlength{\fboxsep}{\string -\fboxrule}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}}
+    \@namedef{PY@tok@kc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@kd}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@kn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@kr}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@bp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+    \@namedef{PY@tok@fm}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+    \@namedef{PY@tok@vc}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+    \@namedef{PY@tok@vg}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+    \@namedef{PY@tok@vi}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+    \@namedef{PY@tok@vm}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+    \@namedef{PY@tok@sa}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@sb}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@sc}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@dl}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@s2}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@sh}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@s1}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+    \@namedef{PY@tok@mb}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+    \@namedef{PY@tok@mf}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+    \@namedef{PY@tok@mh}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+    \@namedef{PY@tok@mi}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+    \@namedef{PY@tok@il}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+    \@namedef{PY@tok@mo}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+    \@namedef{PY@tok@ch}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+    \@namedef{PY@tok@cm}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+    \@namedef{PY@tok@cpf}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+    \@namedef{PY@tok@c1}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+    \@namedef{PY@tok@cs}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+
+    \def\PYZbs{\char`\\}
+    \def\PYZus{\char`\_}
+    \def\PYZob{\char`\{}
+    \def\PYZcb{\char`\}}
+    \def\PYZca{\char`\^}
+    \def\PYZam{\char`\&}
+    \def\PYZlt{\char`\<}
+    \def\PYZgt{\char`\>}
+    \def\PYZsh{\char`\#}
+    \def\PYZpc{\char`\%}
+    \def\PYZdl{\char`\$}
+    \def\PYZhy{\char`\-}
+    \def\PYZsq{\char`\'}
+    \def\PYZdq{\char`\"}
+    \def\PYZti{\char`\~}
+    \def\PYZat{@}
+    \def\PYZlb{[}
+    \def\PYZrb{]}
+    \makeatother
+
+
+    % For linebreaks inside Verbatim environment from package fancyvrb.
+    \makeatletter
+        \newbox\Wrappedcontinuationbox
+        \newbox\Wrappedvisiblespacebox
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}}
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}}
+        \newcommand*\Wrappedcontinuationindent {3ex }
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox}
+        \newcommand*\Wrappedbreaksatspecials {%
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}%
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}%
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}%
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}%
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}%
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}%
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}%
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}%
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}%
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}%
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}%
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}%
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}%
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}%
+        }
+        \newcommand*\Wrappedbreaksatpunct {%
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}%
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}%
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}%
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}%
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}%
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}%
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}%
+            \catcode`\.\active
+            \catcode`\,\active
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active
+            \lccode`\~`\~
+        }
+    \makeatother
+
+    \let\OriginalVerbatim=\Verbatim
+    \makeatletter
+    \renewcommand{\Verbatim}[1][1]{%
+        %\parskip\z@skip
+        \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+        \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+        \def\FancyVerbFormatLine ##1{\hsize\linewidth
+            \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut}%
+        }%
+        % If the linebreak is at a space, the latter will be displayed as visible
+        % space at end of first line, and a continuation symbol starts next line.
+        % Stretch/shrink are however usually zero for typewriter font.
+        \def\FV@Space {%
+            \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+            {\kern\fontdimen2\font}%
+        }%
+
+        % Allow breaks at special characters using \PYG... macros.
+        \Wrappedbreaksatspecials
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active
+        \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+    }
+    \makeatother
+
+    % Exact colors from NB
+    \definecolor{incolor}{HTML}{303F9F}
+    \definecolor{outcolor}{HTML}{D84315}
+    \definecolor{cellborder}{HTML}{F7F7F7}
+    \definecolor{cellbackground}{HTML}{F7F7F7}
+
+    % prompt
+    \makeatletter
+    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+    \makeatother
+    \newcommand{\prompt}[4]{
+        {\ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}}
+    }
+    
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+        
+    \geometry{verbose,tmargin=1.5in,bmargin=1in,lmargin=1.125in,rmargin=1.125in}
+    
+
+
+    % --- Nuevos caracteres Unicode ----
+    \usepackage{newunicodechar}
+    \newunicodechar{∼}{\ensuremath{\sim}}
+    \newunicodechar{←}{\ensuremath{\leftarrow}}
+    \newunicodechar{…}{\ldots}
+    % \le y \ge se vuelven \leq y \geq
+    \let\le\leq
+    \let\ge\geq
+
+
+    % --- Fuentes (texto y matemáticas) ---
+    \usepackage{newtxmath}
+    \usepackage{fontspec}
+    \setmainfont{EB Garamond}[
+        UprightFont = * Regular,
+        ItalicFont = * Italic,
+        BoldFont = * SemiBold,
+        BoldItalicFont = * SemiBold Italic,
+    ]
+
+
+    % --- Secciones y subsecciones ---
+    \usepackage{titlesec}
+    \newfontface\boldd{EB Garamond Bold}
+    \newfontface\bolditalic{EB Garamond  Bold Italic}
+    \newfontface\extrabold{EB Garamond ExtraBold}
+    \newfontface\medium{EB Garamond Medium}
+
+
+
+    \usepackage{bookmark}              % mejora anchors
+    \hypersetup{hypertexnames=false}   % evita destinos idénticos
+
+    \usepackage{etoolbox,needspace}
+
+    % Rompe página solo en \section y crea ancla propia
+    \pretocmd{\section}{\clearpage\phantomsection\needspace{6\baselineskip}}{}{}
+
+    % No rompas página en \subsection; solo asegura espacio
+    \pretocmd{\subsection}{\phantomsection\needspace{4\baselineskip}\clearpage}{}{}
+
+    \setcounter{secnumdepth}{0}
+
+
+    % --- Hacer los títulos de sección y subsección más grandes ---
+    \titleformat{\section}
+      {\boldd\fontsize{34pt}{128pt}\selectfont} % el primer {} es el formato, el segundo {} es el tamaño de línea
+      {\thesection}{18em}{} % el primer {} es el formato, el segundo {} es la separación entre número y título
+      \titleformat{\subsection}
+        {\boldd\fontsize{18pt}{18pt}\selectfont}
+        {\thesubsection}{10em}{}
+    \titlespacing*{\section}{0pt}{0pt}{24pt} % el primer {} es la sangría, el segundo {} es el espacio antes, el tercero {} es el espacio después
+    \titlespacing*{\subsection}{0pt}{0pt}{18pt} % el primer {} es la sangría, el segundo {} es el espacio antes, el tercero {} es el espacio después
+
+    % --- Encabezado con nombre de la sección ---
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhf{}
+    \fancyhead[L]{\small\leftmark}
+    \fancyhead[R]{\small\thepage}
+    \fancyhead[C]{\small\textit{\rightmark}}
+    \renewcommand{\headrulewidth}{0.1pt}
+
+    % --- Crear un nuevo estilo de pagina con el numero arriba a la derecha ---
+    \fancypagestyle{myfancy}{
+      \fancyhf{}
+      \fancyhead[R]{\small\thepage}
+      \renewcommand{\headrulewidth}{0pt}
+    }
+
+        % --- Cambia el pagestyle a 'plain' en cada \section ---
+    \let\oldsection\section
+    \renewcommand{\section}{%
+      \clearpage
+      \thispagestyle{myfancy}%
+      \oldsection
+    }
+
+    % --- Espaciado ---
+    \usepackage{setspace}
+    \setstretch{1.2}
+    \setlength{\parskip}{0.2em}
+
+    \begin{document}
+
+    % --- Portada ---
+    \begin{titlepage}
+    \centering
+    \vspace*{4cm}
+    {\extrabold\fontsize{28pt}{28pt}\selectfont Actividad 3.3\par}
+    \vspace{1cm}
+    
+    {\medium\fontsize{12pt}{12pt}\selectfont
+    {\large Curso:  Temas Selectos I: O25 LAT4032 1\par}
+    \vspace{.5em}
+    {\large Profesor:  Rubén Blancas Rivera\par}
+    \vspace{.5em}
+    {\large Mayren Herrera Vargas, ID: 173802\\ Sofia Graham Coello, ID: 174291\\Heriberto Espino Montelongo, ID: 175199\par}
+    \vspace{.5em}
+    {\large Universidad de las Américas Puebla\par}
+    \vfill
+    {\large 5 de Noviembre de 2025 \par}}
+    \end{titlepage}
+
+
+    % --- Tabla de contenidos ---
+    \renewcommand{\contentsname}{Índice}
+    \tableofcontents
+    \thispagestyle{empty}
+    \newpage
+
+    % --- Inicio del documento ---
+    
+
+    
+    \hypertarget{importar-libreruxedas}{%
+\section{Importar Librerías}\label{importar-libreruxedas}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{1}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{numpy}\PY{+w}{ }\PY{k}{as}\PY{+w}{ }\PY{n+nn}{np}
+\PY{k+kn}{from}\PY{+w}{ }\PY{n+nn}{math}\PY{+w}{ }\PY{k+kn}{import} \PY{n}{erf}
+\PY{k+kn}{import}\PY{+w}{ }\PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot}\PY{+w}{ }\PY{k}{as}\PY{+w}{ }\PY{n+nn}{plt}
+\PY{k+kn}{from}\PY{+w}{ }\PY{n+nn}{scripts}\PY{+w}{ }\PY{k+kn}{import} \PY{n}{style}
+\PY{n}{style}\PY{o}{.}\PY{n}{mpl\PYZus{}apply}\PY{p}{(}\PY{p}{)}
+
+
+\PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{l+m+mi}{863}\PY{p}{)} 
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{ejercicio-1}{%
+\section{Ejercicio 1}\label{ejercicio-1}}
+
+    \[
+\theta=\int_0^1 e^{x} dx=e-1.
+\] Monte Carlo (MC) estima \(\theta\) por promedios muestrales de
+(f(U)). Antitéticas usan el par ((U,1-U)) que induce covarianza negativa
+cuando (f) es monótona creciente, reduciendo la varianza.
+
+Cálculo de momentos para \(U\sim \mathrm{Unif}(0,1)\): \[
+\mathbb{E}[e^{aU}]=\int_0^1 e^{au} du=\frac{e^{a}-1}{a}.
+\] Entonces \[
+\theta=\mathbb{E}[e^{U}]=e-1 \quad
+\mathbb{E}[e^{2U}]=\frac{e^{2}-1}{2}.
+\] Varianza clásica: \[
+\sigma^2:=\mathrm{Var}(e^{U})=\frac{e^{2}-1}{2}-(e-1)^2.
+\] Covarianza antitética: \[
+\mathrm{Cov}(e^{U},e^{1-U})=\mathbb{E}[e^{U}e^{1-U}]-\mathbb{E}[e^{U}] \mathbb{E}[e^{1-U}]
+=e-(e-1)^2<0.
+\] Varianza antitética: \[
+\mathrm{Var}(\hat\theta_n^{(A)})=\frac{1}{2n}(\sigma^2+\mathrm{Cov}(e^{U},e^{1-U})).
+\] \textbf{Factor de reducción de varianza (FRV):} \[
+\mathrm{FRV}:=\frac{\mathrm{Var}(\hat\theta_n^{(A)})}{\mathrm{Var}(\hat\theta_n)}
+=\frac{\sigma^2+\mathrm{Cov}(e^{U},e^{1-U})}{2\sigma^2}
+=\frac{1}{2}+\frac{\mathrm{Cov}(e^{U},e^{1-U})}{2\sigma^2} < \frac{1}{2}.
+\] Todo el esquema antitético y las identidades de varianza/covarianza
+siguen las notas de reducción de varianza.
+
+\textbf{Valores numéricos exactos:} \[
+\theta=e-1\approx 1.7182818285 \quad
+\sigma^2\approx 0.24203560745 \quad
+\mathrm{Cov}\approx -0.23421061355,
+\] \[
+\mathrm{Var}(\hat\theta_n)\approx \frac{0.24203560745}{n} \quad
+\mathrm{Var}(\hat\theta_n^{(A)})\approx \frac{0.00391249695}{n},
+\] \[
+\mathrm{FRV}\approx 0.0161649643 (\text{reducción} \approx 98.38
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{2}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{n} \PY{o}{=} \PY{l+m+mi}{100}
+\PY{n}{true\PYZus{}theta} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{e} \PY{o}{\PYZhy{}} \PY{l+m+mf}{1.0}  \PY{c+c1}{\PYZsh{}\PYZsh{} valor exacto}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} 1) Monte Carlo clásico}
+\PY{n}{U} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{rand}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+\PY{n}{fU} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{U}\PY{p}{)}
+\PY{n}{theta\PYZus{}hat} \PY{o}{=} \PY{n}{fU}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} varianza muestral del promedio: s\PYZca{}2 / n}
+\PY{n}{s2} \PY{o}{=} \PY{n}{fU}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{n}{ddof}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{var\PYZus{}hat} \PY{o}{=} \PY{n}{s2} \PY{o}{/} \PY{n}{n}
+\PY{n}{se\PYZus{}hat} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{var\PYZus{}hat}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} 2) Monte Carlo con antitéticas}
+\PY{n}{Ua} \PY{o}{=} \PY{n}{U}                      \PY{c+c1}{\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{}\PYZsh{} reutilizamos U para formar pares (U, 1\PYZhy{}U)}
+\PY{n}{fU\PYZus{}a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{Ua}\PY{p}{)}
+\PY{n}{f1U\PYZus{}a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{l+m+mf}{1.0} \PY{o}{\PYZhy{}} \PY{n}{Ua}\PY{p}{)}
+\PY{n}{pair\PYZus{}avg} \PY{o}{=} \PY{l+m+mf}{0.5} \PY{o}{*} \PY{p}{(}\PY{n}{fU\PYZus{}a} \PY{o}{+} \PY{n}{f1U\PYZus{}a}\PY{p}{)}
+\PY{n}{theta\PYZus{}hat\PYZus{}a} \PY{o}{=} \PY{n}{pair\PYZus{}avg}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+
+\PY{n}{s2\PYZus{}pair} \PY{o}{=} \PY{n}{pair\PYZus{}avg}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{n}{ddof}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{var\PYZus{}hat\PYZus{}a} \PY{o}{=} \PY{n}{s2\PYZus{}pair} \PY{o}{/} \PY{n}{n}
+\PY{n}{se\PYZus{}hat\PYZus{}a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{var\PYZus{}hat\PYZus{}a}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} 3) Valores teóricos para comparar}
+\PY{n}{var\PYZus{}classic\PYZus{}theo} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{e}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{o}{/}\PY{l+m+mf}{2.0} \PY{o}{\PYZhy{}} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{e} \PY{o}{\PYZhy{}} \PY{l+m+mf}{1.0}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)} \PY{o}{/} \PY{n}{n}
+\PY{n}{cov\PYZus{}theo} \PY{o}{=} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{e} \PY{o}{\PYZhy{}} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{e} \PY{o}{\PYZhy{}} \PY{l+m+mf}{1.0}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{var\PYZus{}antithetic\PYZus{}theo} \PY{o}{=} \PY{p}{(} \PY{p}{(} \PY{p}{(}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{e}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{o}{/}\PY{l+m+mf}{2.0} \PY{o}{\PYZhy{}} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{e} \PY{o}{\PYZhy{}} \PY{l+m+mf}{1.0}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)} \PY{o}{+} \PY{n}{cov\PYZus{}theo} \PY{p}{)} \PY{o}{/} \PY{l+m+mf}{2.0} \PY{p}{)} \PY{o}{/} \PY{n}{n}
+\PY{n}{frv\PYZus{}theo} \PY{o}{=} \PY{n}{var\PYZus{}antithetic\PYZus{}theo} \PY{o}{/} \PY{n}{var\PYZus{}classic\PYZus{}theo}
+
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} 4) Impresión de resultados}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Valor verdadero θ = e \PYZhy{} 1 = }\PY{l+s+si}{\PYZob{}}\PY{n}{true\PYZus{}theta}\PY{l+s+si}{:}\PY{l+s+s2}{.10f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{} Estimador clásico \PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θ̂ = }\PY{l+s+si}{\PYZob{}}\PY{n}{theta\PYZus{}hat}\PY{l+s+si}{:}\PY{l+s+s2}{.10f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{,  SE≈}\PY{l+s+si}{\PYZob{}}\PY{n}{se\PYZus{}hat}\PY{l+s+si}{:}\PY{l+s+s2}{.6e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{,  Var≈}\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}hat}\PY{l+s+si}{:}\PY{l+s+s2}{.6e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Var teórica del promedio ≈ }\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}classic\PYZus{}theo}\PY{l+s+si}{:}\PY{l+s+s2}{.6e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{} Estimador antitético \PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θ̂\PYZus{}A = }\PY{l+s+si}{\PYZob{}}\PY{n}{theta\PYZus{}hat\PYZus{}a}\PY{l+s+si}{:}\PY{l+s+s2}{.10f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{,  SE≈}\PY{l+s+si}{\PYZob{}}\PY{n}{se\PYZus{}hat\PYZus{}a}\PY{l+s+si}{:}\PY{l+s+s2}{.6e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{,  Var≈}\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}hat\PYZus{}a}\PY{l+s+si}{:}\PY{l+s+s2}{.6e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Var teórica del promedio antitético ≈ }\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}antithetic\PYZus{}theo}\PY{l+s+si}{:}\PY{l+s+s2}{.6e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{FRV teórico (Var\PYZus{}A / Var\PYZus{}clásica) ≈ }\PY{l+s+si}{\PYZob{}}\PY{n}{frv\PYZus{}theo}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Valor verdadero θ = e - 1 = 1.7182818285
+
+--- Estimador clásico ---
+θ̂ = 1.7926446271,  SE≈4.712016e-02,  Var≈2.220310e-03
+Var teórica del promedio ≈ 2.420356e-03
+
+--- Estimador antitético ---
+θ̂\_A = 1.7119876053,  SE≈6.134846e-03,  Var≈3.763633e-05
+Var teórica del promedio antitético ≈ 3.912497e-05
+FRV teórico (Var\_A / Var\_clásica) ≈ 0.016165
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{3}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} 5) Distribución de promedios por reboots (para visualizar varianzas)}
+\PY{n}{B} \PY{o}{=} \PY{l+m+mi}{500}  \PY{c+c1}{\PYZsh{}\PYZsh{} reboots del experimento para visualizar dispersión de los estimadores}
+\PY{n}{means\PYZus{}classic} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{B}\PY{p}{)}
+\PY{n}{means\PYZus{}anti} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{B}\PY{p}{)}
+
+\PY{k}{for} \PY{n}{b} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{B}\PY{p}{)}\PY{p}{:}
+    \PY{n}{U\PYZus{}b} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{rand}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+    \PY{n}{means\PYZus{}classic}\PY{p}{[}\PY{n}{b}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{U\PYZus{}b}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+    \PY{n}{means\PYZus{}anti}\PY{p}{[}\PY{n}{b}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{0.5} \PY{o}{*} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{U\PYZus{}b}\PY{p}{)} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n}{U\PYZus{}b}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+
+\PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{12}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,} \PY{n}{constrained\PYZus{}layout}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{means\PYZus{}classic}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m+mi}{30}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.8}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{n}{true\PYZus{}theta}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Distribución de θ̂ clásico}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θ̂}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Densidad}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{means\PYZus{}anti}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m+mi}{30}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.8}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{n}{true\PYZus{}theta}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Distribución de θ̂ antitético}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θ̂\PYZus{}A}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_5_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{4}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} 6) Curva de convergencia (promedios parciales)}
+\PY{n}{U\PYZus{}path} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{rand}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+\PY{n}{classic\PYZus{}path} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{cumsum}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{U\PYZus{}path}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{n}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{anti\PYZus{}path} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{cumsum}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{U\PYZus{}path}\PY{p}{)} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{n}{U\PYZus{}path}\PY{p}{)}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{n}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{classic\PYZus{}path}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Clásico}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{1.2}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{anti\PYZus{}path}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Antitético}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{1.2}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{axhline}\PY{p}{(}\PY{n}{true\PYZus{}theta}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{muestras}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{promedio acumulado}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Convergencia del estimador}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_6_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{ejercicio-2}{%
+\section{Ejercicio 2}\label{ejercicio-2}}
+
+    \[
+p=\mathbb P(Z^2>4)=\mathbb P(|Z|>2)=2{1-\Phi(2)}.
+\] Problema: estimar (p) y comparar \(\mathrm{Var}(\hat p_n)\) vs
+\(\mathrm{Var}(\hat p_n^{(A)})\) solicitados en el enunciado.
+
+Como \(h(z)=\mathbf 1{|z|>2}\) es \textbf{par}: \[
+h(-z)=h(z)\quad\Rightarrow\quad \frac{h(Z)+h(-Z)}{2}=h(Z)\ a.s.
+\] Luego, \[
+\mathrm{Cov}(h(Z),h(-Z))=\mathrm{Var}(h(Z)) \quad
+\mathrm{Var} (\frac{h(Z)+h(-Z)}{2})=\frac{2\mathrm{Var}(h(Z))+2\mathrm{Var}(h(Z))}{4}=\mathrm{Var}(h(Z)).
+\] Por tanto, \[
+\boxed{\ \mathrm{Var}(\hat p_n^{(A)})=\frac{\mathrm{Var}(h(Z))}{n}=\frac{p(1-p)}{n}=\mathrm{Var}(\hat p_n)\ }.
+\] Valor exacto de (p): \[
+p=2{1-\Phi(2)}\approx 0.0455002639.
+\] Conclusión: el emparejamiento antitético \textbf{no cambia} la
+varianza ni el error estándar en este ejercicio. Antitéticas reducen
+varianza cuando (h) no es par y produce \textbf{covarianza negativa}
+entre (h(Z)) y (h(-Z)).
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} === Parámetros ===}
+\PY{n}{n} \PY{o}{=} \PY{l+m+mi}{10\PYZus{}000}   \PY{c+c1}{\PYZsh{}\PYZsh{} tamaño muestral por experimento}
+\PY{n}{B} \PY{o}{=} \PY{l+m+mi}{400}       \PY{c+c1}{\PYZsh{}\PYZsh{} número de experimentos para ver distribución de estimadores}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} === Valor verdadero ===}
+\PY{c+c1}{\PYZsh{}\PYZsh{} p = 2 * (1 \PYZhy{} Phi(2)), con Phi(x) = 0.5*(1+erf(x/sqrt(2)))}
+\PY{n}{Phi} \PY{o}{=} \PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{l+m+mf}{0.5}\PY{o}{*}\PY{p}{(}\PY{l+m+mf}{1.0} \PY{o}{+} \PY{n}{erf}\PY{p}{(}\PY{n}{x}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n}{p\PYZus{}true} \PY{o}{=} \PY{l+m+mf}{2.0} \PY{o}{*} \PY{p}{(}\PY{l+m+mf}{1.0} \PY{o}{\PYZhy{}} \PY{n}{Phi}\PY{p}{(}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} === Un solo experimento: clásico vs \PYZdq{}antitético\PYZdq{} ===}
+\PY{n}{Z} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+\PY{n}{ind} \PY{o}{=} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{Z}\PY{p}{)} \PY{o}{\PYZgt{}} \PY{l+m+mf}{2.0}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} Clásico}
+\PY{n}{p\PYZus{}hat} \PY{o}{=} \PY{n}{ind}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+\PY{n}{var\PYZus{}hat} \PY{o}{=} \PY{n}{ind}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{n}{ddof}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{/} \PY{n}{n}
+\PY{n}{se\PYZus{}hat} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{var\PYZus{}hat}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} Antitético (aquí coincide exactamente con clásico)}
+\PY{c+c1}{\PYZsh{}\PYZsh{} Promedio de h(Z) y h(\PYZhy{}Z) es h(Z) pues h es par}
+\PY{n}{ind\PYZus{}anti} \PY{o}{=} \PY{l+m+mf}{0.5}\PY{o}{*}\PY{p}{(}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{Z}\PY{p}{)} \PY{o}{\PYZgt{}} \PY{l+m+mf}{2.0}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)} \PY{o}{+} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{Z}\PY{p}{)} \PY{o}{\PYZgt{}} \PY{l+m+mf}{2.0}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}\PY{p}{)}
+\PY{n}{p\PYZus{}hat\PYZus{}anti} \PY{o}{=} \PY{n}{ind\PYZus{}anti}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+\PY{n}{var\PYZus{}hat\PYZus{}anti} \PY{o}{=} \PY{n}{ind\PYZus{}anti}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{n}{ddof}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{/} \PY{n}{n}
+\PY{n}{se\PYZus{}hat\PYZus{}anti} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{var\PYZus{}hat\PYZus{}anti}\PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Valor verdadero p = }\PY{l+s+si}{\PYZob{}}\PY{n}{p\PYZus{}true}\PY{l+s+si}{:}\PY{l+s+s2}{.10f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{} Un experimento \PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Clásico:     p̂ = }\PY{l+s+si}{\PYZob{}}\PY{n}{p\PYZus{}hat}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{,  SE≈}\PY{l+s+si}{\PYZob{}}\PY{n}{se\PYZus{}hat}\PY{l+s+si}{:}\PY{l+s+s2}{.3e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{,  Var≈}\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}hat}\PY{l+s+si}{:}\PY{l+s+s2}{.3e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Antitético:  p̂A = }\PY{l+s+si}{\PYZob{}}\PY{n}{p\PYZus{}hat\PYZus{}anti}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{,  SE≈}\PY{l+s+si}{\PYZob{}}\PY{n}{se\PYZus{}hat\PYZus{}anti}\PY{l+s+si}{:}\PY{l+s+s2}{.3e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{,  Var≈}\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}hat\PYZus{}anti}\PY{l+s+si}{:}\PY{l+s+s2}{.3e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} === Muchos experimentos para comparar distribuciones de estimadores ===}
+\PY{n}{means\PYZus{}classic} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{B}\PY{p}{)}
+\PY{n}{means\PYZus{}anti} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{B}\PY{p}{)}
+
+\PY{k}{for} \PY{n}{b} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{B}\PY{p}{)}\PY{p}{:}
+    \PY{n}{Zb} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+    \PY{n}{hb} \PY{o}{=} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{Zb}\PY{p}{)} \PY{o}{\PYZgt{}} \PY{l+m+mf}{2.0}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}
+    \PY{n}{means\PYZus{}classic}\PY{p}{[}\PY{n}{b}\PY{p}{]} \PY{o}{=} \PY{n}{hb}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+    \PY{c+c1}{\PYZsh{}\PYZsh{} antitético = hb.mean() idéntico por simetría}
+    \PY{n}{means\PYZus{}anti}\PY{p}{[}\PY{n}{b}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{0.5}\PY{o}{*}\PY{p}{(}\PY{n}{hb} \PY{o}{+} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{Zb}\PY{p}{)} \PY{o}{\PYZgt{}} \PY{l+m+mf}{2.0}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} === Tablas resumen ===}
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{summary}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{ddof}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+
+\PY{n}{mc\PYZus{}mean}\PY{p}{,} \PY{n}{mc\PYZus{}sd} \PY{o}{=} \PY{n}{summary}\PY{p}{(}\PY{n}{means\PYZus{}classic}\PY{p}{)}
+\PY{n}{anti\PYZus{}mean}\PY{p}{,} \PY{n}{anti\PYZus{}sd} \PY{o}{=} \PY{n}{summary}\PY{p}{(}\PY{n}{means\PYZus{}anti}\PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{} Distribución de estimadores en múltiples corridas \PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Clásico:     media=}\PY{l+s+si}{\PYZob{}}\PY{n}{mc\PYZus{}mean}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, sd≈}\PY{l+s+si}{\PYZob{}}\PY{n}{mc\PYZus{}sd}\PY{l+s+si}{:}\PY{l+s+s2}{.3e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Antitético:  media=}\PY{l+s+si}{\PYZob{}}\PY{n}{anti\PYZus{}mean}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, sd≈}\PY{l+s+si}{\PYZob{}}\PY{n}{anti\PYZus{}sd}\PY{l+s+si}{:}\PY{l+s+s2}{.3e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Valor verdadero p = 0.0455002639
+--- Un experimento ---
+Clásico:     p̂ = 0.049300,  SE≈2.165e-03,  Var≈4.687e-06
+Antitético:  p̂A = 0.049300,  SE≈2.165e-03,  Var≈4.687e-06
+
+--- Distribución de estimadores en múltiples corridas ---
+Clásico:     media=0.045502, sd≈2.051e-03
+Antitético:  media=0.045502, sd≈2.051e-03
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{6}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} === Gráficas ===}
+\PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{12}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,} \PY{n}{constrained\PYZus{}layout}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{means\PYZus{}classic}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m+mi}{30}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.8}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{n}{p\PYZus{}true}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Distribución de p̂ (clásico)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{p̂}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Densidad}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{means\PYZus{}anti}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m+mi}{30}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.8}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{n}{p\PYZus{}true}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Distribución de p̂A (antitético)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{p̂A}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_10_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} === Curvas de convergencia (promedios parciales) ===}
+\PY{n}{Z\PYZus{}path} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+\PY{n}{h\PYZus{}path} \PY{o}{=} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{Z\PYZus{}path}\PY{p}{)} \PY{o}{\PYZgt{}} \PY{l+m+mf}{2.0}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}
+\PY{n}{classic\PYZus{}path} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{cumsum}\PY{p}{(}\PY{n}{h\PYZus{}path}\PY{p}{)}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{n}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} \PYZdq{}Antitético\PYZdq{} coincide con clásico aquí}
+\PY{n}{anti\PYZus{}path} \PY{o}{=} \PY{n}{classic\PYZus{}path}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{classic\PYZus{}path}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Clásico}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{1.2}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{anti\PYZus{}path}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Antitético}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{1.2}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{axhline}\PY{p}{(}\PY{n}{p\PYZus{}true}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{muestras}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{promedio acumulado}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Convergencia de los estimadores}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_11_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{ejercicio-3}{%
+\section{Ejercicio 3}\label{ejercicio-3}}
+
+    Objetivo: \(\theta=\mathbb{E}[f(U)]\) con \(U\sim\mathrm{Unif}(0,1)\).
+Se comparan varianzas de \(\hat\theta_n\) y \(\hat\theta_n^{(A)}\) a
+igualdad de (n).
+
+Usando \(\mathbb{E}[U^{k}]=\tfrac{1}{k+1}\): \[
+\theta=\mathbb{E}[U^{4}]-2\mathbb{E}[U^{2}]+1=\frac{1}{5}-\frac{2}{3}+1=\frac{8}{15}.
+\] Además, \[
+\mathbb{E}[f(U)^2]=\int_{0}^{1}(u^{4}-2u^{2}+1)^{2} du
+=\int_{0}^{1} (u^{8}-4u^{6}+6u^{4}-4u^{2}+1)du
+=\frac{128}{315},
+\] por lo que \[
+\operatorname{Var}(f(U))=\frac{128}{315}-(\frac{8}{15})^{2}=\frac{64}{525}.
+\] Para la covarianza, como
+\(f(1-u)=(u^{2}-2u)^{2}=u^{4}-4u^{3}+4u^{2}\), \[
+\mathbb{E} \big[f(U)f(1-U)\big]
+=\int_{0}^{1}(u^{4}-2u^{2}+1)(u^{4}-4u^{3}+4u^{2}) du
+=\frac{103}{630},
+\] \[
+\Rightarrow\quad \operatorname{Cov} (f(U),f(1-U))=\frac{103}{630}-(\frac{8}{15})^{2}=-\frac{127}{1050}<0.
+\] La varianza por muestra del promedio antitético: \[
+\frac{\operatorname{Var}(f(U))+\operatorname{Cov}(f(U),f(1-U))}{2}
+=\frac{\frac{64}{525}-\frac{127}{1050}}{2}
+=\frac{1}{2100}.
+\] Por tanto, \[
+\operatorname{Var}(\hat\theta_n)=\frac{64}{525}\frac{1}{n} \qquad
+\operatorname{Var}(\hat\theta^{(A)}_n)=\frac{1}{2100}\frac{1}{n} \qquad
+\mathrm{FRV}=\frac{1/2100}{64/525}=\frac{1}{256}.
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{8}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{f}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{n}{u}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{u}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{1}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} Parámetros}
+\PY{n}{n} \PY{o}{=} \PY{l+m+mi}{100}           \PY{c+c1}{\PYZsh{}\PYZsh{} muestras por corrida}
+\PY{n}{B} \PY{o}{=} \PY{l+m+mi}{400}              \PY{c+c1}{\PYZsh{}\PYZsh{} corridas para ver distribución de estimadores}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} Valores exactos}
+\PY{n}{theta\PYZus{}true} \PY{o}{=} \PY{l+m+mi}{8}\PY{o}{/}\PY{l+m+mi}{15}
+\PY{n}{var\PYZus{}classic\PYZus{}theo} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{64}\PY{o}{/}\PY{l+m+mi}{525}\PY{p}{)}\PY{o}{/}\PY{n}{n}
+\PY{n}{var\PYZus{}anti\PYZus{}theo} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2100}\PY{p}{)}\PY{o}{/}\PY{n}{n}
+\PY{n}{frv\PYZus{}theo} \PY{o}{=} \PY{n}{var\PYZus{}anti\PYZus{}theo} \PY{o}{/} \PY{n}{var\PYZus{}classic\PYZus{}theo}  \PY{c+c1}{\PYZsh{}\PYZsh{} = 1/256}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} Una corrida: clásico vs antitético}
+\PY{n}{U} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{rand}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+\PY{n}{theta\PYZus{}hat} \PY{o}{=} \PY{n}{f}\PY{p}{(}\PY{n}{U}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+
+\PY{n}{pair\PYZus{}avg} \PY{o}{=} \PY{l+m+mf}{0.5}\PY{o}{*}\PY{p}{(}\PY{n}{f}\PY{p}{(}\PY{n}{U}\PY{p}{)} \PY{o}{+} \PY{n}{f}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{n}{U}\PY{p}{)}\PY{p}{)}
+\PY{n}{theta\PYZus{}hat\PYZus{}a} \PY{o}{=} \PY{n}{pair\PYZus{}avg}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} Estimación de varianzas del promedio (s\PYZca{}2/n)}
+\PY{n}{var\PYZus{}hat} \PY{o}{=} \PY{n}{f}\PY{p}{(}\PY{n}{U}\PY{p}{)}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{n}{ddof}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{/} \PY{n}{n}
+\PY{n}{var\PYZus{}hat\PYZus{}a} \PY{o}{=} \PY{n}{pair\PYZus{}avg}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{n}{ddof}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{/} \PY{n}{n}
+
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θ verdadero = }\PY{l+s+si}{\PYZob{}}\PY{n}{theta\PYZus{}true}\PY{l+s+si}{:}\PY{l+s+s2}{.10f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{} Una corrida \PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Clásico:     θ̂ = }\PY{l+s+si}{\PYZob{}}\PY{n}{theta\PYZus{}hat}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, Var≈}\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}hat}\PY{l+s+si}{:}\PY{l+s+s2}{.3e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{,  Var\PYZus{}teo≈}\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}classic\PYZus{}theo}\PY{l+s+si}{:}\PY{l+s+s2}{.3e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Antitético:  θ̂A= }\PY{l+s+si}{\PYZob{}}\PY{n}{theta\PYZus{}hat\PYZus{}a}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, Var≈}\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}hat\PYZus{}a}\PY{l+s+si}{:}\PY{l+s+s2}{.3e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, Var\PYZus{}teo≈}\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}anti\PYZus{}theo}\PY{l+s+si}{:}\PY{l+s+s2}{.3e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{FRV empírica≈ }\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}hat\PYZus{}a}\PY{o}{/}\PY{n}{var\PYZus{}hat}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{,  FRV teórica= }\PY{l+s+si}{\PYZob{}}\PY{n}{frv\PYZus{}theo}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} Muchas corridas para ver la distribución de los estimadores}
+\PY{n}{means\PYZus{}classic} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{B}\PY{p}{)}
+\PY{n}{means\PYZus{}anti} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{B}\PY{p}{)}
+
+\PY{k}{for} \PY{n}{b} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{B}\PY{p}{)}\PY{p}{:}
+    \PY{n}{Ub} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{rand}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+    \PY{n}{means\PYZus{}classic}\PY{p}{[}\PY{n}{b}\PY{p}{]} \PY{o}{=} \PY{n}{f}\PY{p}{(}\PY{n}{Ub}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+    \PY{n}{means\PYZus{}anti}\PY{p}{[}\PY{n}{b}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{0.5}\PY{o}{*}\PY{p}{(}\PY{n}{f}\PY{p}{(}\PY{n}{Ub}\PY{p}{)} \PY{o}{+} \PY{n}{f}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{\PYZhy{}} \PY{n}{Ub}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{summary}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{n+nb}{float}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n+nb}{float}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{ddof}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+
+\PY{n}{mc\PYZus{}mean}\PY{p}{,} \PY{n}{mc\PYZus{}sd} \PY{o}{=} \PY{n}{summary}\PY{p}{(}\PY{n}{means\PYZus{}classic}\PY{p}{)}
+\PY{n}{anti\PYZus{}mean}\PY{p}{,} \PY{n}{anti\PYZus{}sd} \PY{o}{=} \PY{n}{summary}\PY{p}{(}\PY{n}{means\PYZus{}anti}\PY{p}{)}
+
+
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{} Distribución de estimadores en múltiples corridas \PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Clásico:     media=}\PY{l+s+si}{\PYZob{}}\PY{n}{mc\PYZus{}mean}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, sd≈}\PY{l+s+si}{\PYZob{}}\PY{n}{mc\PYZus{}sd}\PY{l+s+si}{:}\PY{l+s+s2}{.3e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Antitético:  media=}\PY{l+s+si}{\PYZob{}}\PY{n}{anti\PYZus{}mean}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, sd≈}\PY{l+s+si}{\PYZob{}}\PY{n}{anti\PYZus{}sd}\PY{l+s+si}{:}\PY{l+s+s2}{.3e}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Ratio sd (ant/clas)≈ }\PY{l+s+si}{\PYZob{}}\PY{n}{anti\PYZus{}sd}\PY{o}{/}\PY{n}{mc\PYZus{}sd}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{  \PYZti{} √(1/256)= }\PY{l+s+si}{\PYZob{}}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{256}\PY{p}{)}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+θ verdadero = 0.5333333333
+--- Una corrida ---
+Clásico:     θ̂ = 0.585569, Var≈1.220e-03,  Var\_teo≈1.219e-03
+Antitético:  θ̂A= 0.532049, Var≈4.685e-06, Var\_teo≈4.762e-06
+FRV empírica≈ 0.0038,  FRV teórica= 0.0039
+
+--- Distribución de estimadores en múltiples corridas ---
+Clásico:     media=0.536859, sd≈3.318e-02
+Antitético:  media=0.533379, sd≈2.156e-03
+Ratio sd (ant/clas)≈ 0.0650  \textasciitilde{} √(1/256)= 0.0625
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{9}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} Gráficas}
+\PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{12}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,} \PY{n}{constrained\PYZus{}layout}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{means\PYZus{}classic}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m+mi}{30}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.85}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{n}{theta\PYZus{}true}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Distribución de θ̂ clásico}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θ̂}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Densidad}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{means\PYZus{}anti}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m+mi}{30}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.85}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{n}{theta\PYZus{}true}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Distribución de θ̂ antitético}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θ̂\PYZus{}A}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_15_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{10}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} Curvas de convergencia}
+\PY{n}{U\PYZus{}path} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{rand}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+\PY{n}{cl\PYZus{}path} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{cumsum}\PY{p}{(}\PY{n}{f}\PY{p}{(}\PY{n}{U\PYZus{}path}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{n}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{an\PYZus{}path} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{cumsum}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{p}{(}\PY{n}{f}\PY{p}{(}\PY{n}{U\PYZus{}path}\PY{p}{)} \PY{o}{+} \PY{n}{f}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{n}{U\PYZus{}path}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{n}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cl\PYZus{}path}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Clásico}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{1.2}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{an\PYZus{}path}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Antitético}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{1.2}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{axhline}\PY{p}{(}\PY{n}{theta\PYZus{}true}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{muestras}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{promedio acumulado}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Convergencia de los estimadores}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_16_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{ejercicio-4}{%
+\section{Ejercicio 4}\label{ejercicio-4}}
+
+    Estimamos \[
+\theta=\mathbb{E}[N_2(10)-N_1(10)].
+\] Como \(N_j(10)\sim\mathrm{Poi}(\lambda_j 10)\), \[
+\boxed{\ \theta=(\lambda_2-\lambda_1),10=(4-3)\cdot 10=10\ }.
+\]
+
+\textbf{(a) Independiente.} Generar \(N_1(10)\) y \(N_2(10)\) de forma
+independiente. Estimador \[
+\hat\theta_n^{\text{ind}}=\frac1n\sum_{k=1}^n (N_{2,k}(10)-N_{1,k}(10)).
+\] Varianza: \[
+\mathrm{Var}(\hat\theta_n^{\text{ind}})=\frac{1}{n}(\mathrm{Var}(N_2(10))+\mathrm{Var}(N_1(10)))=\frac{40+30}{n}=\frac{70}{n}.
+\] \textbf{(b) Variables comunes (CRN).} Usar la \textbf{misma}
+secuencia \(U_i\) para construir interarribos de ambos procesos: \[
+E_i^{(j)}=\frac{-\ln U_i}{\lambda_j} \quad j=1,2.
+\] El estimador promedia diferencias con \textbf{acoplamiento positivo}:
+\[
+\hat\theta_n^{\text{crn}}=\frac1n\sum_{k=1}^n (\tilde N_{2,k}(10)-\tilde N_{1,k}(10)),
+\] donde \(\tilde N_{j,k}(10)\) se generan con \textbf{los mismos}
+\(U_i\) por corrida. La varianza resulta \[
+\mathrm{Var}(\hat\theta_n^{\text{crn}})=\frac{1}{n}(\mathrm{Var}(N_2(10))+\mathrm{Var}(N_1(10)) - 2 \mathrm{Cov}(\tilde N_2(10) \tilde N_1(10))),
+\] y, por teoría de \textbf{variables comunes},
+\(\mathrm{Cov}(\tilde N_2(10),\tilde N_1(10))\ge 0\), por lo que \[
+\boxed{\ \mathrm{Var}(\hat\theta_n^{\text{crn}})\le \mathrm{Var}(\hat\theta_n^{\text{ind}})=\tfrac{70}{n}\ }.
+\] Con la misma secuencia \(U_i\), los tiempos
+\(\tau_n^{(j)}=(1/\lambda_j)\sum_{i=1}^n(-\ln U_i)\) son
+\textbf{monótonos} en \(\lambda_j\) más tasa \(\Rightarrow\) más
+llegadas. Esto induce \textbf{correlación positiva} entre contadores y
+reduce la varianza de la \textbf{diferencia}.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{11}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{rng} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{default\PYZus{}rng}\PY{p}{(}\PY{l+m+mi}{1234}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} Parámetros}
+\PY{n}{lam1}\PY{p}{,} \PY{n}{lam2} \PY{o}{=} \PY{l+m+mf}{3.0}\PY{p}{,} \PY{l+m+mf}{4.0}
+\PY{n}{t\PYZus{}max} \PY{o}{=} \PY{l+m+mf}{10.0}
+\PY{n}{n\PYZus{}runs} \PY{o}{=} \PY{l+m+mi}{20\PYZus{}000}  \PY{c+c1}{\PYZsh{}\PYZsh{} corridas para estimar varianzas}
+
+\PY{n}{true\PYZus{}theta} \PY{o}{=} \PY{p}{(}\PY{n}{lam2} \PY{o}{\PYZhy{}} \PY{n}{lam1}\PY{p}{)} \PY{o}{*} \PY{n}{t\PYZus{}max}  \PY{c+c1}{\PYZsh{}\PYZsh{} 10}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{} (a) Corridas independientes: simular N\PYZus{}j(t) por método directo (Poisson) \PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{n}{N1\PYZus{}ind} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{poisson}\PY{p}{(}\PY{n}{lam1} \PY{o}{*} \PY{n}{t\PYZus{}max}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{n}{n\PYZus{}runs}\PY{p}{)}
+\PY{n}{N2\PYZus{}ind} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{poisson}\PY{p}{(}\PY{n}{lam2} \PY{o}{*} \PY{n}{t\PYZus{}max}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{n}{n\PYZus{}runs}\PY{p}{)}
+\PY{n}{theta\PYZus{}ind} \PY{o}{=} \PY{p}{(}\PY{n}{N2\PYZus{}ind} \PY{o}{\PYZhy{}} \PY{n}{N1\PYZus{}ind}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{} (b) Variables comunes: misma secuencia U\PYZus{}i para interarribos de ambos procesos \PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{pois\PYZus{}count\PYZus{}with\PYZus{}common\PYZus{}U}\PY{p}{(}\PY{n}{lam1}\PY{p}{,} \PY{n}{lam2}\PY{p}{,} \PY{n}{t\PYZus{}max}\PY{p}{,} \PY{n}{rng}\PY{p}{)}\PY{p}{:}
+    \PY{c+c1}{\PYZsh{}\PYZsh{} simula una corrida con CRN devolviendo (N1(t), N2(t))}
+    \PY{n}{t1} \PY{o}{=} \PY{n}{t2} \PY{o}{=} \PY{l+m+mf}{0.0}
+    \PY{n}{n1} \PY{o}{=} \PY{n}{n2} \PY{o}{=} \PY{l+m+mi}{0}
+    \PY{k}{while} \PY{k+kc}{True}\PY{p}{:}
+        \PY{n}{u} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{p}{)}
+        \PY{n}{e1} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{u}\PY{p}{)} \PY{o}{/} \PY{n}{lam1}
+        \PY{n}{e2} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{u}\PY{p}{)} \PY{o}{/} \PY{n}{lam2}
+        \PY{c+c1}{\PYZsh{}\PYZsh{} avanzar ambos en paralelo}
+        \PY{k}{if} \PY{n}{t1} \PY{o}{+} \PY{n}{e1} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{t\PYZus{}max}\PY{p}{:}
+            \PY{n}{t1} \PY{o}{+}\PY{o}{=} \PY{n}{e1}
+            \PY{n}{n1} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+        \PY{k}{if} \PY{n}{t2} \PY{o}{+} \PY{n}{e2} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{t\PYZus{}max}\PY{p}{:}
+            \PY{n}{t2} \PY{o}{+}\PY{o}{=} \PY{n}{e2}
+            \PY{n}{n2} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+        \PY{k}{if} \PY{p}{(}\PY{n}{t1} \PY{o}{+} \PY{n}{e1} \PY{o}{\PYZgt{}} \PY{n}{t\PYZus{}max}\PY{p}{)} \PY{o+ow}{and} \PY{p}{(}\PY{n}{t2} \PY{o}{+} \PY{n}{e2} \PY{o}{\PYZgt{}} \PY{n}{t\PYZus{}max}\PY{p}{)}\PY{p}{:}
+            \PY{k}{break}
+    \PY{k}{return} \PY{n}{n1}\PY{p}{,} \PY{n}{n2}
+
+\PY{n}{N1\PYZus{}crn} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{n\PYZus{}runs}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{int}\PY{p}{)}
+\PY{n}{N2\PYZus{}crn} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{n\PYZus{}runs}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{int}\PY{p}{)}
+\PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n\PYZus{}runs}\PY{p}{)}\PY{p}{:}
+    \PY{n}{n1}\PY{p}{,} \PY{n}{n2} \PY{o}{=} \PY{n}{pois\PYZus{}count\PYZus{}with\PYZus{}common\PYZus{}U}\PY{p}{(}\PY{n}{lam1}\PY{p}{,} \PY{n}{lam2}\PY{p}{,} \PY{n}{t\PYZus{}max}\PY{p}{,} \PY{n}{rng}\PY{p}{)}
+    \PY{n}{N1\PYZus{}crn}\PY{p}{[}\PY{n}{k}\PY{p}{]}\PY{p}{,} \PY{n}{N2\PYZus{}crn}\PY{p}{[}\PY{n}{k}\PY{p}{]} \PY{o}{=} \PY{n}{n1}\PY{p}{,} \PY{n}{n2}
+
+\PY{n}{theta\PYZus{}crn} \PY{o}{=} \PY{p}{(}\PY{n}{N2\PYZus{}crn} \PY{o}{\PYZhy{}} \PY{n}{N1\PYZus{}crn}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{} Estadísticos \PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{summarize}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{n+nb}{float}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n+nb}{float}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{ddof}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+
+\PY{n}{m\PYZus{}ind}\PY{p}{,} \PY{n}{v\PYZus{}ind} \PY{o}{=} \PY{n}{summarize}\PY{p}{(}\PY{n}{theta\PYZus{}ind}\PY{p}{)}
+\PY{n}{m\PYZus{}crn}\PY{p}{,} \PY{n}{v\PYZus{}crn} \PY{o}{=} \PY{n}{summarize}\PY{p}{(}\PY{n}{theta\PYZus{}crn}\PY{p}{)}
+
+
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Valor verdadero E[N2\PYZhy{}N1] = }\PY{l+s+si}{\PYZob{}}\PY{n}{true\PYZus{}theta}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{} Independiente \PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{media=}\PY{l+s+si}{\PYZob{}}\PY{n}{m\PYZus{}ind}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, var≈}\PY{l+s+si}{\PYZob{}}\PY{n}{v\PYZus{}ind}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{  (teo por corrida: 70)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{} Variables comunes \PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{media=}\PY{l+s+si}{\PYZob{}}\PY{n}{m\PYZus{}crn}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, var≈}\PY{l+s+si}{\PYZob{}}\PY{n}{v\PYZus{}crn}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{  (debe ser \PYZlt{} 70 en práctica)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Valor verdadero E[N2-N1] = 10.000000
+--- Independiente ---
+media=9.9329, var≈69.6014  (teo por corrida: 70)
+--- Variables comunes ---
+media=6.8982, var≈8.9580  (debe ser < 70 en práctica)
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{12}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{} Visualización: histogramas lado a lado \PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{12}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,} \PY{n}{constrained\PYZus{}layout}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{theta\PYZus{}ind}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{n+nb}{range}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{31}\PY{p}{)}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.9}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{n}{true\PYZus{}theta}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{N2(10) \PYZhy{} N1(10), independiente}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{diferencia}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{densidad}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{theta\PYZus{}crn}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{n+nb}{range}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{31}\PY{p}{)}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.9}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{n}{true\PYZus{}theta}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{N2(10) \PYZhy{} N1(10), variables comunes}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{diferencia}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_20_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{13}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{} Estimación de varianza de los PROMEDIOS para distintos tamaños muestrales \PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{c+c1}{\PYZsh{}\PYZsh{} Compara Var( \PYZbs{}hat theta\PYZus{}n ) empírica bajo independiente vs CRN}
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{batched\PYZus{}means}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{n}\PY{p}{,} \PY{n}{B}\PY{o}{=}\PY{l+m+mi}{1000}\PY{p}{)}\PY{p}{:}
+    \PY{c+c1}{\PYZsh{}\PYZsh{} genera B promedios de tamaño n a partir de x (con reemplazo)}
+    \PY{n}{out} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{B}\PY{p}{)}
+    \PY{k}{for} \PY{n}{b} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{B}\PY{p}{)}\PY{p}{:}
+        \PY{n}{idx} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{integers}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{n}{n}\PY{p}{)}
+        \PY{n}{out}\PY{p}{[}\PY{n}{b}\PY{p}{]} \PY{o}{=} \PY{n}{x}\PY{p}{[}\PY{n}{idx}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+    \PY{k}{return} \PY{n}{out}
+
+\PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{p}{[}\PY{l+m+mi}{50}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{,} \PY{l+m+mi}{500}\PY{p}{,} \PY{l+m+mi}{1000}\PY{p}{]}\PY{p}{:}
+    \PY{n}{m\PYZus{}ind\PYZus{}b} \PY{o}{=} \PY{n}{batched\PYZus{}means}\PY{p}{(}\PY{n}{theta\PYZus{}ind}\PY{p}{,} \PY{n}{n}\PY{p}{)}
+    \PY{n}{m\PYZus{}crn\PYZus{}b} \PY{o}{=} \PY{n}{batched\PYZus{}means}\PY{p}{(}\PY{n}{theta\PYZus{}crn}\PY{p}{,} \PY{n}{n}\PY{p}{)}
+    \PY{n}{v\PYZus{}ind\PYZus{}b} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{n}{m\PYZus{}ind\PYZus{}b}\PY{p}{,} \PY{n}{ddof}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+    \PY{n}{v\PYZus{}crn\PYZus{}b} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{n}{m\PYZus{}crn\PYZus{}b}\PY{p}{,} \PY{n}{ddof}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{n=}\PY{l+s+si}{\PYZob{}}\PY{n}{n}\PY{l+s+si}{:}\PY{l+s+s2}{4d}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{  Var(θ̂\PYZus{}ind)≈}\PY{l+s+si}{\PYZob{}}\PY{n}{v\PYZus{}ind\PYZus{}b}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{   Var(θ̂\PYZus{}crn)≈}\PY{l+s+si}{\PYZob{}}\PY{n}{v\PYZus{}crn\PYZus{}b}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{   ratio≈}\PY{l+s+si}{\PYZob{}}\PY{n}{v\PYZus{}crn\PYZus{}b}\PY{o}{/}\PY{n}{v\PYZus{}ind\PYZus{}b}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+n=  50  Var(θ̂\_ind)≈1.4014   Var(θ̂\_crn)≈0.1554   ratio≈0.111
+n= 100  Var(θ̂\_ind)≈0.6984   Var(θ̂\_crn)≈0.0915   ratio≈0.131
+n= 500  Var(θ̂\_ind)≈0.1304   Var(θ̂\_crn)≈0.0189   ratio≈0.145
+n=1000  Var(θ̂\_ind)≈0.0682   Var(θ̂\_crn)≈0.0086   ratio≈0.126
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{14}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{} Trayectorias ejemplo para ilustrar acoplamiento \PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{c+c1}{\PYZsh{}\PYZsh{} Construye dos procesos con mismos U y grafica conteos vs tiempo}
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{path\PYZus{}with\PYZus{}common\PYZus{}U}\PY{p}{(}\PY{n}{lam1}\PY{p}{,} \PY{n}{lam2}\PY{p}{,} \PY{n}{t\PYZus{}max}\PY{p}{,} \PY{n}{rng}\PY{p}{)}\PY{p}{:}
+    \PY{n}{t}\PY{o}{=}\PY{l+m+mf}{0.0}
+    \PY{n}{t\PYZus{}points}\PY{o}{=}\PY{p}{[}\PY{l+m+mf}{0.0}\PY{p}{]}
+    \PY{n}{n1}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{;} \PY{n}{n2}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+    \PY{k}{while} \PY{k+kc}{True}\PY{p}{:}
+        \PY{n}{u} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{p}{)}
+        \PY{n}{e1} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{o}{/}\PY{n}{lam1}
+        \PY{n}{e2} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{u}\PY{p}{)}\PY{o}{/}\PY{n}{lam2}
+        \PY{n}{t\PYZus{}next} \PY{o}{=} \PY{n+nb}{min}\PY{p}{(}\PY{n}{t}\PY{o}{+}\PY{n}{e1}\PY{p}{,} \PY{n}{t}\PY{o}{+}\PY{n}{e2}\PY{p}{)}
+        \PY{k}{if} \PY{n}{t}\PY{o}{+}\PY{n}{e1} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{t\PYZus{}max}\PY{p}{:}
+            \PY{n}{t} \PY{o}{=} \PY{n}{t}\PY{o}{+}\PY{n}{e1}
+            \PY{n}{t\PYZus{}points}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{;} \PY{n}{n1}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{n1}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{n}{n2}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{n2}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}  \PY{c+c1}{\PYZsh{}\PYZsh{} llegada en 1}
+        \PY{k}{if} \PY{n}{t}\PY{o}{+}\PY{n}{e2} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{t\PYZus{}max}\PY{p}{:}
+            \PY{c+c1}{\PYZsh{}\PYZsh{} cuidado con dobles llegadas si t+e1==t+e2: se registran ambas}
+            \PY{k}{if} \PY{n}{t}\PY{o}{+}\PY{n}{e2} \PY{o}{\PYZlt{}} \PY{n}{t}\PY{p}{:}
+                \PY{n}{t} \PY{o}{=} \PY{n}{t}\PY{o}{+}\PY{n}{e2}
+                \PY{n}{t\PYZus{}points}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{;} \PY{n}{n2}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{n2}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{n}{n1}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{n1}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+            \PY{k}{else}\PY{p}{:}
+                \PY{c+c1}{\PYZsh{}\PYZsh{} misma marca de tiempo o posterior a la de arriba}
+                \PY{n}{t\PYZus{}points}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{=}\PY{n+nb}{max}\PY{p}{(}\PY{n}{t\PYZus{}points}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{t}\PY{o}{+}\PY{n}{e2}\PY{p}{)}
+                \PY{n}{n2}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{=}\PY{n}{n2}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{+}\PY{l+m+mi}{1}
+        \PY{k}{if} \PY{p}{(}\PY{n}{t}\PY{o}{+}\PY{n}{e1} \PY{o}{\PYZgt{}} \PY{n}{t\PYZus{}max}\PY{p}{)} \PY{o+ow}{and} \PY{p}{(}\PY{n}{t}\PY{o}{+}\PY{n}{e2} \PY{o}{\PYZgt{}} \PY{n}{t\PYZus{}max}\PY{p}{)}\PY{p}{:}
+            \PY{k}{break}
+    \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{t\PYZus{}points}\PY{p}{)}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{n1}\PY{p}{)}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{n2}\PY{p}{)}
+
+\PY{n}{t\PYZus{}pts}\PY{p}{,} \PY{n}{n1\PYZus{}path}\PY{p}{,} \PY{n}{n2\PYZus{}path} \PY{o}{=} \PY{n}{path\PYZus{}with\PYZus{}common\PYZus{}U}\PY{p}{(}\PY{n}{lam1}\PY{p}{,} \PY{n}{lam2}\PY{p}{,} \PY{n}{t\PYZus{}max}\PY{p}{,} \PY{n}{rng}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{step}\PY{p}{(}\PY{n}{t\PYZus{}pts}\PY{p}{,} \PY{n}{n1\PYZus{}path}\PY{p}{,} \PY{n}{where}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{post}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{N1 (λ=3)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{step}\PY{p}{(}\PY{n}{t\PYZus{}pts}\PY{p}{,} \PY{n}{n2\PYZus{}path}\PY{p}{,} \PY{n}{where}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{post}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{N2 (λ=4)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{tiempo}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{conteos}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{CRN: trayectorias acopladas por la misma secuencia U}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_22_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{ejercicio-5}{%
+\section{Ejercicio 5}\label{ejercicio-5}}
+
+    Con \(T>0\) y \(W_T\sim N(0,T)\), \[
+S_j(T)=S_0\exp\ ((\mu_j-\tfrac12\sigma_j^2)T+\sigma_j W_T) \quad j=1,2. \quad \text{(definición de MBG)}
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Independiente:} \(S_1,S_2\) se simulan con \(Z_1,Z_2\)
+  independientes.
+\item
+  \textbf{CRN:} \(S_1,S_2\) usan el \textbf{mismo} (Z). Meta: aumentar
+  \(\mathrm{Cov}(S_1,S_2)\) y reducir \(\mathrm{Var}(S_2-S_1)\).
+\end{itemize}
+
+Hechos del MBG: \[
+E[S_j(T)]=S_0e^{\mu_j T} \qquad
+\mathrm{Var}(S_j(T))=S_0^2 e^{2\mu_j T}(e^{\sigma_j^2T}-1).
+\] Para CRN, con el \textbf{mismo} \(W_T\), \[
+E[S_1S_2]=S_0^2 e^{(\mu_1+\mu_2+\sigma_1\sigma_2)T}
+\Rightarrow \mathrm{Cov}(S_1,S_2)=S_0^2 e^{(\mu_1+\mu_2)T} (e^{\sigma_1\sigma_2T}-1)!> 0.
+\] Entonces \[
+\begin{aligned}
+\theta&=E[S_2-S_1]=S_0 (e^{\mu_2T}-e^{\mu_1T}),\\
+\mathrm{Var}*{\text{ind}}(S_2-S_1)&=\mathrm{Var}(S_2)+\mathrm{Var}(S_1),\\
+\mathrm{Var}*{\text{CRN}}(S_2-S_1)&=\mathrm{Var}(S_2)+\mathrm{Var}(S_1)-2 \mathrm{Cov}(S_2,S_1).
+\end{aligned}
+\] (Identidad de varianza con covarianza para CRN.)
+
+\textbf{Valores numéricos con \(T=1\), \(S_0=100\):} \[
+\begin{aligned}
+E[S_1]&=100e^{0.05}\approx 105.1271 \quad E[S_2]=100e^{0.07}\approx 107.2508,\\
+\theta&\approx 2.123708,\\
+\mathrm{Var}(S_1)&=100^2 e^{0.10}(e^{0.04}-1)\approx 451.0288,\\
+\mathrm{Var}(S_2)&=100^2 e^{0.14}(e^{0.0625}-1)\approx 741.8629,\\
+\mathrm{Cov}(S_1,S_2)&=100^2 e^{0.12}(e^{0.05}-1)\approx 578.0800,\\
+\mathrm{Var}*{\text{ind}}&\approx 1192.891 \qquad
+\mathrm{Var}*{\text{CRN}}\approx 36.732,\\
+\mathrm{FRV}&:=\frac{\mathrm{Var}*{\text{CRN}}}{\mathrm{Var}*{\text{ind}}}\approx 0.0308.
+\end{aligned}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{15}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} Parámetros}
+\PY{n}{S0}\PY{p}{,} \PY{n}{T} \PY{o}{=} \PY{l+m+mf}{100.0}\PY{p}{,} \PY{l+m+mf}{1.0}
+\PY{n}{mu1}\PY{p}{,} \PY{n}{mu2} \PY{o}{=} \PY{l+m+mf}{0.05}\PY{p}{,} \PY{l+m+mf}{0.07}
+\PY{n}{sig1}\PY{p}{,} \PY{n}{sig2} \PY{o}{=} \PY{l+m+mf}{0.20}\PY{p}{,} \PY{l+m+mf}{0.25}
+\PY{n}{n} \PY{o}{=} \PY{l+m+mi}{200\PYZus{}000}  \PY{c+c1}{\PYZsh{}\PYZsh{} corridas}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} Verdaderos}
+\PY{n}{theta\PYZus{}true} \PY{o}{=} \PY{n}{S0}\PY{o}{*}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{mu2}\PY{o}{*}\PY{n}{T}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{mu1}\PY{o}{*}\PY{n}{T}\PY{p}{)}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{} (a) Independiente \PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{n}{Z1} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+\PY{n}{Z2} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+\PY{n}{S1\PYZus{}ind} \PY{o}{=} \PY{n}{S0}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{p}{(}\PY{n}{mu1}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{sig1}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{T} \PY{o}{+} \PY{n}{sig1}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{T}\PY{p}{)}\PY{o}{*}\PY{n}{Z1}\PY{p}{)}
+\PY{n}{S2\PYZus{}ind} \PY{o}{=} \PY{n}{S0}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{p}{(}\PY{n}{mu2}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{sig2}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{T} \PY{o}{+} \PY{n}{sig2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{T}\PY{p}{)}\PY{o}{*}\PY{n}{Z2}\PY{p}{)}
+\PY{n}{D\PYZus{}ind} \PY{o}{=} \PY{n}{S2\PYZus{}ind} \PY{o}{\PYZhy{}} \PY{n}{S1\PYZus{}ind}
+\PY{n}{theta\PYZus{}ind} \PY{o}{=} \PY{n}{D\PYZus{}ind}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+\PY{n}{var\PYZus{}ind} \PY{o}{=} \PY{n}{D\PYZus{}ind}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{n}{ddof}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{se\PYZus{}ind} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{var\PYZus{}ind}\PY{o}{/}\PY{n}{n}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{} (b) Variables comunes (CRN) \PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{n}{Z} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+\PY{n}{S1\PYZus{}crn} \PY{o}{=} \PY{n}{S0}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{p}{(}\PY{n}{mu1}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{sig1}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{T} \PY{o}{+} \PY{n}{sig1}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{T}\PY{p}{)}\PY{o}{*}\PY{n}{Z}\PY{p}{)}
+\PY{n}{S2\PYZus{}crn} \PY{o}{=} \PY{n}{S0}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{p}{(}\PY{n}{mu2}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{sig2}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{T} \PY{o}{+} \PY{n}{sig2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{T}\PY{p}{)}\PY{o}{*}\PY{n}{Z}\PY{p}{)}
+\PY{n}{D\PYZus{}crn} \PY{o}{=} \PY{n}{S2\PYZus{}crn} \PY{o}{\PYZhy{}} \PY{n}{S1\PYZus{}crn}
+\PY{n}{theta\PYZus{}crn} \PY{o}{=} \PY{n}{D\PYZus{}crn}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+\PY{n}{var\PYZus{}crn} \PY{o}{=} \PY{n}{D\PYZus{}crn}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{n}{ddof}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{se\PYZus{}crn} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{var\PYZus{}crn}\PY{o}{/}\PY{n}{n}\PY{p}{)}
+
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θ verdadero = }\PY{l+s+si}{\PYZob{}}\PY{n}{theta\PYZus{}true}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{} Independiente \PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θ̂ = }\PY{l+s+si}{\PYZob{}}\PY{n}{theta\PYZus{}ind}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{  Var≈}\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}ind}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{  SE≈}\PY{l+s+si}{\PYZob{}}\PY{n}{se\PYZus{}ind}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{} Variables comunes \PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θ̂ = }\PY{l+s+si}{\PYZob{}}\PY{n}{theta\PYZus{}crn}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{  Var≈}\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}crn}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{  SE≈}\PY{l+s+si}{\PYZob{}}\PY{n}{se\PYZus{}crn}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{FRV ≈ Var\PYZus{}CRN / Var\PYZus{}IND = }\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}crn}\PY{o}{/}\PY{n}{var\PYZus{}ind}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+θ verdadero = 2.123708
+--- Independiente ---
+θ̂ = 2.247785  Var≈1190.086  SE≈0.077139
+--- Variables comunes ---
+θ̂ = 2.114648  Var≈36.783  SE≈0.013562
+FRV ≈ Var\_CRN / Var\_IND = 0.0309
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{16}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} Histogramas lado a lado}
+\PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{12}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,} \PY{n}{constrained\PYZus{}layout}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{D\PYZus{}ind}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m+mi}{120}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.85}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{n}{theta\PYZus{}true}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{S2 \PYZhy{} S1  (independiente)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{diferencia}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{densidad}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{D\PYZus{}crn}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m+mi}{120}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.85}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{n}{theta\PYZus{}true}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{S2 \PYZhy{} S1  (variables comunes)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{diferencia}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_26_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{17}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} Convergencia de promedios}
+\PY{n}{m} \PY{o}{=} \PY{l+m+mi}{100}
+\PY{n}{Z\PYZus{}path} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{n}{m}\PY{p}{)}
+\PY{n}{D\PYZus{}ind\PYZus{}path} \PY{o}{=} \PY{p}{(}
+    \PY{n}{S0}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{p}{(}\PY{n}{mu2}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{sig2}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{T} \PY{o}{+} \PY{n}{sig2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{T}\PY{p}{)}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{n}{m}\PY{p}{)}\PY{p}{)}
+  \PY{o}{\PYZhy{}} \PY{n}{S0}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{p}{(}\PY{n}{mu1}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{sig1}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{T} \PY{o}{+} \PY{n}{sig1}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{T}\PY{p}{)}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{n}{m}\PY{p}{)}\PY{p}{)}
+\PY{p}{)}
+\PY{n}{D\PYZus{}crn\PYZus{}path} \PY{o}{=} \PY{p}{(}
+    \PY{n}{S0}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{p}{(}\PY{n}{mu2}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{sig2}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{T} \PY{o}{+} \PY{n}{sig2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{T}\PY{p}{)}\PY{o}{*}\PY{n}{Z\PYZus{}path}\PY{p}{)}
+  \PY{o}{\PYZhy{}} \PY{n}{S0}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{p}{(}\PY{n}{mu1}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{sig1}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{T} \PY{o}{+} \PY{n}{sig1}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{T}\PY{p}{)}\PY{o}{*}\PY{n}{Z\PYZus{}path}\PY{p}{)}
+\PY{p}{)}
+
+\PY{n}{cum\PYZus{}ind} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{cumsum}\PY{p}{(}\PY{n}{D\PYZus{}ind\PYZus{}path}\PY{p}{)}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{m}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{cum\PYZus{}crn} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{cumsum}\PY{p}{(}\PY{n}{D\PYZus{}crn\PYZus{}path}\PY{p}{)}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{m}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cum\PYZus{}ind}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Independiente}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{1.1}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cum\PYZus{}crn}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{CRN}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{1.1}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{axhline}\PY{p}{(}\PY{n}{theta\PYZus{}true}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{muestras}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{promedio acumulado}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Convergencia de θ̂}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_27_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{18}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} Validación con fórmulas cerradas (opcional)}
+\PY{n}{var1} \PY{o}{=} \PY{n}{S0}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{mu1}\PY{o}{*}\PY{n}{T}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{sig1}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{T}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{var2} \PY{o}{=} \PY{n}{S0}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{mu2}\PY{o}{*}\PY{n}{T}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{sig2}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{T}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{cov12} \PY{o}{=} \PY{n}{S0}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{p}{(}\PY{n}{mu1}\PY{o}{+}\PY{n}{mu2}\PY{p}{)}\PY{o}{*}\PY{n}{T}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{sig1}\PY{o}{*}\PY{n}{sig2}\PY{o}{*}\PY{n}{T}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Var\PYZus{}ind\PYZus{}teo ≈ }\PY{l+s+si}{\PYZob{}}\PY{n}{var1}\PY{o}{+}\PY{n}{var2}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{   Var\PYZus{}CRN\PYZus{}teo ≈ }\PY{l+s+si}{\PYZob{}}\PY{n}{var1}\PY{o}{+}\PY{n}{var2}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{cov12}\PY{l+s+si}{:}\PY{l+s+s2}{.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Var\_ind\_teo ≈ 1192.892   Var\_CRN\_teo ≈ 36.732
+    \end{Verbatim}
+
+    \hypertarget{ejercicio-6}{%
+\section{Ejercicio 6}\label{ejercicio-6}}
+
+    Con independencia estándar entre (N) y \({Y_{j,i}}\), \[
+\theta(t)=\mathbb{E}[S_B(t)-S_A(t)]=\mathbb{E}[N(t)](\mathbb{E}[Y_B]-\mathbb{E}[Y_A])
+=\lambda t(\tfrac1{0.8}-1)=\tfrac{\lambda t}{4}=0.5 t.
+\] El enunciado pide comparar varianzas del estimador por (i) método
+clásico y (ii) CRN.
+
+\textbf{Clásico:} simular \(S_A\) y \(S_B\) \textbf{independientes} por
+corrida estimar \(\theta\) con promedios de \(D=S_B-S_A\). \textbf{CRN:}
+misma trayectoria de (N(t)) y mismos \(V_i\) para ambas severidades
+estimador con \(D^{\text{CRN}}=S_B-S_A\) usando pares acoplados. La
+varianza del promedio de diferencias cumple \[
+\mathrm{Var}(\hat\theta_n)=\frac1n \mathrm{Var}(D) \quad
+\mathrm{Var}(D)=\mathrm{Var}(S_B)+\mathrm{Var}(S_A)-2\mathrm{Cov}(S_B S_A).
+\] CRN maximiza la covarianza y por tanto \textbf{minimiza} la varianza.
+
+Hechos del compuesto Poisson: si \(N\sim\mathrm{Poi}(m)\) con
+\(m=\lambda t\) y (Y) i.i.d. independientes de (N), \[
+\mathbb{E}[S]=m \mathbb{E}[Y] \qquad \mathrm{Var}(S)=m \mathbb{E}[Y^2].
+\] Para tasas \(\beta\), \(\mathrm{Exp}(\beta)\):
+\(\mathbb{E}[Y]=1/\beta\), \(\mathbb{E}[Y^2]=2/\beta^2\).
+
+\textbf{Clásico (indep.)} \[
+\mathrm{Var}_{\text{ind}}(D)=\mathrm{Var}(S_B)+\mathrm{Var}(S_A)
+=m(\tfrac{2}{0.8^2}+2)=m (3.125+2)=m\cdot 5.125.
+\] \textbf{CRN \(compartiendo (N) y (V_i)\)} Con \(V\sim U(0,1)\), \[
+Y_A=-\ln(1-V) \qquad Y_B=-\tfrac{1}{0.8}\ln(1-V)=\tfrac{1}{0.8}Y_A,
+\] por lo que \(Y_B\) es \textbf{proporcional} a \(Y_A\) y \[
+\mathbb{E}[Y_A Y_B]=\tfrac{1}{0.8}\mathbb{E}[Y_A^2]=1.25\times 2=2.5.
+\] Para sumas acopladas sobre el mismo (N), \[
+\mathrm{Cov}(S_B S_A)=m \mathbb{E}[Y_B Y_A]=m\cdot 2.5.
+\] Así, \[
+\mathrm{Var}_{\text{CRN}}(D)=m(3.125+2)-2m(2.5)=m(5.125-5)=m\cdot 0.125.
+\] \textbf{Resumen en función de (t) y \(\lambda=2\)} \[
+\boxed{
+\begin{aligned}
+\theta(t)&=0.5 t,\\
+\mathrm{Var}*{\text{ind}}(D)&=5.125 (\lambda t)=10.25 t,\\
+\mathrm{Var}*{\text{CRN}}(D)&=0.125 (\lambda t)=0.25 t,\\
+\mathrm{FRV}&:=\frac{\mathrm{Var}*{\text{CRN}}}{\mathrm{Var}*{\text{ind}}}=\frac{0.25}{10.25}\approx 0.02439.
+\end{aligned}}
+\]
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{19}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} Parámetros}
+\PY{n}{lam} \PY{o}{=} \PY{l+m+mf}{2.0}
+\PY{n}{t} \PY{o}{=} \PY{l+m+mf}{10.0}               \PY{c+c1}{\PYZsh{}\PYZsh{} puedes cambiar el horizonte; fórmulas arriba valen para todo t}
+\PY{n}{m} \PY{o}{=} \PY{n}{lam} \PY{o}{*} \PY{n}{t}
+\PY{n}{n} \PY{o}{=} \PY{l+m+mi}{100\PYZus{}000}            \PY{c+c1}{\PYZsh{}\PYZsh{} corridas}
+\PY{n}{beta\PYZus{}A} \PY{o}{=} \PY{l+m+mf}{1.0}           \PY{c+c1}{\PYZsh{}\PYZsh{} tasa Exp para caso A}
+\PY{n}{beta\PYZus{}B} \PY{o}{=} \PY{l+m+mf}{0.8}           \PY{c+c1}{\PYZsh{}\PYZsh{} tasa Exp para caso B}
+
+\PY{n}{theta\PYZus{}true} \PY{o}{=} \PY{l+m+mf}{0.5} \PY{o}{*} \PY{n}{t}   \PY{c+c1}{\PYZsh{}\PYZsh{} = (lam*t)*(1/0.8 \PYZhy{} 1)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{} Método clásico: simulaciones independientes \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{c+c1}{\PYZsh{}\PYZsh{} Para eficiencia, usamos que S = sum\PYZus{}\PYZob{}i=1\PYZcb{}\PYZca{}N Y\PYZus{}i con N\PYZti{}Poi(m), Y\PYZti{}Exp(beta)}
+\PY{c+c1}{\PYZsh{}\PYZsh{} Generamos N\PYZus{}A, N\PYZus{}B y luego severidades independientes}
+\PY{n}{N\PYZus{}A} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{poisson}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{n}{n}\PY{p}{)}
+\PY{n}{N\PYZus{}B} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{poisson}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{n}{n}\PY{p}{)}
+
+\PY{k}{def}\PY{+w}{ }\PY{n+nf}{compound\PYZus{}sum\PYZus{}poisson}\PY{p}{(}\PY{n}{N}\PY{p}{,} \PY{n}{beta}\PY{p}{,} \PY{n}{rng}\PY{p}{)}\PY{p}{:}
+    \PY{c+c1}{\PYZsh{}\PYZsh{} Construye las sumas por vectorización sobre todas las corridas,}
+    \PY{c+c1}{\PYZsh{}\PYZsh{} generando una sola muestra de tamaño total y acumulando por índices.}
+    \PY{n}{total\PYZus{}claims} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{n}{N}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+    \PY{k}{if} \PY{n}{total\PYZus{}claims} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
+        \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{zeros\PYZus{}like}\PY{p}{(}\PY{n}{N}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
+    \PY{n}{V} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{n}{total\PYZus{}claims}\PY{p}{)}
+    \PY{c+c1}{\PYZsh{}\PYZsh{} Inversa exponencial: Y = \PYZhy{}ln(1\PYZhy{}V)/beta}
+    \PY{n}{Y} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{np}\PY{o}{.}\PY{n}{log1p}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{V}\PY{p}{)} \PY{o}{/} \PY{n}{beta}
+    \PY{n}{out} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros\PYZus{}like}\PY{p}{(}\PY{n}{N}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
+    \PY{n}{idx} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{repeat}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{N}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{N}\PY{p}{)}
+    \PY{n}{np}\PY{o}{.}\PY{n}{add}\PY{o}{.}\PY{n}{at}\PY{p}{(}\PY{n}{out}\PY{p}{,} \PY{n}{idx}\PY{p}{,} \PY{n}{Y}\PY{p}{)}
+    \PY{k}{return} \PY{n}{out}
+
+\PY{n}{S\PYZus{}A\PYZus{}ind} \PY{o}{=} \PY{n}{compound\PYZus{}sum\PYZus{}poisson}\PY{p}{(}\PY{n}{N\PYZus{}A}\PY{p}{,} \PY{n}{beta\PYZus{}A}\PY{p}{,} \PY{n}{rng}\PY{p}{)}
+\PY{n}{S\PYZus{}B\PYZus{}ind} \PY{o}{=} \PY{n}{compound\PYZus{}sum\PYZus{}poisson}\PY{p}{(}\PY{n}{N\PYZus{}B}\PY{p}{,} \PY{n}{beta\PYZus{}B}\PY{p}{,} \PY{n}{rng}\PY{p}{)}
+\PY{n}{D\PYZus{}ind} \PY{o}{=} \PY{n}{S\PYZus{}B\PYZus{}ind} \PY{o}{\PYZhy{}} \PY{n}{S\PYZus{}A\PYZus{}ind}
+
+\PY{n}{theta\PYZus{}ind} \PY{o}{=} \PY{n}{D\PYZus{}ind}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+\PY{n}{var\PYZus{}ind} \PY{o}{=} \PY{n}{D\PYZus{}ind}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{n}{ddof}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{se\PYZus{}ind} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{var\PYZus{}ind} \PY{o}{/} \PY{n}{n}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{} Variables comunes: mismo N y mismos V\PYZus{}i \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{n}{N} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{poisson}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{n}{n}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} Genera uniformes para todas las reclamaciones y reparte por corrida}
+\PY{n}{total} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{n}{N}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\PY{n}{V} \PY{o}{=} \PY{n}{rng}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{n}{total}\PY{p}{)}
+
+\PY{n}{Y\PYZus{}A\PYZus{}all} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{np}\PY{o}{.}\PY{n}{log1p}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{V}\PY{p}{)} \PY{o}{/} \PY{n}{beta\PYZus{}A}
+\PY{n}{Y\PYZus{}B\PYZus{}all} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{np}\PY{o}{.}\PY{n}{log1p}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{V}\PY{p}{)} \PY{o}{/} \PY{n}{beta\PYZus{}B}  \PY{c+c1}{\PYZsh{}\PYZsh{} proporcional a Y\PYZus{}A\PYZus{}all}
+
+\PY{n}{S\PYZus{}A\PYZus{}crn} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros\PYZus{}like}\PY{p}{(}\PY{n}{N}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
+\PY{n}{S\PYZus{}B\PYZus{}crn} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros\PYZus{}like}\PY{p}{(}\PY{n}{N}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
+\PY{n}{idx} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{repeat}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{,} \PY{n}{N}\PY{p}{)}
+\PY{n}{np}\PY{o}{.}\PY{n}{add}\PY{o}{.}\PY{n}{at}\PY{p}{(}\PY{n}{S\PYZus{}A\PYZus{}crn}\PY{p}{,} \PY{n}{idx}\PY{p}{,} \PY{n}{Y\PYZus{}A\PYZus{}all}\PY{p}{)}
+\PY{n}{np}\PY{o}{.}\PY{n}{add}\PY{o}{.}\PY{n}{at}\PY{p}{(}\PY{n}{S\PYZus{}B\PYZus{}crn}\PY{p}{,} \PY{n}{idx}\PY{p}{,} \PY{n}{Y\PYZus{}B\PYZus{}all}\PY{p}{)}
+\PY{n}{D\PYZus{}crn} \PY{o}{=} \PY{n}{S\PYZus{}B\PYZus{}crn} \PY{o}{\PYZhy{}} \PY{n}{S\PYZus{}A\PYZus{}crn}
+
+\PY{n}{theta\PYZus{}crn} \PY{o}{=} \PY{n}{D\PYZus{}crn}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+\PY{n}{var\PYZus{}crn} \PY{o}{=} \PY{n}{D\PYZus{}crn}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{n}{ddof}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{se\PYZus{}crn} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{var\PYZus{}crn} \PY{o}{/} \PY{n}{n}\PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θ(t) verdadero = }\PY{l+s+si}{\PYZob{}}\PY{n}{theta\PYZus{}true}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{} Clásico \PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θ̂ = }\PY{l+s+si}{\PYZob{}}\PY{n}{theta\PYZus{}ind}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{   Var≈}\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}ind}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{   SE≈}\PY{l+s+si}{\PYZob{}}\PY{n}{se\PYZus{}ind}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{} CRN \PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θ̂ = }\PY{l+s+si}{\PYZob{}}\PY{n}{theta\PYZus{}crn}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{   Var≈}\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}crn}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{   SE≈}\PY{l+s+si}{\PYZob{}}\PY{n}{se\PYZus{}crn}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{FRV ≈ Var\PYZus{}CRN / Var\PYZus{}IND = }\PY{l+s+si}{\PYZob{}}\PY{n}{var\PYZus{}crn}\PY{o}{/}\PY{n}{var\PYZus{}ind}\PY{l+s+si}{:}\PY{l+s+s2}{.4f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+θ(t) verdadero = 5.000000
+--- Clásico ---
+θ̂ = 4.913763   Var≈102.4610   SE≈0.032010
+--- CRN ---
+θ̂ = 4.998786   Var≈2.5012   SE≈0.005001
+FRV ≈ Var\_CRN / Var\_IND = 0.0244
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{20}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{} Gráficas \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{12}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,} \PY{n}{constrained\PYZus{}layout}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{D\PYZus{}ind}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m+mi}{120}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.88}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{n}{theta\PYZus{}true}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{D = S\PYZus{}B \PYZhy{} S\PYZus{}A (clásico)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{D}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{densidad}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{D\PYZus{}crn}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m+mi}{120}\PY{p}{,} \PY{n}{density}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.88}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{axvline}\PY{p}{(}\PY{n}{theta\PYZus{}true}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{D = S\PYZus{}B \PYZhy{} S\PYZus{}A (variables comunes)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{D}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_32_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{21}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{}\PYZsh{} Curvas de convergencia de promedios}
+\PY{n}{m\PYZus{}c} \PY{o}{=} \PY{l+m+mi}{100}
+\PY{n}{rng2} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{default\PYZus{}rng}\PY{p}{(}\PY{l+m+mi}{7}\PY{p}{)}
+\PY{c+c1}{\PYZsh{}\PYZsh{} clásico}
+\PY{n}{N\PYZus{}A\PYZus{}p} \PY{o}{=} \PY{n}{rng2}\PY{o}{.}\PY{n}{poisson}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{n}{m\PYZus{}c}\PY{p}{)}
+\PY{n}{N\PYZus{}B\PYZus{}p} \PY{o}{=} \PY{n}{rng2}\PY{o}{.}\PY{n}{poisson}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{n}{m\PYZus{}c}\PY{p}{)}
+\PY{n}{S\PYZus{}A\PYZus{}p} \PY{o}{=} \PY{n}{compound\PYZus{}sum\PYZus{}poisson}\PY{p}{(}\PY{n}{N\PYZus{}A\PYZus{}p}\PY{p}{,} \PY{n}{beta\PYZus{}A}\PY{p}{,} \PY{n}{rng2}\PY{p}{)}
+\PY{n}{S\PYZus{}B\PYZus{}p} \PY{o}{=} \PY{n}{compound\PYZus{}sum\PYZus{}poisson}\PY{p}{(}\PY{n}{N\PYZus{}B\PYZus{}p}\PY{p}{,} \PY{n}{beta\PYZus{}B}\PY{p}{,} \PY{n}{rng2}\PY{p}{)}
+\PY{n}{cum\PYZus{}ind} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{cumsum}\PY{p}{(}\PY{n}{S\PYZus{}B\PYZus{}p} \PY{o}{\PYZhy{}} \PY{n}{S\PYZus{}A\PYZus{}p}\PY{p}{)}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{m\PYZus{}c}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}\PYZsh{} CRN}
+\PY{n}{N\PYZus{}p} \PY{o}{=} \PY{n}{rng2}\PY{o}{.}\PY{n}{poisson}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{n}{m\PYZus{}c}\PY{p}{)}
+\PY{n}{tot\PYZus{}p} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{n}{N\PYZus{}p}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\PY{n}{V\PYZus{}p} \PY{o}{=} \PY{n}{rng2}\PY{o}{.}\PY{n}{random}\PY{p}{(}\PY{n}{tot\PYZus{}p}\PY{p}{)}
+\PY{n}{Y\PYZus{}A\PYZus{}p} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{np}\PY{o}{.}\PY{n}{log1p}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{V\PYZus{}p}\PY{p}{)}\PY{o}{/}\PY{n}{beta\PYZus{}A}
+\PY{n}{Y\PYZus{}B\PYZus{}p} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{np}\PY{o}{.}\PY{n}{log1p}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{V\PYZus{}p}\PY{p}{)}\PY{o}{/}\PY{n}{beta\PYZus{}B}
+\PY{n}{S\PYZus{}Ap} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros\PYZus{}like}\PY{p}{(}\PY{n}{N\PYZus{}p}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
+\PY{n}{S\PYZus{}Bp} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros\PYZus{}like}\PY{p}{(}\PY{n}{N\PYZus{}p}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
+\PY{n}{idxp} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{repeat}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n}{m\PYZus{}c}\PY{p}{)}\PY{p}{,} \PY{n}{N\PYZus{}p}\PY{p}{)}
+\PY{n}{np}\PY{o}{.}\PY{n}{add}\PY{o}{.}\PY{n}{at}\PY{p}{(}\PY{n}{S\PYZus{}Ap}\PY{p}{,} \PY{n}{idxp}\PY{p}{,} \PY{n}{Y\PYZus{}A\PYZus{}p}\PY{p}{)}
+\PY{n}{np}\PY{o}{.}\PY{n}{add}\PY{o}{.}\PY{n}{at}\PY{p}{(}\PY{n}{S\PYZus{}Bp}\PY{p}{,} \PY{n}{idxp}\PY{p}{,} \PY{n}{Y\PYZus{}B\PYZus{}p}\PY{p}{)}
+\PY{n}{cum\PYZus{}crn} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{cumsum}\PY{p}{(}\PY{n}{S\PYZus{}Bp} \PY{o}{\PYZhy{}} \PY{n}{S\PYZus{}Ap}\PY{p}{)}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{m\PYZus{}c}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cum\PYZus{}ind}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Clásico}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{1.1}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{cum\PYZus{}crn}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{CRN}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{1.1}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{axhline}\PY{p}{(}\PY{n}{theta\PYZus{}true}\PY{p}{,} \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{corridas}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{promedio acumulado}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Convergencia de θ̂}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{notebook_files/notebook_33_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+\end{document}
