@@ -1,0 +1,623 @@
+\documentclass[9pt,letterpaper]{article} % Compila con lualatex o xelatex
+
+% --- Layout & links ---
+\usepackage[margin=4cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+% Paquetes
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel} % (puedes cambiar a spanish si quieres hyphenation en español)
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{xcolor}
+\usepackage{setspace}
+
+% Configuración
+\onehalfspacing
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+% Teoremas
+\newtheorem{definition}{Definición}
+\newtheorem{theorem}{Teorema}
+
+
+
+% --- Fuentes (texto y matemáticas) ---
+\usepackage{newtxmath}
+\usepackage{fontspec}
+\setmainfont{EB Garamond}[
+    UprightFont = * Regular,
+    ItalicFont = * Italic,
+    BoldFont = * SemiBold,
+    BoldItalicFont = * SemiBold Italic,
+]
+
+
+% --- Secciones y subsecciones ---
+\usepackage{titlesec}
+\newfontface\garamondbold{EB Garamond SemiBold}
+\newfontface\garamondbolditalic{EB Garamond Bold Italic}
+\titleformat{\section}
+  {\garamondbold\Large}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\garamondbold\large}{\thesubsection}{1em}{}
+
+% --- Encabezado con nombre de la sección ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\leftmark}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.1pt}
+
+% --- Espaciado ---
+\usepackage{setspace}
+
+% --- Otros paquetes útiles ---
+\usepackage{tocloft}  % Para personalizar la tabla de contenidos
+\usepackage{xcolor}   % Para colores en el código
+\usepackage{booktabs} % Para tablas bonitas
+
+% --- Código fuente ---
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{gray!10},
+  frame=single,
+  breaklines=true
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black, % <- TOC + \ref links
+    citecolor=blue,
+    urlcolor=blue
+}
+
+
+\graphicspath{{../figures/}}
+
+\begin{document}
+
+% Portada
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+
+    {\LARGE\bfseries Implementación del Método de Metropolis--Hastings\\[0.3cm]
+    en una Aplicación Actuarial\par}
+
+    \vspace{1.5cm}
+
+    {\Large Valoración Bayesiana de Opciones Asiáticas\\
+    mediante Inferencia MCMC\par}
+
+    \vspace{2cm}
+
+    {\large Temas Selectos 1: Simulación Actuarial\par}
+
+    \vspace{1cm}
+
+    {\large Equipo: 1\par}
+
+    \vspace{1cm}
+
+    {\large \today\par}
+
+    \vfill
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% ============================================================================
+\section{Introducción y Contexto Actuarial}
+% ============================================================================
+
+\subsection{Motivación}
+
+Las opciones asiáticas son instrumentos derivados cuyo \textit{payoff} depende del promedio del precio del activo subyacente durante la vida de la opción, en lugar del precio spot al vencimiento. Este detalle vuelve a estos contratos especialmente útiles cuando el riesgo relevante no es el precio final, sino la evolución promedio del subyacente. En práctica, estas opciones aparecen en:
+
+\begin{itemize}
+    \item \textbf{Mercados de commodities}: petróleo, gas natural y metales. El promedio reduce incentivos para manipular el precio en fechas específicas y refleja mejor el costo promedio de insumos.
+    \item \textbf{Cobertura corporativa}: empresas con flujos de efectivo continuos que enfrentan riesgo de precio promedio (por ejemplo, aerolíneas con combustible).
+    \item \textbf{Gestión de riesgos financieros}: suelen tener primas menores que opciones europeas estándar, porque el promedio suaviza la volatilidad efectiva.
+\end{itemize}
+
+\subsection{Problema Actuarial}
+
+El problema central consiste en la \textbf{valoración} de opciones asiáticas cuando existe incertidumbre sobre los parámetros del proceso estocástico del activo subyacente. En particular:
+
+\begin{itemize}
+    \item El precio del activo sigue un Movimiento Browniano Geométrico (GBM).
+    \item Los parámetros $\mu$ (drift) y $\sigma$ (volatilidad) son desconocidos y deben estimarse desde datos históricos.
+    \item La valoración clásica mediante Máxima Verosimilitud (MLE) entrega estimaciones puntuales, pero ignora \textbf{riesgo de modelo} e incertidumbre paramétrica.
+\end{itemize}
+
+Desde una perspectiva actuarial, esta incertidumbre importa porque el \textit{payoff} es una función convexa del promedio; por lo tanto, la dispersión en los parámetros puede generar colas de riesgo que no se observan bajo un único estimador puntual.
+
+\subsection{Enfoque Bayesiano}
+
+La inferencia bayesiana permite:
+
+\begin{enumerate}
+    \item \textbf{Cuantificar la incertidumbre} sobre los parámetros mediante distribuciones posteriores $p(\mu,\sigma\mid \mathbf r)$.
+    \item \textbf{Propagar esta incertidumbre} al precio de la opción mediante simulación posterior predictiva.
+    \item \textbf{Obtener intervalos creíbles} que funcionen como medidas directas de riesgo de modelo.
+\end{enumerate}
+
+Dado que la posterior conjunta no tiene forma cerrada analítica, recurrimos a métodos de \textbf{Monte Carlo vía Cadenas de Markov (MCMC)}, específicamente al algoritmo de Metropolis--Hastings.
+
+% ============================================================================
+\section{Descripción del Método Metropolis--Hastings}
+% ============================================================================
+
+\subsection{Fundamento Teórico}
+
+El método de Metropolis--Hastings \citep{metropolis1953equation, hastings1970monte} genera muestras de una distribución objetivo $\pi(\theta)$ cuando dicha distribución solo es conocida hasta una constante normalizante. En nuestro caso:
+
+$$
+\pi(\theta) = p(\mu,\sigma \mid \mathbf r) \propto p(\mathbf r\mid \mu,\sigma)\,p(\mu)\,p(\sigma),
+$$
+
+donde $\theta=(\mu,\sigma)$.
+
+\begin{definition}[Distribución estacionaria]
+Una cadena de Markov con matriz de transición $P$ tiene distribución estacionaria $\pi$ si satisface:
+$$
+\pi P = \pi.
+$$
+\end{definition}
+
+La estrategia es construir $P$ de forma que la posterior sea estacionaria. Una condición suficiente es el \textbf{balance detallado}:
+$$
+\pi(\theta)\,P(\theta\to\theta')=\pi(\theta')\,P(\theta'\to\theta).
+$$
+
+\subsection{Algoritmo}
+
+El núcleo del algoritmo es proponer un nuevo estado $\theta^\ast$ desde una distribución $q(\theta^\ast \mid \theta^{(t-1)})$ y aceptarlo con probabilidad:
+
+$$
+\alpha(\theta^{(t-1)},\theta^\ast)=
+\min\!\left(1,\,
+\frac{\pi(\theta^\ast)\,q(\theta^{(t-1)}\mid\theta^\ast)}
+{\pi(\theta^{(t-1)})\,q(\theta^\ast\mid\theta^{(t-1)})}
+\right).
+$$
+
+\begin{algorithm}[H]
+\caption{Metropolis--Hastings}
+\begin{algorithmic}[1]
+\STATE Inicializar $\theta^{(0)}$
+\FOR{$t = 1$ to $N$}
+    \STATE Proponer $\theta^* \sim q(\theta^* \mid \theta^{(t-1)})$
+    \STATE Calcular $\alpha(\theta^{(t-1)},\theta^*)$
+    \STATE Generar $u \sim \text{Uniform}(0,1)$
+    \IF{$u < \alpha$}
+        \STATE $\theta^{(t)} = \theta^*$ \quad (aceptar)
+    \ELSE
+        \STATE $\theta^{(t)} = \theta^{(t-1)}$ \quad (rechazar)
+    \ENDIF
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Propuesta Random Walk}
+
+En este proyecto usamos un esquema \textbf{Random Walk Metropolis}:
+
+$$
+\theta^\ast=\theta^{(t-1)}+\epsilon,\qquad \epsilon\sim N(0,\Sigma),
+$$
+
+lo que implica simetría $q(\theta^\ast\mid\theta)=q(\theta\mid\theta^\ast)$. Por tanto:
+
+$$
+\alpha(\theta^{(t-1)},\theta^\ast)=
+\min\!\left(1,\,
+\frac{\pi(\theta^\ast)}{\pi(\theta^{(t-1)})}
+\right)
+=
+\min\!\left(1,\,
+\exp\big(\log\pi(\theta^\ast)-\log\pi(\theta^{(t-1)})\big)
+\right).
+$$
+
+Este detalle es clave para la implementación computacional: basta evaluar la log-posterior no normalizada.
+
+% ============================================================================
+\section{Modelo Estadístico/Bayesiano}
+% ============================================================================
+
+\subsection{Modelo del Activo Subyacente}
+
+Suponemos que el precio del activo $S_t$ sigue un GBM bajo la medida física $\mathbb{P}$:
+
+$$
+dS_t = \mu S_t\,dt + \sigma S_t\,dW_t,
+$$
+
+donde $\mu$ representa retorno esperado anualizado, $\sigma$ la volatilidad anualizada y $W_t$ es Browniano estándar.
+
+\subsection{Discretización y Log-retornos}
+
+Aplicando el Lema de Itô a $\log S_t$:
+
+$$
+d(\log S_t)=\left(\mu-\frac{\sigma^2}{2}\right)dt+\sigma dW_t.
+$$
+
+En tiempo discreto con paso $\Delta t$:
+
+$$
+r_t:=\log\left(\frac{S_{t+\Delta t}}{S_t}\right)
+\sim N\!\left(\left(\mu-\frac{\sigma^2}{2}\right)\Delta t,\ \sigma^2\Delta t\right).
+$$
+
+Esta formulación muestra explícitamente que $\sigma$ controla la varianza de los retornos, mientras que $\mu$ afecta solo la media, lo cual anticipa mayor dificultad para estimar drift con muestras finitas.
+
+\subsection{Verosimilitud}
+
+Sea $\mathbf r=(r_1,\dots,r_n)$ con $n$ log-retornos observados. Entonces:
+
+\begin{align}
+p(\mathbf r \mid \mu,\sigma)
+&=\prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma^2\Delta t}}
+\exp\!\left(
+-\frac{(r_i-m)^2}{2\sigma^2\Delta t}
+\right),\\
+m &= \left(\mu-\frac{\sigma^2}{2}\right)\Delta t.
+\end{align}
+
+La log-verosimilitud, ignorando constantes, es:
+
+$$
+\log p(\mathbf r\mid\mu,\sigma)
+=
+-\frac{n}{2}\log(\sigma^2\Delta t)
+-\frac{1}{2\sigma^2\Delta t}\sum_{i=1}^n (r_i-m)^2.
+$$
+
+\subsection{Distribuciones a Priori}
+
+Usamos priors débiles:
+
+\begin{align}
+\mu &\sim N(0,1),\\
+\sigma &\sim \text{InverseGamma}(2,0.1).
+\end{align}
+
+\textbf{Justificación actuarial}:
+\begin{itemize}
+    \item El prior para $\mu$ centrado en 0 refleja neutralidad direccional sin imponer tendencia fuerte.
+    \item El prior para $\sigma$ favorece valores positivos y rangos plausibles (de orden 10\%–50\% anual), evitando pesos exagerados en volatilidades irreales.
+\end{itemize}
+
+\subsection{Posterior}
+
+Por Bayes:
+
+$$
+p(\mu,\sigma\mid \mathbf r)\propto p(\mathbf r\mid \mu,\sigma)\,p(\mu)\,p(\sigma).
+$$
+
+Como la constante normalizante es intractable, M--H opera sobre la densidad no normalizada vía la log-posterior.
+
+% ============================================================================
+\section{Resultados Numéricos}
+% ============================================================================
+
+\subsection{Datos y Configuración}
+
+Se simuló una trayectoria sintética con parámetros verdaderos:
+
+$$
+\mu_{\text{true}}=0.08,\qquad \sigma_{\text{true}}=0.25,\qquad S_0=100,
+$$
+durante $T=1$ año con $n=252$ observaciones diarias ($\Delta t=T/n$). La trayectoria observada arrojó:
+
+\begin{itemize}
+    \item Precio final $S_T=103.44$
+    \item Precio promedio $\bar S = 92.65$
+    \item Retorno anual observado $\log(S_T/S_0)/T = 0.0338$
+\end{itemize}
+
+El MCMC se ejecutó con 30,000 iteraciones, burn-in de 5,000 y propuesta con SD $[0.01,0.01]$.
+
+\subsection{Estimaciones Bayesianas vs. Clásicas}
+
+\begin{table}[H]
+\centering
+\caption{Resultados de Inferencia Bayesiana}
+\label{tab:resultados}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Parámetro} & \textbf{Verdadero} & \textbf{Media Post.} & \textbf{Mediana Post.} & \textbf{IC 2.5\%} & \textbf{IC 97.5\%} & \textbf{MLE} \\
+\midrule
+$\mu$ (drift)       & 0.0800 & 0.2041 & 0.1641 & $-0.1542$ & 0.5946 & 0.0629 \\
+$\sigma$ (vol.)     & 0.2500 & 0.2422 & 0.2418 & 0.2219 & 0.2650 & 0.2413 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Observaciones}:
+\begin{enumerate}
+    \item $\sigma$ se recupera con alta precisión: la posterior es estrecha y cercana al verdadero valor. Esto es coherente con que la varianza de retornos identifica bien la volatilidad.
+    \item $\mu$ muestra intervalo creíble amplio: incluso con 252 retornos diarios, el drift anual es difícil de estimar porque su señal es pequeña frente al ruido.
+    \item La MLE de $\sigma$ coincide casi exactamente con la media posterior; para $\mu$ aparecen diferencias relevantes debido a la asimetría/dispersión posterior.
+\end{enumerate}
+
+\subsection{Diagnósticos MCMC}
+
+\begin{table}[H]
+\centering
+\caption{Diagnósticos del Algoritmo MCMC}
+\label{tab:diagnosticos}
+\begin{tabular}{lc}
+\toprule
+\textbf{Métrica} & \textbf{Valor} \\
+\midrule
+Tasa de aceptación & 0.721 \\
+ESS$_\mu$ (tamaño efectivo) & 258 \\
+ESS$_\sigma$ (tamaño efectivo) & 2,601 \\
+Autocorr(1) $\mu$ & 0.9992 \\
+Autocorr(1) $\sigma$ & 0.8059 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Interpretación ampliada}:
+\begin{itemize}
+    \item Una aceptación de 72\% es alta para random-walk; sugiere pasos pequeños y, por ende, autocorrelación elevada.
+    \item La autocorrelación extremadamente alta de $\mu$ implica mezcla lenta: aunque hay 25{,}000 muestras post burn-in, la información efectiva equivale a unas pocas centenas.
+    \item Para $\sigma$, la autocorrelación decae mucho más rápido: la cadena explora ese parámetro con mayor eficiencia.
+\end{itemize}
+
+\subsection{Análisis Visual}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{fig1_trayectoria_precios.pdf}
+\caption{Trayectoria simulada del precio del activo subyacente. El promedio aritmético ($\bar{S} = 92.65$) es inferior al strike ($K=100$), lo que afecta la valoración de la call asiática.}
+\label{fig:trayectoria}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{fig2_traceplots.pdf}
+\caption{Traceplots de $\mu$ y $\sigma$. Tras burn-in, $\sigma$ estaciona y mezcla bien; $\mu$ presenta persistencia y cambios lentos.}
+\label{fig:traceplots}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{fig3_distribuciones_posteriores.pdf}
+\caption{Posteriores marginales. $\mu$ es amplia y sesgada; $\sigma$ es concentrada y casi simétrica alrededor del verdadero valor.}
+\label{fig:posteriores}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{fig4_autocorrelacion.pdf}
+\caption{Autocorrelaciones. Persistencia elevada en $\mu$ (decaimiento lento); mezcla moderada en $\sigma$.}
+\label{fig:autocorr}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{fig6_joint_posterior.pdf}
+\caption{Posterior conjunta $(\mu,\sigma)$. Se aprecia región de alta densidad y proximidad de la media posterior a los valores verdaderos.}
+\label{fig:joint}
+\end{figure}
+
+% ============================================================================
+\section{Interpretación Actuarial: Valoración de Opción Asiática}
+% ============================================================================
+
+\subsection{Especificación de la Opción}
+
+Se valora una \textbf{opción call asiática de promedio aritmético continuo} con:
+
+\begin{itemize}
+    \item $S_0=100$
+    \item $K=100$ (at-the-money)
+    \item madurez $T=1$ año
+    \item tasa libre de riesgo $r=0.03$
+\end{itemize}
+
+Payoff:
+
+$$
+\text{Payoff}=\max(\bar S_T-K,0),\qquad
+\bar S_T=\frac{1}{T}\int_0^T S_t\,dt.
+$$
+
+\subsection{Metodología de Valoración}
+
+\begin{enumerate}
+    \item \textbf{Enfoque bayesiano:} para cada muestra posterior $(\mu^{(i)},\sigma^{(i)})$, se simulan trayectorias GBM y se calcula un precio $C^{(i)}$ por Monte Carlo.
+    \item \textbf{Enfoque MLE:} se usa el precio puntual $C_{\text{MLE}}$ evaluando en $(\hat\mu_{\text{MLE}},\hat\sigma_{\text{MLE}})$.
+    \item \textbf{Referencia teórica:} precio $C_{\text{true}}$ con $(\mu_{\text{true}},\sigma_{\text{true}})$.
+\end{enumerate}
+
+La distribución posterior del precio se interpreta como:
+
+$$
+p(C\mid \mathbf r)
+=
+\int p(C\mid\mu,\sigma)\,p(\mu,\sigma\mid\mathbf r)\,d\mu\,d\sigma.
+$$
+
+\subsection{Resultados de Valoración}
+
+\begin{table}[H]
+\centering
+\caption{Precio de la Opción Asiática Call}
+\label{tab:valoracion}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Método} & \textbf{Precio Medio (\$)} & \textbf{SD/SE} & \textbf{IC 95\%} \\
+\midrule
+Parámetros Verdaderos & 7.74 & 0.10 & --- \\
+Estimación MLE        & 7.16 & 0.10 & --- \\
+Inferencia Bayesiana  & 14.11 & 9.76 & [2.39, 35.11] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{fig5_precio_opcion_posterior.pdf}
+\caption{Posterior del precio. Dispersión y cola derecha pesada por incertidumbre de $\mu$.}
+\label{fig:precio_opcion}
+\end{figure}
+
+\subsection{Implicaciones Actuariales (ampliadas)}
+
+\begin{enumerate}
+    \item \textbf{Riesgo de modelo explícito:} el precio no es un escalar sino una variable aleatoria inducida por $p(\mu,\sigma\mid \mathbf r)$. La MLE, al ser puntual, equivale a asumir conocimiento perfecto de parámetros.
+    
+    \item \textbf{Subestimación con MLE:} aunque $C_{\text{MLE}}=7.16$ es cercano a $C_{\text{true}}=7.74$, la posterior contiene escenarios plausibles donde el precio supera 30. Esto ocurre porque el payoff es convexo en la tendencia, amplificando valores altos de $\mu$.
+    
+    \item \textbf{Capital económico y reservas:} para una institución que vende estos contratos, reservar solo $C_{\text{MLE}}$ puede ser insuficiente. Un criterio prudente sería usar percentiles altos de $p(C\mid\mathbf r)$ como capital: por ejemplo, el 95\% sugiere un capital cercano a 35.
+    
+    \item \textbf{Pricing conservador:} en práctica actuarial/financiera, un precio de venta puede fijarse en percentiles 75–90 de la posterior (aprox. 17–25), incorporando margen de seguridad y apetito de riesgo.
+    
+    \item \textbf{Sensibilidad al drift:} el driver dominante de incertidumbre es $\mu$, no $\sigma$. Esto es estructural: derivados dependientes de promedios aritméticos son especialmente sensibles a la tendencia media de las trayectorias.
+\end{enumerate}
+
+\subsection{Análisis de Riesgo}
+
+\textbf{Value-at-Risk (VaR) del precio}:
+\begin{itemize}
+    \item VaR$_{95\%} \approx 35.11$
+    \item VaR$_{99\%}$ mayor a 40 (cola derecha pesada)
+\end{itemize}
+
+\textbf{Expected Shortfall}:
+$$
+\text{ES}_{95\%}=\mathbb{E}[C\mid C>\text{VaR}_{95\%}]\approx 38.
+$$
+
+Estas medidas muestran que el riesgo extremo está gobernado por la incertidumbre en tendencia. Para gestión de solvencia, ES es preferible a VaR por ser coherente bajo colas pesadas.
+
+% ============================================================================
+\section{Conclusiones}
+% ============================================================================
+
+\subsection{Síntesis de Resultados}
+
+\begin{enumerate}
+    \item Se implementó Metropolis--Hastings desde cero para inferir parámetros GBM bajo un marco bayesiano.
+    \item La cadena converge, con aceptación alta (72\%), pero con mezcla lenta en $\mu$ reflejada en ESS bajo.
+    \item $\sigma$ se estima con alta precisión (posterior estrecha, ESS alto); $\mu$ conserva incertidumbre inherente a la naturaleza de los datos financieros anuales.
+    \item La valoración bayesiana produce una posterior del precio amplia, evidenciando riesgo de modelo ausente en MLE.
+    \item Para decisiones actuariales prudentes, el precio debe considerarse distribucional y no puntual.
+\end{enumerate}
+
+\subsection{Ventajas del Enfoque Bayesiano}
+
+\begin{itemize}
+    \item \textbf{Cuantificación completa de incertidumbre:} se obtiene $p(\mu,\sigma\mid\mathbf r)$ y, por extensión, $p(C\mid\mathbf r)$.
+    \item \textbf{Decisiones robustas:} permite pricing y capital basados en percentiles/ES coherentes con aversión al riesgo.
+    \item \textbf{Actualización secuencial:} los priors se actualizan naturalmente al incorporar nueva información.
+\end{itemize}
+
+\subsection{Limitaciones y Trabajo Futuro}
+
+\begin{enumerate}
+    \item \textbf{Autocorrelación alta en $\mu$:} se puede mejorar con propuestas adaptativas, reparametrización o HMC/NUTS.
+    \item \textbf{Datos sintéticos:} en aplicación real sería necesario calibrar con datos de mercado, donde hay colas pesadas, volatilidad estocástica y posibles saltos.
+    \item \textbf{Extensiones:}
+    \begin{itemize}
+        \item Heston (volatilidad estocástica)
+        \item Merton (saltos)
+        \item Opciones asiáticas de promedio geométrico
+        \item Opciones sobre canastas multivariadas
+    \end{itemize}
+    \item \textbf{Validación externa:} comparar precios con métodos PDE, Fourier o benchmarks de mercado para cuantificar sesgo y robustez.
+\end{enumerate}
+
+\subsection{Relevancia Actuarial}
+
+Este proyecto muestra que MCMC es crucial en acturía moderna cuando:
+
+\begin{itemize}
+    \item Los modelos financieros carecen de soluciones analíticas.
+    \item La regulación exige cuantificar incertidumbre (Solvencia II, ORSA).
+    \item Las decisiones de pricing y reservas deben ser robustas ante riesgo de modelo.
+\end{itemize}
+
+Metropolis--Hastings, pese a su simplicidad, ofrece un puente práctico entre teoría estocástica, inferencia estadística y gestión prudente de derivados.
+
+% ============================================================================
+% REFERENCIAS
+% ============================================================================
+\newpage
+\thispagestyle{empty}
+\bibliographystyle{apalike}
+\begin{thebibliography}{99}
+
+\bibitem{metropolis1953equation}
+Metropolis, N., Rosenbluth, A. W., Rosenbluth, M. N., Teller, A. H., \& Teller, E. (1953).
+\textit{Equation of state calculations by fast computing machines}.
+The Journal of Chemical Physics, 21(6), 1087--1092.
+
+\bibitem{hastings1970monte}
+Hastings, W. K. (1970).
+\textit{Monte Carlo sampling methods using Markov chains and their applications}.
+Biometrika, 57(1), 97--109.
+
+\bibitem{robert2004monte}
+Robert, C. P., \& Casella, G. (2004).
+\textit{Monte Carlo Statistical Methods} (2nd ed.).
+Springer.
+
+\bibitem{hull2018options}
+Hull, J. C. (2018).
+\textit{Options, Futures, and Other Derivatives} (10th ed.).
+Pearson.
+
+\bibitem{glasserman2004monte}
+Glasserman, P. (2004).
+\textit{Monte Carlo Methods in Financial Engineering}.
+Springer.
+
+\bibitem{klugman2012loss}
+Klugman, S. A., Panjer, H. H., \& Willmot, G. E. (2012).
+\textit{Loss Models: From Data to Decisions} (4th ed.).
+Wiley.
+
+\bibitem{ntzoufras2011bayesian}
+Ntzoufras, I. (2011).
+\textit{Bayesian Modeling Using WinBUGS}.
+Wiley.
+
+\bibitem{scollnik2001implementation}
+Scollnik, D. P. (2001).
+\textit{Implementing a Bayesian analysis of the compound Poisson-gamma distribution using WinBUGS}.
+Journal of Actuarial Practice, 9, 5--28.
+
+\bibitem{vehtari2000bayesian}
+Vehtari, A., \& Ojanen, J. (2012).
+\textit{A survey of Bayesian predictive methods for model assessment, selection and comparison}.
+Statistics Surveys, 6, 142--228.
+
+\end{thebibliography}
+
+\end{document}

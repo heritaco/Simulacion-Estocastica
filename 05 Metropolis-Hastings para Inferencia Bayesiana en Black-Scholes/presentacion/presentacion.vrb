@@ -1,0 +1,31 @@
+\frametitle{Apéndice: Fragmento de Código (Log-Posterior)}
+
+\begin{lstlisting}[language=Python]
+def log_posterior(theta, log_retornos, dt):
+    """
+    Calcula el log de la posterior (hasta constante normalizante)
+    theta = [mu, sigma]
+    """
+    mu, sigma = theta
+
+    # Restricción: sigma > 0
+    if sigma <= 0:
+        return -np.inf
+
+    # Log-likelihood
+    media_retornos = (mu - 0.5 * sigma**2) * dt
+    var_retornos = sigma**2 * dt
+
+    log_lik = -0.5 * len(log_retornos) * np.log(2 * np.pi * var_retornos)
+    log_lik -= 0.5 * np.sum((log_retornos - media_retornos)**2) / var_retornos
+
+    # Log-prior para mu: N(0, 1)
+    log_prior_mu = -0.5 * np.log(2 * np.pi) - 0.5 * mu**2
+
+    # Log-prior para sigma: InverseGamma(2, 0.1)
+    alpha, beta = 2, 0.1
+    log_prior_sigma = alpha * np.log(beta) - (alpha + 1) * np.log(sigma) - beta / sigma
+
+    return log_lik + log_prior_mu + log_prior_sigma
+\end{lstlisting}
+

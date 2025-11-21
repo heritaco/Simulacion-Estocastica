@@ -1,0 +1,881 @@
+\documentclass[8pt,aspectratio=169]{beamer} 
+% Paquetes
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel} % (puedes cambiar a spanish si quieres hyphenation en español)
+
+\usepackage{amsmath, amssymb, bm}
+\usepackage{booktabs}
+\usepackage{csquotes}
+\usepackage{hyperref}
+
+
+% Paquetes
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{listings}
+
+
+% Tema y colores
+\usepackage{fontspec}
+\setmainfont{EB Garamond}[
+  UprightFont = * Regular,
+  ItalicFont = * Italic,
+  BoldFont = * SemiBold,
+  BoldItalicFont = * SemiBold Italic,
+]
+\setsansfont{EB Garamond}[
+  UprightFont = * Regular,
+  ItalicFont = * Italic,
+  BoldFont = * SemiBold,
+  BoldItalicFont = * SemiBold Italic,
+]
+\usetheme{metropolis}
+
+\usecolortheme{default}
+\definecolor{primarycolor}{HTML}{0b0a40}
+\setbeamercolor{structure}{fg=blue!70!black}
+\setbeamercolor{palette primary}{bg=primarycolor,fg=white} 
+\setbeamercolor{palette secondary}{bg=blue!60!black,fg=white}
+\setbeamercolor{palette tertiary}{bg=blue!50!black,fg=white}
+\setbeamercolor{background canvas}{bg=white}
+
+
+% Configuración de listings para código Python
+\lstset{
+    language=Python,
+    basicstyle=\tiny\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray}
+}
+
+% set root directory for images at 09 Metropolis-Hastings para Inferencia Bayesiana en Black-Scholes/figures
+\graphicspath{{../figures/}}
+
+% Información del documento
+\title[Metropolis-Hastings: Opciones Asiáticas]{Implementación del Método de Metropolis--Hastings\\en una Aplicación Actuarial}
+\subtitle{Valoración Bayesiana de Opciones Asiáticas}
+\author[Equipo]{Temas Selectos 1: Simulación Actuarial}
+\institute{Equipo: 1}
+\date{\today}
+
+% Logo (opcional - comentar si no se usa)
+% \logo{\includegraphics[height=0.8cm]{logo_universidad.pdf}}
+
+\begin{document}
+
+% ============================================================================
+% PORTADA
+% ============================================================================
+\begin{frame}
+\titlepage
+\end{frame}
+
+% ============================================================================
+% TABLA DE CONTENIDOS
+% ============================================================================
+\begin{frame}{Contenido}
+\tableofcontents
+\end{frame}
+
+% ============================================================================
+\section{Introducción y Motivación}
+% ============================================================================
+
+\begin{frame}{Contexto: Opciones Asiáticas}
+
+\begin{columns}[T]
+\begin{column}{0.55\textwidth}
+\textbf{¿Qué son?}
+\begin{itemize}
+    \item Derivados cuyo \textit{payoff} depende del \alert{promedio} del precio del activo
+    \item Más comunes que opciones europeas en ciertos mercados
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Payoff (Call asiática):}
+\begin{equation*}
+\text{Payoff} = \max\left(\bar{S}_T - K, 0\right)
+\end{equation*}
+
+donde $\bar{S}_T = \frac{1}{T}\int_0^T S_t \, dt$ (promedio continuo)
+\end{column}
+
+\begin{column}{0.42\textwidth}
+\textbf{Aplicaciones:}
+\begin{itemize}
+    \item \textcolor{blue}{Commodities}: Petróleo, gas, metales
+    \item \textcolor{blue}{Cobertura}: Flujos continuos
+    \item \textcolor{blue}{Gestión de riesgo}: Reduce volatilidad
+\end{itemize}
+
+\vspace{0.3cm}
+\begin{block}{Ventaja clave}
+Menor costo que opciones europeas
+\end{block}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}{Problema Actuarial}
+
+\begin{alertblock}{Desafío Principal}
+Valorar opciones asiáticas cuando los parámetros del proceso estocástico ($\mu, \sigma$) son \alert{desconocidos} e inciertos.
+\end{alertblock}
+
+\vspace{0.5cm}
+
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Enfoque Clásico (MLE):}
+\begin{itemize}
+    \item[$\times$] Estimaciones puntuales
+    \item[$\times$] Ignora incertidumbre
+    \item[$\times$] Subestima riesgo
+\end{itemize}
+\end{column}
+
+\begin{column}{0.48\textwidth}
+\textbf{Enfoque Bayesiano (MCMC):}
+\begin{itemize}
+    \item[\checkmark] Distribuciones completas
+    \item[\checkmark] Cuantifica incertidumbre
+    \item[\checkmark] Propaga riesgo al precio
+\end{itemize}
+\end{column}
+\end{columns}
+
+\vspace{0.5cm}
+
+\begin{block}{Objetivo del Proyecto}
+Implementar Metropolis--Hastings para inferencia bayesiana de parámetros y valoración robusta de opciones asiáticas.
+\end{block}
+
+\end{frame}
+
+% ============================================================================
+\section{Modelo Estadístico}
+% ============================================================================
+
+\begin{frame}{Modelo del Activo Subyacente}
+
+\textbf{Proceso estocástico: Geometric Brownian Motion (GBM)}
+
+\begin{equation*}
+dS_t = \mu S_t \, dt + \sigma S_t \, dW_t
+\end{equation*}
+
+\begin{itemize}
+    \item $\mu$: \textcolor{blue}{drift} (retorno esperado anualizado)
+    \item $\sigma$: \textcolor{blue}{volatilidad} (desviación estándar anualizada)
+    \item $W_t$: Movimiento Browniano estándar
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Discretización (Lema de Itô):}
+
+Aplicando a $\log S_t$:
+\begin{equation*}
+r_t := \log\left(\frac{S_{t+\Delta t}}{S_t}\right) \sim N\left(\left(\mu - \frac{\sigma^2}{2}\right)\Delta t, \sigma^2 \Delta t\right)
+\end{equation*}
+
+\begin{alertblock}{Parámetros a estimar}
+$\theta = (\mu, \sigma)$ usando datos de log-retornos observados
+\end{alertblock}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}{Modelo Bayesiano}
+
+\begin{block}{Verosimilitud}
+Dada una muestra de $n$ log-retornos $\mathbf{r} = (r_1, \ldots, r_n)$:
+\begin{equation*}
+p(\mathbf{r} \mid \mu, \sigma) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi \sigma^2 \Delta t}} \exp\left(-\frac{(r_i - m)^2}{2\sigma^2 \Delta t}\right)
+\end{equation*}
+donde $m = \left(\mu - \frac{\sigma^2}{2}\right)\Delta t$
+\end{block}
+
+%\vspace{0.3cm}
+
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Priors (no informativos):}
+\begin{align*}
+\mu &\sim N(0, 1) \\
+\sigma &\sim \text{InvGamma}(2, 0.1)
+\end{align*}
+\end{column}
+
+\begin{column}{0.48\textwidth}
+\textbf{Posterior (Teorema de Bayes):}
+\begin{equation*}
+p(\mu, \sigma \mid \mathbf{r}) \propto p(\mathbf{r} \mid \mu, \sigma) \times p(\mu) \times p(\sigma)
+\end{equation*}
+\end{column}
+\end{columns}
+
+%\vspace{0.3cm}
+
+\begin{alertblock}{Problema}
+\alert{No tiene forma cerrada} $\Rightarrow$ Requiere métodos MCMC
+\end{alertblock}
+
+\end{frame}
+
+% ============================================================================
+\section{Método de Metropolis--Hastings}
+% ============================================================================
+
+\begin{frame}{Fundamento del Algoritmo}
+
+\textbf{Objetivo:} Generar muestras de la distribución posterior $p(\theta \mid y)$ cuando solo conocemos $p(\theta \mid y)$ hasta una constante normalizante.
+
+\vspace{0.5cm}
+
+\begin{block}{Idea Central}
+Construir una \alert{cadena de Markov} cuya distribución estacionaria sea la posterior deseada.
+\end{block}
+
+\vspace{0.3cm}
+
+\textbf{Componentes clave:}
+\begin{enumerate}
+    \item \textbf{Distribución objetivo:} $\pi(\theta) = p(\theta \mid y)$ (posterior)
+    \item \textbf{Distribución de propuesta:} $q(\theta^* \mid \theta^{(t)})$
+    \item \textbf{Razón de aceptación:} $\alpha$ que garantiza balance detallado
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\begin{alertblock}{Propiedad Clave}
+Bajo condiciones regulares, la cadena converge a la distribución posterior sin importar el punto inicial.
+\end{alertblock}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}[fragile]{Algoritmo de Metropolis--Hastings}
+
+\begin{algorithm}[H]
+\caption{Metropolis--Hastings}
+\begin{algorithmic}[1]
+\STATE Inicializar $\theta^{(0)}$
+\FOR{$t = 1$ to $N$}
+    \STATE Proponer $\theta^* \sim q(\theta^* \mid \theta^{(t-1)})$
+    \STATE Calcular razón de aceptación:
+    \begin{equation*}
+    \alpha = \min\left(1, \frac{p(\theta^* \mid y) \, q(\theta^{(t-1)} \mid \theta^)}{p(\theta^{(t-1)} \mid y) \, q(\theta^ \mid \theta^{(t-1)})}\right)
+    \end{equation*}
+    \STATE Generar $u \sim \text{Uniform}(0,1)$
+    \IF{$u < \alpha$}
+        \STATE $\theta^{(t)} = \theta^*$ \quad \textcolor{green}{(aceptar)}
+    \ELSE
+        \STATE $\theta^{(t)} = \theta^{(t-1)}$ \quad \textcolor{red}{(rechazar)}
+    \ENDIF
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+%\vspace{0.2cm}
+
+\textbf{Propuesta Random Walk:} $\theta^* = \theta^{(t-1)} + \epsilon$, \quad $\epsilon \sim N(0, \Sigma)$
+
+$\Rightarrow$ Simétrica: $q(\theta^* \mid \theta) = q(\theta \mid \theta^*)$ $\Rightarrow$ Se simplifica $\alpha$
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}{Configuración de la Implementación}
+
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Datos Simulados:}
+\begin{itemize}
+    \item $\mu_{\text{true}} = 0.08$
+    \item $\sigma_{\text{true}} = 0.25$
+    \item $S_0 = 100$
+    \item $T = 1$ año
+    \item $n = 252$ observaciones
+\end{itemize}
+
+%\vspace{0.3cm}
+
+\textbf{Parámetros MCMC:}
+\begin{itemize}
+    \item Iteraciones: 30,000
+    \item Burn-in: 5,000
+    \item Propuesta SD: [0.01, 0.01]
+\end{itemize}
+\end{column}
+
+\begin{column}{0.48\textwidth}
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{fig1_trayectoria_precios.pdf}
+\caption{Trayectoria simulada del activo subyacente}
+\end{figure}
+\end{column}
+\end{columns}
+
+\begin{block}{Resultado}
+Tasa de aceptación: \textbf{72.1\%} \quad \textcolor{green}{\checkmark Óptimo} (rango ideal: 40--70\%)
+\end{block}
+
+\end{frame}
+
+% ============================================================================
+\section{Resultados}
+% ============================================================================
+
+\begin{frame}{Diagnósticos MCMC: Convergencia}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.65\textwidth]{fig2_traceplots.pdf}
+\caption{Traceplots de los parámetros $\mu$ y $\sigma$. Convergencia alcanzada después del burn-in.}
+\end{figure}
+
+\begin{itemize}
+    \item \textcolor{green}{\checkmark} Cadena de $\sigma$ mezcla bien
+    \item \textcolor{orange}{!} Cadena de $\mu$ muestra alta autocorrelación (exploración lenta)
+\end{itemize}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}{Distribuciones Posteriores}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.85\textwidth]{fig3_distribuciones_posteriores.pdf}
+\caption{Distribuciones posteriores marginales con intervalos creíbles del 95\%}
+\end{figure}
+
+\vspace{-0.2cm}
+
+\begin{itemize}
+    \item \textbf{Volatilidad $\sigma$:} Estimación \alert{muy precisa}, IC estrecho
+    \item \textbf{Drift $\mu$:} Mayor \alert{incertidumbre}, IC amplio (consistente con teoría)
+\end{itemize}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}{Resultados Numéricos}
+
+\begin{table}
+\centering
+\caption{Estimaciones Bayesianas vs. Clásicas (MLE)}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Parámetro} & \textbf{Verdadero} & \textbf{Media Post.} & \textbf{IC 95\%} & \textbf{MLE} \\
+\midrule
+$\mu$ (drift)      & 0.0800 & 0.2041 & [$-0.15$, $0.59$] & 0.0629 \\
+$\sigma$ (vol.)    & 0.2500 & 0.2422 & [$0.22$, $0.26$]  & 0.2413 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.3cm}
+
+\begin{block}{Observaciones Clave}
+\begin{itemize}
+    \item MLE y media bayesiana casi \textbf{idénticos para $\sigma$}
+    \item \alert{Gran diferencia en $\mu$}: refleja incertidumbre no capturada por MLE
+    \item IC para $\mu$ muy amplio: difícil estimar retorno esperado con datos limitados
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}{Diagnósticos MCMC: Autocorrelación}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.85\textwidth]{fig4_autocorrelacion.pdf}
+\caption{Funciones de autocorrelación para ambos parámetros}
+\end{figure}
+
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Tamaño Efectivo (ESS):}
+\begin{itemize}
+    \item $\mu$: 258 / 25,000
+    \item $\sigma$: 2,601 / 25,000
+\end{itemize}
+\end{column}
+
+\begin{column}{0.48\textwidth}
+\textbf{Implicación:}
+\begin{itemize}
+    \item[$\times$] Alta autocorr. en $\mu$
+    \item[\checkmark] Buena mezcla en $\sigma$
+\end{itemize}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}{Distribución Conjunta Posterior}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.40\textwidth]{fig6_joint_posterior.pdf}
+\caption{Distribución conjunta posterior $(\mu, \sigma)$. Correlación débil entre parámetros.}
+\end{figure}
+
+\begin{itemize}
+    \item \textcolor{red}{Estrella roja}: Valores verdaderos
+    \item \textcolor{orange}{Círculo naranja}: Media posterior
+    \item Nube de puntos: Región de alta probabilidad posterior
+\end{itemize}
+
+\end{frame}
+
+% ============================================================================
+\section{Aplicación: Valoración de Opciones}
+% ============================================================================
+
+\begin{frame}{Valoración de Opción Asiática}
+
+\textbf{Especificación de la opción:}
+\begin{itemize}
+    \item Tipo: Call asiática (promedio aritmético continuo)
+    \item $S_0 = 100$, $K = 100$ (at-the-money), $T = 1$ año, $r = 3\%$
+\end{itemize}
+
+%\vspace{0.3cm}
+
+\textbf{Metodología:}
+\begin{enumerate}
+    \item Para cada muestra posterior $(\mu^{(i)}, \sigma^{(i)})$
+    \item Simular 1,000 trayectorias del precio (Monte Carlo)
+    \item Calcular precio de la opción
+    \item Obtener distribución posterior del precio
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\begin{table}
+\centering
+\caption{Resultados de Valoración}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Método} & \textbf{Precio (\$)} & \textbf{SD/SE} & \textbf{IC 95\%} \\
+\midrule
+Parámetros Verdaderos & 7.74 & 0.10 & --- \\
+Estimación MLE        & 7.16 & 0.10 & --- \\
+Inferencia Bayesiana  & 14.11 & 9.76 & [2.39, 35.11] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}{Distribución Posterior del Precio}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.70\textwidth]{fig5_precio_opcion_posterior.pdf}
+\caption{Distribución posterior del precio de la opción asiática. Bimodal y muy dispersa.}
+\end{figure}
+
+\begin{alertblock}{¡Enorme Incertidumbre!}
+IC 95\%: [\$2.39, \$35.11] $\Rightarrow$ El precio podría ser hasta \alert{5 veces mayor} que la estimación MLE
+\end{alertblock}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}{Interpretación Actuarial}
+
+\begin{block}{Implicaciones para Gestión de Capital}
+\begin{enumerate}
+    \item \textbf{MLE subestima riesgo}: Precio puntual \$7.16 ignora incertidumbre
+    \item \textbf{Capital requerido}: Usar percentil 95\% (\$35.11) $\Rightarrow$ 5× mayor
+    \item \textbf{Pricing conservador}: Percentil 75--90 (\$17--\$25) como precio de venta
+    \item \textbf{Reservas}: Necesarias significativamente mayores que sugiere MLE
+\end{enumerate}
+\end{block}
+
+\vspace{0.3cm}
+
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Medidas de Riesgo:}
+\begin{itemize}
+    \item VaR$_{95\%}$ = \$35.11
+    \item ES$_{95\%}$ $\approx$ \$38
+\end{itemize}
+\end{column}
+
+\begin{column}{0.48\textwidth}
+\textbf{Fuente de incertidumbre:}
+\begin{itemize}
+    \item Principalmente: drift $\mu$
+    \item $\mu$ alto $\Rightarrow$ trayectorias crecientes $\Rightarrow$ payoffs grandes
+\end{itemize}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}{Comparación: Bayesiano vs. Clásico}
+
+\begin{table}
+\centering
+\caption{Enfoque Bayesiano vs. MLE en Valoración}
+\begin{tabular}{p{3cm}p{5cm}p{5cm}}
+\toprule
+\textbf{Aspecto} & \textbf{MLE (Clásico)} & \textbf{Bayesiano (MCMC)} \\
+\midrule
+Estimación & Puntual: \$7.16 & Distribución: \$14.11 $\pm$ \$9.76 \\
+\midrule
+Incertidumbre & No cuantificada & IC: [\$2.39, \$35.11] \\
+\midrule
+Capital requerido & \$7.16 & \$35.11 (perc. 95\%) \\
+\midrule
+Decisiones & Potencialmente riesgosas & Conservadoras y robustas \\
+\midrule
+Gestión de riesgo & Inadecuada & \textcolor{green}{Completa} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.3cm}
+
+\begin{alertblock}{Conclusión Clave}
+El enfoque clásico \alert{subestima dramáticamente} el riesgo real de la posición.
+\end{alertblock}
+
+\end{frame}
+
+% ============================================================================
+\section{Conclusiones}
+% ============================================================================
+
+\begin{frame}{Conclusiones Principales}
+
+\begin{block}{1. Éxito de la Implementación}
+\begin{itemize}
+    \item[\checkmark] Algoritmo M--H implementado \textbf{desde cero} en Python
+    \item[\checkmark] Convergencia verificada con tasa de aceptación óptima (72\%)
+    \item[\checkmark] Diagnósticos MCMC confirman calidad de las muestras
+\end{itemize}
+\end{block}
+
+\vspace{0.2cm}
+
+\begin{block}{2. Valor del Enfoque Bayesiano}
+\begin{itemize}
+    \item[\checkmark] \textbf{Cuantifica incertidumbre} paramétrica completa
+    \item[\checkmark] \textbf{Revela riesgos ocultos} no capturados por MLE
+    \item[\checkmark] \textbf{Permite decisiones robustas} en gestión de capital
+\end{itemize}
+\end{block}
+
+\vspace{0.2cm}
+
+\begin{alertblock}{3. Implicación Actuarial Crítica}
+La valoración clásica (MLE) puede llevar a \alert{reservas insuficientes} y \alert{capital inadecuado}, exponiendo a la institución a riesgos catastróficos.
+\end{alertblock}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}{Limitaciones y Trabajo Futuro}
+
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Limitaciones:}
+\begin{itemize}
+    \item Alta autocorrelación en $\mu$
+    \item Datos sintéticos (idealmente: datos reales de mercado)
+    \item Modelo simple (GBM)
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Mejoras Posibles:}
+\begin{itemize}
+    \item Hamiltonian MC (HMC)
+    \item Reparametrización
+    \item Propuestas adaptativas
+\end{itemize}
+\end{column}
+
+\begin{column}{0.48\textwidth}
+\textbf{Extensiones:}
+\begin{itemize}
+    \item Volatilidad estocástica (Heston)
+    \item Saltos (Merton)
+    \item Opciones sobre canastas
+    \item Modelos multivariados
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Aplicaciones Adicionales:}
+\begin{itemize}
+    \item Reserving bayesiano
+    \item Modelos de credibilidad
+    \item Riesgo de crédito
+    \item Pérdidas agregadas
+\end{itemize}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}{Relevancia Actuarial del MCMC}
+
+\begin{block}{¿Por qué MCMC es esencial en Actuaría moderna?}
+\begin{enumerate}
+    \item \textbf{Complejidad creciente}: Modelos sin soluciones analíticas
+    \item \textbf{Requerimientos regulatorios}: Solvencia II, ORSA
+    \item \textbf{Gestión de riesgos}: Cuantificación completa de incertidumbre
+    \item \textbf{Robustez}: Decisiones que resisten incertidumbre de modelo
+\end{enumerate}
+\end{block}
+
+\vspace{0.3cm}
+
+\textbf{Áreas de aplicación:}
+\begin{itemize}
+    \item Reservas técnicas (Chain Ladder bayesiano)
+    \item Pricing de productos complejos
+    \item Modelos de dependencia (cópulas)
+    \item Riesgo operacional y catastrófico
+    \item Stress testing y análisis de escenarios
+\end{itemize}
+
+\vspace{0.3cm}
+
+\begin{alertblock}{Mensaje Final}
+\textbf{Metropolis--Hastings} es una herramienta fundamental que todo actuario debe dominar para enfrentar los desafíos del siglo XXI.
+\end{alertblock}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}{Contribuciones del Proyecto}
+
+\begin{block}{Logros Técnicos}
+\begin{enumerate}
+    \item Implementación completa de M--H sin librerías especializadas
+    \item Aplicación a problema actuarial realista (opciones asiáticas)
+    \item Análisis exhaustivo con 6 visualizaciones de calidad
+    \item Comparación rigurosa: Bayesiano vs. Clásico
+\end{enumerate}
+\end{block}
+
+%\vspace{0.3cm}
+
+\begin{block}{Aportaciones Conceptuales}
+\begin{itemize}
+    \item Demostración de \textbf{subestimación de riesgo} en métodos puntuales
+    \item Cuantificación de \textbf{impacto financiero} de incertidumbre paramétrica
+    \item Metodología replicable para otros derivados y productos
+\end{itemize}
+\end{block}
+
+%\vspace{0.3cm}
+
+\begin{exampleblock}{Código y Documentación}
+%Proyecto completo disponible con:
+\begin{itemize}
+    \item Código Python documentado (500+ líneas)
+    \item Reporte técnico LaTeX (18 páginas)
+    \item 9 referencias académicas
+\end{itemize}
+\end{exampleblock}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}[standout]
+\begin{center}
+{\Huge \textbf{¡Gracias!}}
+
+\vspace{1cm}
+
+{\Large Preguntas y Comentarios}
+
+\vspace{1.5cm}
+
+\begin{tikzpicture}
+\node[draw, rounded corners, fill=blue!20, text width=10cm, align=center] {
+\textbf{Proyecto:} Método de Metropolis--Hastings\\
+\textbf{Aplicación:} Valoración Bayesiana de Opciones Asiáticas\\
+\textbf{Materia:} Temas Selectos 1 - Simulación Actuarial
+};
+\end{tikzpicture}
+
+\end{center}
+\end{frame}
+
+% ============================================================================
+% APÉNDICE (opcional)
+% ============================================================================
+
+\appendix
+
+\begin{frame}[allowframebreaks]{Referencias}
+
+\begin{thebibliography}{99}
+
+\bibitem{metropolis1953}
+Metropolis, N., Rosenbluth, A. W., Rosenbluth, M. N., Teller, A. H., \& Teller, E. (1953).
+\textit{Equation of state calculations by fast computing machines}.
+The Journal of Chemical Physics, 21(6), 1087--1092.
+
+\bibitem{hastings1970}
+Hastings, W. K. (1970).
+\textit{Monte Carlo sampling methods using Markov chains and their applications}.
+Biometrika, 57(1), 97--109.
+
+\bibitem{robert2004}
+Robert, C. P., \& Casella, G. (2004).
+\textit{Monte Carlo Statistical Methods} (2nd ed.). Springer.
+
+\bibitem{hull2018}
+Hull, J. C. (2018).
+\textit{Options, Futures, and Other Derivatives} (10th ed.). Pearson.
+
+\bibitem{glasserman2004}
+Glasserman, P. (2004).
+\textit{Monte Carlo Methods in Financial Engineering}. Springer.
+
+\bibitem{klugman2012}
+Klugman, S. A., Panjer, H. H., \& Willmot, G. E. (2012).
+\textit{Loss Models: From Data to Decisions} (4th ed.). Wiley.
+
+\end{thebibliography}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}{Apéndice: Detalles Técnicos del Código}
+
+\textbf{Estructura del código Python (500+ líneas):}
+
+\begin{enumerate}
+    \item \textbf{Generación de datos}: Simulación GBM con parámetros conocidos
+    \item \textbf{Función log-posterior}: Likelihood + Priors
+    \item \textbf{Algoritmo M--H}: Implementación desde cero con Random Walk
+    \item \textbf{Diagnósticos}: Traceplots, autocorrelación, ESS
+    \item \textbf{Valoración}: Monte Carlo para opciones asiáticas
+    \item \textbf{Visualización}: 6 gráficas de alta calidad
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Herramientas utilizadas:}
+\begin{itemize}
+    \item NumPy (cálculos numéricos y álgebra lineal)
+    \item SciPy (distribuciones de probabilidad)
+    \item Matplotlib (visualización)
+    \item Pandas (manejo de datos tabulares)
+\end{itemize}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}[fragile]{Apéndice: Fragmento de Código (Log-Posterior)}
+
+\begin{lstlisting}[language=Python]
+def log_posterior(theta, log_retornos, dt):
+    """
+    Calcula el log de la posterior (hasta constante normalizante)
+    theta = [mu, sigma]
+    """
+    mu, sigma = theta
+    
+    # Restricción: sigma > 0
+    if sigma <= 0:
+        return -np.inf
+    
+    # Log-likelihood
+    media_retornos = (mu - 0.5 * sigma**2) * dt
+    var_retornos = sigma**2 * dt
+    
+    log_lik = -0.5 * len(log_retornos) * np.log(2 * np.pi * var_retornos)
+    log_lik -= 0.5 * np.sum((log_retornos - media_retornos)**2) / var_retornos
+    
+    # Log-prior para mu: N(0, 1)
+    log_prior_mu = -0.5 * np.log(2 * np.pi) - 0.5 * mu**2
+    
+    # Log-prior para sigma: InverseGamma(2, 0.1)
+    alpha, beta = 2, 0.1
+    log_prior_sigma = alpha * np.log(beta) - (alpha + 1) * np.log(sigma) - beta / sigma
+    
+    return log_lik + log_prior_mu + log_prior_sigma
+\end{lstlisting}
+
+\end{frame}
+
+% ============================================================================
+
+\begin{frame}{Apéndice: Fórmulas Adicionales}
+
+\textbf{Razón de aceptación (Random Walk simétrico):}
+
+Como $q(\theta^* \mid \theta^{(t)}) = q(\theta^{(t)} \mid \theta^*)$, se simplifica a:
+
+\begin{equation*}
+\alpha = \min\left(1, \frac{p(\theta^* \mid y)}{p(\theta^{(t)} \mid y)}\right) = \min\left(1, \exp\left(\log p(\theta^* \mid y) - \log p(\theta^{(t)} \mid y)\right)\right)
+\end{equation*}
+
+\vspace{0.5cm}
+
+\textbf{Tamaño Efectivo de Muestra (ESS):}
+
+Aproximación mediante autocorrelación:
+
+\begin{equation*}
+\text{ESS} \approx \frac{N}{1 + 2\sum_{k=1}^{K} \rho_k}
+\end{equation*}
+
+donde $\rho_k$ es la autocorrelación en lag $k$.
+
+\end{frame}
+
+\end{document}

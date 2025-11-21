@@ -6,9 +6,10 @@ def mpl_apply():
     """
 
     import seaborn as sns
+    custom_palette = ["#083775", "#ee854a", "#6acc64", "#d65f5f", "#956cb4", "#8c613c", "#dc7ec0", "#797979", "#d5bb67", "#82c6e2"]
     sns.set(
         style="whitegrid",
-        palette="muted",
+        palette=custom_palette,
         font="serif",
         font_scale=1.2,
         rc={
